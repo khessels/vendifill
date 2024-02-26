@@ -84,7 +84,7 @@ return [
     */
 
     'locale' => 'en',
-
+    'available_locales' => array('en', 'es'),
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\VoltServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
     ])->toArray(),
 
     /*

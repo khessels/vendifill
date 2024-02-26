@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpTestFrameworkSettings">
+    <test_tools>
+      <tool tool_name="Pest">
+        <settings>
+          <configurations>
+            <configuration_by_sdk interpreter_id="d1e3f1f5-1a0a-4eb8-b90d-e6b28bdda2dc" configuration_file_path="//wsl.localhost/Ubuntu-22.04/var/www/vendifill.com/phpunit.xml" executable_path="//wsl.localhost/Ubuntu-22.04/var/www/vendifill.com/vendor/pestphp/pest/bin/pest" use_configuration_file="true" />
+          </configurations>
+        </settings>
+      </tool>
+    </test_tools>
+  </component>
+</project>

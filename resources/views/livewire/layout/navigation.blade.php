@@ -27,6 +27,12 @@ $logout = function (Logout $logout) {
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('english')" :active="request()->routeIs('english')" wire:navigate>
+                        {{ __('English') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('espanol')" :active="request()->routeIs('espanol')" wire:navigate>
+                        {{ __('Español') }}
+                    </x-nav-link>
                 </div>
             </div>
 
