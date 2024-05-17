@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 	<head>
-		<title>VendGO</title>
+		<title>VendiFill</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -203,7 +203,7 @@
 										</li>
 
 										<li>
-											<a href="mailto:support@vendgo.com">support@vendgo.com</a>
+											<a href="mailto:support@VendiFill.com">support@VendiFill.com</a>
 										</li>
 									</ul>
 								</div>
@@ -401,7 +401,7 @@
 								<div class="section-heading section-heading--left">
 									<h5 class="__subtitle">About</h5>
 
-									<h2 class="__title">VendGo Machines <br> <span>in&nbsp;Our Business</span></h2>
+									<h2 class="__title">VendiFill Machines <br> <span>in&nbsp;Our Business</span></h2>
 								</div>
 
 								<div class="spacer py-3"></div>
@@ -477,7 +477,7 @@
 								<div class="section-heading section-heading--center section-heading--white">
 									<h5 class="__subtitle">Products</h5>
 
-									<h2 class="__title">VendGo <span>Products</span></h2>
+									<h2 class="__title">VendiFill <span>Products</span></h2>
 
 									<p>
 										Flagfin Atlantic saury, stonecat beachsalmon, silver dollar South American<br>Lungfish. Reef triggerfish dogteeth
@@ -647,7 +647,7 @@
 								<div class="section-heading section-heading--left">
 									<h5 class="__subtitle">Services</h5>
 
-									<h2 class="__title">Services by VendGo</h2>
+									<h2 class="__title">Services by VendiFill</h2>
 
 									<p>
 										Flagfin Atlantic saury, stonecat beachsalmon, silver dollar South American Lungfish. Reef triggerfish dogteeth
@@ -1184,7 +1184,7 @@
 								<div class="section-heading section-heading--center">
 									<h5 class="__subtitle">How we works</h5>
 
-									<h2 class="__title">Steps for Cooperation witn VendGo</h2>
+									<h2 class="__title">Steps for Cooperation witn VendiFill</h2>
 
 									<p>
 										Flagfin Atlantic saury, stonecat beachsalmon, silver dollar South American Lungfish. Reef triggerfish dogteeth
@@ -2000,7 +2000,7 @@
 
 								<div class="footer__item">
 									<p class="__copy">
-										Copyright © 2019 VendGo
+										Copyright © 2019 VendiFill
 									</p>
 								</div>
 							</div>
@@ -2010,7 +2010,7 @@
 									<address class="footer__address">
 										<p>5272 Lyngate Ct Burke, VA 2015-1688</p>
 										<p>+1 998 150 30 20 &nbsp; +31 85 964 47 25</p>
-										<p><a href="mailto:info@vendgo.co">info@vendgo.co</a></p>
+										<p><a href="mailto:info@VendiFill.co">info@VendiFill.co</a></p>
 									</address>
 								</div>
 

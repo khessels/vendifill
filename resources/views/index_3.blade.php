@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 	<head>
-		<title>VendGO</title>
+		<title>VendiFill</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -69,7 +69,7 @@
 										</li>
 
 										<li>
-											<a href="mailto:support@vendgo.com">support@vendgo.com</a>
+											<a href="mailto:support@VendiFill.com">support@VendiFill.com</a>
 										</li>
 									</ul>
 								</div>
@@ -787,7 +787,7 @@
 								<div class="section-heading section-heading--center">
 									<h5 class="__subtitle">Products of our company</h5>
 
-									<h2 class="__title">VendGo Products</h2>
+									<h2 class="__title">VendiFill Products</h2>
 
 									<p>Flagfin Atlantic saury, stonecat beachsalmon, silver dollar South <br>American Lungfish. Reef triggerfish dogteeth</p>
 								</div>
@@ -1609,7 +1609,7 @@
 								<div class="section-heading">
 									<h5 class="__subtitle">Information text</h5>
 
-									<h2 class="__title">VendGo Machines <span>in&nbsp;Our Business</span></h2>
+									<h2 class="__title">VendiFill Machines <span>in&nbsp;Our Business</span></h2>
 								</div>
 
 								<div class="spacer py-3"></div>
@@ -1721,7 +1721,7 @@
 
 								<div class="footer__item">
 									<p class="__copy">
-										Copyright © 2019 VendGo
+										Copyright © 2019 VendiFill
 									</p>
 								</div>
 							</div>
@@ -1731,7 +1731,7 @@
 									<address class="footer__address">
 										<p>5272 Lyngate Ct Burke, VA 2015-1688</p>
 										<p>+1 998 150 30 20 &nbsp; +31 85 964 47 25</p>
-										<p><a href="mailto:info@vendgo.co">info@vendgo.co</a></p>
+										<p><a href="mailto:info@VendiFill.co">info@VendiFill.co</a></p>
 									</address>
 								</div>
 

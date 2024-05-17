@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 	<head>
-		<title>VendGO</title>
+		<title>VendiFill</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -69,7 +69,7 @@
 										</li>
 
 										<li>
-											<a href="mailto:support@vendgo.com">support@vendgo.com</a>
+											<a href="mailto:support@VendiFill.com">support@VendiFill.com</a>
 										</li>
 									</ul>
 								</div>
@@ -304,7 +304,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-11 col-sm-12">
-								<h4 class="hero__subtitle">VendGo</h4>
+								<h4 class="hero__subtitle">VendiFill</h4>
 								<h1 class="hero__title">About Company</h1>
 							</div>
 						</div>
@@ -325,9 +325,9 @@
 						<div class="row">
 							<div class="col-12 col-sm-8 col-md-7 col-lg-4">
 								<div class="section-heading">
-									<h5 class="__subtitle">About VendGo</h5>
+									<h5 class="__subtitle">About VendiFill</h5>
 
-									<h2 class="__title">VendGo Machines <span>in&nbsp;Our Business</span></h2>
+									<h2 class="__title">VendiFill Machines <span>in&nbsp;Our Business</span></h2>
 								</div>
 
 								<div class="spacer py-4"></div>
@@ -544,7 +544,7 @@
 								<div class="section-heading section-heading--center">
 									<h5 class="__subtitle">Our family</h5>
 
-									<h2 class="__title">VendGo <span>Dream Team</span></h2>
+									<h2 class="__title">VendiFill <span>Dream Team</span></h2>
 
 									<p>
 										Flagfin Atlantic saury, stonecat beachsalmon, silver dollar South American Lungfish. Reef triggerfish dogteeth
@@ -567,7 +567,7 @@
 													</figure>
 
 													<div class="__content">
-														<div class="__position">CEO vendgo</div>
+														<div class="__position">CEO VendiFill</div>
 
 														<h4 class="__name">Paul Miller</h4>
 
@@ -763,7 +763,7 @@
 								<div class="section-heading section-heading--left">
 									<h5 class="__subtitle">Instagramm</h5>
 
-									<h2 class="__title"><span># VendGo</span></h2>
+									<h2 class="__title"><span># VendiFill</span></h2>
 								</div>
 							</div>
 
@@ -887,7 +887,7 @@
 									<address class="footer__address">
 										<p>5272 Lyngate Ct Burke, VA 2015-1688</p>
 										<p>+1 998 150 30 20 &nbsp; +31 85 964 47 25</p>
-										<p><a href="mailto:info@vendgo.co">info@vendgo.co</a></p>
+										<p><a href="mailto:info@VendiFill.co">info@VendiFill.co</a></p>
 									</address>
 								</div>
 
@@ -982,7 +982,7 @@
 							<div class="col-auto">
 								<div class="footer__item">
 									<p class="__copy">
-										Copyright © 2019 VendGo | <a href="javascript:void(0)">Terms & Privacy</a>
+										Copyright © 2019 VendiFill | <a href="javascript:void(0)">Terms & Privacy</a>
 									</p>
 								</div>
 							</div>

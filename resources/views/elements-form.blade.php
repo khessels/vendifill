@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 	<head>
-		<title>VendGO</title>
+		<title>VendiFill</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -69,7 +69,7 @@
 										</li>
 
 										<li>
-											<a href="mailto:support@vendgo.com">support@vendgo.com</a>
+											<a href="mailto:support@VendiFill.com">support@VendiFill.com</a>
 										</li>
 									</ul>
 								</div>
@@ -304,7 +304,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-11 col-sm-12">
-								<h4 class="hero__subtitle">VendGo</h4>
+								<h4 class="hero__subtitle">VendiFill</h4>
 								<h1 class="hero__title">Form</h1>
 							</div>
 						</div>
@@ -453,7 +453,7 @@
 									<address class="footer__address">
 										<p>5272 Lyngate Ct Burke, VA 2015-1688</p>
 										<p>+1 998 150 30 20 &nbsp; +31 85 964 47 25</p>
-										<p><a href="mailto:info@vendgo.co">info@vendgo.co</a></p>
+										<p><a href="mailto:info@VendiFill.co">info@VendiFill.co</a></p>
 									</address>
 								</div>
 
@@ -548,7 +548,7 @@
 							<div class="col-auto">
 								<div class="footer__item">
 									<p class="__copy">
-										Copyright © 2019 VendGo | <a href="javascript:void(0)">Terms & Privacy</a>
+										Copyright © 2019 VendiFill | <a href="javascript:void(0)">Terms & Privacy</a>
 									</p>
 								</div>
 							</div>
