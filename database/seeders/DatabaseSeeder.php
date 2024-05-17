@@ -12,11 +12,25 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $seeds = [];
+        switch(\App::Environment()) {
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+            /**
+             * Local/testing seeds
+             */
+            case 'local':
+            case 'staging':
+            case 'production':
+            case 'testing':
+                $seeds = [
+                    PermissionsSeeder::class,
+                    UsersSeeder::class,
+                ];
+                break;
+        }
+        /**
+         * Run seeders
+         */
+        array_map(fn($s) => $this->call($s), $seeds);
     }
 }

@@ -1,18 +1,20 @@
 <?php
 
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PublicPagesController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// display the page in requested browser locale
+$availableLocales = Config::get('app.available_locales');
+$locale = Request::getPreferredLanguage($availableLocales);
+if(App::currentLocale() !== $locale) {
+    if ($locale) App::setLocale($locale);
+}
+// todo: check if locale is in query parameters
 
+<<<<<<< HEAD
 Route::view('404', '404');
 Route::view('/', 'index');
 Route::view('/index', 'index');
@@ -45,6 +47,20 @@ Route::view('/product/single', 'product_single');
 Route::view('/services', 'services');
 Route::view('/catalog/shop', 'catalog_shop');
 Route::view('/typography', 'typography');
+=======
+Route::get('/info', function () {
+    phpinfo();
+});
+Route::post('/english', function () {
+    redirect('/');
+})->name('english');
+Route::get('/espanol', function () {
+    redirect('/');
+})->name('espanol');
+
+
+Route::get('/', [PublicPagesController::class, 'index'])->name('index');
+>>>>>>> d80a6fb1c708b184695aa3ab8450d00fd0c02486
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
