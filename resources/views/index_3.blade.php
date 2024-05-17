@@ -14,15 +14,15 @@
 
 		<!-- Favicons
 		================================================== -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico">
-		<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
-		<link rel="icon" href="img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
-		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" sizes="180x180">
-		<link rel="manifest" href="img/favicon/manifest.json">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+		<link rel="icon" href="/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+		<link rel="icon" href="/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+		<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png" sizes="180x180">
+		<link rel="manifest" href="/img/favicon/manifest.json">
 
 		<!-- Critical styles
 		================================================== -->
-		<link rel="stylesheet" href="css/critical.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
 
 		<!-- Load google font
 		================================================== -->
@@ -49,7 +49,7 @@
 			_html.className = _html.className.replace("no-js","js");
 			_html.classList.add( isTouch ? "touch" : "no-touch");
 		</script>
-		<script type="text/javascript" src="js/device.min.js"></script>
+		<script type="text/javascript" src="/js/device.min.js"></script>
 	</head>
 
 	<body class="page-home page-home-3">
@@ -82,10 +82,10 @@
 											<!-- start social buttons -->
 											<div class="s-btns s-btns--gray">
 												<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-													<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-													<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-													<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-													<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+													<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+													<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+													<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+													<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 												</ul>
 											</div>
 											<!-- end social buttons -->
@@ -103,19 +103,19 @@
 						<span></span>
 					</div>
 
-					<a class="top-bar__logo site-logo" href="index_3">
-						<img class="img-fluid" src="img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
+					<a class="top-bar__logo site-logo" href="/index_3">
+						<img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
 					</a>
 
 					<a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler" href="javascript:void(0);">
 						<span></span>
 					</a>
 
-					<a class="top-bar__cart-btn" href="#">
+					<a class="top-bar__cart-btn" href="javascript:void(0)">
 						<i class="cart-ico fontello-shopping-cart"><span class="total">1</span></i>
 					</a>
 
-					<a class="top-bar__profile-btn" href="account">
+					<a class="top-bar__profile-btn" href="/account">
 						<i class="profile-ico fontello-user"></i>
 					</a>
 
@@ -127,9 +127,9 @@
 										<a class="nav-link active" href="javascript:void(0);">Home</a>
 
 										<ul class="submenu">
-											<li><a href="index">Home Page 1</a></li>
-											<li><a href="index">Home Page 2</a></li>
-											<li><a class="active" href="index_3">Shop</a></li>
+											<li><a href="/index">Home Page 1</a></li>
+											<li><a href="/index">Home Page 2</a></li>
+											<li><a class="active" href="/index_3">Shop</a></li>
 										</ul>
 									</li>
 
@@ -137,38 +137,38 @@
 										<a class="nav-link" href="javascript:void(0);">Pages</a>
 
 										<ul class="submenu">
-											<li><a href="about_us">About Us</a></li>
-											<li><a href="services">Services</a></li>
-											<li><a href="product_details">Product Single</a></li>
-											<li><a href="gallery_masonry">Gallery Masonry</a></li>
-											<li><a href="gallery_classic">Gallery Classic</a></li>
-											<li><a href="faq">FAQ</a></li>
-											<li><a href="typography">Typography</a></li>
-											<li><a href="404">404 Page</a></li>
+											<li><a href="/about_us">About Us</a></li>
+											<li><a href="/services">Services</a></li>
+											<li><a href="/product_details">Product Single</a></li>
+											<li><a href="/gallery_masonry">Gallery Masonry</a></li>
+											<li><a href="/gallery_classic">Gallery Classic</a></li>
+											<li><a href="/faq">FAQ</a></li>
+											<li><a href="/typography">Typography</a></li>
+											<li><a href="/404">404 Page</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="products">Products</a>
+										<a class="nav-link" href="/products">Products</a>
 									</li>
 
 									<li>
-										<a class="nav-link" href="blog">Blog</a>
+										<a class="nav-link" href="/blog">Blog</a>
 									</li>
 
 									<li class="has-submenu">
 										<a class="nav-link" href="javascript:void(0);">Shop</a>
 
 										<ul class="submenu">
-											<li><a href="shop_catalog">Catalog</a></li>
-											<li><a href="product_single">Single Product</a></li>
+											<li><a href="/shop_catalog">Catalog</a></li>
+											<li><a href="/product_single">Single Product</a></li>
 											<li><a href="/cart/checkout">Cart & Checkout</a></li>
-											<li><a href="account">Account</a></li>
+											<li><a href="/account">Account</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="contact">Contacts</a>
+										<a class="nav-link" href="/contact">Contacts</a>
 									</li>
 
 									<li class="has-submenu">
@@ -177,13 +177,13 @@
 										<ul class="submenu">
 											<li><a href="/element/accordions">Accordion</a></li>
 											<li><a href="/element/alerts">Alerts</a></li>
-											<li><a href="elements-counters">Counters</a></li>
-											<li><a href="elements-form">Forms</a></li>
-											<li><a href="elements-icons">IconList</a></li>
-											<li><a href="elements-info_tables">Tables</a></li>
-											<li><a href="elements-media_embeds">Media Embeds</a></li>
-											<li><a href="elements-pricing_tables">Pricing Tables</a></li>
-											<li><a href="elements-tabs">Tabs</a></li>
+											<li><a href="/elements-counters">Counters</a></li>
+											<li><a href="/elements-form">Forms</a></li>
+											<li><a href="/elements-icons">IconList</a></li>
+											<li><a href="/elements-info_tables">Tables</a></li>
+											<li><a href="/elements-media_embeds">Media Embeds</a></li>
+											<li><a href="/elements-pricing_tables">Pricing Tables</a></li>
+											<li><a href="/elements-tabs">Tabs</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -215,10 +215,10 @@
 										<!-- start social buttons -->
 										<div class="s-btns s-btns--gray">
 											<ul class="d-flex flex-row flex-wrap align-items-center">
-												<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-												<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-												<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-												<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+												<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+												<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+												<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+												<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 											</ul>
 										</div>
 										<!-- end social buttons -->
@@ -229,11 +229,11 @@
 							<div class="top-bar__action">
 								<div class="d-sm-table">
 									<div class="d-sm-table-cell align-middle">
-										<a class="top-bar__profile-btn" href="account"><i class="profile-ico fontello-user"></i></a>
+										<a class="top-bar__profile-btn" href="/account"><i class="profile-ico fontello-user"></i></a>
 									</div>
 
 									<div class="d-sm-table-cell align-middle">
-										<a class="custom-btn" href="#">
+										<a class="custom-btn" href="javascript:void(0)">
 											<i class="cart-ico fontello-shopping-cart"><span class="total">1</span></i>1 525.00$
 										</a>
 									</div>
@@ -249,9 +249,9 @@
 			<div id="side-menu" class="side-menu  d-none">
 				<div class="side-menu__inner">
 					<ul class="side-menu__menu">
-						<li class="active"><a href="#">Documents</a></li>
-						<li><a href="#">Downloads</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li class="active"><a href="javascript:void(0)">Documents</a></li>
+						<li><a href="javascript:void(0)">Downloads</a></li>
+						<li><a href="javascript:void(0)">Useful links</a></li>
 					</ul>
 
 					<div class="side-menu__contacts">
@@ -280,10 +280,10 @@
 								<!-- start social buttons -->
 								<div class="s-btns s-btns--gray">
 									<ul class="d-flex flex-row flex-wrap align-items-center">
-										<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-										<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-										<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-										<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+										<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+										<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+										<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+										<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 									</ul>
 								</div>
 								<!-- end social buttons -->
@@ -292,7 +292,7 @@
 					</div>
 
 					<div>
-						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="#">Get in Touch</a>
+						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="javascript:void(0)">Get in Touch</a>
 					</div>
 				</div>
 			</div>
@@ -328,7 +328,7 @@
 
 									<div class="d-sm-table">
 										<div class="d-sm-table-cell align-middle">
-											<p><a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a></p>
+											<p><a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a></p>
 										</div>
 
 										<div class="d-sm-table-cell align-middle pt-4 pt-sm-0 pl-sm-6 pl-lg-8 pl-xl-10">
@@ -354,7 +354,7 @@
 
 									<div class="spacer py-4"></div>
 
-									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a></p>
+									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a></p>
 								</div>
 							</div>
 						</div>
@@ -376,7 +376,7 @@
 
 									<div class="spacer py-3"></div>
 
-									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a></p>
+									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a></p>
 								</div>
 							</div>
 						</div>
@@ -393,7 +393,7 @@
 			<main role="main">
 				<!-- Common styles
 				================================================== -->
-				<link rel="stylesheet" href="css/style.min.css" type="text/css">
+				<link rel="stylesheet" href="/css/style.min.css" type="text/css">
 
 				<!-- start section -->
 				<section class="section section--no-pt section--no-pb">
@@ -406,11 +406,11 @@
 									<div class="__inner">
 										<div class="row">
 											<div class="col-12 col-md-6">
-												<a class="__item" href="#"><img src="img/banner_1.jpg" alt="demo" class="img-fluid w-100" /></a>
+												<a class="__item" href="javascript:void(0)"><img src="/img/banner_1.jpg" alt="demo" class="img-fluid w-100" /></a>
 											</div>
 
 											<div class="col-12 col-md-6">
-												<a class="__item" href="#"><img src="img/banner_2.jpg" alt="demo" class="img-fluid w-100" /></a>
+												<a class="__item" href="javascript:void(0)"><img src="/img/banner_2.jpg" alt="demo" class="img-fluid w-100" /></a>
 											</div>
 										</div>
 									</div>
@@ -596,10 +596,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/1.jpg" alt="demo" />
+												<img src="/img/goods_img/1.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -609,7 +609,7 @@
 													<span class="product-price__item product-price__item--old">2200$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -619,10 +619,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/2.jpg" alt="demo" />
+												<img src="/img/goods_img/2.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -631,7 +631,7 @@
 													<span class="product-price__item product-price__item--new">2 250$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Snack Machine Claus 1</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Snack Machine Claus 1</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -639,10 +639,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/3.jpg" alt="demo" />
+												<img src="/img/goods_img/3.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -651,7 +651,7 @@
 													<span class="product-price__item product-price__item--new">1 150$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Coffe Machine CF96</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Coffe Machine CF96</a></h4>
 											</div>
 
 											<span class="product-label product-label--new">New</span>
@@ -661,10 +661,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/4.jpg" alt="demo" />
+												<img src="/img/goods_img/4.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -674,7 +674,7 @@
 													<span class="product-price__item product-price__item--old">4200$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Water Machine WM 2500</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Water Machine WM 2500</a></h4>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -685,10 +685,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/1.jpg" alt="demo" />
+												<img src="/img/goods_img/1.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -698,7 +698,7 @@
 													<span class="product-price__item product-price__item--old">2200$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -708,10 +708,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/2.jpg" alt="demo" />
+												<img src="/img/goods_img/2.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -720,7 +720,7 @@
 													<span class="product-price__item product-price__item--new">2 250$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Snack Machine Claus 1</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Snack Machine Claus 1</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -728,10 +728,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/3.jpg" alt="demo" />
+												<img src="/img/goods_img/3.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -740,7 +740,7 @@
 													<span class="product-price__item product-price__item--new">1 150$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Coffe Machine CF96</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Coffe Machine CF96</a></h4>
 											</div>
 
 											<span class="product-label product-label--new">New</span>
@@ -750,10 +750,10 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image __image--bg-gray">
-												<img src="img/goods_img/4.jpg" alt="demo" />
+												<img src="/img/goods_img/4.jpg" alt="demo" />
 
 												<div class="__btn">
-													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="#">Add to Cart</a>
+													<a class="custom-btn custom-btn--medium custom-btn--s3 wide" href="javascript:void(0)">Add to Cart</a>
 												</div>
 											</figure>
 
@@ -763,7 +763,7 @@
 													<span class="product-price__item product-price__item--old">4200$</span>
 												</div>
 
-												<h4 class="__title"><a href="#">Water Machine WM 2500</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Water Machine WM 2500</a></h4>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -802,14 +802,14 @@
 											<div class="col-12 col-md-6">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/products-cards_img/1.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/products-cards_img/1.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
 														<h4 class="__title text-white">Vending Machines</h4>
 													</div>
 
-													<a class="__link" href="#"></a>
+													<a class="__link" href="javascript:void(0)"></a>
 												</div>
 											</div>
 											<!-- end item -->
@@ -818,14 +818,14 @@
 											<div class="col-12 col-md-6">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/products-cards_img/2.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/products-cards_img/2.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
 														<h4 class="__title text-white">Coffe Machines</h4>
 													</div>
 
-													<a class="__link" href="#"></a>
+													<a class="__link" href="javascript:void(0)"></a>
 												</div>
 											</div>
 											<!-- end item -->
@@ -834,14 +834,14 @@
 											<div class="col-12 col-md-6 col-lg-5">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/products-cards_img/3.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/products-cards_img/3.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
 														<h4 class="__title text-white">Ingredients & Snacks</h4>
 													</div>
 
-													<a class="__link" href="#"></a>
+													<a class="__link" href="javascript:void(0)"></a>
 												</div>
 											</div>
 											<!-- end item -->
@@ -850,14 +850,14 @@
 											<div class="col-12 col-md-6 col-lg-4">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/products-cards_img/4.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/products-cards_img/4.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
 														<h4 class="__title">Repair & Services</h4>
 													</div>
 
-													<a class="__link" href="#"></a>
+													<a class="__link" href="javascript:void(0)"></a>
 												</div>
 											</div>
 											<!-- end item -->
@@ -867,7 +867,7 @@
 												<div class="spacer py-4 d-lg-none"></div>
 
 												<div class="__item text-center">
-													<a class="custom-btn custom-btn--big custom-btn--s1" href="#">More Products</a>
+													<a class="custom-btn custom-btn--big custom-btn--s1" href="javascript:void(0)">More Products</a>
 												</div>
 											</div>
 											<!-- end item -->
@@ -925,7 +925,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/5.png" width="126" height="64" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/5.png" width="126" height="64" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -933,7 +933,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/4.png" width="100" height="89" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/4.png" width="100" height="89" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -941,7 +941,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/3.png" width="127" height="60" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/3.png" width="127" height="60" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -949,7 +949,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/2.png" width="132" height="47" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/2.png" width="132" height="47" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -957,7 +957,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/1.png" width="120" height="78" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/1.png" width="120" height="78" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -985,7 +985,7 @@
 
 							<div class="col-12 col-lg-auto">
 								<div class="d-none d-lg-block">
-									<a class="custom-btn custom-btn--big custom-btn--s1" href="#">All Products</a>
+									<a class="custom-btn custom-btn--big custom-btn--s1" href="javascript:void(0)">All Products</a>
 								</div>
 							</div>
 						</div>
@@ -1003,18 +1003,18 @@
 												<div class="__item">
 													<div class="d-flex flex-wrap">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/ingredients_img/1.png" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/ingredients_img/1.png" alt="demo" />
 														</figure>
 
 														<div class="__content">
-															<h4 class="__title"><a href="#">Combo Machine Snack</a></h4>
+															<h4 class="__title"><a href="javascript:void(0)">Combo Machine Snack</a></h4>
 
 															<div class="product-price">
 																<span class="product-price__item product-price__item--new">10$</span>
 															</div>
 
 															<div class="__btn">
-																<a class="__add-to-cart" href="#"><i class="fontello-shopping-cart"></i>Add to Cart</a>
+																<a class="__add-to-cart" href="javascript:void(0)"><i class="fontello-shopping-cart"></i>Add to Cart</a>
 															</div>
 														</div>
 													</div>
@@ -1029,18 +1029,18 @@
 												<div class="__item">
 													<div class="d-flex flex-wrap">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/ingredients_img/2.png" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/ingredients_img/2.png" alt="demo" />
 														</figure>
 
 														<div class="__content">
-															<h4 class="__title"><a href="#">Combo Machine Snack</a></h4>
+															<h4 class="__title"><a href="javascript:void(0)">Combo Machine Snack</a></h4>
 
 															<div class="product-price">
 																<span class="product-price__item product-price__item--new">10$</span>
 															</div>
 
 															<div class="__btn">
-																<a class="__add-to-cart" href="#"><i class="fontello-shopping-cart"></i>Add to Cart</a>
+																<a class="__add-to-cart" href="javascript:void(0)"><i class="fontello-shopping-cart"></i>Add to Cart</a>
 															</div>
 														</div>
 													</div>
@@ -1053,18 +1053,18 @@
 												<div class="__item">
 													<div class="d-flex flex-wrap">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/ingredients_img/3.png" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/ingredients_img/3.png" alt="demo" />
 														</figure>
 
 														<div class="__content">
-															<h4 class="__title"><a href="#">Combo Machine Snack</a></h4>
+															<h4 class="__title"><a href="javascript:void(0)">Combo Machine Snack</a></h4>
 
 															<div class="product-price">
 																<span class="product-price__item product-price__item--new">10$</span>
 															</div>
 
 															<div class="__btn">
-																<a class="__add-to-cart" href="#"><i class="fontello-shopping-cart"></i>Add to Cart</a>
+																<a class="__add-to-cart" href="javascript:void(0)"><i class="fontello-shopping-cart"></i>Add to Cart</a>
 															</div>
 														</div>
 													</div>
@@ -1077,18 +1077,18 @@
 												<div class="__item">
 													<div class="d-flex flex-wrap">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/ingredients_img/4.png" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/ingredients_img/4.png" alt="demo" />
 														</figure>
 
 														<div class="__content">
-															<h4 class="__title"><a href="#">Combo Machine Snack</a></h4>
+															<h4 class="__title"><a href="javascript:void(0)">Combo Machine Snack</a></h4>
 
 															<div class="product-price">
 																<span class="product-price__item product-price__item--new">10$</span>
 															</div>
 
 															<div class="__btn">
-																<a class="__add-to-cart" href="#"><i class="fontello-shopping-cart"></i>Add to Cart</a>
+																<a class="__add-to-cart" href="javascript:void(0)"><i class="fontello-shopping-cart"></i>Add to Cart</a>
 															</div>
 														</div>
 													</div>
@@ -1101,18 +1101,18 @@
 												<div class="__item">
 													<div class="d-flex flex-wrap">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/ingredients_img/5.png" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/ingredients_img/5.png" alt="demo" />
 														</figure>
 
 														<div class="__content">
-															<h4 class="__title"><a href="#">Combo Machine Snack</a></h4>
+															<h4 class="__title"><a href="javascript:void(0)">Combo Machine Snack</a></h4>
 
 															<div class="product-price">
 																<span class="product-price__item product-price__item--new">10$</span>
 															</div>
 
 															<div class="__btn">
-																<a class="__add-to-cart" href="#"><i class="fontello-shopping-cart"></i>Add to Cart</a>
+																<a class="__add-to-cart" href="javascript:void(0)"><i class="fontello-shopping-cart"></i>Add to Cart</a>
 															</div>
 														</div>
 													</div>
@@ -1125,18 +1125,18 @@
 												<div class="__item">
 													<div class="d-flex flex-wrap">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/ingredients_img/6.png" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/ingredients_img/6.png" alt="demo" />
 														</figure>
 
 														<div class="__content">
-															<h4 class="__title"><a href="#">Combo Machine Snack</a></h4>
+															<h4 class="__title"><a href="javascript:void(0)">Combo Machine Snack</a></h4>
 
 															<div class="product-price">
 																<span class="product-price__item product-price__item--new">10$</span>
 															</div>
 
 															<div class="__btn">
-																<a class="__add-to-cart" href="#"><i class="fontello-shopping-cart"></i>Add to Cart</a>
+																<a class="__add-to-cart" href="javascript:void(0)"><i class="fontello-shopping-cart"></i>Add to Cart</a>
 															</div>
 														</div>
 													</div>
@@ -1151,7 +1151,7 @@
 								<div class="text-center d-lg-none">
 									<div class="spacer py-5"></div>
 
-									<a class="custom-btn custom-btn--big custom-btn--s1" href="#">All Products</a>
+									<a class="custom-btn custom-btn--big custom-btn--s1" href="javascript:void(0)">All Products</a>
 								</div>
 							</div>
 						</div>
@@ -1222,17 +1222,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/1.png" width="174" alt="demo" />
+												<img src="/img/goods-rent_img/1.png" width="174" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 585/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -1242,17 +1242,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/2.png" width="179" alt="demo" />
+												<img src="/img/goods-rent_img/2.png" width="179" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Snack Machine Claus 1</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Snack Machine Claus 1</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 750/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 										</div>
 										<!-- end item -->
@@ -1260,17 +1260,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/3.png" width="194" alt="demo" />
+												<img src="/img/goods-rent_img/3.png" width="194" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Coffe Machine CF96</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Coffe Machine CF96</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 330/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 
 											<span class="product-label product-label--new">New</span>
@@ -1280,17 +1280,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/4.png" width="167" alt="demo" />
+												<img src="/img/goods-rent_img/4.png" width="167" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Water Machine WM 2500</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Water Machine WM 2500</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 330/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 										</div>
 										<!-- end item -->
@@ -1298,17 +1298,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/5.png" width="200" alt="demo" />
+												<img src="/img/goods-rent_img/5.png" width="200" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 585/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -1318,17 +1318,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/6.png" width="215" alt="demo" />
+												<img src="/img/goods-rent_img/6.png" width="215" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 585/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 										</div>
 										<!-- end item -->
@@ -1347,7 +1347,7 @@
 
 										<div class="col-12 col-sm-auto">
 											<div class="more-link">
-												<a href="#">See all products</a>
+												<a href="javascript:void(0)">See all products</a>
 											</div>
 										</div>
 									</div>
@@ -1369,7 +1369,7 @@
 				<!-- start section -->
 				<section class="section section--no-pb section--blog" style="background-image: url(img/bg_11.jpg);background-repeat: no-repeat;">
 					<div class="decor-el" data-jarallax-element="-140" data-speed="0.2">
-						<img class="lazy" width="154" height="480" src="img/blank.gif" data-src="img/decor-el_blog.png" alt="demo"/>
+						<img class="lazy" width="154" height="480" src="/img/blank.gif" data-src="/img/decor-el_blog.png" alt="demo"/>
 					</div>
 
 					<div class="container">
@@ -1398,13 +1398,13 @@
 														<div class="__item __item--preview __item--shadow">
 															<div class="__header">
 																<figure class="__image">
-																	<img class="lazy" src="img/blank.gif" data-src="img/posts_img/1.jpg" alt="demo" />
+																	<img class="lazy" src="/img/blank.gif" data-src="/img/posts_img/1.jpg" alt="demo" />
 																</figure>
 															</div>
 
 															<div class="__body">
 																<div class="__content">
-																	<h5 class="__category"><a href="#">Coffe Machine</a></h5>
+																	<h5 class="__category"><a href="javascript:void(0)">Coffe Machine</a></h5>
 
 																	<h4 class="__title"><a href="/blog/details">Combo Machine</a></h4>
 																</div>
@@ -1434,7 +1434,7 @@
 														<div class="__item __item--preview __item--shadow">
 															<div class="__body">
 																<div class="__content">
-																	<h5 class="__category"><a href="#">Snacks</a></h5>
+																	<h5 class="__category"><a href="javascript:void(0)">Snacks</a></h5>
 
 																	<h4 class="__title"><a href="/blog/details">Corparate Problem in Vending Business</a></h4>
 
@@ -1484,7 +1484,7 @@
 												<div class="__item __item--preview __item--shadow" style="background-image: url(img/posts_img/2.jpg);">
 													<div class="__body  d-sm-flex align-items-sm-end">
 														<div class="__content">
-															<h5 class="__category"><a href="#">Combo Machine</a></h5>
+															<h5 class="__category"><a href="javascript:void(0)">Combo Machine</a></h5>
 
 															<h4 class="__title"><a class="text-white" href="/blog/details">Vending Solutions</a></h4>
 														</div>
@@ -1514,7 +1514,7 @@
 												<div class="__item __item--preview __item--shadow" style="background: #f95a3f">
 													<div class="__body">
 														<div class="__content">
-															<h5 class="__category"><a class="text-white" href="#">Business</a></h5>
+															<h5 class="__category"><a class="text-white" href="javascript:void(0)">Business</a></h5>
 
 															<h4 class="__title"><a class="text-white" href="/blog/details">Corparate Problem in Vending Business</a></h4>
 
@@ -1548,13 +1548,13 @@
 												<div class="__item __item--preview __item--shadow">
 													<div class="__header">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/posts_img/4.jpg" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/posts_img/4.jpg" alt="demo" />
 														</figure>
 													</div>
 
 													<div class="__body">
 														<div class="__content">
-															<h5 class="__category"><a href="#">Combo Machine</a></h5>
+															<h5 class="__category"><a href="javascript:void(0)">Combo Machine</a></h5>
 
 															<h4 class="__title"><a href="/blog/details">Snack for Machines</a></h4>
 														</div>
@@ -1584,7 +1584,7 @@
 												<div class="__item">
 
 													<div class="mt-4 mt-lg-10 mt-xl-12 mb-6 text-center text-lg-right">
-														<a class="custom-btn custom-btn--big custom-btn--s1" href="blog">All Blog Posts</a>
+														<a class="custom-btn custom-btn--big custom-btn--s1" href="/blog">All Blog Posts</a>
 													</div>
 
 												</div>
@@ -1714,8 +1714,8 @@
 						<div class="row">
 							<div class="col-12 col-md-4 col-lg-3">
 								<div class="footer__item">
-									<a class="footer__logo site-logo" href="index">
-										<img class="lazy" src="img/blank.gif" data-src="img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
+									<a class="footer__logo site-logo" href="/index">
+										<img class="lazy" src="/img/blank.gif" data-src="/img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
 									</a>
 								</div>
 
@@ -1739,10 +1739,10 @@
 									<!-- start social buttons -->
 									<div class="s-btns s-btns--white">
 										<ul class="d-flex flex-row flex-wrap align-items-center">
-											<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-											<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-											<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-											<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+											<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+											<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+											<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+											<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 										</ul>
 									</div>
 									<!-- end social buttons -->
@@ -1756,11 +1756,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Documents</a></li>
-													<li><a href="#">Services</a></li>
-													<li><a href="#">Vending Info</a></li>
-													<li><a href="#">News</a></li>
-													<li><a href="#">Support</a></li>
+													<li><a href="javascript:void(0)">Documents</a></li>
+													<li><a href="javascript:void(0)">Services</a></li>
+													<li><a href="javascript:void(0)">Vending Info</a></li>
+													<li><a href="javascript:void(0)">News</a></li>
+													<li><a href="javascript:void(0)">Support</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -1771,11 +1771,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Snack Vending Machines</a></li>
-													<li><a href="#">Beverage Vending Machines</a></li>
-													<li><a href="#">Combo Vending Machines</a></li>
-													<li><a href="#">Coffee Machines</a></li>
-													<li><a href="#">ATMs Machines</a></li>
+													<li><a href="javascript:void(0)">Snack Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Beverage Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Combo Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Coffee Machines</a></li>
+													<li><a href="javascript:void(0)">ATMs Machines</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -1834,10 +1834,10 @@
 		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-		<script type="text/javascript" src="js/main.min.js"></script>
+		<script type="text/javascript" src="/js/main.min.js"></script>
 	</body>
 </html>

@@ -14,15 +14,15 @@
 
 		<!-- Favicons
 		================================================== -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico">
-		<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
-		<link rel="icon" href="img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
-		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" sizes="180x180">
-		<link rel="manifest" href="img/favicon/manifest.json">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+		<link rel="icon" href="/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+		<link rel="icon" href="/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+		<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png" sizes="180x180">
+		<link rel="manifest" href="/img/favicon/manifest.json">
 
 		<!-- Critical styles
 		================================================== -->
-		<link rel="stylesheet" href="css/critical.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
 
 		<!-- Load google font
 		================================================== -->
@@ -49,7 +49,7 @@
 			_html.className = _html.className.replace("no-js","js");
 			_html.classList.add( isTouch ? "touch" : "no-touch");
 		</script>
-		<script type="text/javascript" src="js/device.min.js"></script>
+		<script type="text/javascript" src="/js/device.min.js"></script>
 	</head>
 
 	<body class="page-home page-home-2">
@@ -62,8 +62,8 @@
 						<span></span>
 					</div>
 
-					<a class="top-bar__logo site-logo" href="index_2">
-						<img class="img-fluid" src="img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
+					<a class="top-bar__logo site-logo" href="/index_2">
+						<img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
 					</a>
 
 					<a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler" href="javascript:void(0);">
@@ -78,9 +78,9 @@
 										<a class="nav-link active" href="javascript:void(0);">Home</a>
 
 										<ul class="submenu">
-											<li><a href="index">Home Page 1</a></li>
-											<li><a class="active" href="index_2">Home Page 2</a></li>
-											<li><a href="index_3">Shop</a></li>
+											<li><a href="/index">Home Page 1</a></li>
+											<li><a class="active" href="/index_2">Home Page 2</a></li>
+											<li><a href="/index_3">Shop</a></li>
 										</ul>
 									</li>
 
@@ -88,38 +88,38 @@
 										<a class="nav-link" href="javascript:void(0);">Pages</a>
 
 										<ul class="submenu">
-											<li><a href="about_us">About Us</a></li>
-											<li><a href="services">Services</a></li>
-											<li><a href="product_details">Product Single</a></li>
-											<li><a href="gallery_masonry">Gallery Masonry</a></li>
-											<li><a href="gallery_classic">Gallery Classic</a></li>
-											<li><a href="faq">FAQ</a></li>
-											<li><a href="typography">Typography</a></li>
-											<li><a href="404">404 Page</a></li>
+											<li><a href="/about_us">About Us</a></li>
+											<li><a href="/services">Services</a></li>
+											<li><a href="/product_details">Product Single</a></li>
+											<li><a href="/gallery_masonry">Gallery Masonry</a></li>
+											<li><a href="/gallery_classic">Gallery Classic</a></li>
+											<li><a href="/faq">FAQ</a></li>
+											<li><a href="/typography">Typography</a></li>
+											<li><a href="/404">404 Page</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="products">Products</a>
+										<a class="nav-link" href="/products">Products</a>
 									</li>
 
 									<li>
-										<a class="nav-link" href="blog">Blog</a>
+										<a class="nav-link" href="/blog">Blog</a>
 									</li>
 
 									<li class="has-submenu">
 										<a class="nav-link" href="javascript:void(0);">Shop</a>
 
 										<ul class="submenu">
-											<li><a href="shop_catalog">Catalog</a></li>
-											<li><a href="product_single">Single Product</a></li>
+											<li><a href="/shop_catalog">Catalog</a></li>
+											<li><a href="/product_single">Single Product</a></li>
 											<li><a href="/cart/checkout">Cart & Checkout</a></li>
-											<li><a href="account">Account</a></li>
+											<li><a href="/account">Account</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="contact">Contacts</a>
+										<a class="nav-link" href="/contact">Contacts</a>
 									</li>
 
 									<li class="has-submenu">
@@ -128,13 +128,13 @@
 										<ul class="submenu">
 											<li><a href="/element/accordions">Accordion</a></li>
 											<li><a href="/element/alerts">Alerts</a></li>
-											<li><a href="elements-counters">Counters</a></li>
-											<li><a href="elements-form">Forms</a></li>
-											<li><a href="elements-icons">IconList</a></li>
-											<li><a href="elements-info_tables">Tables</a></li>
-											<li><a href="elements-media_embeds">Media Embeds</a></li>
-											<li><a href="elements-pricing_tables">Pricing Tables</a></li>
-											<li><a href="elements-tabs">Tabs</a></li>
+											<li><a href="/elements-counters">Counters</a></li>
+											<li><a href="/elements-form">Forms</a></li>
+											<li><a href="/elements-icons">IconList</a></li>
+											<li><a href="/elements-info_tables">Tables</a></li>
+											<li><a href="/elements-media_embeds">Media Embeds</a></li>
+											<li><a href="/elements-pricing_tables">Pricing Tables</a></li>
+											<li><a href="/elements-tabs">Tabs</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -166,10 +166,10 @@
 										<!-- start social buttons -->
 										<div class="s-btns s-btns--gray">
 											<ul class="d-flex flex-row flex-wrap align-items-center">
-												<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-												<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-												<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-												<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+												<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+												<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+												<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+												<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 											</ul>
 										</div>
 										<!-- end social buttons -->
@@ -178,9 +178,9 @@
 							</div>
 
 							<div class="top-bar__action">
-								<a class="custom-btn" href="#">Get in Touch</a>
+								<a class="custom-btn" href="javascript:void(0)">Get in Touch</a>
 
-								<a class="custom-btn custom-btn--big custom-btn--s2" href="#">Get in Touch</a>
+								<a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Get in Touch</a>
 							</div>
 						</div>
 					</div>
@@ -216,10 +216,10 @@
 											<!-- start social buttons -->
 											<div class="s-btns s-btns--gray">
 												<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-													<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-													<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-													<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-													<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+													<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+													<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+													<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+													<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 												</ul>
 											</div>
 											<!-- end social buttons -->
@@ -237,9 +237,9 @@
 			<div id="side-menu" class="side-menu  d-none">
 				<div class="side-menu__inner">
 					<ul class="side-menu__menu">
-						<li class="active"><a href="#">Documents</a></li>
-						<li><a href="#">Downloads</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li class="active"><a href="javascript:void(0)">Documents</a></li>
+						<li><a href="javascript:void(0)">Downloads</a></li>
+						<li><a href="javascript:void(0)">Useful links</a></li>
 					</ul>
 
 					<div class="side-menu__contacts">
@@ -268,10 +268,10 @@
 								<!-- start social buttons -->
 								<div class="s-btns s-btns--gray">
 									<ul class="d-flex flex-row flex-wrap align-items-center">
-										<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-										<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-										<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-										<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+										<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+										<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+										<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+										<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 									</ul>
 								</div>
 								<!-- end social buttons -->
@@ -280,7 +280,7 @@
 					</div>
 
 					<div>
-						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="#">Get in Touch</a>
+						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="javascript:void(0)">Get in Touch</a>
 					</div>
 				</div>
 			</div>
@@ -320,7 +320,7 @@
 
 									<div class="spacer py-3"></div>
 
-									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a></p>
+									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a></p>
 								</div>
 							</div>
 						</div>
@@ -336,7 +336,7 @@
 
 									<div class="spacer py-4"></div>
 
-									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a></p>
+									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a></p>
 								</div>
 							</div>
 						</div>
@@ -352,7 +352,7 @@
 
 									<div class="spacer py-4"></div>
 
-									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a></p>
+									<p><a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a></p>
 								</div>
 							</div>
 						</div>
@@ -391,7 +391,7 @@
 			<main role="main">
 				<!-- Common styles
 				================================================== -->
-				<link rel="stylesheet" href="css/style.min.css" type="text/css">
+				<link rel="stylesheet" href="/css/style.min.css" type="text/css">
 
 				<!-- start section -->
 				<section class="section section--about">
@@ -418,7 +418,7 @@
 									<div class="spacer"></div>
 
 									<p>
-										<a class="custom-btn custom-btn--big custom-btn--s1" href="#">More About</a>
+										<a class="custom-btn custom-btn--big custom-btn--s1" href="javascript:void(0)">More About</a>
 									</p>
 
 									<div class="spacer py-2"></div>
@@ -461,7 +461,7 @@
 								<div class="spacer py-4 py-md-6 d-lg-none"></div>
 
 								<div class="about-img text-right">
-									<img class="lazy" width="719" height="741" src="img/blank.gif" data-src="img/about_img.png" alt="demo">
+									<img class="lazy" width="719" height="741" src="/img/blank.gif" data-src="/img/about_img.png" alt="demo">
 								</div>
 							</div>
 						</div>
@@ -505,10 +505,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="113" height="195" data-src="img/icon-list_img/1/1.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="113" height="195" data-src="/img/icon-list_img/1/1.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Snack Vending Machine</a></h4>
+													<h4><a href="javascript:void(0)">Snack Vending Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -517,10 +517,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="94" height="195" data-src="img/icon-list_img/1/2.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="94" height="195" data-src="/img/icon-list_img/1/2.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Coffee Machine</a></h4>
+													<h4><a href="javascript:void(0)">Coffee Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -529,10 +529,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="116" height="201" data-src="img/icon-list_img/1/3.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="116" height="201" data-src="/img/icon-list_img/1/3.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Water Machine</a></h4>
+													<h4><a href="javascript:void(0)">Water Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -541,10 +541,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="91" height="200" data-src="img/icon-list_img/1/4.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="91" height="200" data-src="/img/icon-list_img/1/4.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Coffe  Machine</a></h4>
+													<h4><a href="javascript:void(0)">Coffe  Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -553,10 +553,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="87" height="192" data-src="img/icon-list_img/1/5.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="87" height="192" data-src="/img/icon-list_img/1/5.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">ATM Machine</a></h4>
+													<h4><a href="javascript:void(0)">ATM Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -565,10 +565,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="130" height="196" data-src="img/icon-list_img/1/6.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="130" height="196" data-src="/img/icon-list_img/1/6.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Candy Machine</a></h4>
+													<h4><a href="javascript:void(0)">Candy Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -577,10 +577,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="121" height="206" data-src="img/icon-list_img/1/7.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="121" height="206" data-src="/img/icon-list_img/1/7.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Coffe Machine</a></h4>
+													<h4><a href="javascript:void(0)">Coffe Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -589,10 +589,10 @@
 											<div class="col-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" width="116" height="193" data-src="img/icon-list_img/1/8.png" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" width="116" height="193" data-src="/img/icon-list_img/1/8.png" alt="demo" />
 													</figure>
 
-													<h4><a href="#">Candy Machine</a></h4>
+													<h4><a href="javascript:void(0)">Candy Machine</a></h4>
 												</div>
 											</div>
 											<!-- end item -->
@@ -630,7 +630,7 @@
 
 								<div class="content-container">
 									<p>
-										<a class="custom-btn custom-btn--big custom-btn--s1" href="#">More Products</a>
+										<a class="custom-btn custom-btn--big custom-btn--s1" href="javascript:void(0)">More Products</a>
 									</p>
 								</div>
 							</div>
@@ -708,11 +708,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/1.jpg" alt="demo" />
+												<img src="/img/services_img/1.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="01">
-												<h4 class="__title"><a href="#">Installation</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Installation</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -720,11 +720,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/2.jpg" alt="demo" />
+												<img src="/img/services_img/2.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="02">
-												<h4 class="__title"><a href="#">Repair and Service</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Repair and Service</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -732,11 +732,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/3.jpg" alt="demo" />
+												<img src="/img/services_img/3.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="03">
-												<h4 class="__title"><a href="#">Guarantee</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Guarantee</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -744,11 +744,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/4.jpg" alt="demo" />
+												<img src="/img/services_img/4.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="04">
-												<h4 class="__title"><a href="#">Provision of Ingredients</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Provision of Ingredients</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -756,11 +756,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/5.jpg" alt="demo" />
+												<img src="/img/services_img/5.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="05">
-												<h4 class="__title"><a href="#">Additional Equipment</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Additional Equipment</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -769,11 +769,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/1.jpg" alt="demo" />
+												<img src="/img/services_img/1.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="06">
-												<h4 class="__title"><a href="#">2 Installation</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">2 Installation</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -781,11 +781,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/2.jpg" alt="demo" />
+												<img src="/img/services_img/2.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="07">
-												<h4 class="__title"><a href="#">2 Repair and Service</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">2 Repair and Service</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -793,11 +793,11 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/services_img/3.jpg" alt="demo" />
+												<img src="/img/services_img/3.jpg" alt="demo" />
 											</figure>
 
 											<div class="__content" data-num="08">
-												<h4 class="__title"><a href="#">2 Guarantee</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">2 Guarantee</a></h4>
 											</div>
 										</div>
 										<!-- end item -->
@@ -832,7 +832,7 @@
 							<div class="col-12">
 
 								<div class="decor-el">
-									<img class="lazy" width="954" height="166" src="img/blank.gif" data-src="img/decor-el_feature.png" alt="demo"/>
+									<img class="lazy" width="954" height="166" src="/img/blank.gif" data-src="/img/decor-el_feature.png" alt="demo"/>
 								</div>
 
 								<!-- start feature -->
@@ -983,7 +983,7 @@
 							<div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-2">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/1.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/1.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -993,7 +993,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/1.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/1.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1007,7 +1007,7 @@
 							<div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-1">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/2.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/2.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1017,7 +1017,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/2.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/2.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1031,7 +1031,7 @@
 							<div class="col-12 col-sm-6 col-lg-4 col-xl-6  js-isotope__item  category-3">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/3.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/3.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1041,7 +1041,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/3.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/3.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1055,7 +1055,7 @@
 							<div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-1">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/4.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/4.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1065,7 +1065,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/4.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/4.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1079,7 +1079,7 @@
 							<div class="col-12 col-md-4 col-xl-3  js-isotope__item  category-2">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/5.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/5.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1089,7 +1089,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/5.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/5.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1103,7 +1103,7 @@
 							<div class="col-12 col-md-8 col-xl-6  js-isotope__item  category-3">
 								<div class="__item" data-x="2" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/6.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/6.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1113,7 +1113,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/6.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/6.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1127,7 +1127,7 @@
 							<div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-1">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/7.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/7.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1137,7 +1137,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/7.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/7.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1151,7 +1151,7 @@
 							<div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-2">
 								<div class="__item" data-x="1" data-y="1">
 									<figure class="__image">
-										<img class="lazy" src="img/blank.gif" data-src="img/gallery_img/8.jpg" alt="demo" />
+										<img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/8.jpg" alt="demo" />
 									</figure>
 
 									<div class="__content">
@@ -1161,7 +1161,7 @@
 											</div>
 
 											<div class="col-auto">
-												<a class="__link" href="img/gallery_img/8.jpg" data-fancybox="gallery-masonry">
+												<a class="__link" href="/img/gallery_img/8.jpg" data-fancybox="gallery-masonry">
 													<i class="fontello-resize"></i>
 												</a>
 											</div>
@@ -1370,17 +1370,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/1.png" width="174" alt="demo" />
+												<img src="/img/goods-rent_img/1.png" width="174" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 585/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -1390,17 +1390,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/2.png" width="179" alt="demo" />
+												<img src="/img/goods-rent_img/2.png" width="179" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Snack Machine Claus 1</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Snack Machine Claus 1</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 750/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 										</div>
 										<!-- end item -->
@@ -1408,17 +1408,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/3.png" width="194" alt="demo" />
+												<img src="/img/goods-rent_img/3.png" width="194" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Coffe Machine CF96</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Coffe Machine CF96</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 330/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 
 											<span class="product-label product-label--new">New</span>
@@ -1428,17 +1428,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/4.png" width="167" alt="demo" />
+												<img src="/img/goods-rent_img/4.png" width="167" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Water Machine WM 2500</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Water Machine WM 2500</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 330/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 										</div>
 										<!-- end item -->
@@ -1446,17 +1446,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/5.png" width="200" alt="demo" />
+												<img src="/img/goods-rent_img/5.png" width="200" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 585/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 
 											<span class="product-label product-label--discount">Sale</span>
@@ -1466,17 +1466,17 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<img src="img/goods-rent_img/6.png" width="215" alt="demo" />
+												<img src="/img/goods-rent_img/6.png" width="215" alt="demo" />
 											</figure>
 
 											<div class="__content">
-												<h4 class="__title"><a href="#">Combo Machine TB 100</a></h4>
+												<h4 class="__title"><a href="javascript:void(0)">Combo Machine TB 100</a></h4>
 
 												<div class="__price">
 													<span class="__new">$ 585/<sub>month</sub></span>
 												</div>
 
-												<a class="custom-btn custom-btn--medium custom-btn--s1" href="#">Rent</a>
+												<a class="custom-btn custom-btn--medium custom-btn--s1" href="javascript:void(0)">Rent</a>
 											</div>
 										</div>
 										<!-- end item -->
@@ -1495,7 +1495,7 @@
 
 										<div class="col-12 col-sm-auto">
 											<div class="more-link">
-												<a href="#">See all products</a>
+												<a href="javascript:void(0)">See all products</a>
 											</div>
 										</div>
 									</div>
@@ -1598,7 +1598,7 @@
 										<h2 class="__title">Vending Technology in new Business Era</h2>
 
 										<p>
-											<a class="custom-btn custom-btn--big custom-btn--s2" href="#">Discover</a>
+											<a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Discover</a>
 										</p>
 									</div>
 								</div>
@@ -1612,7 +1612,7 @@
 				<!-- start section -->
 				<section class="section section--no-pb section--blog" style="background-image: url(img/bg_11.jpg);background-repeat: no-repeat;">
 					<div class="decor-el" data-jarallax-element="-140" data-speed="0.2">
-						<img class="lazy" width="154" height="480" src="img/blank.gif" data-src="img/decor-el_blog.png" alt="demo"/>
+						<img class="lazy" width="154" height="480" src="/img/blank.gif" data-src="/img/decor-el_blog.png" alt="demo"/>
 					</div>
 
 					<div class="container">
@@ -1641,13 +1641,13 @@
 														<div class="__item __item--preview __item--shadow">
 															<div class="__header">
 																<figure class="__image">
-																	<img class="lazy" src="img/blank.gif" data-src="img/posts_img/1.jpg" alt="demo" />
+																	<img class="lazy" src="/img/blank.gif" data-src="/img/posts_img/1.jpg" alt="demo" />
 																</figure>
 															</div>
 
 															<div class="__body">
 																<div class="__content">
-																	<h5 class="__category"><a href="#">Coffe Machine</a></h5>
+																	<h5 class="__category"><a href="javascript:void(0)">Coffe Machine</a></h5>
 
 																	<h4 class="__title"><a href="/blog/details">Combo Machine</a></h4>
 																</div>
@@ -1677,7 +1677,7 @@
 														<div class="__item __item--preview __item--shadow">
 															<div class="__body">
 																<div class="__content">
-																	<h5 class="__category"><a href="#">Snacks</a></h5>
+																	<h5 class="__category"><a href="javascript:void(0)">Snacks</a></h5>
 
 																	<h4 class="__title"><a href="/blog/details">Corparate Problem in Vending Business</a></h4>
 
@@ -1727,7 +1727,7 @@
 												<div class="__item __item--preview __item--shadow" style="background-image: url(img/posts_img/2.jpg);">
 													<div class="__body  d-sm-flex align-items-sm-end">
 														<div class="__content">
-															<h5 class="__category"><a href="#">Combo Machine</a></h5>
+															<h5 class="__category"><a href="javascript:void(0)">Combo Machine</a></h5>
 
 															<h4 class="__title"><a class="text-white" href="/blog/details">Vending Solutions</a></h4>
 														</div>
@@ -1757,7 +1757,7 @@
 												<div class="__item __item--preview __item--shadow" style="background: #f95a3f">
 													<div class="__body">
 														<div class="__content">
-															<h5 class="__category"><a class="text-white" href="#">Business</a></h5>
+															<h5 class="__category"><a class="text-white" href="javascript:void(0)">Business</a></h5>
 
 															<h4 class="__title"><a class="text-white" href="/blog/details">Corparate Problem in Vending Business</a></h4>
 
@@ -1791,13 +1791,13 @@
 												<div class="__item __item--preview __item--shadow">
 													<div class="__header">
 														<figure class="__image">
-															<img class="lazy" src="img/blank.gif" data-src="img/posts_img/4.jpg" alt="demo" />
+															<img class="lazy" src="/img/blank.gif" data-src="/img/posts_img/4.jpg" alt="demo" />
 														</figure>
 													</div>
 
 													<div class="__body">
 														<div class="__content">
-															<h5 class="__category"><a href="#">Combo Machine</a></h5>
+															<h5 class="__category"><a href="javascript:void(0)">Combo Machine</a></h5>
 
 															<h4 class="__title"><a href="/blog/details">Snack for Machines</a></h4>
 														</div>
@@ -1827,7 +1827,7 @@
 												<div class="__item">
 
 													<div class="mt-4 mt-lg-10 mt-xl-12 mb-6 text-center text-lg-right">
-														<a class="custom-btn custom-btn--big custom-btn--s1" href="blog">All Blog Posts</a>
+														<a class="custom-btn custom-btn--big custom-btn--s1" href="/blog">All Blog Posts</a>
 													</div>
 
 												</div>
@@ -1902,7 +1902,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/5.png" width="126" height="64" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/5.png" width="126" height="64" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -1910,7 +1910,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/4.png" width="100" height="89" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/4.png" width="100" height="89" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -1918,7 +1918,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/3.png" width="127" height="60" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/3.png" width="127" height="60" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -1926,7 +1926,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/2.png" width="132" height="47" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/2.png" width="132" height="47" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -1934,7 +1934,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/1.png" width="120" height="78" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/1.png" width="120" height="78" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -1993,8 +1993,8 @@
 						<div class="row">
 							<div class="col-12 col-md-4 col-lg-3">
 								<div class="footer__item">
-									<a class="footer__logo site-logo" href="index">
-										<img class="lazy" src="img/blank.gif" data-src="img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
+									<a class="footer__logo site-logo" href="/index">
+										<img class="lazy" src="/img/blank.gif" data-src="/img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
 									</a>
 								</div>
 
@@ -2018,10 +2018,10 @@
 									<!-- start social buttons -->
 									<div class="s-btns s-btns--white">
 										<ul class="d-flex flex-row flex-wrap align-items-center">
-											<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-											<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-											<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-											<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+											<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+											<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+											<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+											<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 										</ul>
 									</div>
 									<!-- end social buttons -->
@@ -2035,11 +2035,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Documents</a></li>
-													<li><a href="#">Services</a></li>
-													<li><a href="#">Vending Info</a></li>
-													<li><a href="#">News</a></li>
-													<li><a href="#">Support</a></li>
+													<li><a href="javascript:void(0)">Documents</a></li>
+													<li><a href="javascript:void(0)">Services</a></li>
+													<li><a href="javascript:void(0)">Vending Info</a></li>
+													<li><a href="javascript:void(0)">News</a></li>
+													<li><a href="javascript:void(0)">Support</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -2050,11 +2050,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Snack Vending Machines</a></li>
-													<li><a href="#">Beverage Vending Machines</a></li>
-													<li><a href="#">Combo Vending Machines</a></li>
-													<li><a href="#">Coffee Machines</a></li>
-													<li><a href="#">ATMs Machines</a></li>
+													<li><a href="javascript:void(0)">Snack Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Beverage Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Combo Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Coffee Machines</a></li>
+													<li><a href="javascript:void(0)">ATMs Machines</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -2113,10 +2113,10 @@
 		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-		<script type="text/javascript" src="js/main.min.js"></script>
+		<script type="text/javascript" src="/js/main.min.js"></script>
 	</body>
 </html>

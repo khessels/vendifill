@@ -14,15 +14,15 @@
 
 		<!-- Favicons
 		================================================== -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico">
-		<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
-		<link rel="icon" href="img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
-		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" sizes="180x180">
-		<link rel="manifest" href="img/favicon/manifest.json">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+		<link rel="icon" href="/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+		<link rel="icon" href="/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+		<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png" sizes="180x180">
+		<link rel="manifest" href="/img/favicon/manifest.json">
 
 		<!-- Critical styles
 		================================================== -->
-		<link rel="stylesheet" href="css/critical.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
 
 		<!-- Load google font
 		================================================== -->
@@ -49,7 +49,7 @@
 			_html.className = _html.className.replace("no-js","js");
 			_html.classList.add( isTouch ? "touch" : "no-touch");
 		</script>
-		<script type="text/javascript" src="js/device.min.js"></script>
+		<script type="text/javascript" src="/js/device.min.js"></script>
 	</head>
 
 	<body class="page-shop">
@@ -80,9 +80,9 @@
 									<div class="col-auto">
 										<nav class="top-bar__subnav">
 											<ul>
-												<li><a href="#">Delivery</a></li>
-												<li><a href="#">Payment</a></li>
-												<li><a href="#">Return</a></li>
+												<li><a href="javascript:void(0)">Delivery</a></li>
+												<li><a href="javascript:void(0)">Payment</a></li>
+												<li><a href="javascript:void(0)">Return</a></li>
 											</ul>
 										</nav>
 									</div>
@@ -92,10 +92,10 @@
 											<!-- start social buttons -->
 											<div class="s-btns s-btns--gray">
 												<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-													<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-													<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-													<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-													<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+													<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+													<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+													<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+													<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 												</ul>
 											</div>
 											<!-- end social buttons -->
@@ -113,19 +113,19 @@
 						<span></span>
 					</div>
 
-					<a class="top-bar__logo site-logo" href="index">
-						<img class="img-fluid" src="img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
+					<a class="top-bar__logo site-logo" href="/index">
+						<img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
 					</a>
 
 					<a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler" href="javascript:void(0);">
 						<span></span>
 					</a>
 
-					<a class="top-bar__cart-btn" href="#">
+					<a class="top-bar__cart-btn" href="javascript:void(0)">
 						<i class="cart-ico fontello-shopping-cart"><span class="total">1</span></i>
 					</a>
 
-					<a class="top-bar__profile-btn" href="account">
+					<a class="top-bar__profile-btn" href="/account">
 						<i class="profile-ico fontello-user"></i>
 					</a>
 
@@ -137,9 +137,9 @@
 										<a class="nav-link" href="javascript:void(0);">Home</a>
 
 										<ul class="submenu">
-											<li><a href="index">Home Page 1</a></li>
-											<li><a href="index">Home Page 2</a></li>
-											<li><a href="index_3">Shop</a></li>
+											<li><a href="/index">Home Page 1</a></li>
+											<li><a href="/index">Home Page 2</a></li>
+											<li><a href="/index_3">Shop</a></li>
 										</ul>
 									</li>
 
@@ -147,38 +147,38 @@
 										<a class="nav-link" href="javascript:void(0);">Pages</a>
 
 										<ul class="submenu">
-											<li><a href="about_us">About Us</a></li>
-											<li><a href="services">Services</a></li>
-											<li><a href="product_details">Product Single</a></li>
-											<li><a href="gallery_masonry">Gallery Masonry</a></li>
-											<li><a href="gallery_classic">Gallery Classic</a></li>
-											<li><a href="faq">FAQ</a></li>
-											<li><a href="typography">Typography</a></li>
-											<li><a href="404">404 Page</a></li>
+											<li><a href="/about_us">About Us</a></li>
+											<li><a href="/services">Services</a></li>
+											<li><a href="/product_details">Product Single</a></li>
+											<li><a href="/gallery_masonry">Gallery Masonry</a></li>
+											<li><a href="/gallery_classic">Gallery Classic</a></li>
+											<li><a href="/faq">FAQ</a></li>
+											<li><a href="/typography">Typography</a></li>
+											<li><a href="/404">404 Page</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="products">Products</a>
+										<a class="nav-link" href="/products">Products</a>
 									</li>
 
 									<li>
-										<a class="nav-link" href="blog">Blog</a>
+										<a class="nav-link" href="/blog">Blog</a>
 									</li>
 
 									<li class="has-submenu">
 										<a class="nav-link active" href="javascript:void(0);">Shop</a>
 
 										<ul class="submenu">
-											<li><a href="shop_catalog">Catalog</a></li>
-											<li><a href="product_single">Single Product</a></li>
+											<li><a href="/shop_catalog">Catalog</a></li>
+											<li><a href="/product_single">Single Product</a></li>
 											<li><a href="/cart/checkout">Cart & Checkout</a></li>
-											<li><a class="active" href="accountblade.php">Account</a></li>
+											<li><a class="active" href="/accountblade.php">Account</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="contact">Contacts</a>
+										<a class="nav-link" href="/contact">Contacts</a>
 									</li>
 
 									<li class="has-submenu">
@@ -187,13 +187,13 @@
 										<ul class="submenu">
 											<li><a href="/element/accordions">Accordion</a></li>
 											<li><a href="/element/alerts">Alerts</a></li>
-											<li><a href="elements-counters">Counters</a></li>
-											<li><a href="elements-form">Forms</a></li>
-											<li><a href="elements-icons">IconList</a></li>
-											<li><a href="elements-info_tables">Tables</a></li>
-											<li><a href="elements-media_embeds">Media Embeds</a></li>
-											<li><a href="elements-pricing_tables">Pricing Tables</a></li>
-											<li><a href="elements-tabs">Tabs</a></li>
+											<li><a href="/elements-counters">Counters</a></li>
+											<li><a href="/elements-form">Forms</a></li>
+											<li><a href="/elements-icons">IconList</a></li>
+											<li><a href="/elements-info_tables">Tables</a></li>
+											<li><a href="/elements-media_embeds">Media Embeds</a></li>
+											<li><a href="/elements-pricing_tables">Pricing Tables</a></li>
+											<li><a href="/elements-tabs">Tabs</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -225,10 +225,10 @@
 										<!-- start social buttons -->
 										<div class="s-btns s-btns--gray">
 											<ul class="d-flex flex-row flex-wrap align-items-center">
-												<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-												<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-												<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-												<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+												<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+												<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+												<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+												<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 											</ul>
 										</div>
 										<!-- end social buttons -->
@@ -239,11 +239,11 @@
 							<div class="top-bar__action">
 								<div class="d-sm-table">
 									<div class="d-sm-table-cell align-middle">
-										<a class="top-bar__profile-btn" href="account"><i class="profile-ico fontello-user"></i></a>
+										<a class="top-bar__profile-btn" href="/account"><i class="profile-ico fontello-user"></i></a>
 									</div>
 
 									<div class="d-sm-table-cell align-middle">
-										<a class="custom-btn" href="#">
+										<a class="custom-btn" href="javascript:void(0)">
 											<i class="cart-ico fontello-shopping-cart"><span class="total">1</span></i>1 525.00$
 										</a>
 									</div>
@@ -259,9 +259,9 @@
 			<div id="side-menu" class="side-menu  d-none">
 				<div class="side-menu__inner">
 					<ul class="side-menu__menu">
-						<li class="active"><a href="#">Documents</a></li>
-						<li><a href="#">Downloads</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li class="active"><a href="javascript:void(0)">Documents</a></li>
+						<li><a href="javascript:void(0)">Downloads</a></li>
+						<li><a href="javascript:void(0)">Useful links</a></li>
 					</ul>
 
 					<div class="side-menu__contacts">
@@ -290,10 +290,10 @@
 								<!-- start social buttons -->
 								<div class="s-btns s-btns--gray">
 									<ul class="d-flex flex-row flex-wrap align-items-center">
-										<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-										<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-										<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-										<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+										<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+										<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+										<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+										<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 									</ul>
 								</div>
 								<!-- end social buttons -->
@@ -302,7 +302,7 @@
 					</div>
 
 					<div>
-						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="#">Get in Touch</a>
+						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="javascript:void(0)">Get in Touch</a>
 					</div>
 				</div>
 			</div>
@@ -333,7 +333,7 @@
 			<main role="main">
 				<!-- Common styles
 				================================================== -->
-				<link rel="stylesheet" href="css/style.min.css" type="text/css">
+				<link rel="stylesheet" href="/css/style.min.css" type="text/css">
 
 				<!-- start section -->
 				<section class="section section--gray-bg">
@@ -364,13 +364,13 @@
 										</div>
 
 										<div class="col-auto">
-											<a class="__link" href="#">I forgot my password</a>
+											<a class="__link" href="javascript:void(0)">I forgot my password</a>
 										</div>
 									</div>
 
 									<button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Sign in</button>
 
-									<div class="text-center"><a href="#">Sign up</a> if you don’t have an account</div>
+									<div class="text-center"><a href="javascript:void(0)">Sign up</a> if you don’t have an account</div>
 								</form>
 								<!-- end auth form -->
 
@@ -401,11 +401,11 @@
 										<input class="textfield" placeholder="Confirm Password" type="text" />
 									</div>
 
-									<div class="pt-1">I agree with <a href="#">Term of Services</a></div>
+									<div class="pt-1">I agree with <a href="javascript:void(0)">Term of Services</a></div>
 
 									<button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Sign up</button>
 
-									<div class="text-center"><a href="#">Sign in</a> if you an account</div>
+									<div class="text-center"><a href="javascript:void(0)">Sign in</a> if you an account</div>
 								</form>
 								<!-- end auth form -->
 
@@ -422,11 +422,11 @@
 										<input class="textfield" placeholder="Email" type="text" inputmode="email" x-inputmode="email"/>
 									</div>
 
-									<div class="pt-1"><a href="#">Didn’t get email?</a></div>
+									<div class="pt-1"><a href="javascript:void(0)">Didn’t get email?</a></div>
 
 									<button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Submit</button>
 
-									<div class="text-center">Back to <a href="#">Sign in</a></div>
+									<div class="text-center">Back to <a href="javascript:void(0)">Sign in</a></div>
 								</form>
 								<!-- end auth form -->
 
@@ -456,10 +456,10 @@
 									<!-- start social buttons -->
 									<div class="s-btns s-btns--white">
 										<ul class="d-flex flex-row flex-wrap align-items-center">
-											<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-											<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-											<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-											<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+											<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+											<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+											<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+											<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 										</ul>
 									</div>
 									<!-- end social buttons -->
@@ -473,11 +473,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">About Us</a></li>
-													<li><a href="#">Pages</a></li>
-													<li><a href="#">Blog</a></li>
-													<li><a href="#">Shop</a></li>
-													<li><a href="#">Contacts</a></li>
+													<li><a href="javascript:void(0)">About Us</a></li>
+													<li><a href="javascript:void(0)">Pages</a></li>
+													<li><a href="javascript:void(0)">Blog</a></li>
+													<li><a href="javascript:void(0)">Shop</a></li>
+													<li><a href="javascript:void(0)">Contacts</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -488,11 +488,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Documents</a></li>
-													<li><a href="#">Services</a></li>
-													<li><a href="#">Vending Info</a></li>
-													<li><a href="#">News</a></li>
-													<li><a href="#">Support</a></li>
+													<li><a href="javascript:void(0)">Documents</a></li>
+													<li><a href="javascript:void(0)">Services</a></li>
+													<li><a href="javascript:void(0)">Vending Info</a></li>
+													<li><a href="javascript:void(0)">News</a></li>
+													<li><a href="javascript:void(0)">Support</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -503,11 +503,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Snack Vending Machines</a></li>
-													<li><a href="#">Beverage Vending Machines</a></li>
-													<li><a href="#">Combo Vending Machines</a></li>
-													<li><a href="#">Coffee Machines</a></li>
-													<li><a href="#">ATMs Machines</a></li>
+													<li><a href="javascript:void(0)">Snack Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Beverage Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Combo Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Coffee Machines</a></li>
+													<li><a href="javascript:void(0)">ATMs Machines</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -534,8 +534,8 @@
 						<div class="row justify-content-between align-items-center">
 							<div class="col-auto">
 								<div class="footer__item">
-									<a class="footer__logo site-logo" href="index">
-										<img class="lazy" src="img/blank.gif" data-src="img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
+									<a class="footer__logo site-logo" href="/index">
+										<img class="lazy" src="/img/blank.gif" data-src="/img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
 									</a>
 								</div>
 							</div>
@@ -543,7 +543,7 @@
 							<div class="col-auto">
 								<div class="footer__item">
 									<p class="__copy">
-										Copyright © 2019 VendGo | <a href="#">Terms & Privacy</a>
+										Copyright © 2019 VendGo | <a href="javascript:void(0)">Terms & Privacy</a>
 									</p>
 								</div>
 							</div>
@@ -599,10 +599,10 @@
 		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-		<script type="text/javascript" src="js/main.min.js"></script>
+		<script type="text/javascript" src="/js/main.min.js"></script>
 	</body>
 </html>

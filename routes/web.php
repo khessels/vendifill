@@ -14,8 +14,7 @@ if(App::currentLocale() !== $locale) {
 }
 // todo: check if locale is in query parameters
 
-<<<<<<< HEAD
-Route::view('404', '404');
+Route::view('404', 'errors.404');
 Route::view('/', 'index');
 Route::view('/index', 'index');
 Route::view('/about_us', 'about_us');
@@ -47,7 +46,7 @@ Route::view('/product/single', 'product_single');
 Route::view('/services', 'services');
 Route::view('/catalog/shop', 'catalog_shop');
 Route::view('/typography', 'typography');
-=======
+
 Route::get('/info', function () {
     phpinfo();
 });
@@ -59,8 +58,7 @@ Route::get('/espanol', function () {
 })->name('espanol');
 
 
-Route::get('/', [PublicPagesController::class, 'index'])->name('index');
->>>>>>> d80a6fb1c708b184695aa3ab8450d00fd0c02486
+//Route::get('/', [PublicPagesController::class, 'index'])->name('index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

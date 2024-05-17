@@ -14,15 +14,15 @@
 
 		<!-- Favicons
 		================================================== -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico">
-		<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
-		<link rel="icon" href="img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
-		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" sizes="180x180">
-		<link rel="manifest" href="img/favicon/manifest.json">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+		<link rel="icon" href="/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+		<link rel="icon" href="/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+		<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png" sizes="180x180">
+		<link rel="manifest" href="/img/favicon/manifest.json">
 
 		<!-- Critical styles
 		================================================== -->
-		<link rel="stylesheet" href="css/critical.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
 
 		<!-- Load google font
 		================================================== -->
@@ -49,7 +49,7 @@
 			_html.className = _html.className.replace("no-js","js");
 			_html.classList.add( isTouch ? "touch" : "no-touch");
 		</script>
-		<script type="text/javascript" src="js/device.min.js"></script>
+		<script type="text/javascript" src="/js/device.min.js"></script>
 	</head>
 
 	<body class="page-about">
@@ -80,9 +80,9 @@
 									<div class="col-auto">
 										<nav class="top-bar__subnav">
 											<ul>
-												<li><a href="#">Delivery</a></li>
-												<li><a href="#">Payment</a></li>
-												<li><a href="#">Return</a></li>
+												<li><a href="javascript:void(0)">Delivery</a></li>
+												<li><a href="javascript:void(0)">Payment</a></li>
+												<li><a href="javascript:void(0)">Return</a></li>
 											</ul>
 										</nav>
 									</div>
@@ -92,10 +92,10 @@
 											<!-- start social buttons -->
 											<div class="s-btns s-btns--gray">
 												<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-													<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-													<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-													<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-													<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+													<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+													<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+													<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+													<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 												</ul>
 											</div>
 											<!-- end social buttons -->
@@ -113,8 +113,8 @@
 						<span></span>
 					</div>
 
-					<a class="top-bar__logo site-logo" href="index">
-						<img class="img-fluid" src="img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
+					<a class="top-bar__logo site-logo" href="/index">
+						<img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
 					</a>
 
 					<a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler" href="javascript:void(0);">
@@ -129,9 +129,9 @@
 										<a class="nav-link" href="javascript:void(0);">Home</a>
 
 										<ul class="submenu">
-											<li><a href="index">Home Page 1</a></li>
-											<li><a href="index">Home Page 2</a></li>
-											<li><a href="index_3">Shop</a></li>
+											<li><a href="/index">Home Page 1</a></li>
+											<li><a href="/index">Home Page 2</a></li>
+											<li><a href="/index_3">Shop</a></li>
 										</ul>
 									</li>
 
@@ -139,38 +139,38 @@
 										<a class="nav-link active" href="javascript:void(0);">Pages</a>
 
 										<ul class="submenu">
-											<li><a class="active" href="about_us">About Us</a></li>
-											<li><a href="services">Services</a></li>
-											<li><a href="product_details">Product Single</a></li>
-											<li><a href="gallery_masonry">Gallery Masonry</a></li>
-											<li><a href="gallery_classic">Gallery Classic</a></li>
-											<li><a href="faq">FAQ</a></li>
-											<li><a href="typography">Typography</a></li>
-											<li><a href="404">404 Page</a></li>
+											<li><a class="active" href="/about_us">About Us</a></li>
+											<li><a href="/services">Services</a></li>
+											<li><a href="/product_details">Product Single</a></li>
+											<li><a href="/gallery_masonry">Gallery Masonry</a></li>
+											<li><a href="/gallery_classic">Gallery Classic</a></li>
+											<li><a href="/faq">FAQ</a></li>
+											<li><a href="/typography">Typography</a></li>
+											<li><a href="/404">404 Page</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="products">Products</a>
+										<a class="nav-link" href="/products">Products</a>
 									</li>
 
 									<li>
-										<a class="nav-link" href="blog">Blog</a>
+										<a class="nav-link" href="/blog">Blog</a>
 									</li>
 
 									<li class="has-submenu">
 										<a class="nav-link" href="javascript:void(0);">Shop</a>
 
 										<ul class="submenu">
-											<li><a href="shop_catalog">Catalog</a></li>
-											<li><a href="product_single">Single Product</a></li>
+											<li><a href="/shop_catalog">Catalog</a></li>
+											<li><a href="/product_single">Single Product</a></li>
 											<li><a href="/cart/checkout">Cart & Checkout</a></li>
-											<li><a href="account">Account</a></li>
+											<li><a href="/account">Account</a></li>
 										</ul>
 									</li>
 
 									<li>
-										<a class="nav-link" href="contact">Contacts</a>
+										<a class="nav-link" href="/contact">Contacts</a>
 									</li>
 
 									<li class="has-submenu">
@@ -179,13 +179,13 @@
 										<ul class="submenu">
 											<li><a href="/element/accordions">Accordion</a></li>
 											<li><a href="/element/alerts">Alerts</a></li>
-											<li><a href="elements-counters">Counters</a></li>
-											<li><a href="elements-form">Forms</a></li>
-											<li><a href="elements-icons">IconList</a></li>
-											<li><a href="elements-info_tables">Tables</a></li>
-											<li><a href="elements-media_embeds">Media Embeds</a></li>
-											<li><a href="elements-pricing_tables">Pricing Tables</a></li>
-											<li><a href="elements-tabs">Tabs</a></li>
+											<li><a href="/elements-counters">Counters</a></li>
+											<li><a href="/elements-form">Forms</a></li>
+											<li><a href="/elements-icons">IconList</a></li>
+											<li><a href="/elements-info_tables">Tables</a></li>
+											<li><a href="/elements-media_embeds">Media Embeds</a></li>
+											<li><a href="/elements-pricing_tables">Pricing Tables</a></li>
+											<li><a href="/elements-tabs">Tabs</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -217,10 +217,10 @@
 										<!-- start social buttons -->
 										<div class="s-btns s-btns--gray">
 											<ul class="d-flex flex-row flex-wrap align-items-center">
-												<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-												<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-												<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-												<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+												<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+												<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+												<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+												<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 											</ul>
 										</div>
 										<!-- end social buttons -->
@@ -229,9 +229,9 @@
 							</div>
 
 							<div class="top-bar__action">
-								<a class="custom-btn" href="#">Get in Touch</a>
+								<a class="custom-btn" href="javascript:void(0)">Get in Touch</a>
 
-								<a class="custom-btn custom-btn--big custom-btn--s2" href="#">Get in Touch</a>
+								<a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Get in Touch</a>
 							</div>
 						</div>
 					</div>
@@ -243,9 +243,9 @@
 			<div id="side-menu" class="side-menu  d-none">
 				<div class="side-menu__inner">
 					<ul class="side-menu__menu">
-						<li class="active"><a href="#">Documents</a></li>
-						<li><a href="#">Downloads</a></li>
-						<li><a href="#">Useful links</a></li>
+						<li class="active"><a href="javascript:void(0)">Documents</a></li>
+						<li><a href="javascript:void(0)">Downloads</a></li>
+						<li><a href="javascript:void(0)">Useful links</a></li>
 					</ul>
 
 					<div class="side-menu__contacts">
@@ -274,10 +274,10 @@
 								<!-- start social buttons -->
 								<div class="s-btns s-btns--gray">
 									<ul class="d-flex flex-row flex-wrap align-items-center">
-										<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-										<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-										<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-										<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+										<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+										<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+										<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+										<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 									</ul>
 								</div>
 								<!-- end social buttons -->
@@ -286,7 +286,7 @@
 					</div>
 
 					<div>
-						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="#">Get in Touch</a>
+						<a class="custom-btn custom-btn--big custom-btn--s2 wide" href="javascript:void(0)">Get in Touch</a>
 					</div>
 				</div>
 			</div>
@@ -317,7 +317,7 @@
 			<main role="main">
 				<!-- Common styles
 				================================================== -->
-				<link rel="stylesheet" href="css/style.min.css" type="text/css">
+				<link rel="stylesheet" href="/css/style.min.css" type="text/css">
 
 				<!-- start section -->
 				<section class="section">
@@ -370,7 +370,7 @@
 									<div class="row align-items-end">
 										<div class="col-12 col-md">
 											<div class="__img-place">
-												<img class="lazy" src="img/blank.gif" data-src="img/about_num.png" alt="demo" />
+												<img class="lazy" src="/img/blank.gif" data-src="/img/about_num.png" alt="demo" />
 											</div>
 										</div>
 
@@ -438,7 +438,7 @@
 								<div class="spacer py-4 d-lg-none"></div>
 
 								<div class="about-img text-right">
-									<img class="lazy" width="719" height="741" src="img/blank.gif" data-src="img/about_img.png" alt="demo">
+									<img class="lazy" width="719" height="741" src="/img/blank.gif" data-src="/img/about_img.png" alt="demo">
 								</div>
 							</div>
 						</div>
@@ -490,7 +490,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/5.png" width="126" height="64" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/5.png" width="126" height="64" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -498,7 +498,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/4.png" width="100" height="89" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/4.png" width="100" height="89" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -506,7 +506,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/3.png" width="127" height="60" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/3.png" width="127" height="60" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -514,7 +514,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/2.png" width="132" height="47" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/2.png" width="132" height="47" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -522,7 +522,7 @@
 										<!-- start item -->
 										<div class="__item">
 											<figure class="__image">
-												<a href="javascript:void(0);"><img src="img/brands_img/1.png" width="120" height="78" alt="demo" /></a>
+												<a href="javascript:void(0);"><img src="/img/brands_img/1.png" width="120" height="78" alt="demo" /></a>
 											</figure>
 										</div>
 										<!-- end item -->
@@ -563,7 +563,7 @@
 											<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/team_img/1.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/team_img/1.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
@@ -574,10 +574,10 @@
 														<!-- start social buttons -->
 														<div class="s-btns s-btns--gray">
 															<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-																<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-																<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-																<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-																<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+																<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+																<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+																<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+																<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 															</ul>
 														</div>
 														<!-- end social buttons -->
@@ -590,7 +590,7 @@
 											<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/team_img/2.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/team_img/2.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
@@ -601,10 +601,10 @@
 														<!-- start social buttons -->
 														<div class="s-btns s-btns--gray">
 															<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-																<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-																<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-																<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-																<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+																<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+																<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+																<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+																<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 															</ul>
 														</div>
 														<!-- end social buttons -->
@@ -617,7 +617,7 @@
 											<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/team_img/3.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/team_img/3.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
@@ -628,10 +628,10 @@
 														<!-- start social buttons -->
 														<div class="s-btns s-btns--gray">
 															<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-																<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-																<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-																<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-																<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+																<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+																<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+																<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+																<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 															</ul>
 														</div>
 														<!-- end social buttons -->
@@ -644,7 +644,7 @@
 											<div class="col-12 col-sm-6 col-md-4 col-lg-3">
 												<div class="__item">
 													<figure class="__image">
-														<img class="lazy" src="img/blank.gif" data-src="img/team_img/4.jpg" alt="demo" />
+														<img class="lazy" src="/img/blank.gif" data-src="/img/team_img/4.jpg" alt="demo" />
 													</figure>
 
 													<div class="__content">
@@ -655,10 +655,10 @@
 														<!-- start social buttons -->
 														<div class="s-btns s-btns--gray">
 															<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
-																<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-																<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-																<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-																<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+																<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+																<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+																<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+																<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 															</ul>
 														</div>
 														<!-- end social buttons -->
@@ -813,7 +813,7 @@
 							<!-- start item -->
 							<div class="__item">
 								<figure class="__image">
-									<img src="img/instafeed_img/1.jpg" alt="demo" />
+									<img src="/img/instafeed_img/1.jpg" alt="demo" />
 
 									<a href="javascript:void(0);" class="d-table">
 										<i class="d-table-cell align-bottom fontello-instagram"></i>
@@ -825,7 +825,7 @@
 							<!-- start item -->
 							<div class="__item">
 								<figure class="__image">
-									<img src="img/instafeed_img/2.jpg" alt="demo" />
+									<img src="/img/instafeed_img/2.jpg" alt="demo" />
 
 									<a href="javascript:void(0);" class="d-table">
 										<i class="d-table-cell align-bottom fontello-instagram"></i>
@@ -837,7 +837,7 @@
 							<!-- start item -->
 							<div class="__item">
 								<figure class="__image">
-									<img src="img/instafeed_img/3.jpg" alt="demo" />
+									<img src="/img/instafeed_img/3.jpg" alt="demo" />
 
 									<a href="javascript:void(0);" class="d-table">
 										<i class="d-table-cell align-bottom fontello-instagram"></i>
@@ -849,7 +849,7 @@
 							<!-- start item -->
 							<div class="__item">
 								<figure class="__image">
-									<img src="img/instafeed_img/4.jpg" alt="demo" />
+									<img src="/img/instafeed_img/4.jpg" alt="demo" />
 
 									<a href="javascript:void(0);" class="d-table">
 										<i class="d-table-cell align-bottom fontello-instagram"></i>
@@ -861,7 +861,7 @@
 							<!-- start item -->
 							<div class="__item">
 								<figure class="__image">
-									<img src="img/instafeed_img/5.jpg" alt="demo" />
+									<img src="/img/instafeed_img/5.jpg" alt="demo" />
 
 									<a href="javascript:void(0);" class="d-table">
 										<i class="d-table-cell align-bottom fontello-instagram"></i>
@@ -895,10 +895,10 @@
 									<!-- start social buttons -->
 									<div class="s-btns s-btns--white">
 										<ul class="d-flex flex-row flex-wrap align-items-center">
-											<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
-											<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
-											<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
-											<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+											<li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
+											<li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
+											<li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
+											<li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
 										</ul>
 									</div>
 									<!-- end social buttons -->
@@ -912,11 +912,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">About Us</a></li>
-													<li><a href="#">Pages</a></li>
-													<li><a href="#">Blog</a></li>
-													<li><a href="#">Shop</a></li>
-													<li><a href="#">Contacts</a></li>
+													<li><a href="javascript:void(0)">About Us</a></li>
+													<li><a href="javascript:void(0)">Pages</a></li>
+													<li><a href="javascript:void(0)">Blog</a></li>
+													<li><a href="javascript:void(0)">Shop</a></li>
+													<li><a href="javascript:void(0)">Contacts</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -927,11 +927,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Documents</a></li>
-													<li><a href="#">Services</a></li>
-													<li><a href="#">Vending Info</a></li>
-													<li><a href="#">News</a></li>
-													<li><a href="#">Support</a></li>
+													<li><a href="javascript:void(0)">Documents</a></li>
+													<li><a href="javascript:void(0)">Services</a></li>
+													<li><a href="javascript:void(0)">Vending Info</a></li>
+													<li><a href="javascript:void(0)">News</a></li>
+													<li><a href="javascript:void(0)">Support</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -942,11 +942,11 @@
 											<nav class="footer__navigation">
 												<ul>
 													<!-- li class="active" -->
-													<li><a href="#">Snack Vending Machines</a></li>
-													<li><a href="#">Beverage Vending Machines</a></li>
-													<li><a href="#">Combo Vending Machines</a></li>
-													<li><a href="#">Coffee Machines</a></li>
-													<li><a href="#">ATMs Machines</a></li>
+													<li><a href="javascript:void(0)">Snack Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Beverage Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Combo Vending Machines</a></li>
+													<li><a href="javascript:void(0)">Coffee Machines</a></li>
+													<li><a href="javascript:void(0)">ATMs Machines</a></li>
 												</ul>
 											</nav>
 										</div>
@@ -973,8 +973,8 @@
 						<div class="row justify-content-between align-items-center">
 							<div class="col-auto">
 								<div class="footer__item">
-									<a class="footer__logo site-logo" href="index">
-										<img class="lazy" src="img/blank.gif" data-src="img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
+									<a class="footer__logo site-logo" href="/index">
+										<img class="lazy" src="/img/blank.gif" data-src="/img/site_logo/logo_2.svg" width="155" height="40" alt="demo" />
 									</a>
 								</div>
 							</div>
@@ -982,7 +982,7 @@
 							<div class="col-auto">
 								<div class="footer__item">
 									<p class="__copy">
-										Copyright © 2019 VendGo | <a href="#">Terms & Privacy</a>
+										Copyright © 2019 VendGo | <a href="javascript:void(0)">Terms & Privacy</a>
 									</p>
 								</div>
 							</div>
@@ -1038,10 +1038,10 @@
 		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-		<script type="text/javascript" src="js/main.min.js"></script>
+		<script type="text/javascript" src="/js/main.min.js"></script>
 	</body>
 </html>

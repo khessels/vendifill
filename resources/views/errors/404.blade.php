@@ -14,15 +14,15 @@
 
 		<!-- Favicons
 		================================================== -->
-		<link rel="shortcut icon" href="img/favicon/favicon.ico">
-		<link rel="icon" href="img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
-		<link rel="icon" href="img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
-		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" sizes="180x180">
-		<link rel="manifest" href="img/favicon/manifest.json">
+		<link rel="shortcut icon" href="/img/favicon/favicon.ico">
+		<link rel="icon" href="/img/favicon/favicon-32x32.png" type="image/png" sizes="32x32">
+		<link rel="icon" href="/img/favicon/favicon-16x16.png" type="image/png" sizes="16x16">
+		<link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png" sizes="180x180">
+		<link rel="manifest" href="/img/favicon/manifest.json">
 
 		<!-- Critical styles
 		================================================== -->
-		<link rel="stylesheet" href="css/critical.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
 
 		<!-- Load google font
 		================================================== -->
@@ -49,7 +49,7 @@
 			_html.className = _html.className.replace("no-js","js");
 			_html.classList.add( isTouch ? "touch" : "no-touch");
 		</script>
-		<script type="text/javascript" src="js/device.min.js"></script>
+		<script type="text/javascript" src="/js/device.min.js"></script>
 	</head>
 
 	<body class="page-404">
@@ -62,8 +62,8 @@
 
 				<div class="hero__inner">
 					<div class="container">
-						<a class="site-logo" href="index">
-							<img class="img-fluid" src="img/site_logo/logo_2.svg" width="155" height="40" alt="vendifill.com logo" />
+						<a class="site-logo" href="/index">
+							<img class="img-fluid" src="/img/site_logo/logo_2.svg" width="155" height="40" alt="vendifill.com logo" />
 						</a>
 					</div>
 
@@ -92,7 +92,7 @@
 
 			<!-- Common styles
 			================================================== -->
-			<link rel="stylesheet" href="css/style.min.css" type="text/css">
+			<link rel="stylesheet" href="/css/style.min.css" type="text/css">
 		</div>
 
 		<div id="btn-to-top-wrap" class="compensate-for-scrollbar">
@@ -140,7 +140,7 @@
 		</script>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-2.2.4.min.js"><\/script>')</script>
+		<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
