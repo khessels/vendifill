@@ -14,17 +14,32 @@ if(App::currentLocale() !== $locale) {
 }
 // todo: check if locale is in query parameters
 
-Route::view('404', 'errors.404');
-Route::view('/', 'index');
-Route::view('/index', 'index');
-Route::view('/about_us', 'about_us');
+//Route::view('404', 'errors.404');
+//Route::view('/', 'index');
+Route::view('/', 'pages.index.guest');
+Route::view('/contact', 'pages.contact.default');
+Route::view('/about_us', 'pages.about-us.default');
+Route::view('/login', 'pages.auth.login');
+Route::view('/recovery', 'pages.auth.recovery');
+Route::view('/signup', 'pages.auth.signup');
+Route::view('/terms', 'pages.auth.terms');
+Route::view('/services', 'pages.services.default');
+Route::view('/services/machines', 'pages.services.machines');
+Route::view('/services/products', 'pages.services.products');
+Route::view('/faqs', 'pages.faqs.default');
+Route::view('/faq', 'pages.faqs.default');
+Route::view('/article/request', 'pages.articles.default');
+
+Route::view('/old/index', 'index');
+Route::view('/old/login', 'login');
+Route::view('/old/about_us', 'about_us');
 Route::view('/index_2', 'index_2');
 Route::view('/index_3', 'index_3');
 Route::view('/account', 'account');
 Route::view('/blog', 'blog');
 Route::view('/blog/details', 'blog_details');
 Route::view('/cart/checkout', 'cart_checkout');
-Route::view('/contact', 'contact');
+Route::view('/old/contact', 'contact');
 Route::view('/element/accordions', 'elements-accordions');
 Route::view('/element/alerts', 'elements-alerts');
 Route::view('/element/counters', 'elements-counters');
@@ -39,24 +54,23 @@ Route::view('/faqs', 'faq');
 Route::view('/gallery/classic', 'gallery_classic');
 Route::view('/gallery/masonry', 'gallery_masonry');
 
-Route::view('/products', 'products');
+Route::view('/old/products', 'products');
 Route::view('/product/details', 'product_details');
 Route::view('/product/single', 'product_single');
 
-Route::view('/services', 'services');
+Route::view('/old/services', 'services');
 Route::view('/catalog/shop', 'catalog_shop');
 Route::view('/typography', 'typography');
 
 Route::get('/info', function () {
     phpinfo();
 });
-Route::post('/english', function () {
-    redirect('/');
+Route::get('/english', function () {
+    redirect()->back();
 })->name('english');
 Route::get('/espanol', function () {
-    redirect('/');
+    redirect()->back();
 })->name('espanol');
-
 
 //Route::get('/', [PublicPagesController::class, 'index'])->name('index');
 

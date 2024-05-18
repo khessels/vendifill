@@ -52,7 +52,7 @@
 		<script type="text/javascript" src="/js/device.min.js"></script>
 	</head>
 
-	<body class="page-elements-media">
+	<body class="page-shop">
 		<div id="app">
 			<!-- start header -->
 			<header id="top-bar" class="top-bar top-bar--s1" data-nav-fixed="true" data-nav-anchor="false">
@@ -121,6 +121,14 @@
 						<span></span>
 					</a>
 
+					<a class="top-bar__cart-btn" href="javascript:void(0)">
+						<i class="cart-ico fontello-shopping-cart"><span class="total">1</span></i>
+					</a>
+
+					<a class="top-bar__profile-btn" href="/account">
+						<i class="profile-ico fontello-user"></i>
+					</a>
+
 					<div class="top-bar__collapse">
 						<div>
 							<nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
@@ -159,13 +167,13 @@
 									</li>
 
 									<li class="has-submenu">
-										<a class="nav-link" href="javascript:void(0);">Shop</a>
+										<a class="nav-link active" href="javascript:void(0);">Shop</a>
 
 										<ul class="submenu">
 											<li><a href="/shop_catalog">Catalog</a></li>
 											<li><a href="/product_single">Single Product</a></li>
 											<li><a href="/cart/checkout">Cart & Checkout</a></li>
-											<li><a href="/account">Account</a></li>
+											<li><a class="active" href="/accountblade.php">Account</a></li>
 										</ul>
 									</li>
 
@@ -174,16 +182,16 @@
 									</li>
 
 									<li class="has-submenu">
-										<a class="nav-link active" href="javascript:void(0);">Elements</a>
+										<a class="nav-link" href="javascript:void(0);">Elements</a>
 
 										<ul class="submenu">
 											<li><a href="/element/accordions">Accordion</a></li>
 											<li><a href="/element/alerts">Alerts</a></li>
-											<li><a href="/elements/counters">Counters</a></li>
-											<li><a href="/elements/form">Forms</a></li>
-											<li><a href="/elements/icons">IconList</a></li>
-											<li><a href="/elements/tables/info">Tables</a></li>
-											<li><a class="active" href="/elements-media_embeds">Media Embeds</a></li>
+											<li><a href="/elements-counters">Counters</a></li>
+											<li><a href="/elements-form">Forms</a></li>
+											<li><a href="/elements-icons">IconList</a></li>
+											<li><a href="/elements-info_tables">Tables</a></li>
+											<li><a href="/elements-media_embeds">Media Embeds</a></li>
 											<li><a href="/elements-pricing_tables">Pricing Tables</a></li>
 											<li><a href="/elements-tabs">Tabs</a></li>
 										</ul>
@@ -229,9 +237,17 @@
 							</div>
 
 							<div class="top-bar__action">
-								<a class="custom-btn" href="javascript:void(0)">Get in Touch</a>
+								<div class="d-sm-table">
+									<div class="d-sm-table-cell align-middle">
+										<a class="top-bar__profile-btn" href="/account"><i class="profile-ico fontello-user"></i></a>
+									</div>
 
-								<a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Get in Touch</a>
+									<div class="d-sm-table-cell align-middle">
+										<a class="custom-btn" href="javascript:void(0)">
+											<i class="cart-ico fontello-shopping-cart"><span class="total">1</span></i>1 525.00$
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -297,15 +313,15 @@
 				id="hero"
 				class="hero jarallax"
 				data-speed="0.6"
-				data-img-position="50% 48%"
-				style="background-image: url(img/hero_img/1.jpg);background-position: 15% center;background-color: #2d69b9">
+				data-img-position="50% 50%"
+				style="background-image: url(img/hero_img/2.jpg);background-color: #f18226">
 
 				<div class="hero__inner">
 					<div class="container">
 						<div class="row">
 							<div class="col-11 col-sm-12">
 								<h4 class="hero__subtitle">VendiFill</h4>
-								<h1 class="hero__title">Media Embeds</h1>
+								<h1 class="hero__title">Account</h1>
 							</div>
 						</div>
 					</div>
@@ -320,73 +336,99 @@
 				<link rel="stylesheet" href="/css/style.min.css" type="text/css">
 
 				<!-- start section -->
-				<section class="section">
+				<section class="section section--gray-bg">
 					<div class="container">
-						<div class="row justify-content-lg-center">
-							<div class="col-12 col-lg-10 col-xl-8">
+						<div class="row">
+							<div class="col-12 col-md-6 col-lg-4">
 
-								<div class="section-heading">
-									<h5 class="__subtitle">Video Embeds</h5>
+								<!-- start auth form -->
+								<form class="auth-form" action="#">
+									<h4>Sign in</h4>
 
-									<h2 class="__title">Youtube Player</h2>
-								</div>
+									<div class="input-wrp">
+										<input class="textfield" placeholder="Username" type="text" />
+									</div>
 
-								<div class="spacer py-3"></div>
+									<div class="input-wrp">
+										<i class="textfield-ico fontello-eye"></i>
+										<input class="textfield" placeholder="Password" type="text" />
+									</div>
 
-								<figure class="embed-responsive embed-responsive-16by9">
-									<iframe class="lazy" data-src="http://www.youtube.com/embed/1zG1iq9LZ2U?rel=0&showinfo=0&hd=1&fs=1&wmode=transparent" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-								</figure>
+									<div class="row justify-content-between no-gutters pt-1">
+										<div class="col-auto">
+											<label class="checkfield align-bottom">
+												<input type="checkbox" checked="">
+												<i></i>
+												Remember me
+											</label>
+										</div>
+
+										<div class="col-auto">
+											<a class="__link" href="javascript:void(0)">I forgot my password</a>
+										</div>
+									</div>
+
+									<button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Sign in</button>
+
+									<div class="text-center"><a href="javascript:void(0)">Sign up</a> if you don’t have an account</div>
+								</form>
+								<!-- end auth form -->
 
 							</div>
-						</div>
-					</div>
-				</section>
-				<!-- end section -->
 
-				<!-- start section -->
-				<section class="section section--no-pt">
-					<div class="container">
-						<div class="row justify-content-lg-center">
-							<div class="col-12 col-lg-10 col-xl-8">
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="spacer py-5 d-md-none"></div>
 
-								<div class="section-heading">
-									<h5 class="__subtitle">Video Embeds</h5>
+								<!-- start auth form -->
+								<form class="auth-form" action="#">
+									<h4>Sign up</h4>
 
-									<h2 class="__title">Vimeo Player</h2>
-								</div>
+									<div class="input-wrp">
+										<input class="textfield" placeholder="Username" type="text" />
+									</div>
 
-								<div class="spacer py-3"></div>
+									<div class="input-wrp">
+										<input class="textfield" placeholder="Email" type="text" inputmode="email" x-inputmode="email"/>
+									</div>
 
-								<figure class="embed-responsive embed-responsive-16by9">
-									<iframe class="lazy" data-src="http://player.vimeo.com/video/240942627?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-								</figure>
+									<div class="input-wrp">
+										<i class="textfield-ico fontello-eye"></i>
+										<input class="textfield" placeholder="Password" type="text" />
+									</div>
+
+									<div class="input-wrp">
+										<i class="textfield-ico fontello-eye"></i>
+										<input class="textfield" placeholder="Confirm Password" type="text" />
+									</div>
+
+									<div class="pt-1">I agree with <a href="javascript:void(0)">Term of Services</a></div>
+
+									<button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Sign up</button>
+
+									<div class="text-center"><a href="javascript:void(0)">Sign in</a> if you an account</div>
+								</form>
+								<!-- end auth form -->
 
 							</div>
-						</div>
-					</div>
-				</section>
-				<!-- end section -->
 
-				<!-- start section -->
-				<section class="section section--no-pt">
-					<div class="container">
-						<div class="row justify-content-lg-center">
-							<div class="col-12 col-lg-10 col-xl-8">
+							<div class="col-12 col-md-6 col-lg-4">
+								<div class="spacer py-5 d-lg-none"></div>
 
-								<div class="section-heading">
-									<h5 class="__subtitle">Video Embeds</h5>
+								<!-- start auth form -->
+								<form class="auth-form" action="#">
+									<h4>Password Recovery</h4>
 
-									<h2 class="__title">HTML5 Player</h2>
-								</div>
+									<div class="input-wrp">
+										<input class="textfield" placeholder="Email" type="text" inputmode="email" x-inputmode="email"/>
+									</div>
 
-								<div class="spacer py-3"></div>
+									<div class="pt-1"><a href="javascript:void(0)">Didn’t get email?</a></div>
 
-								<figure class="embed-responsive embed-responsive-16by9">
-									<video class="lazy" poster="img/videos/video_1.jpg" preload="auto" controls>
-										<source data-src='img/videos/video_1.webm' type='video/webm' />
-										<source data-src='img/videos/video_1.mp4' type='video/mp4' />
-									</video>
-								</figure>
+									<button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Submit</button>
+
+									<div class="text-center">Back to <a href="javascript:void(0)">Sign in</a></div>
+								</form>
+								<!-- end auth form -->
 
 							</div>
 						</div>
