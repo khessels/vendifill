@@ -25,6 +25,7 @@ class GuestPagesController extends Controller
     public function index(Request $request)
     {
         try {
+            error_log('Hello');
             $content = $this->getPageContentAttributes('welcome');
             return view('pages.index.guest')->with('content' ,$content );
         } catch (\Exception $e) {
