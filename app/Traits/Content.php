@@ -49,7 +49,7 @@ trait Content {
                                 }
                             }else {
                                 if(empty($this->expiration )){
-                                    Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT", 'EX', $this->expiration );
+                                    Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT" );
                                 }else{
                                     Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT", 'EX', $this->expiration );
                                 }
