@@ -7,12 +7,12 @@
                     <div class="top-bar__contacts">
                         <ul>
                             <li>
-{{--                                <a href="tel:+19981503020">+506 6107 3424</a>--}}&nbsp;
-                                <a href="tel:+31859644725">+506 6202 0259</a>
+                                <a href="tel:{{ $content['top-bar']['phone_1'] ?? "phone_1"}}">{{ $content['top-bar']['phone_1'] ?? "phone_1"}}</a>
+                                <a href="tel:{{ $content['top-bar']['phone_2'] ?? "phone_2"}}">{{ $content['top-bar']['phone_2'] ?? "phone_2"}}</a>
                             </li>
 
                             <li>
-                                <a href="mailto:support@VendiFill.com">support@VendiFill.com</a>
+                                <a href="mailto:{{$content['top-bar']['email_support'] ?? 'email_support'}}">{{$content['top-bar']['email_support'] ?? 'email_support'}}</a>
                             </li>
                         </ul>
                     </div>
@@ -23,9 +23,8 @@
                         <div class="col-auto">
                             <nav class="top-bar__subnav">
                                 <ul>
-                                    <li><a href="javascript:void(0)" class="select language en_US">English</a></li>
-                                    <li><a href="javascript:void(0)" class="select language es_ES">Español</a></li>
-                                    <li><a href="/login">Login</a></li>
+                                    @include('partials.language')
+                                    <li><a href="{{ $content['top-bar']['link_login'] ?? "/login"}}">{{ $content['top-bar']['login'] ?? "login"}}</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -36,6 +35,20 @@
                                 <div class="s-btns s-btns--gray">
                                     <ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
                                         <li><a class="f" target="_blank" href="https://www.facebook.com/vendifill"><i class="fontello-facebook"></i></a></li>
+
+
+                                        @if(!empty($content['top-bar']['link_facebook']))
+                                            <li><a class="f" href="{{ $content['top-bar']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
+                                        @endif
+                                        @if(!empty($content['top-bar']['link_twitter']))
+                                            <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
+                                        @endif
+                                        @if(!empty($content['top-bar']['link_youtube']))
+                                            <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
+                                        @endif
+                                        @if(!empty($content['top-bar']['link_instagram']))
+                                            <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
+                                        @endif
 {{--                                        <li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>--}}
 {{--                                        <li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>--}}
 {{--                                        <li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>--}}
@@ -56,7 +69,7 @@
 {{--            <span></span>--}}
 {{--        </div>--}}
 
-        <a class="top-bar__logo site-logo" href="/index">
+        <a class="top-bar__logo site-logo" href="/">
             <img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
         </a>
 
@@ -69,18 +82,18 @@
                 <nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
                     <ul>
                         <li>
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" href="/">{{ $content['top-bar']['home'] ?? "home"}}</a>
                         </li>
-                        <li><a href="/about_us">About Us</a></li>
+                        <li><a href="{{ $content['top-bar']['link_about_us'] ?? "/about_us"}}">{{ $content['top-bar']['about_us'] ?? "about_us"}}</a></li>
                         <li class="has-submenu">
-                            <a class="nav-link" href="javascript:void(0);">Services</a>
+                            <a class="nav-link" href="{{ $content['top-bar']['link_services'] ?? "javascript:void(0);"}}">{{ $content['top-bar']['services'] ?? "services"}}</a>
                             <ul class="submenu">
-                                <li><a href="/services/machines">Machines</a></li>
-                                <li><a href="/services/products">Products</a></li>
+                                <li><a href="{{ $content['top-bar']['link_machines'] ?? "/services/machines"}}">{{ $content['top-bar']['machines'] ?? "machines"}}</a></li>
+                                <li><a href="{{ $content['top-bar']['link_products'] ?? "/services/products"}}">{{ $content['top-bar']['products'] ?? "products"}}</a></li>
                             </ul>
                         </li>
-                        <li><a href="/article/request">Request article</a></li>
-                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="{{ $content['top-bar']['link_article_request'] ?? "/article/request"}}">{{ $content['top-bar']['article_request'] ?? "article_request"}}</a></li>
+                        <li><a href="{{ $content['top-bar']['link_faq'] ?? "/faq"}}">{{ $content['top-bar']['faq'] ?? "faq"}}</a></li>
 {{--                        --}}
 
 {{--                        <li>--}}
@@ -104,7 +117,7 @@
 
                         <li>
 {{--                            <a class="nav-link active" href="/contact">Contact Us</a>--}}
-                            <a class="nav-link" href="/contact">Contact Us</a>
+                            <a class="nav-link" href="{{ $content['top-bar']['link_contact_us'] ?? "/contact"}}">{{ $content['top-bar']['contact_us'] ?? "contact_us"}}</a>
                         </li>
 
 {{--                        <li class="has-submenu">--}}
@@ -128,33 +141,42 @@
                 <div class="top-bar__address">
                     <ul class="contact-info">
                         <li>
-                            <div class="__label">Address</div>
+                            <div class="__label">{{ $content['top-bar']['address'] ?? "address"}}</div>
 
                             <p>
-                                5272 Lyngate Ct Burke,<br>
-                                VA 2015-1688
+                                {{ $content['top-bar']['html_address'] ?? "html_address"}}
+{{--                                5272 Lyngate Ct Burke,<br>--}}
+{{--                                VA 2015-1688--}}
                             </p>
                         </li>
 
                         <li>
-                            <div class="__label">Phone</div>
+                            <div class="__label">{{ $content['top-bar']['phone'] ?? "phone"}}</div>
 
                             <p>
-                                +1 998 150 30 20 <br>
-                                +31 85 964 47 25
+                                {{ $content['top-bar']['phone_1'] ?? "phone_1"}} <br>
+                                {{ $content['top-bar']['phone_2'] ?? "phone_2"}}
                             </p>
                         </li>
 
                         <li>
-                            <div class="__label">Social</div>
+                            <div class="__label">{{ $content['top-bar']['social'] ?? "social"}}</div>
 
                             <!-- start social buttons -->
                             <div class="s-btns s-btns--gray">
                                 <ul class="d-flex flex-row flex-wrap align-items-center">
-                                    <li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
-                                    <li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
-                                    <li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
-                                    <li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
+                                    @if(!empty($content['top-bar']['link_facebook']))
+                                        <li><a class="f" href="{{ $content['top-bar']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
+                                    @endif
+                                    @if(!empty($content['top-bar']['link_twitter']))
+                                        <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
+                                    @endif
+                                    @if(!empty($content['top-bar']['link_youtube']))
+                                        <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
+                                    @endif
+                                    @if(!empty($content['top-bar']['link_instagram']))
+                                        <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
+                                    @endif
                                 </ul>
                             </div>
                             <!-- end social buttons -->
@@ -163,9 +185,8 @@
                 </div>
 
                 <div class="top-bar__action">
-                    <a class="custom-btn" href="javascript:void(0)">Get in Touch</a>
-
-                    <a class="custom-btn custom-btn--big custom-btn--s2" href="javascript:void(0)">Get in Touch</a>
+                    <a class="custom-btn" href="javascript:void(0)">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
+                    <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ $content['top-bar']['link_get_in_touch'] ?? "/contact"}}">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
                 </div>
             </div>
         </div>

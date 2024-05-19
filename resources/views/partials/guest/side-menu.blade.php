@@ -2,41 +2,50 @@
 <div id="side-menu" class="side-menu  d-none">
     <div class="side-menu__inner">
         <ul class="side-menu__menu">
-            <li class="active"><a href="javascript:void(0)">Documents</a></li>
-            <li><a href="javascript:void(0)">Downloads</a></li>
-            <li><a href="javascript:void(0)">Useful links</a></li>
+            {{ $content['side-menu']['column_1'] ?? "column_1"}}
+{{--            <li class="active"><a href="javascript:void(0)">Documents</a></li>--}}
+{{--            <li><a href="javascript:void(0)">Downloads</a></li>--}}
+{{--            <li><a href="javascript:void(0)">Useful links</a></li>--}}
         </ul>
 
         <div class="side-menu__contacts">
             <ul class="contact-info">
                 <li>
-                    <div class="__label">Address</div>
+                    <div class="__label">{{ $content['side-menu']['address'] ?? "address"}}</div>
 
                     <p>
-                        5272 Lyngate Ct Burke,
-                        VA 2015-1688
+                        {{ $content['side-menu']['html_address'] ?? "html_address"}}
                     </p>
                 </li>
 
                 <li>
-                    <div class="__label">Phone</div>
+                    <div class="__label">{{ $content['side-menu']['phone'] ?? "phone"}}</div>
 
                     <p>
-                        +1 998 150 30 20 <br>
-                        +31 85 964 47 25
+                        {{ $side_menu['phone_1'] ?? "phone_1"}}<br>
+                        {{ $side_menu['phone_2'] ?? "phone_2"}}
                     </p>
                 </li>
 
                 <li>
-                    <div class="__label">Social</div>
+                    <div class="__label">{{ $content['side-menu']['social'] ?? "social"}}</div>
 
                     <!-- start social buttons -->
                     <div class="s-btns s-btns--gray">
                         <ul class="d-flex flex-row flex-wrap align-items-center">
-                            <li><a class="f" href="javascript:void(0)"><i class="fontello-facebook"></i></a></li>
-                            <li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>
-                            <li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>
-                            <li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>
+                            @if(!empty($content['top-bar']['link_facebook']))
+                                <li><a class="f" href="{{ $content['top-bar']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
+                            @endif
+                            @if(!empty($content['top-bar']['link_twitter']))
+                                <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
+                            @endif
+                            @if(!empty($content['top-bar']['link_youtube']))
+                                <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
+                            @endif
+                            @if(!empty($content['top-bar']['link_instagram']))
+                                <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
+                            @endif
+
                         </ul>
                     </div>
                     <!-- end social buttons -->
@@ -45,7 +54,7 @@
         </div>
 
         <div>
-            <a class="custom-btn custom-btn--big custom-btn--s2 wide" href="javascript:void(0)">Get in Touch</a>
+            <a class="custom-btn custom-btn--big custom-btn--s2 wide" href="{{ $content['side-menu']['link_get_in_touch'] ?? "/contact"}}">{{ $content['side-menu']['get_in_touch'] ?? "get_in_touch"}}</a>
         </div>
     </div>
 </div>

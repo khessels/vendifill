@@ -60,11 +60,11 @@
                                     <input class="textfield" placeholder="Confirm Password" type="text" />
                                 </div>
 
-                                <div class="pt-1">I agree with <a href="javascript:void(0)">Term of Services</a></div>
+                                <div class="pt-1">I agree with <a href="/terms">Term of Services</a></div>
 
                                 <button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Sign up</button>
 
-                                <div class="text-center"><a href="javascript:void(0)">Sign in</a> if you an account</div>
+                                <div class="text-center"><a href="/login">Sign in</a> if you an account</div>
                             </form>
                             <!-- end auth form -->
 

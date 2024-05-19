@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PublicPagesController;
+use App\Http\Controllers\GuestPagesController;
 
 // display the page in requested browser locale
 $availableLocales = Config::get('app.available_locales');
@@ -16,7 +16,9 @@ if(App::currentLocale() !== $locale) {
 
 //Route::view('404', 'errors.404');
 //Route::view('/', 'index');
-Route::view('/', 'pages.index.guest');
+// Route::view('/', 'pages.index.guest');
+Route::get('/',[\App\Http\Controllers\GuestPagesController:: class, 'index'])->name('index');
+Route::get('/about-us',[\App\Http\Controllers\GuestPagesController:: class, 'about_us'])->name('about-us');
 Route::view('/contact', 'pages.contact.default');
 Route::view('/about_us', 'pages.about-us.default');
 Route::view('/login', 'pages.auth.login');
@@ -72,7 +74,7 @@ Route::get('/espanol', function () {
     redirect()->back();
 })->name('espanol');
 
-//Route::get('/', [PublicPagesController::class, 'index'])->name('index');
+//Route::get('/', [GuestPagesController::class, 'index'])->name('index');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

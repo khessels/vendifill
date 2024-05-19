@@ -9,12 +9,17 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Request;
 
 
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, ValidatesRequests;
+
     public function criticalException($request, $e, $file, $function, $line): void
     {
-        error_log($e->getMessage);
+        if(!empty($e)){
+            error_log($e->getMessage);
+        }
+
     }
     public function responseObject($request, $status, $data = null, $errors = null, $aPage = null, $itemCount = null, $meta = null): array
     {

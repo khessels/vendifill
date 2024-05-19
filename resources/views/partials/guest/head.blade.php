@@ -3,6 +3,8 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, minimal-ui" />
 
+{{ $content['head']['meta'] ?? ""}}
+
 <meta name="theme-color" content="#056EB9" />
 <meta name="msapplication-navbutton-color" content="#056EB9" />
 <meta name="apple-mobile-web-app-status-bar-style" content="#056EB9" />

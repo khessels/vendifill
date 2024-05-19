@@ -45,11 +45,11 @@
                                 <input class="textfield" placeholder="Email" type="text" inputmode="email" x-inputmode="email"/>
                             </div>
 
-                            <div class="pt-1"><a href="javascript:void(0)">Didn’t get email?</a></div>
+{{--                            <div class="pt-1"><a href="javascript:void(0)">Didn’t get email?</a></div>--}}
 
                             <button class="custom-btn custom-btn--big custom-btn--s3" type="submit" role="button">Submit</button>
 
-                            <div class="text-center">Back to <a href="javascript:void(0)">Sign in</a></div>
+                            <div class="text-center">Back to <a href="/login">Sign in</a></div>
                         </form>
                         <!-- end auth form -->
                         </div>
