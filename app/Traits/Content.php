@@ -38,6 +38,7 @@ trait Content {
                                 // write resulting array to redis
                             }
                         }else {
+                            error_log("Hello dolly");
                             error_log(json_encode($data));
                         }
                     }
