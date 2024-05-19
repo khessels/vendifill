@@ -25,7 +25,7 @@ class RedisController extends Controller
     public function test_ttl(Request $request)
     {
         try {
-            Redis::set('test', 'test_ttl_failed', 2);
+            Redis::set('test', 'test_ttl_failed', 'EX', 2);
             sleep(4);
             return response()->json($this->responseObject($request, true, Redis::get('test')));
         } catch (\Exception $e) {
