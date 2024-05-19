@@ -18,7 +18,7 @@ class GuestPagesController extends Controller
         $this->pages['contact']     = ['attributes' => ['contact', 'footer','head','top-bar','side-menu']];
 
         // load the pages and partials
-        $this->setLocale();
+        $this->loadLocale();
         $this->loadPages();
     }
 

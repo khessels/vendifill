@@ -30,4 +30,8 @@ Route::group(['prefix' => 'v1'], function() {
 
     Route::post('redis/test/ping', [RedisController::class, 'ping']);
     Route::post('redis/test/ttl', [RedisController::class, 'test_ttl']);
+    Route::group(['prefix' => 'guest'], function() {
+        Route::post('redis/content/expire', [\App\Http\Controllers\GuestPagesController::class, 'expireContent']);
+        Route::post('redis/content/reload', [\App\Http\Controllers\GuestPagesController::class, 'reloadContent']);
+    });
 });
