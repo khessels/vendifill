@@ -4,6 +4,7 @@ namespace App\Traits;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redis;
 
 trait Content {
     protected $locale;
@@ -38,8 +39,13 @@ trait Content {
                                 // write resulting array to redis
                             }
                         }else {
-                            error_log("Hello dolly");
-                            error_log(json_encode($data));
+                            $timeOut = Redis::get('trait.content.logging.timeout');
+                            if(empty($timeOut)) {
+                                error_log(json_encode($data));
+                                Redis::set('trait.content.logging.timeout', 'YES', 10);
+                            }else{
+                                error_log('timed out');
+                            }
                         }
                     }
                 }
