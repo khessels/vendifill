@@ -17,9 +17,8 @@ class Controller extends BaseController
     public function criticalException($request, $e, $file, $function, $line): void
     {
         if(!empty($e)){
-            error_log($e->getMessage);
+            error_log($e->getMessage());
         }
-
     }
     public function responseObject($request, $status, $data = null, $errors = null, $aPage = null, $itemCount = null, $meta = null): array
     {

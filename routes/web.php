@@ -17,11 +17,20 @@ if(App::currentLocale() !== $locale) {
 //Route::view('404', 'errors.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
+Route::group(['middleware' => ['web']], function () {
+    // your routes here
+    Route::get('/',[\App\Http\Controllers\WebPagesController:: class, 'index'])->name('index');
+    Route::get('/logout',[\App\Http\Controllers\UserAuthController:: class, 'logout'])->name('logout');
+});
+
+
 Route::get('/',[\App\Http\Controllers\GuestPagesController:: class, 'index'])->name('index');
 Route::get('/about-us',[\App\Http\Controllers\GuestPagesController:: class, 'about_us'])->name('about-us');
+Route::get('/login',[\App\Http\Controllers\GuestPagesController:: class, 'login'])->name('login');
+
+
 Route::view('/contact', 'pages.contact.default');
 Route::view('/about_us', 'pages.about-us.default');
-Route::view('/login', 'pages.auth.login');
 Route::view('/recovery', 'pages.auth.recovery');
 Route::view('/signup', 'pages.auth.signup');
 Route::view('/terms', 'pages.auth.terms');

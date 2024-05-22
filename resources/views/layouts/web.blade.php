@@ -1,29 +1,64 @@
+{{--<!DOCTYPE html>--}}
+{{--<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">--}}
+{{--<head>--}}
+{{--    <meta charset="utf-8">--}}
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1">--}}
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
+
+{{--    <title>@yield('title') | {{ config('app.name', 'VendiFill.com') }}</title>--}}
+
+{{--    <!-- Fonts -->--}}
+{{--    <link rel="preconnect" href="https://fonts.bunny.net">--}}
+{{--    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>--}}
+
+{{--    <!-- Scripts -->--}}
+{{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+{{--</head>--}}
+{{--<body class="font-sans antialiased">--}}
+{{--<div class="min-h-screen bg-gray-100">--}}
+{{--    <livewire:layout.navigation/>--}}
+
+{{--    <!-- Page Heading -->--}}
+{{--    @if (isset($header))--}}
+{{--        <header class="bg-white shadow">--}}
+{{--            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">--}}
+{{--                {{ $header }}--}}
+{{--            </div>--}}
+{{--        </header>--}}
+{{--    @endif--}}
+
+{{--    <!-- Page Content -->--}}
+{{--    <main>--}}
+{{--        {{ $slot }}--}}
+{{--    </main>--}}
+{{--</div>--}}
+{{--</body>--}}
+{{--</html>--}}
+
+
 <!DOCTYPE html>
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>@yield('title') </title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title') | {{ config('app.name', 'tab_title') }}</title>
 
     @yield('head')
     @yield('head_scripts')
     @yield('vite')
-
 </head>
 {{--    <body class="page-home page-home-2">--}}
 <body class="page-contact">
 <div id="app">
     <!-- start header -->
-    @yield('top-bar')
+    @include('partials.top-bar')
     <!-- end header -->
 
     <!-- start side menu -->
-    @yield('side-menu')
-    <!-- end side menu -->
-
-    <!-- start screen -->
-    @yield('start-screen')
+    @include('partials.side-menu')
     <!-- end side menu -->
 
     <!-- start main -->
+    {{--                @include('pages.index.guest')--}}
     @yield('content')
 
     <!-- end main -->

@@ -1,5 +1,35 @@
 @extends('layouts.guest')
-@section('content')
+
+@section('title')
+    {{$content['articles']['tab_title'] ?? 'tab_title'}}
+@endsection
+
+@section('head')
+    @include('partials.guest.head')
+@endsection
+
+@section('head-css')
+@endsection
+
+@section('head-scripts')
+@endsection
+
+@section('vite')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
+
+@section('top-bar')
+    @include('partials.top-bar')
+@endsection
+
+@section('side-menu')
+    @include('partials.side-menu')
+@endsection
+
+@section('start-screen')
+    <!-- start start screen -->
+{{--    {!! $content['articles']['start_screen'] ?? '' !!}--}}
+    <!-- end start screen -->
     <!-- start hero -->
     <div
         id="hero"
@@ -20,7 +50,13 @@
         </div>
     </div>
     <!-- end hero -->
+@endsection
 
+
+@section('content')
+{{--    <main role="main">--}}
+{{--        {!! $content['articles']['main'] ?? '' !!}--}}
+{{--    </main>--}}
     <!-- start main -->
     <main role="main">
         <!-- Common styles

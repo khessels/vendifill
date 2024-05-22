@@ -23,9 +23,9 @@ use App\Http\Controllers\UserController;
 Route::group(['prefix' => 'v1'], function() {
     Route::get('user/profile', [UserController::class, 'profile'])->middleware('auth:sanctum');
 
-    Route::post('auth/register', [UserAuthController::class, 'register']);
-    Route::post('auth/login', [UserAuthController::class, 'login']);
-    Route::post('auth/logout', [UserAuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::post('register', [UserAuthController::class, 'register']);
+    Route::post('login', [UserAuthController::class, 'login']);
+    Route::post('logout', [UserAuthController::class, 'logout'])->middleware('auth:sanctum');
 
 
     Route::post('redis/test/ping', [RedisController::class, 'ping']);
@@ -34,4 +34,7 @@ Route::group(['prefix' => 'v1'], function() {
         Route::post('redis/content/expire', [\App\Http\Controllers\GuestPagesController::class, 'expireContent']);
         Route::post('redis/content/reload', [\App\Http\Controllers\GuestPagesController::class, 'reloadContent']);
     });
+});
+Route::group(['prefix' => 'v1'], function() {
+
 });

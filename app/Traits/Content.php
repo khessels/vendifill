@@ -30,6 +30,9 @@ trait Content {
         foreach($this->pages as $index => $page){
             foreach($page['attributes'] as $attribute){
                 // load from redis
+                if ($attribute == 'social-media'){
+                    $s='';
+                }
                 $redisContent = Redis::get('content.'.$this->locale.'.'.$index.'.'.$attribute);
                 if($redisContent != "DO NOT REQUEST CONTENT"){
                     if(empty($redisContent) ){
@@ -66,12 +69,18 @@ trait Content {
             }
         }
     }
+
     protected function getPageContentAttributes($page){
         return $this->content[$this->locale][$page];
     }
     protected function reloadContent(){
         $this->loadPages();
-        return true;
+        return response()->json($this->responseObject(null, true, null, "Content reloaded"));
+    }
+    protected function refreshContent(){
+        $this->expireContent();
+        $this->loadPages();
+        return response()->json($this->responseObject(null, true, null, "Content refreshed"));
     }
     public function expireContent(){
         foreach($this->pages as $index => $page) {
@@ -79,5 +88,6 @@ trait Content {
                 Redis::del('content.'.$this->locale.'.'.$index.'.'.$attribute);
             }
         }
+        return response()->json($this->responseObject(null, true, null, "Content expired"));
     }
 }

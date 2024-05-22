@@ -1,5 +1,7 @@
 @extends('layouts.guest')
-
+@section('title')
+    {{$content['signup']['tab_title'] ?? 'tab_title'}}
+@endsection
 @section('content')
     <!-- start hero -->
     <div

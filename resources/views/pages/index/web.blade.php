@@ -1,10 +1,10 @@
-@extends('layouts.guest')
+@extends('layouts.web')
 @section('title')
     {{$content['welcome']['tab_title'] ?? 'tab_title'}}
 @endsection
 
 @section('head')
-    @include('partials.guest.head')
+    @include('partials.web.head')
 @endsection
 
 @section('head-css')
@@ -22,7 +22,7 @@
 @endsection
 
 @section('side-menu')
-    @include('partials.side-menu')
+    @include('partials.guest.side-menu')
 @endsection
 
 @section('start-screen')

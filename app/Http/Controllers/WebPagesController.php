@@ -7,34 +7,20 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use App\Traits\Content;
 
-class GuestPagesController extends Controller
+class WebPagesController extends Controller
 {
     use Content;
     public function __construct()
     {
         // define pages used in this controller
         $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['about-us']    = ['attributes' => ['about-us', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['terms']       = ['attributes' => ['terms', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['contact']     = ['attributes' => ['contact', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['login']       = ['attributes' => ['login', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
         $this->loadLocale();
         $this->loadPages();
-    }
-    public function terms(Request $request)
-    {
-        try {
-            $page = 'terms';
-            $content = $this->getPageContentAttributes($page);
-            return view('pages.terms.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
-        } catch (\Exception $e) {
-            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
-        }
     }
 
     public function index(Request $request)
@@ -42,7 +28,7 @@ class GuestPagesController extends Controller
         try {
             $page = 'welcome';
             $content = $this->getPageContentAttributes($page);
-            return view('pages.index.guest')
+            return view('pages.index.web')
                 ->with('page', $page)
                 ->with('content' ,$content );
         } catch (\Exception $e) {
@@ -50,45 +36,42 @@ class GuestPagesController extends Controller
             abort(404);
         }
     }
-    public function login(Request $request)
+    public function profile(Request $request)
     {
         try {
-            $page = 'login';
+            $page = 'profile';
             $content = $this->getPageContentAttributes($page);
-            return view('pages.auth.'.$page)
+            return view('pages.auth.profile')
                 ->with('page', $page)
                 ->with('content' ,$content );
-
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
         }
     }
-    public function about_us(Request $request)
+    public function recovery(Request $request)
     {
         try {
-            $page = 'about-us';
+            $page = 'recovery';
             $content = $this->getPageContentAttributes($page);
-            return view('pages.about-us.default')
+            return view('pages.auth.recovery')
                 ->with('page', $page)
                 ->with('content' ,$content );
-
         } catch (\Exception $e) {
-            $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
+            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
         }
     }
-    public function contact(Request $request)
+    public function signup(Request $request)
     {
         try {
-            $page = 'contact';
+            $page = 'signup';
             $content = $this->getPageContentAttributes($page);
-            return view('pages.contact.default')
+            return view('pages.auth.recovery')
                 ->with('page', $page)
                 ->with('content' ,$content );
-
         } catch (\Exception $e) {
-            $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
+            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
         }
     }

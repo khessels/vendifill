@@ -1,4 +1,7 @@
 @extends('layouts.guest')
+@section('title')
+    {{$content['recovery']['tab_title'] ?? 'tab_title'}}
+@endsection
 
 @section('content')
     <!-- start hero -->
@@ -61,3 +64,55 @@
     </main>
     <!-- end main -->
 @stop
+
+
+
+@extends('layouts.guest')
+@section('title')
+    {{$content['recovery']['tab_title'] ?? 'tab_title'}}
+@endsection
+
+@section('head')
+    @include('partials.guest.head')
+@endsection
+
+@section('head-css')
+@endsection
+
+@section('head-scripts')
+@endsection
+
+@section('vite')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
+
+@section('top-bar')
+    @include('partials.top-bar')
+@endsection
+
+@section('side-menu')
+    @include('partials.side-menu')
+@endsection
+
+@section('start-screen')
+    <!-- start hero -->
+    <div
+        id="hero"
+        class="hero jarallax"
+        data-speed="0.6"
+        data-img-position="50% 50%"
+        style="background-image: url(/img/hero_img/2.jpg);background-color: #f18226">
+
+        <div class="hero__inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-11 col-sm-12">
+                        <h4 class="hero__subtitle">VendiFill</h4>
+                        <h1 class="hero__title">Account</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end hero -->
+@endsection

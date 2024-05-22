@@ -1,6 +1,34 @@
 @extends('layouts.guest')
-@section('content')
+
+@section('title')
+    {{$content['contact']['tab_title'] ?? 'tab_title'}}
+@endsection
+
+@section('head')
+    @include('partials.guest.head')
+@endsection
+
+@section('head-css')
+@endsection
+
+@section('head-scripts')
+@endsection
+
+@section('vite')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
+
+@section('top-bar')
+    @include('partials.top-bar')
+@endsection
+
+@section('side-menu')
+    @include('partials.side-menu')
+@endsection
+
+@section('start-screen')
     <!-- start hero -->
+    {{--    {!! $content['contact']['start_screen'] ?? '' !!}--}}
     <div
         id="hero"
         class="hero jarallax"
@@ -20,7 +48,13 @@
         </div>
     </div>
     <!-- end hero -->
+@endsection
 
+
+@section('content')
+{{--    <main role="main">--}}
+{{--        {!! $content['contact']['main'] ?? '' !!}--}}
+{{--    </main>--}}
     <!-- start main -->
     <main role="main">
         <!-- Common styles
@@ -195,4 +229,6 @@
         <!-- end section -->
     </main>
     <!-- end main -->
+
 @stop
+

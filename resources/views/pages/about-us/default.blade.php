@@ -1,6 +1,34 @@
 @extends('layouts.guest')
-@section('content')
+
+@section('title')
+    {{$content['about-us']['tab_title'] ?? 'tab_title'}}
+@endsection
+
+@section('head')
+    @include('partials.guest.head')
+@endsection
+
+@section('head-css')
+@endsection
+
+@section('head-scripts')
+@endsection
+
+@section('vite')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+@endsection
+
+@section('top-bar')
+    @include('partials.top-bar')
+@endsection
+
+@section('side-menu')
+    @include('partials.side-menu')
+@endsection
+
+@section('start-screen')
     <!-- start hero -->
+{{--    {!! $content['about-us']['start_screen'] ?? '' !!}--}}
     <div
         id="hero"
         class="hero jarallax"
@@ -20,7 +48,13 @@
         </div>
     </div>
     <!-- end hero -->
+@endsection
 
+
+@section('content')
+{{--    <main role="main">--}}
+{{--    {!! $content['about-us']['main'] ?? '' !!}--}}
+{{--    </main>--}}
     <!-- start main -->
     <main role="main">
         <!-- Common styles
@@ -43,10 +77,10 @@
                         <!-- start video block -->
                         <div class="video-block">
                             <a href="https://www.youtube.com/embed/1zG1iq9LZ2U" class="btn_play btn_play--dark" data-fancybox="video">
-										<span class="d-table">
-											<span class="d-table-cell align-middle"><i></i></span>
-											<span class="d-table-cell align-middle">Watch video</span>
-										</span>
+                                    <span class="d-table">
+                                        <span class="d-table-cell align-middle"><i></i></span>
+                                        <span class="d-table-cell align-middle">Watch video</span>
+                                    </span>
                             </a>
                         </div>
                         <!-- end video block -->
@@ -160,41 +194,41 @@
                         <div class="brands-list brands-list--slider">
                             <div class="js-slick"
                                  data-slick='{
-											"autoplay": true,
-											"dots": true,
-											"speed": 1200,
-											"slidesToShow": 2,
-											"slidesToScroll": 2,
-											"responsive": [
-											{
-												"breakpoint": 575,
-												"settings":{
-													"slidesToShow": 3,
-													"slidesToScroll": 1
-												}
-											},
-											{
-												"breakpoint": 767,
-												"settings":{
-													"slidesToShow": 4,
-													"slidesToScroll": 1
-												}
-											},
-											{
-												"breakpoint": 991,
-												"settings":{
-													"slidesToShow": 5,
-													"slidesToScroll": 1
-												}
-											},
-											{
-												"breakpoint": 1199,
-												"settings":{
-													"slidesToShow": 5,
-													"slidesToScroll": 1
-												}
-											}]
-										}'>
+                                        "autoplay": true,
+                                        "dots": true,
+                                        "speed": 1200,
+                                        "slidesToShow": 2,
+                                        "slidesToScroll": 2,
+                                        "responsive": [
+                                        {
+                                            "breakpoint": 575,
+                                            "settings":{
+                                                "slidesToShow": 3,
+                                                "slidesToScroll": 1
+                                            }
+                                        },
+                                        {
+                                            "breakpoint": 767,
+                                            "settings":{
+                                                "slidesToShow": 4,
+                                                "slidesToScroll": 1
+                                            }
+                                        },
+                                        {
+                                            "breakpoint": 991,
+                                            "settings":{
+                                                "slidesToShow": 5,
+                                                "slidesToScroll": 1
+                                            }
+                                        },
+                                        {
+                                            "breakpoint": 1199,
+                                            "settings":{
+                                                "slidesToShow": 5,
+                                                "slidesToScroll": 1
+                                            }
+                                        }]
+                                    }'>
                                 <!-- start item -->
                                 <div class="__item">
                                     <figure class="__image">
@@ -419,11 +453,11 @@
                         <div class="review review--slider">
                             <div class="js-slick"
                                  data-slick='{
-											"autoplay": true,
-											"dots": true,
-											"speed": 1200,
-											"appendDots": "#slick-dots--container-0"
-										}'>
+                                        "autoplay": true,
+                                        "dots": true,
+                                        "speed": 1200,
+                                        "appendDots": "#slick-dots--container-0"
+                                    }'>
 
                                 <!-- start item -->
                                 <div class="review__item">
@@ -487,37 +521,37 @@
             <div class="instafeed instafeed--slider">
                 <div class="js-slick"
                      data-slick='{
-								"autoplay": true,
-								"dots": false,
-								"speed": 1200,
-								"slidesToShow": 2,
-								"slidesToScroll": 1,
-								"responsive": [
-								{
-									"breakpoint": 575,
-									"settings":{
-										"slidesToShow": 2
-									}
-								},
-								{
-									"breakpoint": 767,
-									"settings":{
-										"slidesToShow": 3
-									}
-								},
-								{
-									"breakpoint": 991,
-									"settings":{
-										"slidesToShow": 4
-									}
-								},
-								{
-									"breakpoint": 1199,
-									"settings":{
-										"slidesToShow": 5
-									}
-								}]
-							}'>
+                            "autoplay": true,
+                            "dots": false,
+                            "speed": 1200,
+                            "slidesToShow": 2,
+                            "slidesToScroll": 1,
+                            "responsive": [
+                            {
+                                "breakpoint": 575,
+                                "settings":{
+                                    "slidesToShow": 2
+                                }
+                            },
+                            {
+                                "breakpoint": 767,
+                                "settings":{
+                                    "slidesToShow": 3
+                                }
+                            },
+                            {
+                                "breakpoint": 991,
+                                "settings":{
+                                    "slidesToShow": 4
+                                }
+                            },
+                            {
+                                "breakpoint": 1199,
+                                "settings":{
+                                    "slidesToShow": 5
+                                }
+                            }]
+                        }'>
                     <!-- start item -->
                     <div class="__item">
                         <figure class="__image">
@@ -585,3 +619,4 @@
     </main>
     <!-- end main -->
 @stop
+
