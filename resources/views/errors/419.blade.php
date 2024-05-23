@@ -70,11 +70,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-7 col-lg-5">
-                        <div class="hero__title h1"><span>{{__('Page Not Found')}}</span></div>
+                        <div class="hero__title h1"><span>{{__('Page Not Found')}}: 419</span></div>
 
-                        <p>
-                            <img class="img-fluid" src="/img/404.png" alt="vendifill.com 404"/>
-                        </p>
+{{--                        <p>--}}
+{{--                            <img class="img-fluid" src="/img/404.png" alt="vendifill.com 404"/>--}}
+{{--                        </p>--}}
 
                         {{--								<p>--}}
                         {{--									Flagfin Atlantic saury, stonecat beachsalmon, silver dollar South American Lungfish. Reef triggerfish dogteeth tetra barreleye springfish chubsucker Pacific hake sea devil New--}}
