@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+{{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
+    @csrf
     <title>@yield('title') </title>
 
     @yield('head')
