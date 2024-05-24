@@ -14,7 +14,7 @@
 @endsection
 
 @section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['/resources/css/app.css', '/resources/js/app.js'])
 @endsection
 
 @section('top-bar')
@@ -69,7 +69,7 @@
                         <div style="width:50%">
                             <!-- start auth form -->
                             <form class="auth-form" action="/api/v1/login" method="POST">
-                                
+
                                 @csrf
                                 <h4>{{$content['login']['sign_in'] ?? 'sign_in'}}</h4>
 

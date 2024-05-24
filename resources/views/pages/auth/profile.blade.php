@@ -14,7 +14,7 @@
 @endsection
 
 @section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['/resources/css/app.css', '/resources/js/app.js'])
 @endsection
 
 @section('top-bar')

@@ -37,7 +37,7 @@
 
 
 <!DOCTYPE html>
-<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html class="no-js"  lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 {{--    <meta name="csrf-token" content="{{ csrf_token() }}">--}}
 {{--    @csrf--}}
@@ -51,15 +51,18 @@
 <body class="page-contact">
 <div id="app">
     <!-- start header -->
-    @include('partials.top-bar')
+    @yield('top-bar')
     <!-- end header -->
 
     <!-- start side menu -->
-    @include('partials.side-menu')
+    @yield('side-menu')
+    <!-- end side menu -->
+
+    <!-- start screen -->
+    @yield('start-screen')
     <!-- end side menu -->
 
     <!-- start main -->
-    {{--                @include('pages.index.guest')--}}
     @yield('content')
 
     <!-- end main -->
