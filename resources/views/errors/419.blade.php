@@ -58,7 +58,7 @@
     <div
         id="hero"
         class="hero"
-        style="background-image: url(img/hero_img/1.jpg);background-color: #2d69b9">
+        style="background-image: url(/img/hero_img/1.jpg);background-color: #2d69b9">
 
         <div class="hero__inner">
             <div class="container">
@@ -70,7 +70,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-7 col-lg-5">
-                        <div class="hero__title h1"><span>{{__('Page Not Found')}}: 419</span></div>
+                        <div class="hero__title h1"><span>{{__('Page Expired')}}: 419</span></div>
 
 {{--                        <p>--}}
 {{--                            <img class="img-fluid" src="/img/404.png" alt="vendifill.com 404"/>--}}

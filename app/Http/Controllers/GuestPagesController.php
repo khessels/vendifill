@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use App\Traits\Content;
 
@@ -40,9 +41,14 @@ class GuestPagesController extends Controller
     public function index(Request $request)
     {
         try {
+            $template = 'guest';
+            if(Auth::check()) {
+                $roles = Auth::user()->getRoleNames();
+                $template = 'web';
+            }
             $page = 'welcome';
             $content = $this->getPageContentAttributes($page);
-            return view('pages.index.guest')
+            return view('pages.index.'.$template)
                 ->with('page', $page)
                 ->with('content' ,$content );
         } catch (\Exception $e) {

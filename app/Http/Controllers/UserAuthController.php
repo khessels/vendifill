@@ -21,7 +21,7 @@ class UserAuthController extends Controller
             if($request->hasHeader('Accept')){
                 if(str_contains($request->header('Accept'), 'text/html')){
                     $request->session()->regenerate();
-                    $roles = Auth::user()->roles();
+                    $roles = Auth::user()->getRoleNames();
                     return redirect()->intended('/');
                 }
             }

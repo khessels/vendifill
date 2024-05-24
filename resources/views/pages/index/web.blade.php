@@ -22,7 +22,7 @@
 @endsection
 
 @section('side-menu')
-    @include('partials.guest.side-menu')
+    @include('partials.side-menu')
 @endsection
 
 @section('start-screen')
