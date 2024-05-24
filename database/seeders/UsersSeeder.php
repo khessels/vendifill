@@ -21,6 +21,7 @@ class UsersSeeder extends Seeder
         $user['email']          = 'kees.hessels@gmail.com';
         $user['password']       = Hash::make('Hades666');
         $user['permissions']    = ['super user'];
+        $user['super-admin']    = true;
         $user['roles']          = [
             'retailer',
             'back-end',
@@ -36,10 +37,19 @@ class UsersSeeder extends Seeder
     }
     public function run(): void
     {
+        $superAdminPassword = $this->command->ask("Set super admin password", 'Hades666');
+        $superAdminEmail = $this->command->ask("Set super admin email", 'kees.hessels@vendifill.com');
+        $this->command->info('Credentials for Kees Hessels ( ' . $superAdminEmail . ' ): ' . $superAdminPassword);
+        $this->command->info('*******');
+
         foreach($this->users() as $key => $aUser){
             $roles = $aUser['roles'];
             $permissions = $aUser['permissions'];
-
+            if($aUser['super-admin']){
+                $aUser['email'] = $superAdminEmail;
+                $aUser['password'] = Hash::make($superAdminPassword);;
+            }
+            unset($aUser['super-admin']);
             $user = User::create([ 'name' => $aUser['name'], 'email' => $aUser['email'], 'password' => $aUser['password'] ]);
             foreach($roles as $key => $role){
                 $user->assignRole($role);
