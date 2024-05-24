@@ -21,11 +21,11 @@ use App\Http\Controllers\UserController;
 //    return $request->user();
 //});
 Route::group(['prefix' => 'v1'], function() {
-    Route::get('user/profile', [UserController::class, 'profile'])->middleware('auth:sanctum');
+    Route::get('user/profile', [UserController::class, 'profile'])->middleware('auth:api');
 
     Route::post('register', [UserAuthController::class, 'register']);
     Route::post('login', [UserAuthController::class, 'login']);
-    Route::post('logout', [UserAuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::post('logout', [UserAuthController::class, 'logout'])->middleware('auth:api');
 
 
     Route::post('redis/test/ping', [RedisController::class, 'ping']);

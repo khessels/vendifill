@@ -42,7 +42,7 @@ class UserAuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::logout();
+        Auth::guard('web')->logout();
         if($request->hasHeader('Accept')) {
             if (str_contains($request->header('Accept'), 'text/html')) {
                 $request->session()->invalidate();
