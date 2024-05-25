@@ -6,55 +6,44 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Session;
 
 trait Content {
-    protected $locale;
+
     protected $content;
     protected $pages;
     protected $expiration;
     protected $logging_error_timeout;
 
-    public function loadLocale(){
-        if (App::isLocale('en')) {
-            $this->locale = 'en';
-        }else if(App::isLocale('es')){
-            $this->locale = 'es';
-        }else{
-            App::setLocale('en');
-            $this->locale = 'en';
-        }
+    public function loadPages(){
+
         $this->expiration = config('content.expiration.default');
         $this->logging_error_timeout = config('content.logging.error.timeout');
-    }
-    public function loadPages(){
+
         foreach($this->pages as $index => $page){
             foreach($page['attributes'] as $attribute){
-                // load from redis
-                if ($attribute == 'social-media'){
-                    $s='';
-                }
-                $redisContent = Redis::get('content.'.$this->locale.'.'.$index.'.'.$attribute);
+                $redisContent = Redis::get('content.'.App::getLocale().'.'.$index.'.'.$attribute);
                 if($redisContent != "DO NOT REQUEST CONTENT"){
                     if(empty($redisContent) ){
-                        $response = Http::strapi()->get('api/' . $attribute . '?locale=' . $this->locale);
-                        $this->content[$this->locale][$index][$attribute] = "DO NOT REQUEST CONTENT";
+                        $response = Http::strapi()->get('api/' . $attribute . '?locale=' . App::getLocale());
+                        $this->content[App::getLocale()][$index][$attribute] = "DO NOT REQUEST CONTENT";
                         if(!empty($response->json())) {
                             $data = $response->json();
                             if($data['data']) {
                                 if($data['data']['attributes']) {
-                                    $this->content[$this->locale][$index][$attribute] = $data['data']['attributes'];
+                                    $this->content[App::getLocale()][$index][$attribute] = $data['data']['attributes'];
                                     // write resulting array to redis
                                     if(empty($this->expiration )){
-                                        Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, json_encode($data['data']['attributes']));
+                                        Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, json_encode($data['data']['attributes']));
                                     }else{
-                                        Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, json_encode($data['data']['attributes']), 'EX', $this->expiration );
+                                        Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, json_encode($data['data']['attributes']), 'EX', $this->expiration );
                                     }
                                 }
                             }else {
                                 if(empty($this->expiration )){
-                                    Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT" );
+                                    Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT" );
                                 }else{
-                                    Redis::set('content.'.$this->locale.'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT", 'EX', $this->expiration );
+                                    Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT", 'EX', $this->expiration );
                                 }
                                 if(empty($this->logging_error_timeout)) {
                                     error_log(json_encode($data));
@@ -63,7 +52,7 @@ trait Content {
                             }
                         }
                     }else{
-                        $this->content[$this->locale][$index][$attribute] = json_decode($redisContent, true);
+                        $this->content[App::getLocale()][$index][$attribute] = json_decode($redisContent, true);
                     }
                 }
             }
@@ -71,7 +60,10 @@ trait Content {
     }
 
     protected function getPageContentAttributes($page){
-        return $this->content[$this->locale][$page];
+        if(empty($this->content[App::getLocale()])){
+            $this->loadPages();
+        }
+        return $this->content[App::getLocale()][$page];
     }
     protected function reloadContent(){
         $this->loadPages();
@@ -82,12 +74,23 @@ trait Content {
         $this->loadPages();
         return response()->json($this->responseObject(null, true, null, "Content refreshed"));
     }
-    public function expireContent(){
-        foreach($this->pages as $index => $page) {
-            foreach ($page['attributes'] as $attribute) {
-                Redis::del('content.'.$this->locale.'.'.$index.'.'.$attribute);
+    public function expireContent($locale = null){
+        if(empty($locale)){
+            foreach (config('app.available_locales') as $locale) {
+                foreach($this->pages as $index => $page) {
+                    foreach ($page['attributes'] as $attribute) {
+                        Redis::del('content.' . $locale . '.' . $index . '.' . $attribute);
+                    }
+                }
+            }
+        }else{
+            foreach($this->pages as $index => $page) {
+                foreach ($page['attributes'] as $attribute) {
+                    Redis::del('content.' . $locale . '.' . $index . '.' . $attribute);
+                }
             }
         }
         return response()->json($this->responseObject(null, true, null, "Content expired"));
     }
+
 }

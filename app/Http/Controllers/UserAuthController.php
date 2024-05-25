@@ -27,6 +27,7 @@ class UserAuthController extends Controller
             }
             $user = User::where('email',$credentials['email'])->first();
             $token = $user->createToken($user->name.'-AuthToken')->plainTextToken;
+            $roles = Auth::user()->getRoleNames();
             return response()->json($this->responseObject($request, true, [
                 'access_token' => $token,
             ]));
@@ -42,15 +43,18 @@ class UserAuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard('web')->logout();
+        //auth('sanctum')->user()->currentAccessToken()->delete();
         if($request->hasHeader('Accept')) {
             if (str_contains($request->header('Accept'), 'text/html')) {
+                Auth::guard('web')->logout();
                 $request->session()->invalidate();
                 $request->session()->regenerateToken();
                 return redirect()->intended('/')->with('message', 'Logged out');
             }
         }
-        auth()->user()->tokens()->delete();
+        $user = Auth::user();
+        $user->tokens()->delete();
+        //$user->currentAccessToken()->delete();
         return response()->json($this->responseObject($request, true, "Logged out"));
     }
 

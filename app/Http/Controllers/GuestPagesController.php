@@ -21,8 +21,8 @@ class GuestPagesController extends Controller
         $this->pages['login']       = ['attributes' => ['login', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
-        $this->loadLocale();
-        $this->loadPages();
+        //$this->loadLocale();
+         $this->loadPages();
     }
     public function terms(Request $request)
     {

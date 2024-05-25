@@ -7,11 +7,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestPagesController;
 
 // display the page in requested browser locale
-$availableLocales = Config::get('app.available_locales');
-$locale = Request::getPreferredLanguage($availableLocales);
-if(App::currentLocale() !== $locale) {
-    if ($locale) App::setLocale($locale);
-}
+//$availableLocales = Config::get('app.available_locales');
+//$locale = Request::getPreferredLanguage($availableLocales);
+//if(App::currentLocale() !== $locale) {
+//    if ($locale) App::setLocale($locale);
+//}
 // todo: check if locale is in query parameters
 
 //Route::view('404', 'errors.404');

@@ -23,9 +23,10 @@ class UsersSeeder extends Seeder
         $user['rating']         = 5;
         $user['email']          = 'kees.hessels@gmail.com';
         $user['password']       = Hash::make('Hades666');
-        $user['permissions']    = ['super user'];
+        $user['permissions']    = ['super user', 'content-flush'];
         $user['super-admin']    = true;
         $user['roles']          = [
+            'developer',
             'retailer',
             'back-end',
             'vendor',
@@ -47,7 +48,6 @@ class UsersSeeder extends Seeder
 
         foreach($this->users() as $key => $aUser){
             $roles = $aUser['roles'];
-            $permissions = $aUser['permissions'];
             if($aUser['super-admin']){
                 $aUser['email'] = $superAdminEmail;
                 $aUser['password'] = Hash::make($superAdminPassword);;
@@ -57,8 +57,8 @@ class UsersSeeder extends Seeder
             foreach($roles as $key => $role){
                 $user->assignRole($role);
             }
-            foreach($permissions as $key => $permission){
-                $user->givePermissionTo($permission);
+            if(!empty($aUser['permissions'])){
+                $user->givePermissonTo($aUser['permissions']);
             }
         }
     }

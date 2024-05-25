@@ -19,7 +19,7 @@ class WebPagesController extends Controller
         $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
-        $this->loadLocale();
+        //$this->loadLocale();
         $this->loadPages();
     }
 

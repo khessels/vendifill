@@ -17,7 +17,7 @@ class PermissionsSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         // create permissions
-        $permissions = ['super user', 'moderate', 'manage users', 'manage financials', 'developer', 'technician', 'access-machines', 'filler'];
+        $permissions = ['super user', 'moderate', 'manage users', 'manage financials', 'developer', 'technician', 'access-machines', 'filler', 'content-flush'];
         foreach($permissions as $permission){
             Permission::create(['name' => $permission]);
         }
@@ -27,6 +27,10 @@ class PermissionsSeeder extends Seeder
 //        $role->givePermissionTo(['access-machines']);
 
         $roles = [
+            [
+                'name'=> 'developer',
+                'permissions' => $permissions
+            ],
             [
                 'name'=> 'retailer',
                 'permissions' => []
