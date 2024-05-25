@@ -1,2 +1,7 @@
-<li><a href="javascript:void(0)" class="select language en_US">{{ $content['top-bar']['english'] ?? "english"}}</a></li>
-<li><a href="javascript:void(0)" class="select language es_ES">{{ $content['top-bar']['spanish'] ?? "spanish"}}</a></li>
+<form action="{{ route('language.switch') }}" method="POST">
+    @csrf
+    <select name="language" onchange="this.form.submit()">
+        <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : ''}}>{{__('english')}}</option>
+        <option value="es" {{ app()->getLocale() === 'es' ? 'selected' : ''}}>{{__('spanish')}}</option>
+    </select>
+</form>

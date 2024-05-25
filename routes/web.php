@@ -17,6 +17,7 @@ if(App::currentLocale() !== $locale) {
 //Route::view('404', 'errors.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
+Route::post('/language/switch',[\App\Http\Controllers\LanguagesController:: class, 'languageSwitch'])->name('language.switch');
 Route::group(['middleware' => ['web']], function () {
     // your routes here
     Route::get('/',[\App\Http\Controllers\WebPagesController:: class, 'index'])->name('index');
@@ -27,6 +28,7 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/',[\App\Http\Controllers\GuestPagesController:: class, 'index'])->name('index');
 Route::get('/about-us',[\App\Http\Controllers\GuestPagesController:: class, 'about_us'])->name('about-us');
 Route::get('/login',[\App\Http\Controllers\GuestPagesController:: class, 'login'])->name('login');
+
 
 
 Route::view('/contact', 'pages.contact.default');

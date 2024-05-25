@@ -22,8 +22,11 @@
                     <div class="row">
                         <div class="col-auto">
                             <nav class="top-bar__subnav">
-                                <ul>
-                                    @include('partials.language')
+                                <ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
+                                    <li>
+                                        @include('partials.language')
+                                    </li>
+
                                     @guest
                                     <li><a href="{{ $content['top-bar']['link_login'] ?? "/login"}}">{{ $content['top-bar']['login'] ?? "login"}}</a></li>
                                     @endguest
