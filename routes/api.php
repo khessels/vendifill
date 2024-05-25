@@ -27,15 +27,15 @@ Route::group(['prefix' => 'v1'], function() {
 });
 
 
-Route::group(['prefix' => 'v1', 'middleware' => 'auth:sanctum'], function() {
+Route::group(['prefix' => 'v1', 'middleware' => 'role:developer'], function() {
 
-        Route::get('user/profile', [UserController::class, 'profile']);
-        Route::post('logout', [UserAuthController::class, 'logout']);
+    Route::get('user/profile', [UserController::class, 'profile']);
+    Route::post('logout', [UserAuthController::class, 'logout']);
 
-        Route::post('redis/test/ping', [RedisController::class, 'ping']);
-        Route::post('redis/test/ttl', [RedisController::class, 'test_ttl']);
+    Route::post('redis/test/ping', [RedisController::class, 'ping']);
+    Route::post('redis/test/ttl', [RedisController::class, 'test_ttl']);
 
-        Route::post('redis/content/expire/{language?}', [GuestPagesController::class, 'expireContent']);
-        Route::post('redis/content/reload', [GuestPagesController::class, 'reloadContent']);
+    Route::post('redis/content/expire/{language?}', [GuestPagesController::class, 'expireContent']);
+    Route::post('redis/content/reload', [GuestPagesController::class, 'reloadContent']);
 
 });
