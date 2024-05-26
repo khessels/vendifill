@@ -17,18 +17,20 @@ trait Content {
 
     public function loadPages(){
         $strapi = config('strapi.enabled', false);
+        $locale = App::getLocale();
+        $this->logging_error_timeout = (int) config('strapi.error_logging_timeout');
         if(empty($strapi)){
             return;
         }
         $this->expiration = config('content.expiration.default');
-        $this->logging_error_timeout = config('content.logging.error.timeout');
+        $this->timeout = config('content.logging.error.timeout');
 
         foreach($this->pages as $index => $page){
             foreach($page['attributes'] as $attribute){
                 $redisContent = Redis::get('content.'.App::getLocale().'.'.$index.'.'.$attribute);
                 if($redisContent != "DO NOT REQUEST CONTENT"){
                     if(empty($redisContent) ){
-                        $response = Http::strapi()->get('api/' . $attribute . '?locale=' . App::getLocale());
+                        $response = Http::withToken(config('strapi.token'))->withHeaders(['Accept' => 'application/json', 'Authorization'])->get(config('strapi.url').'/api/' . $attribute . '?locale=' . App::getLocale());
                         $this->content[App::getLocale()][$index][$attribute] = "DO NOT REQUEST CONTENT";
                         if(!empty($response->json())) {
                             $data = $response->json();
@@ -48,9 +50,9 @@ trait Content {
                                 }else{
                                     Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, "DO NOT REQUEST CONTENT", 'EX', $this->expiration );
                                 }
-                                if(empty($this->logging_error_timeout)) {
-                                    error_log(json_encode($data));
+                                if(empty($this->timeout)) {
                                     Redis::set('content.logging.timeout', 'YES', 'EX', $this->logging_error_timeout);
+                                    error_log(json_encode($data));
                                 }
                             }
                         }

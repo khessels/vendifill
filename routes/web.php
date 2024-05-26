@@ -22,15 +22,7 @@ use \App\Http\Controllers\LanguagesController;
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('/',                 [GuestPagesController::class,   'index'])->name('index');
-    Route::post('/language/switch', [LanguagesController::class,    'languageSwitch'])->name('language.switch');
-    Route::post('/logout',          [UserAuthController::class,     'logout'])->name('logout');
-    Route::get('/login',            [GuestPagesController::class,   'login'])->name('login');
-    Route::post('/login',           [UserAuthController::class,     'login'])->name('post.login');
-
-});
-
+Route::get('/',                 [GuestPagesController::class,   'index'])->name('index');
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // your routes here
     Route::get('/',         [WebPagesController::class, 'index'])->name('index');
@@ -40,6 +32,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::get('/about-us',     [GuestPagesController::class, 'about_us'])->name('about-us');
 
 
+
+Route::post('/logout',          [UserAuthController::class,     'logout'])->name('logout');
+Route::get('/login',            [GuestPagesController::class,   'login'])->name('login');
+Route::post('/login',           [UserAuthController::class,     'login'])->name('post.login');
+Route::post('/language/switch', [LanguagesController::class,    'languageSwitch'])->name('language.switch');
 Route::view('/contact', 'pages.contact.default');
 Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
