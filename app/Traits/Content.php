@@ -16,7 +16,10 @@ trait Content {
     protected $logging_error_timeout;
 
     public function loadPages(){
-
+        $strapi = config('strapi.enabled', false);
+        if(empty($strapi)){
+            return;
+        }
         $this->expiration = config('content.expiration.default');
         $this->logging_error_timeout = config('content.logging.error.timeout');
 
@@ -60,6 +63,10 @@ trait Content {
     }
 
     protected function getPageContentAttributes($page){
+        $strapi = config('strapi.enabled', false);
+        if(empty($strapi)){
+            return [];
+        }
         if(empty($this->content[App::getLocale()])){
             $this->loadPages();
         }

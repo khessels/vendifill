@@ -31,7 +31,12 @@
                                     <li><a href="{{ $content['top-bar']['link_login'] ?? "/login"}}">{{ $content['top-bar']['login'] ?? "login"}}</a></li>
                                     @endguest
                                     @auth
-                                        <li><a href="{{ $content['top-bar']['link_logout'] ?? "/logout"}}">{{ $content['top-bar']['logout'] ?? "logout"}}</a></li>
+                                        <li>
+                                            <form method="post" action="{{ $content['top-bar']['link_logout'] ?? "/logout"}}">
+                                                @csrf
+                                                <a style="cursor: pointer;" onclick="this.parentNode.submit();">{{ $content['top-bar']['logout'] ?? "logout"}}</a>
+                                            </form>
+                                        </li>
                                         <li><a href="{{ $content['top-bar']['link_profile'] ?? "/profile"}}">{{ $content['top-bar']['profile'] ?? "profile"}}</a></li>
                                     @endauth
                                 </ul>

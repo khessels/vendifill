@@ -57,9 +57,9 @@ class UsersSeeder extends Seeder
             foreach($roles as $key => $role){
                 $user->assignRole($role);
             }
-            if(!empty($aUser['permissions'])){
-                $user->givePermissonTo($aUser['permissions']);
-            }
+//            if(!empty($aUser['permissions'])){
+//                $user->givePermissonTo($aUser['permissions']);
+//            }
         }
     }
 }

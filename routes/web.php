@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestPagesController;
+use \App\Http\Controllers\WebPagesController;
+use \App\Http\Controllers\UserAuthController;
+use \App\Http\Controllers\LanguagesController;
+
 
 // display the page in requested browser locale
 //$availableLocales = Config::get('app.available_locales');
@@ -17,18 +21,23 @@ use App\Http\Controllers\GuestPagesController;
 //Route::view('404', 'errors.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
-Route::post('/language/switch',[\App\Http\Controllers\LanguagesController:: class, 'languageSwitch'])->name('language.switch');
+
 Route::group(['middleware' => ['web']], function () {
-    // your routes here
-    Route::get('/',[\App\Http\Controllers\WebPagesController:: class, 'index'])->name('index');
-    Route::get('/logout',[\App\Http\Controllers\UserAuthController:: class, 'logout'])->name('logout');
+    Route::get('/',                 [GuestPagesController::class,   'index'])->name('index');
+    Route::post('/language/switch', [LanguagesController::class,    'languageSwitch'])->name('language.switch');
+    Route::post('/logout',          [UserAuthController::class,     'logout'])->name('logout');
+    Route::get('/login',            [GuestPagesController::class,   'login'])->name('login');
+    Route::post('/login',           [UserAuthController::class,     'login'])->name('post.login');
+
 });
 
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    // your routes here
+    Route::get('/',         [WebPagesController::class, 'index'])->name('index');
+    Route::post('/logout',   [UserAuthController::class, 'logout'])->name('logout');
+});
 
-Route::get('/',[\App\Http\Controllers\GuestPagesController:: class, 'index'])->name('index');
-Route::get('/about-us',[\App\Http\Controllers\GuestPagesController:: class, 'about_us'])->name('about-us');
-Route::get('/login',[\App\Http\Controllers\GuestPagesController:: class, 'login'])->name('login');
-
+Route::get('/about-us',     [GuestPagesController::class, 'about_us'])->name('about-us');
 
 
 Route::view('/contact', 'pages.contact.default');
@@ -78,21 +87,14 @@ Route::view('/typography', 'typography');
 Route::get('/info', function () {
     phpinfo();
 });
-Route::get('/english', function () {
-    redirect()->back();
-})->name('english');
-Route::get('/espanol', function () {
-    redirect()->back();
-})->name('espanol');
-
 //Route::get('/', [GuestPagesController::class, 'index'])->name('index');
 
-Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
-    ->name('dashboard');
+//Route::view('dashboard', 'dashboard')
+//    ->middleware(['auth', 'verified'])
+//    ->name('dashboard');
+//
+//Route::view('profile', 'profile')
+//    ->middleware(['auth'])
+//    ->name('profile');
 
-Route::view('profile', 'profile')
-    ->middleware(['auth'])
-    ->name('profile');
-
-require __DIR__.'/auth.php';
+//require __DIR__.'/auth.php';

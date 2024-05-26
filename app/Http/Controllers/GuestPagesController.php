@@ -59,7 +59,7 @@ class GuestPagesController extends Controller
     public function login(Request $request)
     {
         try {
-            $page = 'login';
+            $page = 'view.login';
             $content = $this->getPageContentAttributes($page);
             return view('pages.auth.'.$page)
                 ->with('page', $page)

@@ -17,47 +17,53 @@ class UserAuthController extends Controller
             'password'=>'required|min:8'
         ]);
 
-        if (Auth::attempt($credentials)) {
-            if($request->hasHeader('Accept')){
-                if(str_contains($request->header('Accept'), 'text/html')){
+        if (Auth::attempt($credentials, true)) {
+            if ($request->hasHeader('Accept')) {
+                if (str_contains($request->header('Accept'), 'text/html')) {
                     $request->session()->regenerate();
                     $roles = Auth::user()->getRoleNames();
                     return redirect()->intended('/');
                 }
             }
+        }
+    }
+    public function getToken(Request $request)
+    {
+        $credentials = $request->validate([
+            'email'=>'required|string|email',
+            'password'=>'required|min:8',
+            'name'=>'required|min:5'
+        ]);
+
+        if (Auth::attempt($credentials, true)) {
             $user = User::where('email',$credentials['email'])->first();
-            $token = $user->createToken($user->name.'-AuthToken')->plainTextToken;
+            $token = $user->createToken($credentials['name'])->plainTextToken;
             $roles = Auth::user()->getRoleNames();
             return response()->json($this->responseObject($request, true, [
                 'access_token' => $token,
             ]));
         }else{
-            if($request->hasHeader('Accept')) {
-                if (str_contains($request->header('Accept'), 'text/html')) {
-                    return redirect()->intended('/')->with('message', 'Login failed');
-                }
-            }
-            return response()->json($this->responseObject($request, false, "Invalid Credentials"),401);
+            return response()->json($this->responseObject($request, false, null, "Invalid Credentials"),401);
         }
     }
-
     public function logout(Request $request)
     {
         //auth('sanctum')->user()->currentAccessToken()->delete();
-        if($request->hasHeader('Accept')) {
-            if (str_contains($request->header('Accept'), 'text/html')) {
-                Auth::guard('web')->logout();
-                $request->session()->invalidate();
-                $request->session()->regenerateToken();
-                return redirect()->intended('/')->with('message', 'Logged out');
-            }
-        }
+        Auth::guard('web')->logout();
+        //$request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->intended('index')->with('message', 'Logged out');
+    }
+    public function tokenDelete(Request $request)
+    {
+        //auth('sanctum')->user()->currentAccessToken()->delete();
         $user = Auth::user();
         $user->tokens()->delete();
+        $request->session()->invalidate();
+        //$request->user()->currentAccessToken()->delete();
         //$user->currentAccessToken()->delete();
         return response()->json($this->responseObject($request, true, "Logged out"));
     }
-
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {
         $registerUserData = $request->validate([

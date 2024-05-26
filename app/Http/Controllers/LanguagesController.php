@@ -28,7 +28,9 @@ class LanguagesController extends Controller
     {
         try {
             $language = $request->input('language');
-            Session::put('language', $language);
+            $result = $request->session()->put('language', $language);
+            // Session::put('language', $language);
+
             return redirect()->back()->with('language_switched' , $language);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);

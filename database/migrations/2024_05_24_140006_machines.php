@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('machines', function (Blueprint $table) {
             $table->id();
-            $table->point('location')->nullable(false);
+            $table->geography('coordinates');
             $table->unsignedBigInteger('location_id')->index();
             $table->foreign('location_id')
                 ->references('id')

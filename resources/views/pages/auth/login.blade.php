@@ -68,8 +68,7 @@
                     <div class="col-12 d-flex justify-content-center">
                         <div style="width:50%">
                             <!-- start auth form -->
-                            <form class="auth-form" action="/api/v1/login" method="POST">
-
+                            <form class="auth-form" action="/login" method="POST">
                                 @csrf
                                 <h4>{{$content['login']['sign_in'] ?? 'sign_in'}}</h4>
 
