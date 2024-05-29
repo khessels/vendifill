@@ -22,6 +22,49 @@ return new class extends Migration
             $table->string('type')->nullable(false);
             $table->timestamps();
         });
+        Schema::create('machine_products', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('machine_id')->index();
+            $table->foreign('machine_id')
+                ->references('id')
+                ->on('machines')
+                ->onDelete(' cascade');
+
+            $table->string('type')->nullable(false);
+            $table->timestamps();
+        });
+        Schema::create('machine_stock', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('product_id')->index();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products');
+
+            $table->unsignedBigInteger('machine_id')->index();
+            $table->foreign('machine_id')
+                ->references('id')
+                ->on('machines')
+                ->onDelete('cascade');
+
+            $table->double('price', 6,2)->nullable(false);
+            $table->integer('slot')->nullable(false);
+            $table->integer('count')->nullable(false)->default(0);
+            $table->integer('max')->nullable(false);
+            $table->timestamps();
+        });
+        Schema::create('machine_events', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('machine_id')->index();
+            $table->foreign('machine_id')
+                ->references('id')
+                ->on('machines')
+                ->onDelete('cascade');
+
+            $table->string('event')->nullable(false);
+            $table->json('data')->nullable();
+
+            $table->timestamps();
+        });
     }
 
     /**

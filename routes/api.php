@@ -13,12 +13,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => 'v1'], function() {
-    Route::post('register', [UserAuthController::class, 'register']);
-    Route::get('token', [UserAuthController::class, 'getToken']);
-
-    Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::group(['middleware' => ['role:developer']], function () {
+        Route::get('user', function (Request $request) {
+            return $request->user();
+        });
         Route::get('user/profile', [UserController::class, 'profile']);
-        Route::delete('token', [UserAuthController::class, 'tokenDelete']);
 
         Route::post('redis/ping', [RedisController::class, 'ping']);
         Route::post('redis/test/ttl', [RedisController::class, 'test_ttl']);
@@ -27,4 +26,16 @@ Route::group(['prefix' => 'v1'], function() {
         Route::post('redis/content/reload', [GuestPagesController::class, 'reloadContent']);
     });
 
+    Route::post('register', [UserAuthController::class, 'register']);
+    Route::get('token', [UserAuthController::class, 'getToken']);
+
+    Route::group(['middleware' => ['auth:sanctum']], function () {
+        Route::delete('token', [UserAuthController::class, 'tokenDelete']);
+        Route::get('profile', [UserController::class, 'profile']);
+
+        Route::group(['middleware' => ['can:content-flush']], function () {
+            // used by strapi
+            Route::get('content/flush/{page?}', [RedisController::class, 'flushContent']);
+        });
+    });
 });

@@ -31,7 +31,8 @@
     <!-- end main -->
 
     <!-- start footer -->
-    @include('partials.footer')
+    @yield('footer')
+
     <!-- end footer -->
 </div>
 <div id="btn-to-top-wrap" class="compensate-for-scrollbar">

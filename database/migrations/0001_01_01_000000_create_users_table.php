@@ -20,6 +20,7 @@ return new class extends Migration
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->enum('reason', ['seed', 'new registration', 'banned', 'opt-out'])->default('new registration');
             $table->double('rating', 2,1)->nullable()->default(5);
+            $table->enum('user_type', ['system', 'service', 'user'])->default('user');
 
             $table->rememberToken();
             $table->timestamps();

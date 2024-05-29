@@ -37,3 +37,8 @@
         {!! $content['welcome']['main'] ?? '' !!}
     </main>
 @stop
+
+@section('footer')
+    @include('partials.footer')
+@stop
+

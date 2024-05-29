@@ -9,13 +9,8 @@ class UserController extends Controller
 {
     public function profile(){
         $user = Auth::user();
-        $aRoles = [];
-        foreach($user->getRoleNames() as $role){
-            $aRoles[] = $role;
-        }
-        unset($user->roles); // it has the roles filled by default by spatie permissions
-        $user->roles = $aRoles;
-
+        $user->roles = $user->getRoleNames()->pluck("name");
+        $user->permissions = $user->getPermissionNames()->pluck("name") ;
         return $user;
     }
 }

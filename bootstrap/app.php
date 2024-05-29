@@ -15,6 +15,11 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->statefulApi();
         $middleware->append(\Illuminate\Session\Middleware\StartSession::class);
         $middleware->append(\Illuminate\View\Middleware\ShareErrorsFromSession::class);
+        $middleware->alias([
+            'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
+            'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
+            'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
+        ]);
         $middleware->append(\App\Http\Middleware\Language::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {

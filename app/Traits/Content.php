@@ -63,7 +63,10 @@ trait Content {
             }
         }
     }
-
+    public function flushContent(Request $request): void
+    {
+        $this->refreshContent();
+    }
     protected function getPageContentAttributes($page){
         $strapi = config('strapi.enabled', false);
         if(empty($strapi)){
@@ -74,16 +77,19 @@ trait Content {
         }
         return $this->content[App::getLocale()][$page];
     }
-    protected function reloadContent(){
+    protected function reloadContent(): \Illuminate\Http\JsonResponse
+    {
         $this->loadPages();
         return response()->json($this->responseObject(null, true, null, "Content reloaded"));
     }
-    protected function refreshContent(){
+    protected function refreshContent(): \Illuminate\Http\JsonResponse
+    {
         $this->expireContent();
         $this->loadPages();
         return response()->json($this->responseObject(null, true, null, "Content refreshed"));
     }
-    public function expireContent($locale = null){
+    public function expireContent($locale = null): \Illuminate\Http\JsonResponse
+    {
         if(empty($locale)){
             foreach (config('app.available_locales') as $locale) {
                 foreach($this->pages as $index => $page) {

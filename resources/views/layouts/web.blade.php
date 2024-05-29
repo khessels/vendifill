@@ -23,12 +23,22 @@
     <!-- end side menu -->
 
     <!-- start main -->
+    <link rel="stylesheet" href="/css/style.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css">
+    <style>
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-size: 18px;
+        }
+    </style>
     @yield('content')
 
-    <!-- end main -->
 
     <!-- start footer -->
-    @include('partials.footer')
+    @yield('footer')
+
     <!-- end footer -->
 </div>
 <div id="btn-to-top-wrap" class="compensate-for-scrollbar">

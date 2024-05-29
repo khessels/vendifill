@@ -92,113 +92,29 @@
         <div class="top-bar__collapse">
             <div>
                 <nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
-                    <ul>
-                        <li>
-                            <a class="nav-link" href="/">{{ $content['top-bar']['home'] ?? "home"}}</a>
-                        </li>
-                        <li><a href="{{ $content['top-bar']['link_about_us'] ?? "/about_us"}}">{{ $content['top-bar']['about_us'] ?? "about_us"}}</a></li>
-                        <li class="has-submenu">
-                            <a class="nav-link" href="{{ $content['top-bar']['link_services'] ?? "javascript:void(0);"}}">{{ $content['top-bar']['services'] ?? "services"}}</a>
-                            <ul class="submenu">
-                                <li><a href="{{ $content['top-bar']['link_machines'] ?? "/services/machines"}}">{{ $content['top-bar']['machines'] ?? "machines"}}</a></li>
-                                <li><a href="{{ $content['top-bar']['link_products'] ?? "/services/products"}}">{{ $content['top-bar']['products'] ?? "products"}}</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{{ $content['top-bar']['link_article_request'] ?? "/article/request"}}">{{ $content['top-bar']['article_request'] ?? "article_request"}}</a></li>
-                        <li><a href="{{ $content['top-bar']['link_faq'] ?? "/faq"}}">{{ $content['top-bar']['faq'] ?? "faq"}}</a></li>
-{{--                        --}}
-
-{{--                        <li>--}}
-{{--                            <a class="nav-link" href="/products">Products</a>--}}
-{{--                        </li>--}}
-
-{{--                        <li>--}}
-{{--                            <a class="nav-link" href="/blog">Blog</a>--}}
-{{--                        </li>--}}
-
-{{--                        <li class="has-submenu">--}}
-{{--                            <a class="nav-link" href="javascript:void(0);">Shop</a>--}}
-
-{{--                            <ul class="submenu">--}}
-{{--                                <li><a href="/shop_catalog">Catalog</a></li>--}}
-{{--                                <li><a href="/product_single">Single Product</a></li>--}}
-{{--                                <li><a href="/cart/checkout">Cart & Checkout</a></li>--}}
-{{--                                <li><a href="/account">Account</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-
-                        <li>
-{{--                            <a class="nav-link active" href="/contact">Contact Us</a>--}}
-                            <a class="nav-link" href="{{ $content['top-bar']['link_contact_us'] ?? "/contact"}}">{{ $content['top-bar']['contact_us'] ?? "contact_us"}}</a>
-                        </li>
-
-{{--                        <li class="has-submenu">--}}
-{{--                            <a class="nav-link" href="javascript:void(0);">Elements</a>--}}
-
-{{--                            <ul class="submenu">--}}
-{{--                                <li><a href="/element/accordions">Accordion</a></li>--}}
-{{--                                <li><a href="/element/alerts">Alerts</a></li>--}}
-{{--                                <li><a href="/elements-counters">Counters</a></li>--}}
-{{--                                <li><a href="/elements-form">Forms</a></li>--}}
-{{--                                <li><a href="/elements-icons">IconList</a></li>--}}
-{{--                                <li><a href="/elements-info_tables">Tables</a></li>--}}
-{{--                                <li><a href="/elements-media_embeds">Media Embeds</a></li>--}}
-{{--                                <li><a href="/elements-pricing_tables">Pricing Tables</a></li>--}}
-{{--                                <li><a href="/elements-tabs">Tabs</a></li>--}}
-{{--                            </ul>--}}
-{{--                        </li>--}}
-                    </ul>
+                    @guest
+                        @include('partials.guest.menu')
+                    @endguest
+                    @auth
+                        @include('partials.web.menu')
+                    @endauth
                 </nav>
 
                 <div class="top-bar__address">
-                    <ul class="contact-info">
-                        <li>
-                            <div class="__label">{{ $content['top-bar']['address'] ?? "address"}}</div>
+                    @guest
+                        @include('partials.guest.top-bar-address')
+                    @endguest
+                    @auth
+                        @include('partials.web.top-bar-address')
+                    @endauth
 
-                            <p>
-                                {{ $content['top-bar']['html_address'] ?? "html_address"}}
-{{--                                5272 Lyngate Ct Burke,<br>--}}
-{{--                                VA 2015-1688--}}
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="__label">{{ $content['top-bar']['phone'] ?? "phone"}}</div>
-
-                            <p>
-                                {{ $content['top-bar']['phone_1'] ?? "phone_1"}} <br>
-                                {{ $content['top-bar']['phone_2'] ?? "phone_2"}}
-                            </p>
-                        </li>
-
-                        <li>
-                            <div class="__label">{{ $content['top-bar']['social'] ?? "social"}}</div>
-
-                            <!-- start social buttons -->
-                            <div class="s-btns s-btns--gray">
-                                <ul class="d-flex flex-row flex-wrap align-items-center">
-                                    @if(!empty($content['top-bar']['link_facebook']))
-                                        <li><a class="f" href="{{ $content['top-bar']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
-                                    @endif
-                                    @if(!empty($content['top-bar']['link_twitter']))
-                                        <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
-                                    @endif
-                                    @if(!empty($content['top-bar']['link_youtube']))
-                                        <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
-                                    @endif
-                                    @if(!empty($content['top-bar']['link_instagram']))
-                                        <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
-                                    @endif
-                                </ul>
-                            </div>
-                            <!-- end social buttons -->
-                        </li>
-                    </ul>
                 </div>
 
                 <div class="top-bar__action">
-                    <a class="custom-btn" href="javascript:void(0)">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
-                    <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ $content['top-bar']['link_get_in_touch'] ?? "/contact"}}">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
+                    @guest
+                        <a class="custom-btn" href="javascript:void(0)">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
+                        <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ $content['top-bar']['link_get_in_touch'] ?? "/contact"}}">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
+                    @endguest
                 </div>
             </div>
         </div>

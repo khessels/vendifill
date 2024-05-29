@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Redis;
 
 class RedisController extends Controller
 {
-
+    use Content;
     public function ping(Request $request)
     {
         try {

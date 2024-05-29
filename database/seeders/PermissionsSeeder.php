@@ -15,56 +15,23 @@ class PermissionsSeeder extends Seeder
     {
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
-
+        xdebug_break();
         // create permissions
-        $permissions = ['super user', 'moderate', 'manage users', 'manage financials', 'developer', 'technician', 'access-machines', 'filler', 'content-flush'];
+        $permissions = config('constants.permissions');
+
         foreach($permissions as $permission){
             Permission::create(['name' => $permission]);
         }
 
-        // this can be done as separate statements
-//        $role = Role::create(['name' => 'filler']);
-//        $role->givePermissionTo(['access-machines']);
-
-        $roles = [
-            [
-                'name'=> 'developer',
-                'permissions' => $permissions
-            ],
-            [
-                'name'=> 'retailer',
-                'permissions' => []
-            ],
-            [
-                'name'=> 'back-end',
-                'permissions' => ['manage users']
-            ],
-            [
-                'name'=> 'vendor',
-                'permissions' => ['technician', 'access-machines']
-            ],
-            [
-                'name'=> 'filler',
-                'permissions' => ['access-machines']
-            ],
-            [
-                'name'=> 'loan supplier',
-                'permissions' => []
-            ],
-            [
-                'name'=> 'insurance supplier',
-                'permissions' => []
-            ],
-            [
-                // like vending cleaning service
-                'name'=> 'service supplier',
-                'permissions' => []
-            ]
-        ];
+        $roles = config('constants.roles');
         foreach($roles as $role){
             $role = Role::create(['name' => $role['name']]);
             $role->givePermissionTo($role['permissions']);
         }
+        // this can be done as separate statements
+//        $role = Role::create(['name' => 'filler']);
+//        $role->givePermissionTo(['access-machines']);
+
 
 //        // or may be done by chaining
 //        $role = Role::create(['name' => 'moderator'])

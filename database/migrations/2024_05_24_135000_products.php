@@ -11,6 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('barcode_providers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable(false);
+            $table->json('config')->nullable();
+            $table->timestamps();
+        });
+
         Schema::create('packaging', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
@@ -23,12 +30,17 @@ return new class extends Migration
             $table->enum('active', ['yes', 'no'])->nullable(false);
             $table->timestamps();
         });
-        Schema::create('brand_products', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
             $table->enum('active', ['yes', 'no'])->nullable(false);
             $table->double('min_price', 6, 2)->nullable(false);
             $table->double('msrp', 6, 2)->nullable(false);
+            $table->string('barcode')->nullable();
+            $table->unsignedBigInteger('barcode_provider_id')->index();
+            $table->foreign('barcode_provider_id')
+                ->references('id')
+                ->on('barcode_providers');
 
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')
