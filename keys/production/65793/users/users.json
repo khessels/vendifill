@@ -1,7 +1,7 @@
 {
     "users" : [
             {
-                "username":"token-server@comercado.com",
+                "username":"api@vendifill.com",
                 "password": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
                 "enabled": true,
                 "admin": true

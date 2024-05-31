@@ -66,7 +66,7 @@ trait V3Messaging {
         return false;
     }
 
-    public function criticalException( $request, $e, $file, $function, $line, $payload = null  ): bool
+    public function criticalException( $request, $e, $file, $function, $line, $payload = null  ): void
     {
         $data['message'] = $e->getMessage();
         error_log("===================");
@@ -102,9 +102,7 @@ trait V3Messaging {
         $message = $this->_createV3Message($request,'topic', 'critical exception',  'logging', null, $data);
         if(!empty($message)) {
             $this->_publishV3Message($message);
-            return true;
         }
-        return false;
     }
     public function decodeV3Payload($oPayload = null, $returnArray = false)
     {

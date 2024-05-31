@@ -107,8 +107,8 @@
             </div>
         </section>
     </main>
-@stop
+@endsection
 
 @section('footer')
 {{--    @include('partials.footer')--}}
-@stop
+@endsection

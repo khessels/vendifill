@@ -12,6 +12,7 @@ class WebPagesController extends Controller
     use Content;
     public function __construct()
     {
+
         // define pages used in this controller
         $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];

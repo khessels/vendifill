@@ -278,4 +278,6 @@
         <!-- end section -->
     </main>
     <!-- end main -->
-@stop
+@endsection
+
+

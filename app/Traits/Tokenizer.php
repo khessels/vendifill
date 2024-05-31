@@ -14,7 +14,8 @@ Trait Tokenizer{
             $urlAuthenticate =  $baseUrl . '/authenticate';
             $response = Http::post($urlAuthenticate, $credentials);
             if($response->status() === 200){
-                if($response->body() === 'Access Denied'){
+                $s = $response->body();
+                if($response->body() === 'Access denied'){
                     error_log($response->body());
                     return false;
                 }else{
@@ -35,7 +36,7 @@ Trait Tokenizer{
             if(!empty($brandId) && !empty($data)) {
 
                 // apply asymmetric encryption on data before flight, docker secrets contains public key (brand dependent)
-                $publicKeyPath = '/run/secrets/' . $brandId . '_comms_public';
+                $publicKeyPath =  base_path() . '/keys/' . 'local' . '/' . $brandId . '/keys/comms_public.pem';
                 $publicKey = file_get_contents($publicKeyPath);
                 $chunks = str_split($data, 214); // max is 214
                 $result = '';
@@ -82,7 +83,8 @@ Trait Tokenizer{
                     $encoded = $response->body();
                     if(is_string($encoded)){
                         if(!empty($encoded)) {
-                            $privateKeyPath = '/run/secrets/' . $brandId . '_comms_private';
+                            //$privateKeyPath = '/run/secrets/' . $brandId . '_comms_private';
+                            $privateKeyPath = base_path() . '/keys/' . 'local' . '/' . $brandId . '/keys/comms_private.pem';
                             $privateKey = file_get_contents($privateKeyPath);
                             $data = base64_decode($encoded); //every strlen($encrypted) == 256
                             openssl_private_decrypt($data, $decrypted, $privateKey, OPENSSL_PKCS1_OAEP_PADDING);

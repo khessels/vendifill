@@ -14,7 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-
+    'brand_id' => 65793,
     /*
     |--------------------------------------------------------------------------
     | Application Environment
@@ -83,7 +83,7 @@ return [
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),
-
+    'available_locales' => ['en', 'es'],
     /*
     |--------------------------------------------------------------------------
     | Encryption Key

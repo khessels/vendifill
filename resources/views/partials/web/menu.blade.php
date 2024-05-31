@@ -61,6 +61,7 @@
         <ul class="submenu">
             <li><a href="/report/events/log">{{__('Events')}}</a></li>
             <li><a href="/report/error/log">{{__('Errors')}}</a></li>
+            <li><a href="/tokenizer">{{__('Tokenizer')}}</a></li>
         </ul>
     </li>
     @endhasrole

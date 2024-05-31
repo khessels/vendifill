@@ -50,12 +50,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     });
 
     Route::group( ['middleware' => ['role:developer']], function () {
-        Route::get( 'tokenizer',        [TokenizerController::class,        'showIndex'])       ->name('tokenize.index');
+        Route::get( 'tokenizer',        [TokenizerController::class,        'index'])           ->name('tokenize.index');
+        Route::post('tokenize',         [TokenizerController::class,       'tokenize'])         ->name('tokenize.tokenize');
         Route::get( 'tokenize',         [TokenizerController::class,        'retrieveData'])    ->name('tokenize.retrieve');
-        Route::get( 'tokenize/card',    [TokenizerController::class],       'retrieveCard')     ->name('tokenize.card.retrieve');
-
-        Route::post('tokenize',         [TokenizerController::class],       'tokenize')         ->name('tokenize.tokenize');
-        Route::post('tokenize/card',    [TokenizerController::class],       'tokenizeCard')     ->name('tokenize.card');
+        Route::get( 'tokenize/card',    [TokenizerController::class,       'retrieveCard'])     ->name('tokenize.card.retrieve');
+        Route::post('tokenize/card',    [TokenizerController::class,       'tokenizeCard'])     ->name('tokenize.card');
 
         Route::get('/info', function () {
             phpinfo();

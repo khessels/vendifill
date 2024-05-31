@@ -2,22 +2,36 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use net\authorize\api\contract\v1 as AnetAPI;
-use net\authorize\api\controller as AnetController;
-use App\Http\Controllers\PaymentInterface;
+//use net\authorize\api\contract\v1 as AnetAPI;
+//use net\authorize\api\controller as AnetController;
+// use App\Http\Controllers\PaymentInterface;
+use App\Traits\Content;
 use App\Traits\Tokenizer;
+use Illuminate\Support\Facades\Session;
 
 class TokenizerController extends APIController
 {
-    use Tokenizer;
-
-    public function showIndex(Request $request)
+    use Content, Tokenizer;
+    public function __construct()
     {
-        try{
-            return view('pages.tokenize.index');
-        }catch(\Exception $e){
+        // define pages used in this controller
+        $this->pages['tokenize.index']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+
+        $this->loadPages();
+    }
+
+    public function index(Request $request)
+    {
+        try {
+            $page = 'tokenize.index';
+            $content = $this->getPageContentAttributes($page);
+            return view('pages.tokenize.web')
+                ->with('page', $page)
+                ->with('content' ,$content );
+        } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
         }
@@ -25,11 +39,11 @@ class TokenizerController extends APIController
     public function tokenize(Request $request)
     {
         try{
-            $token = "";
             if(!empty($request->data)) {
                 $token = $this->tokenizerExchangeForToken($request, config('app.brand_id'), $request->data);
+                $request->session()->put('token', $token);
             }
-            return Redirect::back()->with('data_token', $token );
+            return Redirect::back()->with('success', 'Data exchanged for token');
         }catch(\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -38,11 +52,11 @@ class TokenizerController extends APIController
     public function retrieveData(Request $request)
     {
         try{
-            $token = "";
             if(!empty($request->data)) {
-                $token = $this->tokenizerExchangeForData($request, config('app.brand_id'), $request->data);
+                $data = $this->tokenizerExchangeForData($request, config('app.brand_id'), $request->data);
+                $request->session()->put('token_data', $data);
             }
-            return Redirect::back()->with('get_data_token', $token );
+            return Redirect::back()->with('success', 'token exchanged for data');
         }catch(\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
