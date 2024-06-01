@@ -20,7 +20,6 @@ class LanguagesController extends Controller
         $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
-        //$this->loadLocale();
         $this->loadPages();
     }
 
@@ -28,7 +27,7 @@ class LanguagesController extends Controller
     {
         try {
             $language = $request->input('language');
-            Session::flash('language', $language);
+            Session::put('language', $language);
             return redirect()->back()->with('language_switched' , $language);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
