@@ -11,18 +11,6 @@ use Illuminate\Support\Facades\Session;
 class LanguagesController extends Controller
 {
     use Content;
-    public function __construct()
-    {
-        // define pages used in this controller
-        $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-
-        // load the pages and partials
-        $this->loadPages();
-    }
-
     public function languageSwitch(Request $request)
     {
         try {

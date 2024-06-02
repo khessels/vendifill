@@ -26,12 +26,14 @@
 @endsection
 
 @section('start-screen')
-{{--    {!! $content[$page]['start_screen'] ?? '' !!}--}}
+    <!-- page var: {{ $page }} -->
+    {!! $content[$page]['start_screen'] ?? '' !!}
 @endsection
 
 @section('content')
 {{--    {!! $content[$page]['main'] ?? '' !!}--}}
     <main role="main">
+        <link rel="stylesheet" href="/css/style.min.css" type="text/css">
         <!-- start section -->
         <section class="section section--gray-bg">
             <div class="container">
