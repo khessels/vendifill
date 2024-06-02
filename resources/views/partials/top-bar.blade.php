@@ -112,8 +112,8 @@
 
                 <div class="top-bar__action">
                     @guest
-                        <a class="custom-btn" href="{{ $content['top-bar']['link_get_in_touch'] ?? "/contact"}}">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
-                        <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ $content['top-bar']['link_get_in_touch'] ?? "/contact"}}">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
+                        <a class="custom-btn" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red_button'] ?? "red_button"}}</a>
+                        <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red_button'] ?? "red_button"}}</a>
                     @endguest
                 </div>
             </div>

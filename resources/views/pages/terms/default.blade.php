@@ -27,14 +27,14 @@
 @endsection
 
 @section('start-screen')
-    <!-- start hero -->
     {!! $content[$page]['start_screen'] ?? '' !!}
 @endsection
 
-
 @section('content')
-    <main role="main">
     {!! $content[$page]['main'] ?? 'main' !!}
-    </main>
+@stop
+
+@section('footer')
+    @include('partials.footer')
 @stop
 

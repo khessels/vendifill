@@ -36,3 +36,5 @@
 @section('footer')
     @include('partials.footer')
 @stop
+
+

@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content['welcome']['tab_title'] ?? 'tab_title'}}
+    {{$content[$page]['tab_title'] ?? 'tab_title'}}
 @endsection
 
 @section('head')
@@ -31,24 +31,9 @@
 
 
 @section('content')
-    <main role="main">
-        <!-- Common styles
-        ================================================== -->
-        <link rel="stylesheet" href="/css/style.min.css" type="text/css">
-
-        <!-- start section -->
-        <section class="section ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6-md">Lets </div>
-                    <div class="col-6-md">Stock</div>
-                </div>
-            </div>
-        </section>
-    </main>
 
 @stop
 
 @section('footer')
-{{--    @include('partials.footer')--}}
+    @include('partials.footer')
 @stop

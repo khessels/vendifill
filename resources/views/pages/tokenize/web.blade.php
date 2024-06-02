@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content['welcome']['tab_title'] ?? 'tab_title'}}
+    {{$content[$page]['tab_title'] ?? 'tab_title'}}
 @endsection
 
 @section('head')
@@ -31,7 +31,6 @@
 
 
 @section('content')
-
     <main role="main">
         <!-- Common styles
         ================================================== -->
@@ -223,5 +222,5 @@
 @stop
 
 @section('footer')
-    {{--    @include('partials.footer')--}}
+    @include('partials.footer')
 @stop

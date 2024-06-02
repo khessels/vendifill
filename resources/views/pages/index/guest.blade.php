@@ -1,6 +1,7 @@
 @extends('layouts.guest')
+
 @section('title')
-    {{$content['welcome']['tab_title'] ?? 'tab_title'}}
+    {{$content[$page]['tab_title'] ?? 'tab_title'}}
 @endsection
 
 @section('head')
@@ -26,19 +27,14 @@
 @endsection
 
 @section('start-screen')
-    <!-- start start screen -->
-    {!! $content['welcome']['start_screen'] ?? '' !!}
-    <!-- end start screen -->
+    {!! $content[$page]['start_screen'] ?? '' !!}
 @endsection
 
-
 @section('content')
-    <main role="main">
-        {!! $content['welcome']['main'] ?? '' !!}
-    </main>
-@stop
+    {!! $content[$page]['main'] ?? '' !!}
+@endsection
 
 @section('footer')
     @include('partials.footer')
-@stop
+@endsection
 

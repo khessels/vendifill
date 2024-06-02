@@ -27,12 +27,16 @@ Route::view('404', 'errors.404')->name('view.404');
 Route::get( '/',                     [GuestPagesController::class,   'index'])          ->name('view.index');
 Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('view.login');
 Route::get( '/about-us',             [GuestPagesController::class,   'about_us'])       ->name('view.about-us');
+Route::get( '/contact-us',           [GuestPagesController::class,   'contact'])        ->name('view.contact');
+Route::get( '/article/request',      [GuestPagesController::class,   'articleRequest']) ->name('view.article.request');
 Route::get( '/services',             [GuestPagesController::class,   'services'])       ->name('view.services');
 Route::get( '/services/machines',    [GuestPagesController::class,   'machines'])       ->name('view.services.machines');
 Route::get( '/services/refill',      [GuestPagesController::class,   'refill'])         ->name('view.services.refill');
 Route::get( '/faqs',                 [GuestPagesController::class,   'faqs'])           ->name('view.faqs');
 Route::post('/login',                [UserAuthController::class,     'login'])          ->name('post.login');
 Route::post('/language/switch',      [LanguagesController::class,    'languageSwitch']) ->name('post.language.switch');
+Route::get('/red-button',            [GuestPagesController::class,   'redButton'])      ->name('view.red-button');
+Route::get('/terms',                 [GuestPagesController::class,   'terms'])          ->name('view.terms');
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -69,17 +73,11 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 
-Route::view('/contact', 'pages.contact.default')->name('view.contact');
+//Route::view('/contact', 'pages.contact.default')->name('view.contact');
 //Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
 Route::view('/signup', 'pages.auth.signup');
 Route::view('/terms', 'pages.auth.terms');
-//Route::view('/services', 'pages.services.developer');
-//Route::view('/services/machines', 'pages.services.machines');
-//Route::view('/services/products', 'pages.services.products');
-
-//Route::view('/faq', 'pages.faqs.default');
-Route::view('/article/request', 'pages.articles.default')->name('view.article.request');
 
 if(config('app.env') === 'local') {
     Route::view('/old/index', 'index');

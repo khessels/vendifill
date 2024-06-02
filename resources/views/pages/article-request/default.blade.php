@@ -1,4 +1,5 @@
 @extends('layouts.guest')
+
 @section('title')
     {{$content[$page]['tab_title'] ?? 'tab_title'}}
 @endsection
@@ -29,10 +30,12 @@
     {!! $content[$page]['start_screen'] ?? '' !!}
 @endsection
 
+
 @section('content')
     {!! $content[$page]['main'] ?? '' !!}
-@endsection
+@stop
 
 @section('footer')
     @include('partials.footer')
 @stop
+

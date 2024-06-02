@@ -32,11 +32,6 @@
 
 @section('content')
     <main role="main">
-        <!-- Common styles
-        ================================================== -->
-        <link rel="stylesheet" href="/css/style.min.css" type="text/css">
-
-        <!-- start section -->
         <section class="section ">
             <div class="container">
                 <div class="row">
