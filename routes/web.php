@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\MachineController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -55,7 +56,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get( 'tokenize',         [TokenizerController::class,        'retrieveData'])    ->name('tokenize.retrieve');
         Route::get( 'tokenize/card',    [TokenizerController::class,       'retrieveCard'])     ->name('tokenize.card.retrieve');
         Route::post('tokenize/card',    [TokenizerController::class,       'tokenizeCard'])     ->name('tokenize.card');
-
+        Route::get( 'developer/settings',         [DeveloperController::class,       'settings'])     ->name('developer.settings');
         Route::get('/info', function () {
             phpinfo();
         });
@@ -70,9 +71,9 @@ Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
 Route::view('/signup', 'pages.auth.signup');
 Route::view('/terms', 'pages.auth.terms');
-Route::view('/services', 'pages.services.default');
-Route::view('/services/machines', 'pages.services.machines');
-Route::view('/services/products', 'pages.services.products');
+//Route::view('/services', 'pages.services.developer');
+//Route::view('/services/machines', 'pages.services.machines');
+//Route::view('/services/products', 'pages.services.products');
 Route::view('/faqs', 'pages.faqs.default');
 Route::view('/faq', 'pages.faqs.default');
 Route::view('/article/request', 'pages.articles.default');

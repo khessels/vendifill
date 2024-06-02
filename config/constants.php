@@ -2,6 +2,7 @@
 return [
     'permissions' => [
         'super user',
+        'switch-role',
         'content-moderate',
         'content-flush',
         'users-manage',
@@ -21,7 +22,9 @@ return [
     'roles' => [
         [
             'name'=> 'developer',
-            'permissions' => ['super user',
+            'permissions' => [
+                'super user',
+                'switch-role',
                 'content-moderate',
                 'content-flush',
                 'users-manage',

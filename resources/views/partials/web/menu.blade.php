@@ -57,11 +57,12 @@
     </li>
     @hasrole('developer')
     <li class="has-submenu">
-        <a class="nav-link" href="/testing">{{__('Testing')}}</a>
+        <a class="nav-link" href="/developer">{{__('Testing')}}</a>
         <ul class="submenu">
             <li><a href="/report/events/log">{{__('Events')}}</a></li>
             <li><a href="/report/error/log">{{__('Errors')}}</a></li>
             <li><a href="/tokenizer">{{__('Tokenizer')}}</a></li>
+            <li><a href="/developer/settings">{{__('Settings')}}</a></li>
         </ul>
     </li>
     @endhasrole

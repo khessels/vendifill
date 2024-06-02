@@ -18,12 +18,11 @@ trait Content {
     public function loadPages(){
         $strapi = config('strapi.enabled', false);
         $locale = App::getLocale();
-        $this->logging_error_timeout = (int) config('strapi.error_logging_timeout');
+        $this->logging_error_timeout = (int) config('content.logging.error.timeout');
         if(empty($strapi)){
             return;
         }
         $this->expiration = config('content.expiration.default');
-        $this->timeout = config('content.logging.error.timeout');
 
         foreach($this->pages as $index => $page){
             foreach($page['attributes'] as $attribute){
@@ -37,12 +36,20 @@ trait Content {
                             if($data['data']) {
                                 if($data['data']['attributes']) {
                                     $this->content[App::getLocale()][$index][$attribute] = $data['data']['attributes'];
+                                    // get overview of pages in cache (page content may have been expired)
+                                    $cachedPages = json_decode(Redis::get('pages.cached'));
+                                    if(empty($cachedPages)){
+                                        $cachedPages = [];
+                                    }
                                     // write resulting array to redis
                                     if(empty($this->expiration )){
                                         Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, json_encode($data['data']['attributes']));
+                                        $cachedPages[] = App::getLocale() . '.' . $index . '.' . $attribute;
                                     }else{
                                         Redis::set('content.'.App::getLocale().'.'.$index.'.'.$attribute, json_encode($data['data']['attributes']), 'EX', $this->expiration );
                                     }
+                                    // updated the pages overview
+                                    Redis::set('pages.cached', json_encode($cachedPages));
                                 }
                             }else {
                                 if(empty($this->expiration )){

@@ -15,7 +15,7 @@ class PermissionsSeeder extends Seeder
     {
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
-        xdebug_break();
+
         // create permissions
         $permissions = config('constants.permissions');
 
