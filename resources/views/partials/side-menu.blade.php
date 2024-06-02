@@ -54,7 +54,7 @@
         </div>
 
         <div>
-            <a class="custom-btn custom-btn--big custom-btn--s2 wide" href="{{ $content['side-menu']['link_get_in_touch'] ?? "/contact"}}">{{ $content['side-menu']['get_in_touch'] ?? "get_in_touch"}}</a>
+            <a class="custom-btn custom-btn--big custom-btn--s2 wide" href="{{ $content['top-bar']['link_get_in_touch'] ?? "/contact"}}">{{ $content['top-bar']['get_in_touch'] ?? "get_in_touch"}}</a>
         </div>
     </div>
 </div>
