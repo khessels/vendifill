@@ -20,7 +20,7 @@ class UserAuthController extends Controller
         if (Auth::attempt($credentials, true)) {
             $request->session()->regenerate();
             $roles = Auth::user()->getRoleNames();
-            return redirect()->intended(route('index'));
+            return redirect()->intended(route('view.index'));
         }
     }
     public function logout(Request $request)
@@ -29,7 +29,7 @@ class UserAuthController extends Controller
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->intended(route('index'))->with('message', 'Logged out');
+        return redirect()->intended(route('view.index'))->with('message', 'Logged out');
     }
     public function getToken(Request $request)
     {

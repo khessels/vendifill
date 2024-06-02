@@ -20,7 +20,7 @@ use App\Http\Controllers\TokenizerController;
 //}
 // todo: check if locale is in query parameters
 
-Route::view('404', 'errors.404');
+Route::view('404', 'errors.404')->name('view.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
 
