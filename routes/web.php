@@ -28,12 +28,12 @@ Route::get( '/',                     [GuestPagesController::class,   'index'])  
 Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('view.login');
 Route::get( '/about-us',             [GuestPagesController::class,   'about_us'])       ->name('view.about-us');
 Route::get( '/services',             [GuestPagesController::class,   'services'])       ->name('view.services');
-Route::get( '/services/machines',             [GuestPagesController::class,   'machines'])       ->name('view.services.machines');
-Route::get( '/services/refill',             [GuestPagesController::class,   'refill'])       ->name('view.services.refill');
+Route::get( '/services/machines',    [GuestPagesController::class,   'machines'])       ->name('view.services.machines');
+Route::get( '/services/refill',      [GuestPagesController::class,   'refill'])         ->name('view.services.refill');
+Route::get( '/faqs',                 [GuestPagesController::class,   'faqs'])           ->name('view.faqs');
 Route::post('/login',                [UserAuthController::class,     'login'])          ->name('post.login');
 Route::post('/language/switch',      [LanguagesController::class,    'languageSwitch']) ->name('post.language.switch');
-Route::get( '/faqs',             [GuestPagesController::class,   'faqs'])       ->name('view.faqs');
-//Route::view('/faqs', 'pages.faqs.default')->name('view.faqs');
+
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // your routes here
@@ -69,7 +69,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 
-Route::view('/contact', 'pages.contact.default');
+Route::view('/contact', 'pages.contact.default')->name('view.contact');
 //Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
 Route::view('/signup', 'pages.auth.signup');
@@ -78,7 +78,7 @@ Route::view('/terms', 'pages.auth.terms');
 //Route::view('/services/machines', 'pages.services.machines');
 //Route::view('/services/products', 'pages.services.products');
 
-Route::view('/faq', 'pages.faqs.default');
+//Route::view('/faq', 'pages.faqs.default');
 Route::view('/article/request', 'pages.articles.default')->name('view.article.request');
 
 if(config('app.env') === 'local') {
@@ -102,7 +102,7 @@ if(config('app.env') === 'local') {
     Route::view('/element/embeds/media', 'elements-media_embeds');
 
     Route::view('/element/tabs', 'elements-tabs');
-    Route::view('/faqs', 'faq');
+    //Route::view('/faqs', 'faq');
     Route::view('/gallery/classic', 'gallery_classic');
     Route::view('/gallery/masonry', 'gallery_masonry');
 
