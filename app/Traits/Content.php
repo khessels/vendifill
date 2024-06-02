@@ -17,12 +17,11 @@ trait Content {
 
     public function loadPages(){
         $strapi = config('strapi.enabled', false);
-        $locale = App::getLocale();
         $this->logging_error_timeout = (int) config('content.logging.error.timeout');
         if(empty($strapi)){
             return;
         }
-        $this->expiration = config('content.expiration.default');
+        $this->expiration = (int) config('content.expiration.default');
 
         foreach($this->pages as $index => $page){
             foreach($page['attributes'] as $attribute){
@@ -59,7 +58,7 @@ trait Content {
                                 }
                                 if(empty($this->timeout)) {
                                     Redis::set('content.logging.timeout', 'YES', 'EX', $this->logging_error_timeout);
-                                    error_log(json_encode($data));
+                                    //error_log(json_encode($data));
                                 }
                             }
                         }

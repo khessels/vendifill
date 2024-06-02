@@ -24,42 +24,45 @@ Route::view('404', 'errors.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
 
-Route::get( '/',                     [GuestPagesController::class,   'index'])          ->name('index');
-Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('login');
-Route::get( '/about-us',             [GuestPagesController::class,   'about_us'])       ->name('about-us');
-
+Route::get( '/',                     [GuestPagesController::class,   'index'])          ->name('view.index');
+Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('view.login');
+Route::get( '/about-us',             [GuestPagesController::class,   'about_us'])       ->name('view.about-us');
+Route::get( '/services',             [GuestPagesController::class,   'services'])       ->name('view.services');
+Route::get( '/services/machines',             [GuestPagesController::class,   'machines'])       ->name('view.services.machines');
+Route::get( '/services/refill',             [GuestPagesController::class,   'refill'])       ->name('view.services.refill');
 Route::post('/login',                [UserAuthController::class,     'login'])          ->name('post.login');
-Route::post('/language/switch',      [LanguagesController::class,    'languageSwitch']) ->name('language.switch');
-
+Route::post('/language/switch',      [LanguagesController::class,    'languageSwitch']) ->name('post.language.switch');
+Route::get( '/faqs',             [GuestPagesController::class,   'faqs'])       ->name('view.faqs');
+//Route::view('/faqs', 'pages.faqs.default')->name('view.faqs');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // your routes here
-    Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
-    Route::post('/logout',              [UserAuthController::class,     'logout'])      ->name('logout');
+    //Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
+    Route::post('/logout',              [UserAuthController::class,     'logout'])      ->name('post.logout');
 
     Route::group( ['middleware' => ['can:machines-manage']], function () {
-        Route::get('/machines',              [MachineController::class,     'index'])       ->name('machines.index');
-        Route::get('/machine/stock',         [MachineController::class,     'stock'])       ->name('machine.stock');
+        Route::get('/machines',              [MachineController::class,     'index'])       ->name('view.machines.index');
+        Route::get('/machine/stock',         [MachineController::class,     'stock'])       ->name('view.machine.stock');
     });
 
     Route::group( ['middleware' => ['can:machines-config']], function () {
-        Route::get('/machine/config', [MachineController::class, 'config'])->name('machine.config');
+        Route::get('/machine/config', [MachineController::class, 'config'])->name('view.machine.config');
     });
 
     Route::group( ['middleware' => ['can:machines-experiment']], function () {
-        Route::get('/machine/testing-ground', [MachineController::class, 'testingGround'])->name('machine.testing.ground');
+        Route::get('/machine/testing-ground', [MachineController::class, 'testingGround'])->name('view.machine.testing.ground');
     });
 
     Route::group( ['middleware' => ['role:developer']], function () {
-        Route::get( 'tokenizer',        [TokenizerController::class,        'index'])           ->name('tokenize.index');
-        Route::post('tokenize',         [TokenizerController::class,       'tokenize'])         ->name('tokenize.tokenize');
-        Route::get( 'tokenize',         [TokenizerController::class,        'retrieveData'])    ->name('tokenize.retrieve');
-        Route::get( 'tokenize/card',    [TokenizerController::class,       'retrieveCard'])     ->name('tokenize.card.retrieve');
-        Route::post('tokenize/card',    [TokenizerController::class,       'tokenizeCard'])     ->name('tokenize.card');
-        Route::get( 'developer/settings',         [DeveloperController::class,       'settings'])     ->name('developer.settings');
+        Route::get( 'tokenizer',        [TokenizerController::class,        'index'])           ->name('view.tokenize.index');
+        Route::post('tokenize',         [TokenizerController::class,       'tokenize'])         ->name('post.tokenize.tokenize');
+        Route::get( 'tokenize',         [TokenizerController::class,        'retrieveData'])    ->name('get.tokenize.retrieve');
+        Route::get( 'tokenize/card',    [TokenizerController::class,       'retrieveCard'])     ->name('get.tokenize.card.retrieve');
+        Route::post('tokenize/card',    [TokenizerController::class,       'tokenizeCard'])     ->name('post.tokenize.card');
+        Route::get( 'developer/settings',         [DeveloperController::class,       'settings'])     ->name('view.developer.settings');
         Route::get('/info', function () {
             phpinfo();
-        });
+        })->name('view.phpinfo');
     });
     //Route::get('machines/manage',    [MachineController::class],       'viewManagement')     ->name('machines.manage');
 });
@@ -67,16 +70,16 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 
 Route::view('/contact', 'pages.contact.default');
-Route::view('/about_us', 'pages.about-us.default');
+//Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
 Route::view('/signup', 'pages.auth.signup');
 Route::view('/terms', 'pages.auth.terms');
 //Route::view('/services', 'pages.services.developer');
 //Route::view('/services/machines', 'pages.services.machines');
 //Route::view('/services/products', 'pages.services.products');
-Route::view('/faqs', 'pages.faqs.default');
+
 Route::view('/faq', 'pages.faqs.default');
-Route::view('/article/request', 'pages.articles.default');
+Route::view('/article/request', 'pages.articles.default')->name('view.article.request');
 
 if(config('app.env') === 'local') {
     Route::view('/old/index', 'index');

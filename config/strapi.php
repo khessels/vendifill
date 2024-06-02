@@ -12,6 +12,8 @@ declare(strict_types=1);
  */
 
 return [
+    // when strapi logs an error, it will wait x seconds to start logging the next error. This will i.e. limit logging
+    'error_logging_timeout' => env('STRAPI_ERROR_LOGGING_TIMEOUT', 20),
     'enabled' => env('STRAPI_ENABLED', false),
 
     // The url to your Strapi installation, e.g. https://strapi.yoursite.com/
