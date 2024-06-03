@@ -37,6 +37,7 @@ Route::post('/login',                [UserAuthController::class,     'login'])  
 Route::post('/language/switch',      [LanguagesController::class,    'languageSwitch']) ->name('post.language.switch');
 Route::get('/red-button',            [GuestPagesController::class,   'redButton'])      ->name('view.red-button');
 Route::get('/terms',                 [GuestPagesController::class,   'terms'])          ->name('view.terms');
+Route::get('/profile',               [WebPagesController::class,     'profile'])        ->name('view.profile');
 
 
 Route::group(['middleware' => ['auth:sanctum']], function () {

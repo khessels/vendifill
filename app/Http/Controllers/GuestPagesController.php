@@ -19,10 +19,10 @@ class GuestPagesController extends Controller
         $this->pages['article-request']     = ['attributes' => ['article-request', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['about-us']    = ['attributes' => ['about-us', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['terms']       = ['attributes' => ['terms', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['faqs']       = ['attributes' => ['faqs', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['faq']       = ['attributes' => ['faq', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['contact']     = ['attributes' => ['contact', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['services']     = ['attributes' => ['services', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines']     = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['service']     = ['attributes' => ['service', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['machine']     = ['attributes' => ['machine', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['refill']     = ['attributes' => ['refill', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['login']       = ['attributes' => ['login', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         //$this->loadPages();
@@ -58,7 +58,7 @@ class GuestPagesController extends Controller
     public function faqs(Request $request)
     {
         try {
-            $page = 'faqs';
+            $page = 'faq';
             $this->loadPage($page);
             $content = $this->getPageContentAttributes($page);
             return view('pages.faqs.default')
@@ -137,7 +137,7 @@ class GuestPagesController extends Controller
     public function services(Request $request)
     {
         try {
-            $page = 'services';
+            $page = 'service';
             $this->loadPage($page);
             $content = $this->getPageContentAttributes($page);
             return view('pages.services.default')
@@ -167,7 +167,7 @@ class GuestPagesController extends Controller
     public function machines(Request $request)
     {
         try {
-            $page = 'machines';
+            $page = 'machine';
             $this->loadPage($page);
             $content = $this->getPageContentAttributes($page);
             return view('pages.machines.default')
