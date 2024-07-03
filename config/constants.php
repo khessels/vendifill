@@ -1,45 +1,31 @@
 <?php
+$arrAllPermissions = [
+    'super user',
+    'switch-role',
+    'content-moderate',
+    'content-flush',
+    'users-manage',
+    'tickets-fulfill',
+    'financials-reports',
+    'financials-non-sensitive',
+    'financials-non-sensitive-update',
+    'financials-sensitive',
+    'financials-sensitive-update',
+    'machines-manage',
+    'machines-config',
+    'machines-fill',
+    'machines-service',
+    'machines-experiment',
+    'locations-manage',
+    'outlets-manage'
+];
 return [
-    'permissions' => [
-        'super user',
-        'switch-role',
-        'content-moderate',
-        'content-flush',
-        'users-manage',
-        'tickets-fulfill',
-        'financials-reports',
-        'financials-non-sensitive',
-        'financials-non-sensitive-update',
-        'financials-sensitive',
-        'financials-sensitive-update',
-        'machines-manage',
-        'machines-config',
-        'machines-fill',
-        'machines-service',
-        'machines-experiment',
-        ],
+    'permissions' => $arrAllPermissions,
 
     'roles' => [
         [
             'name'=> 'developer',
-            'permissions' => [
-                'super user',
-                'switch-role',
-                'content-moderate',
-                'content-flush',
-                'users-manage',
-                'tickets-fulfill',
-                'financials-reports',
-                'financials-non-sensitive',
-                'financials-non-sensitive-update',
-                'financials-sensitive',
-                'financials-sensitive-update',
-                'machines-manage',
-                'machines-config',
-                'machines-fill',
-                'machines-service',
-                'machines-experiment',
-            ]
+            'permissions' => $arrAllPermissions
         ],
         [
             'name'=> 'strapi',

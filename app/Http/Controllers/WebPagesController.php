@@ -16,7 +16,7 @@ class WebPagesController extends Controller
         // define pages used in this controller
         $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+
         $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
@@ -63,17 +63,5 @@ class WebPagesController extends Controller
             abort(404);
         }
     }
-    public function signup(Request $request)
-    {
-        try {
-            $page = 'signup';
-            $content = $this->getPageContentAttributes($page);
-            return view('pages.auth.recovery')
-                ->with('page', $page)
-                ->with('content' ,$content );
-        } catch (\Exception $e) {
-            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
-        }
-    }
+
 }

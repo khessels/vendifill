@@ -1,0 +1,113 @@
+/* --------------------------------
+   steps
+-------------------------------- */
+
+.steps
+{
+	$itemMarginBottom: 20px;
+	$itemGap: 30px;
+
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+
+	.__inner { overflow: hidden; }
+
+	.col,
+	[class*=col-]
+	{
+		&:last-child
+		{
+			.__line { margin-right: 0; }
+		}
+	}
+
+	.__item
+	{
+		position: relative;
+		width: 100%;
+		margin-bottom: $itemMarginBottom;
+
+		.__num
+		{
+			line-height: 1.2;
+			font-size: 1.4rem;
+			font-weight: 700;
+			color: #333;
+
+			span
+			{
+				display: inline-block;
+				line-height: 1;
+				font-size: 3rem;
+				color: $primary-color;
+
+				&:after
+				{
+					content: "/";
+					font-size: 2rem;
+				}
+			}
+		}
+
+		.__line
+		{
+			position: relative;
+			margin-top: 25px;
+			margin-right: -$itemGap;
+			margin-bottom: 20px;
+			border-top: 1px solid #ededed;
+
+			.__point
+			{
+				position: absolute;
+				top: -8px;
+
+				&--last { right: 0; }
+			}
+		}
+
+		.__point
+		{
+			display: block;
+			width: 15px;
+			height: 15px;
+			background-color: $white;
+			border: 2px solid $primary-color;
+			border-radius: 50%;
+			line-height: 1;
+			color: $primary-color;
+
+			&--last { background-color: $primary-color; }
+
+			i
+			{
+				position: absolute;
+				bottom: 100%;
+				margin-bottom: 10px;
+				font-size: 1.3rem;
+			}
+		}
+
+		.__title { }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

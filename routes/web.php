@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeveloperController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MachineController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
@@ -38,15 +39,25 @@ Route::post('/language/switch',      [LanguagesController::class,    'languageSw
 Route::get('/red-button',            [GuestPagesController::class,   'redButton'])      ->name('view.red-button');
 Route::get('/terms',                 [GuestPagesController::class,   'terms'])          ->name('view.terms');
 Route::get('/profile',               [WebPagesController::class,     'profile'])        ->name('view.profile');
-
+Route::get('/signup',                [GuestPagesController::class,   'signup'])         ->name('view.signup');
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // your routes here
     //Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
     Route::post('/logout',              [UserAuthController::class,     'logout'])      ->name('post.logout');
 
+    Route::group( ['middleware' => ['can:locations-manage']], function () {
+        Route::get('/locations',             [LocationController::class,    'index'])       ->name('view.locations.index');
+        Route::post('/locations',            [LocationController::class,    'store']);
+    });
+    Route::group( ['middleware' => ['can:locations-manage']], function () {
+        Route::get('/locations',             [LocationController::class,    'index'])       ->name('view.locations.index');
+        Route::post('/locations',            [LocationController::class,    'store']);
+    });
+
     Route::group( ['middleware' => ['can:machines-manage']], function () {
         Route::get('/machines',              [MachineController::class,     'index'])       ->name('view.machines.index');
+        Route::post('/machines',             [MachineController::class,     'store']);
         Route::get('/machine/stock',         [MachineController::class,     'stock'])       ->name('view.machine.stock');
     });
 
@@ -77,8 +88,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 //Route::view('/contact', 'pages.contact.default')->name('view.contact');
 //Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
-Route::view('/signup', 'pages.auth.signup');
-Route::view('/terms', 'pages.auth.terms');
+
 
 if(config('app.env') === 'local') {
     Route::view('/old/index', 'index');

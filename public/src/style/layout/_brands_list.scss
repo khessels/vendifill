@@ -1,0 +1,100 @@
+/* --------------------------------
+   brands list
+-------------------------------- */
+
+.brands-list
+{
+	$itemMarginBottom: 30px;
+
+	.__inner { margin-bottom: -$itemMarginBottom; }
+
+	.__item
+	{
+		position: relative;
+		vertical-align: top;
+		width: 100%;
+		margin-bottom: $itemMarginBottom;
+		text-align: center;
+	}
+
+	.__image
+	{
+		margin: auto;
+		opacity: 0.2;
+		@include transition(opacity 0.5s ease-in-out);
+
+		a
+		{
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		&:hover { opacity: 0.8; }
+	}
+}
+
+.brands-list--slider
+{
+	$slideGutter: 30px;
+
+	overflow: hidden;
+
+	.slick-track { align-items: center; }
+
+	.slick-slider
+	{
+		> .slick-dots
+		{
+			margin-top: 30px;
+			text-align: center;
+		}
+	}
+
+	@if $slideGutter > 0
+	{
+		.slick-list
+		{
+			margin-left: -$slideGutter/2;
+			margin-right: -$slideGutter/2;
+		}
+
+		.slick-slide
+		{
+			padding-left: $slideGutter/2;
+			padding-right: $slideGutter/2;
+		}
+	}
+
+	.__item { margin-bottom: 0; }
+
+	.__image
+	{
+		transform: translateZ(0);
+
+		img
+		{
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,139 @@
+/* --------------------------------
+   icon list
+-------------------------------- */
+
+%imgContain
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
+	margin: auto;
+}
+
+.icon-list
+{
+	.__item
+	{
+		position: relative;
+		width: 100%;
+		text-align: center;
+	}
+
+	.__image
+	{
+		position: relative;
+		width: 100%;
+		margin: auto;
+		overflow: hidden;
+	}
+
+	.__ico
+	{
+		display: inline-block;
+		vertical-align: top;
+		color: $primary-color;
+
+		> svg
+		{
+			vertical-align: middle;
+			fill: currentColor;
+		}
+	}
+}
+
+.icon-list--s1
+{
+	$itemMarginBottom: 60px;
+
+	.__inner { margin-bottom: -$itemMarginBottom; }
+
+	.__item { margin-bottom: $itemMarginBottom; }
+
+	.__image
+	{
+		min-height: 140px;
+
+		&:before
+		{
+			content: "";
+			display: block;
+			padding-top: percentage(200/255);
+		}
+
+		img { @extend %imgContain; }
+	}
+}
+
+.icon-list--s2
+{
+	$itemMarginBottom: 60px;
+
+	.__inner { margin-bottom: -$itemMarginBottom; }
+
+	.__item { margin-bottom: $itemMarginBottom; }
+
+	.__image
+	{
+		min-height: 170px;
+
+		&:before
+		{
+			content: "";
+			display: block;
+			padding-top: percentage(250/255);
+		}
+
+		img { @extend %imgContain; }
+	}
+}
+
+.icon-list--s3
+{
+	$itemMarginBottom: 50px;
+
+	.__inner { margin-bottom: -$itemMarginBottom; }
+
+	.__item { margin-bottom: $itemMarginBottom; }
+
+	.__ico
+	{
+		margin-bottom: -5px;
+
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+.icon-list--s4
+{
+	$itemMarginBottom: 50px;
+
+	.__inner { margin-bottom: -$itemMarginBottom; }
+
+	.__item { margin-bottom: $itemMarginBottom; }
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

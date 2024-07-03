@@ -17,8 +17,8 @@
 
 <!-- Critical styles
 ================================================== -->
-<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
-
+{{--<link rel="stylesheet" href="/css/critical.min.css" type="text/css">--}}
+<link rel="stylesheet" href="/css/critical.css" type="text/css">
 <!-- Load google font
 ================================================== -->
 <script type="text/javascript">
@@ -44,5 +44,6 @@
     _html.className = _html.className.replace("no-js","js");
     _html.classList.add( isTouch ? "touch" : "no-touch");
 </script>
-<script type="text/javascript" src="/js/device.min.js"></script>
+{{--<script type="text/javascript" src="/js/device.min.js"></script>--}}
+<script type="text/javascript" src="/js/device.js"></script>
 

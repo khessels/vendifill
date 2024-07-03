@@ -1,0 +1,61 @@
+/* --------------------------------
+   feature
+-------------------------------- */
+
+.feature
+{
+	$itemMarginBottom: 60px;
+
+	.__inner { margin-bottom: -$itemMarginBottom; }
+
+	.__item
+	{
+		position: relative;
+		width: 100%;
+		margin-bottom: $itemMarginBottom;
+		text-align: inherit;
+
+		.__ico
+		{
+			display: inline-block;
+			vertical-align: top;
+			margin-bottom: 5px;
+			line-height: 1;
+
+			> svg { vertical-align: middle; }
+		}
+
+		.__title
+		{
+			margin-bottom: 15px;
+			font-weight: 700;
+			text-transform: none;
+		}
+
+		p
+		{
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

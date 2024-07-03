@@ -1,0 +1,287 @@
+/* --------------------------------
+   form
+-------------------------------- */
+
+form
+{
+	position: relative;
+
+	.input-wrp
+	{
+		position: relative;
+		display: block;
+		width: 100%;
+		line-height: 1;
+		margin-bottom: 20px;
+	}
+
+	.textfield
+	{
+		display: block;
+		float: none;
+		width: 100%;
+		background: none transparent;
+		background-clip: padding-box;
+		border: none;
+		border-bottom: 1px solid #e5e5e5;
+		line-height: 1.2;
+		font-size: 1.6rem;
+		color: #777;
+		appearance: none;
+		outline: none;
+		padding: 15px 0;
+		box-shadow: none;
+		border-radius: 0;
+		@include transition(
+			background-color 0.3s ease-in-out,
+			border-color 0.3s ease-in-out,
+			color 0.3s ease-in-out
+		);
+
+		@include placeholder
+		{
+			color: #777;
+			@include transition(color 0.3s ease-in-out);
+		}
+
+		&:focus:not([disabled]),
+		&.focus:not([disabled])
+		{
+			border-color: #131313;
+		}
+
+		&.valid:not([disabled])
+		{
+			border-color: #46b36a !important;
+			color: #46b36a !important;
+
+			@include placeholder
+			{
+				color: #46b36a
+			}
+		}
+
+		&.invalid:not([disabled])
+		{
+			border-color: #f94e4e !important;
+			color: #f94e4e !important;
+
+			@include placeholder
+			{
+				color: #f94e4e
+			}
+		}
+
+		&:disabled
+		{
+			@include placeholder { color: #ccc; }
+		}
+	}
+
+	input.textfield,
+	select.textfield,
+	.nice-select.textfield
+	{
+		height: 50px;
+	}
+
+	textarea
+	{
+		resize: vertical;
+		min-height: 130px;
+		height: 100%;
+	}
+
+	button[type=submit]
+	{
+		cursor: pointer;
+		box-shadow: none;
+		outline: none;
+		margin-top: 10px;
+	}
+}
+
+.form--horizontal
+{
+	button[type=submit] { margin-top: 0; }
+
+	@include media-breakpoint-up(sm)
+	{
+		.input-wrp { margin: 0; }
+	}
+}
+
+.form-subscribe
+{
+	.textfield
+	{
+		color: $white;
+		border-color: rgba($white,0.5);
+
+		@include placeholder { color: inherit; }
+
+		&:focus:not([disabled]),
+		&.focus:not([disabled])
+		{
+			border-color: $white;
+		}
+	}
+}
+
+select { border: none; }
+
+label { cursor: pointer; }
+
+.radiofield,
+.checkfield
+{
+	position: relative;
+	display: inline-block;
+	margin-bottom: 20px;
+	padding-left: 30px;
+	line-height: 1.2;
+	font-size: 1.6rem;
+
+	i
+	{
+		position: relative;
+		float: left;
+		width: 17px;
+		height: 17px;
+		margin-left: -30px;
+		border: 2px solid #cdcdcd;
+		overflow: hidden;
+
+		&:before { @include transition(transform .25s cubic-bezier(.23,1,.32,1)); }
+	}
+}
+
+.radiofield input[type="radio"],
+.checkfield input[type="checkbox"]
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	opacity: 0;
+	clip: rect(2px,2px,2px,2px);
+
+	&:disabled ~ *
+	{
+		// cursor: not-allowed;
+		opacity: 0.6;
+	}
+}
+
+.radiofield
+{
+	input[type="radio"]
+	{
+		&:checked ~
+		{
+			i:before { transform: scale(1); }
+
+			span a { color: $primary-color; }
+		}
+	}
+
+	i
+	{
+		border-radius: 50%;
+
+		&:before
+		{
+			content: "";
+			position: absolute;
+			top: 3px;
+			right: 3px;
+			bottom: 3px;
+			left: 3px;
+			transform: scale(0);
+			background-color: $primary-color;
+			border-radius: inherit;
+		}
+	}
+}
+
+.checkfield
+{
+	input[type="checkbox"]
+	{
+		&:checked ~
+		{
+			i:before { transform: scale(1) rotate(45deg); }
+
+			span a { color: $primary-color; }
+		}
+	}
+
+	i
+	{
+		background-color: $white;
+
+		&:before
+		{
+			content: "";
+			display: block;
+			width: 5px;
+			height: 9px;
+			margin: auto;
+			border: 2px solid $primary-color;
+			border-top: none;
+			border-left: none;
+			transform: scale(0) rotate(45deg);
+			color: $primary-color;
+		}
+
+		&:last-child { margin-right: 0; }
+	}
+}
+
+.nice-select
+{
+	padding-right: 30px !important;
+
+	&:after
+	{
+		width: 8px !important;
+		height: 8px !important;
+		margin-top: -5px !important;
+		border-bottom: 2px solid #525252 !important;
+		border-right: 2px solid #525252 !important;
+	}
+
+	.option
+	{
+		line-height: 40px;
+
+		&:hover,
+		&.focus,
+		&.selected.focus
+		{
+			background-color: #f1f1f1 !important;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

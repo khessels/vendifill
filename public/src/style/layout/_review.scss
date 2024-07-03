@@ -1,0 +1,89 @@
+/* --------------------------------
+   review
+-------------------------------- */
+
+.testimonial-ico
+{
+	display: block;
+	width: 100px;
+	height: 80px;
+	margin-right: 30px;
+	padding-left: 62px;
+	background-color: #020203;
+	line-height: 0.85;
+	font-size: 15rem;
+	font-weight: 700;
+	font-style: normal;
+	color: $primary-color;
+	user-select: none;
+}
+
+.review
+{
+	position: relative;
+
+	&__item
+	{
+		position: relative;
+		width: 100%;
+		line-height: 1.4;
+		font-size: 2rem;
+
+		@include media-breakpoint-up(sm)
+		{
+			font-size: 2.4rem;
+		}
+
+		&__author
+		{
+
+			&-name
+			{
+				$lineWidth: 55px;
+
+				position: relative;
+				padding-top: 15px;
+				padding-left: $lineWidth + 20px;
+				line-height: 1;
+
+				&:before
+				{
+					content: "";
+					position: absolute;
+					top: 15px;
+					bottom: 0;
+					left: 0;
+					margin: auto;
+					width: $lineWidth;
+					height: 0;
+					border-top: 1px solid $primary-color;
+				}
+			}
+		}
+	}
+}
+
+.review--slider
+{
+	.review__item { vertical-align: middle; }
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,161 @@
+/*
+	Template Name: VendiGO
+	Version: 1.0
+*/
+
+/*------------------------------------------------------------------
+[Table of contents]
+
+1 jarallax
+2 fancybox
+3 nice-select
+4 ion.rangeSlider
+5 aos
+6 slick
+7 bootstrap
+  7.1 pagination
+  7.2 align
+  7.3 mbed
+  7.4 position
+  7.5 sizing
+  7.6 spacing
+  7.7 text
+8 components
+  8.1 about_stats
+  8.2 accordions
+  8.3 alert
+  8.4 block_info
+  8.5 check_list
+  8.6 comments_list
+  8.7 contact_info
+  8.8 counters
+  8.9 forms
+  8.10 icon_list
+  8.11 info_table
+  8.12 pagination
+  8.13 product_brochure
+  8.14 product_label
+  8.15 product_price
+  8.16 quantity_counter
+  8.17 rating
+  8.18 tab
+  8.19 tags_list
+  8.20 to_top_btn
+  8.21 video_block
+  8.22 widget
+9 layout
+  9.1 advantages
+  9.2 authorization_form
+  9.3 brands_list
+  9.4 cart
+  9.5 checkout
+  9.6 company_contacts
+  9.7 content
+  9.8 faq
+  9.9 feature
+  9.10 footer
+  9.11 gallery
+  9.12 goods
+  9.13 goods_catalog
+  9.14 goods_rent
+  9.15 ingredients
+  9.16 instafeed
+  9.17 pages
+  9.18 posts
+  9.19 pricing_table
+  9.20 product_single
+  9.21 products_cards
+  9.22 promo_banner
+  9.23 review
+  9.24 services
+  9.25 side_menu
+  9.26 sidebar
+  9.27 steps
+  9.28 team
+-------------------------------------------------------------------*/
+
+@import '../libs/aos/sass/aos';
+@import '../libs/slick/slick.scss';
+@import '../libs/jarallax/jarallax.css';
+@import '../libs/fancybox/jquery.fancybox.min.css';
+@import '../libs/nice-select/nice-select.css';
+@import '../libs/ion.rangeSlider/css/ion.rangeSlider.css';
+
+@import 'utils/variables';
+@import 'utils/extends';
+@import 'utils/filters';
+@import 'utils/functions';
+@import 'utils/media-queries';
+@import 'utils/mixins';
+@import 'utils/angled-edges';
+
+// Required
+@import "vendors/bootstrap-4/functions";
+@import "vendors/bootstrap-4/variables";
+@import "vendors/bootstrap-4/mixins";
+// Optional
+@import "vendors/bootstrap-4/pagination";
+@import "vendors/bootstrap-4/utilities/align";
+@import "vendors/bootstrap-4/utilities/embed";
+@import "vendors/bootstrap-4/utilities/position";
+@import "vendors/bootstrap-4/utilities/sizing";
+@import "vendors/bootstrap-4/utilities/spacing";
+@import "vendors/bootstrap-4/utilities/text";
+
+@import 'vendors-extensions/bootstrap-4/col-push-pull';
+@import 'vendors-extensions/slick';
+@import 'vendors-extensions/ion.rangeSlider';
+
+@import 'base/common';
+
+@import 'components/about_stats';
+@import 'components/accordions';
+@import 'components/alert';
+@import 'components/block_info';
+@import 'components/check_list';
+@import 'components/comments_list';
+@import 'components/contact_info';
+@import 'components/counters';
+@import 'components/forms';
+@import 'components/icon_list';
+@import 'components/info_table';
+@import 'components/pagination';
+@import 'components/product_brochure';
+@import 'components/product_label';
+@import 'components/product_price';
+@import 'components/quantity_counter';
+@import 'components/rating';
+@import 'components/tab';
+@import 'components/tags_list';
+@import 'components/to_top_btn';
+@import 'components/video_block';
+@import 'components/widget';
+
+@import 'layout/advantages';
+@import 'layout/authorization_form';
+@import 'layout/brands_list';
+@import 'layout/cart';
+@import 'layout/checkout';
+@import 'layout/company_contacts';
+@import 'layout/content';
+@import 'layout/faq';
+@import 'layout/feature';
+@import 'layout/footer';
+@import 'layout/gallery';
+@import 'layout/goods';
+@import 'layout/goods_catalog';
+@import 'layout/goods_rent';
+@import 'layout/ingredients';
+@import 'layout/instafeed';
+@import 'layout/pages';
+@import 'layout/posts';
+@import 'layout/pricing_table';
+@import 'layout/product_single';
+@import 'layout/products_cards';
+@import 'layout/promo_banner';
+@import 'layout/review';
+@import 'layout/services';
+@import 'layout/side_menu';
+@import 'layout/sidebar';
+@import 'layout/steps';
+@import 'layout/team';

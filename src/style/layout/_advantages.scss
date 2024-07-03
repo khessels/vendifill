@@ -1,0 +1,75 @@
+/* --------------------------------
+   advantages
+-------------------------------- */
+
+$marginBottom: 30px;
+
+.advantages
+{
+	max-width: 1520px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px 0;
+
+	.__inner
+	{
+		overflow: hidden;
+	}
+
+	.__item
+	{
+		position: relative;
+		width: 100%;
+		padding: 20px 0;
+
+		@include media-breakpoint-up(sm)
+		{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+
+			&:before
+			{
+				content: "";
+				position: absolute;
+				top: 0;
+				left: -15px;
+				bottom: 0;
+				border-left: 1px solid #e9e9e9;
+			}
+		}
+	}
+
+	.__ico
+	{
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 20px;
+		line-height: 1;
+
+		>svg { vertical-align: middle; }
+	}
+
+	.__title { margin: 0 }
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

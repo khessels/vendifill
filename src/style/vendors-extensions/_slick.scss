@@ -1,0 +1,262 @@
+/* --------------------------------
+   custom slick styles
+-------------------------------- */
+
+.slider-special-layout
+{
+	$container-max-width-sm: 540px - $grid-gutter-width;
+	$container-max-width-md: 720px - $grid-gutter-width;
+	$container-max-width-lg: 960px - $grid-gutter-width;
+	$container-max-width-xl: 1140px - $grid-gutter-width;
+
+	@include media-breakpoint-up(sm)
+	{
+		margin-left: calc((100% - #{$container-max-width-sm}) / 2);
+	}
+
+	@include media-breakpoint-up(md)
+	{
+		margin-left: calc((100% - #{$container-max-width-md}) / 2);
+	}
+
+	@include media-breakpoint-up(lg)
+	{
+		margin-left: calc((100% - #{$container-max-width-lg}) / 2);
+	}
+
+	@include media-breakpoint-up(xl)
+	{
+		margin-left: calc((100% - #{$container-max-width-xl}) / 2);
+	}
+
+	&__inner
+	{
+		position: relative;
+		margin-left: 15px;
+		margin-right: 15px;
+		overflow: hidden;
+
+		@include media-breakpoint-up(sm)
+		{
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+
+	&__nav
+	{
+		background-color: #f4f4f4;
+		padding: 20px 15px;
+		overflow: hidden;
+
+		.slick-dots
+		{
+			margin-top: 15px;
+			margin-bottom: 15px;
+
+			@include media-breakpoint-up(sm)
+			{
+				margin-left: 15px;
+			}
+		}
+
+		.more-link
+		{
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			margin-right: 15px;
+			line-height: 1;
+
+			&:before
+			{
+				content: '';
+				width: 110px;
+				border-top: 1px solid rgba(#a1a1a1, 0.35);
+				margin-right: 25px;
+			}
+
+			a
+			{
+				display: inline-block;
+				vertical-align: middle;
+				line-height: 1.2;
+				font-size: 1.3rem;
+				font-weight: 700;
+				text-decoration: none;
+				text-transform: uppercase;
+
+				&:not(:hover):not(:focus) { color: #333; }
+			}
+		}
+	}
+
+	&__container
+	{
+		width: 100%;
+
+		@include media-breakpoint-up(sm)
+		{
+			max-width: $container-max-width-sm;
+		}
+
+		@include media-breakpoint-up(md)
+		{
+			max-width: $container-max-width-md;
+		}
+
+		@include media-breakpoint-up(lg)
+		{
+			max-width: $container-max-width-lg;
+		}
+
+		@include media-breakpoint-up(xl)
+		{
+			max-width: $container-max-width-xl;
+		}
+	}
+
+	.slick-list { overflow: visible; }
+
+	@include media-breakpoint-up(sm)
+	{
+		.slick-slider
+		{
+			&.disable-not-active
+			{
+				.slick-slide
+				{
+					@include transition(opacity 300ms ease-in-out);
+
+					&:not(.slick-active)
+					{
+						opacity: 0.5;
+						pointer-events: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+.slick-slider { }
+
+.slick-track
+{
+	display: flex;
+	align-items: flex-start;
+}
+
+.slick-slide
+{
+	flex-shrink: 0;
+	outline: none;
+
+	> div:first-child
+	{
+		flex: 0 0 100%;
+		width: 100%;
+		height: 100%;
+	}
+
+	.slick-initialized &
+	{
+		display: flex;
+		height: auto;
+	}
+}
+
+.slick-arrow
+{
+	line-height: 1;
+	text-align: center;
+	cursor: pointer;
+	z-index: 1;
+
+	&.slick-disabled { cursor: default; }
+}
+
+.slick-dots
+{
+	line-height: 0;
+	font-size: 0;
+
+	li
+	{
+		position: relative;
+		display: inline-block;
+		margin-left: 15px;
+		user-select: none;
+
+		&:first-child { margin-left: 0; }
+
+		&.slick-active
+		{
+			button
+			{
+				color: $primary-color;
+				border-color: currentColor;
+				cursor: default;
+
+				&:before
+				{
+					top: 3px;
+					right: 3px;
+					bottom: 3px;
+					left: 3px;
+					background-color: currentColor;
+				}
+			}
+		}
+	}
+
+	button
+	{
+		position: relative;
+		display: block;
+		width: 15px;
+		height: 15px;
+		padding: 0;
+		cursor: pointer;
+		cursor: hand;
+		color: transparent;
+		border: 2px solid transparent;
+		outline: none;
+		background: transparent;
+		@include border-radius(50%);
+
+		&:before
+		{
+			content: "";
+			position: absolute;
+			top: 1px;
+			right: 1px;
+			bottom: 1px;
+			left: 1px;
+			background-color: #c7c7c7;
+			border-radius: inherit;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,66 @@
+/* --------------------------------
+   authorization form
+-------------------------------- */
+
+.auth-form
+{
+	background-color: $white;
+	padding: 30px 15px 25px;
+	line-height: 1.2;
+	font-size: 1.6rem;
+	color: #333;
+
+	.input-wrp { margin-bottom: 10px; }
+
+	.textfield-ico
+	{
+		position: absolute;
+		top: 11px;
+		right: 0;
+		line-height: 30px;
+		font-size: 1.5rem;
+		color: #8f8a86;
+		cursor: pointer;
+
+		+ .textfield { padding-right: 20px; }
+	}
+
+	.checkfield { color: #333; }
+
+	button[type=submit]
+	{
+		display: block;
+		width: 100%;
+		min-width: 0;
+		margin-top: 45px;
+		margin-bottom: 45px;
+
+		&:last-child { margin-bottom: 0; }
+	}
+
+	.__link
+	{
+		display: inline-block;
+		vertical-align: top;
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	.auth-form { padding: 40px 30px 35px; }
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

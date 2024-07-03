@@ -1,0 +1,79 @@
+/* --------------------------------
+   check list
+-------------------------------- */
+
+.check-list
+{
+	line-height: 1.2;
+	text-align: left;
+	color: #25272a;
+
+	li
+	{
+		margin-top: 20px;
+		padding-left: 35px;
+
+		&:first-child { margin-top: 0; }
+	}
+
+	.ico
+	{
+		&-checked,
+		&-unchecked
+		{
+			float: left;
+			margin-left: -35px;
+			vertical-align: top;
+		}
+	}
+
+	.ico
+	{
+		&-checked,
+		&-unchecked
+		{
+			display: inline-block;
+			vertical-align: middle;
+			width: 20px;
+			height: 20px;
+			border: 1px solid;
+			line-height: 18px;
+			font-size: 1rem;
+			text-align: center;
+			border-radius: 50%;
+
+			&:before { vertical-align: middle; }
+		}
+
+		&-checked
+		{
+			color: #25e986;
+			border-color: #25e986;
+		}
+
+		&-unchecked
+		{
+			
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

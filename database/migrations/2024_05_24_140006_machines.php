@@ -11,17 +11,31 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('machine_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('machine_type')->nullable(false);
+            $table->timestamps();
+        });
         Schema::create('machines', function (Blueprint $table) {
             $table->id();
-            $table->geography('coordinates');
+
+            $table->geography('coordinates')->nullable();
+            $table->uuid('uuid')->nullable();
+            $table->string('brand')->nullable();
+            $table->string('brand_model')->nullable();
+            $table->smallInteger('year')->nullable();
             $table->unsignedBigInteger('location_id')->index();
             $table->foreign('location_id')
                 ->references('id')
                 ->on('locations');
 
-            $table->string('type')->nullable(false);
+            $table->unsignedBigInteger('machine_type_id')->index();
+            $table->foreign('machine_type_id')
+                ->references('id')
+                ->on('machine_types');
             $table->timestamps();
         });
+
         Schema::create('machine_products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('machine_id')->index();

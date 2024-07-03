@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Location;
+use App\Models\Machine;
+use App\Models\MachineType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use App\Traits\Content;
+use Illuminate\Support\Facades\Redirect;
 
 class MachineController extends Controller
 {
@@ -32,12 +36,34 @@ class MachineController extends Controller
         try {
             $page = 'machines.index';
             $content = $this->getPageContentAttributes($page);
-            return view('pages.machines.web')
+            $locations = Location::where('active', 'yes')->get();
+            $machineTypes = MachineType::all();
+            $machines = Machine::with('location')
+                ->with('machine_type')
+                ->get();
+
+            return view('pages.machines.index')
+                ->with('locations', $locations ?? [])
+                ->with('machine_types', $machineTypes ?? [])
                 ->with('page', $page)
                 ->with('content' ,$content );
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
+        }
+    }
+    public function store(Request $request)
+    {
+        try {
+            $all = $request->all();
+            $machine = new Machine($request->all());
+            $machine->save();
+            return redirect()->route('view.machines.index');
+        } catch (\Exception $e) {
+            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
+            return Redirect::back()
+                ->with('message', 'Machine not added')
+                ->with('alert-class', 'alert-warning');
         }
     }
     public function stock(Request $request)

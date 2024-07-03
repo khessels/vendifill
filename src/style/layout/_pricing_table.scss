@@ -1,0 +1,285 @@
+/* --------------------------------
+   pricing table
+-------------------------------- */
+
+$marginBottom: 50px;
+$paddingX: 15px;
+$paddingY: 60px;
+$itemBorderWidth: 15px;
+
+.pricing-table
+{
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item
+	{
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		background-color: $white;
+		margin-bottom: $marginBottom;
+		padding: $paddingY $paddingX;
+		text-align: center;
+		overflow: hidden;
+
+		&--bordered
+		{
+			padding: ($paddingY - $itemBorderWidth) $paddingX;
+			border: $itemBorderWidth solid #f1f1f1;
+		}
+
+		.__header { flex: 0 0 auto; }
+
+		.__body { flex: 1 0 auto; }
+
+		.__footer { flex: 0 0 auto; }
+	}
+
+	.__label
+	{
+		position: absolute;
+		line-height: 1;
+		font-size: 1.4rem;
+		@include userSelect(none);
+
+		+ .__title { margin-top: 0; }
+	}
+
+	.__price
+	{
+		margin-top: 25px;
+		margin-bottom: 25px;
+		line-height: 1;
+		font-size: 5rem;
+		font-weight: 700;
+		letter-spacing: -3px;
+		color: $primary-color;
+
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+
+	.__desc-list
+	{
+		line-height: 1.5;
+		line-height: 1.2;
+		text-align: left;
+
+		li
+		{
+			margin-top: 20px;
+			padding-left: 30px;
+
+			&:first-child { margin-top: 0; }
+
+			>i:first-child
+			{
+				float: left;
+				margin-top: 5px;
+				margin-left: -30px;
+				width: 1em;
+				line-height: 1;
+				font-size: 1.3rem;
+			}
+		}
+
+		.fontello-ok { color: #45dbab; }
+	}
+
+	.disabled { color: #c8c8c8; }
+}
+
+.pricing-table--s1
+{
+	.__item
+	{
+		&--shadow { box-shadow: 0px 20px 30px 0px rgba($black, 0.05); }
+
+		&--active
+		{
+			background-color: $primary-color;
+			border-color: $primary-color;
+			color: $white;
+
+			.__title,
+			.__price,
+			.__value,
+			.__desc-list .fontello-ok
+			{
+				color: inherit;
+			}
+
+			.__label
+			{
+				top: 4px;
+				right: 4px;
+				background-color: $white;
+				padding: 7px 20px;
+				color: #01a1d2;
+			}
+
+			.disabled { color: #fbb9ad; }
+
+			.custom-btn--s1
+			{
+				border-color: $white;
+				background-color: transparent;
+				color: $white;
+
+				&:hover,
+				&:focus
+				{
+					background-color: $white;
+					color: #333;
+				}
+			}
+		}
+	}
+}
+
+.pricing-table--s2
+{
+	$space: 20px;
+
+	@include media-breakpoint-up(md)
+	{
+		box-shadow: 0px 20px 30px 0px rgba($black, 0.05);
+	}
+
+	.__inner { margin-bottom: 0; }
+
+	.col,
+	[class*=col-]
+	{
+		@include media-breakpoint-only(md)
+		{
+			&:nth-of-type(odd)
+			{
+				.__item
+				{
+					&:before { content: none; }
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg)
+		{
+			&:first-child
+			{
+				.__item
+				{
+					&:before { content: none; }
+				}
+			}
+		}
+	}
+
+	.__item
+	{
+		margin-bottom: 0;
+
+		@include media-breakpoint-up(md)
+		{
+			&:before
+			{
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				border-left: 1px solid #eff2f5;
+			}
+		}
+
+		.__label
+		{
+			top: 0;
+			right: 0;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 60px 60px 0;
+			border-width: 0 50px 50px 0;
+			border-color: transparent $primary-color transparent transparent;
+			color: $white;
+
+			i
+			{
+				position: absolute;
+				top: 10px;
+				right: -50px;
+				right: -40px;
+			}
+		}
+
+		// @include media-breakpoint-up(md)
+		// {
+		// 	margin-bottom: $marginBottom - $space;
+		// 	padding-bottom: $paddingY + $space;
+
+		// 	.__header { padding-bottom: $space; }
+		// }
+	}
+}
+
+.pricing-table--s3
+{
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+
+	table { min-width: 650px; }
+
+	tr
+	{
+		&:first-child td
+		{
+			border-top: none;
+			padding-top: 0;
+		}
+
+		&:last-child td { padding-bottom: 0; }
+	}
+
+	td
+	{
+		padding-top: 24px;
+		padding-bottom: 25px;
+		padding-left: 20px;
+		border-top: 1px solid #eff2f5;
+
+		&:first-child
+		{
+			vertical-align: top;
+			padding-left: 0;
+		}
+	}
+
+	.__price
+	{
+		font-size: 4rem;
+		white-space: nowrap;
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,432 @@
+@@include('template/document_start.html')
+
+	<body class="page-elements-tables">
+		<div id="app">
+			<!-- start header -->
+			<header id="top-bar" class="top-bar top-bar--s1" data-nav-fixed="true" data-nav-anchor="false">
+				<div class="top-bar__line-contacts">
+					<div class="container-fluid">
+						<div class="row align-items-center justify-content-lg-between">
+							<div class="col-auto">
+								<div class="top-bar__contacts">
+									<ul>
+										<li>
+											<a href="tel:+19981503020">+1 998 150 30 20</a>
+											&nbsp;
+											<a href="tel:+31859644725">+31 85 964 47 25</a>
+										</li>
+
+										<li>
+											<a href="mailto:support@vendgo.com">support@vendgo.com</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col-auto">
+								<div class="row">
+									<div class="col-auto">
+										<nav class="top-bar__subnav">
+											<ul>
+												<li><a href="#">Delivery</a></li>
+												<li><a href="#">Payment</a></li>
+												<li><a href="#">Return</a></li>
+											</ul>
+										</nav>
+									</div>
+
+									<div class="col-auto">
+										<div class="top-bar__socials">
+											<!-- start social buttons -->
+											<div class="s-btns s-btns--gray">
+												<ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
+													<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
+													<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
+													<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
+													<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+												</ul>
+											</div>
+											<!-- end social buttons -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- class "compensate-for-scrollbar" from fancybox.js, use if data-fixed="true" -->
+				<div class="top-bar__line-menu    compensate-for-scrollbar">
+					<div class="top-bar__side-menu-button js-side-menu-toggler">
+						<span></span>
+					</div>
+
+					<a class="top-bar__logo site-logo" href="index.html">
+						<img class="img-fluid" src="img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
+					</a>
+
+					<a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler" href="javascript:void(0);">
+						<span></span>
+					</a>
+
+					<div class="top-bar__collapse">
+						<div>
+							<nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
+								<ul>
+									<li class="has-submenu">
+										<a class="nav-link" href="javascript:void(0);">Home</a>
+
+										<ul class="submenu">
+											<li><a href="index.html">Home Page 1</a></li>
+											<li><a href="index_2.html">Home Page 2</a></li>
+											<li><a href="index_3.html">Shop</a></li>
+										</ul>
+									</li>
+
+									<li class="has-submenu">
+										<a class="nav-link" href="javascript:void(0);">Pages</a>
+
+										<ul class="submenu">
+											<li><a href="about_us.html">About Us</a></li>
+											<li><a href="services.html">Services</a></li>
+											<li><a href="product_details.html">Product Single</a></li>
+											<li><a href="gallery_masonry.html">Gallery Masonry</a></li>
+											<li><a href="gallery_classic.html">Gallery Classic</a></li>
+											<li><a href="faq.html">FAQ</a></li>
+											<li><a href="typography.html">Typography</a></li>
+											<li><a href="404.html">404 Page</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<a class="nav-link" href="products.html">Products</a>
+									</li>
+
+									<li>
+										<a class="nav-link" href="blog.html">Blog</a>
+									</li>
+
+									<li class="has-submenu">
+										<a class="nav-link" href="javascript:void(0);">Shop</a>
+
+										<ul class="submenu">
+											<li><a href="shop_catalog.html">Catalog</a></li>
+											<li><a href="product_single.html">Single Product</a></li>
+											<li><a href="cart_checkout.html">Cart & Checkout</a></li>
+											<li><a href="account.html">Account</a></li>
+										</ul>
+									</li>
+
+									<li>
+										<a class="nav-link" href="contacts.html">Contacts</a>
+									</li>
+
+									<li class="has-submenu">
+										<a class="nav-link active" href="javascript:void(0);">Elements</a>
+
+										<ul class="submenu">
+											<li><a href="elements-accordions.html">Accordion</a></li>
+											<li><a href="elements-alerts.html">Alerts</a></li>
+											<li><a href="elements-counters.html">Counters</a></li>
+											<li><a href="elements-form.html">Forms</a></li>
+											<li><a href="elements-icons.html">IconList</a></li>
+											<li><a class="active" href="elements-info_tables.html">Tables</a></li>
+											<li><a href="elements-media_embeds.html">Media Embeds</a></li>
+											<li><a href="elements-pricing_tables.html">Pricing Tables</a></li>
+											<li><a href="elements-tabs.html">Tabs</a></li>
+										</ul>
+									</li>
+								</ul>
+							</nav>
+
+							<div class="top-bar__address">
+								<ul class="contact-info">
+									<li>
+										<div class="__label">Address</div>
+
+										<p>
+											5272 Lyngate Ct Burke,<br>
+											VA 2015-1688
+										</p>
+									</li>
+
+									<li>
+										<div class="__label">Phone</div>
+
+										<p>
+											+1 998 150 30 20 <br>
+											+31 85 964 47 25
+										</p>
+									</li>
+
+									<li>
+										<div class="__label">Social</div>
+
+										<!-- start social buttons -->
+										<div class="s-btns s-btns--gray">
+											<ul class="d-flex flex-row flex-wrap align-items-center">
+												<li><a class="f" href="#"><i class="fontello-facebook"></i></a></li>
+												<li><a class="t" href="#"><i class="fontello-twitter"></i></a></li>
+												<li><a class="y" href="#"><i class="fontello-youtube-play"></i></a></li>
+												<li><a class="i" href="#"><i class="fontello-instagram"></i></a></li>
+											</ul>
+										</div>
+										<!-- end social buttons -->
+									</li>
+								</ul>
+							</div>
+
+							<div class="top-bar__action">
+								<a class="custom-btn" href="#">Get in Touch</a>
+
+								<a class="custom-btn custom-btn--big custom-btn--s2" href="#">Get in Touch</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- end header -->
+
+			<!-- start side menu -->
+			@@include('template/side_menu.html')
+			<!-- end side menu -->
+
+			<!-- start hero -->
+			@@include('template/hero.html', {
+				"hero_title": "Tables",
+				"image_position-X": "50%",
+				"image_position-Y": "48%",
+				"speed": "0.6"
+			})
+			<!-- end hero -->
+
+			<!-- start main -->
+			<main role="main">
+				<!-- Common styles
+				================================================== -->
+				<link rel="stylesheet" href="css/style.min.css" type="text/css">
+
+				<!-- start section -->
+				<section class="section">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-lg-6">
+								<h2>Version 1</h2>
+
+								<div class="info-table info-table--s1">
+									<table>
+										<thead>
+											<tr>
+												<td>Name</td>
+												<td>Title 1</td>
+												<td>Title 2</td>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr>
+												<td>Height</td>
+												<td>72″</td>
+												<td>72″</td>
+											</tr>
+											<tr>
+												<td>Width</td>
+												<td>33″</td>
+												<td>44″</td>
+											</tr>
+											<tr>
+												<td>Depth</td>
+												<td>35″</td>
+												<td>35″</td>
+											</tr>
+											<tr>
+												<td>Weight</td>
+												<td>510 lbs.</td>
+												<td>610 lbs.</td>
+											</tr>
+											<tr>
+												<td>Electrical</td>
+												<td>115 VAC</td>
+												<td>120 VAC</td>
+											</tr>
+											<tr>
+												<td>Certifications</td>
+												<td>UL</td>
+												<td>CE</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="spacer py-4 d-lg-none"></div>
+
+							<div class="col-12 col-lg-6">
+								<h2>Version 2</h2>
+
+								<div class="info-table info-table--s2">
+									<table>
+										<thead>
+											<tr>
+												<td>Name</td>
+												<td>Title 1</td>
+												<td>Title 2</td>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr>
+												<td>Height</td>
+												<td>72″</td>
+												<td>72″</td>
+											</tr>
+											<tr>
+												<td>Width</td>
+												<td>33″</td>
+												<td>44″</td>
+											</tr>
+											<tr>
+												<td>Depth</td>
+												<td>35″</td>
+												<td>35″</td>
+											</tr>
+											<tr>
+												<td>Weight</td>
+												<td>510 lbs.</td>
+												<td>610 lbs.</td>
+											</tr>
+											<tr>
+												<td>Electrical</td>
+												<td>115 VAC</td>
+												<td>120 VAC</td>
+											</tr>
+											<tr>
+												<td>Certifications</td>
+												<td>UL</td>
+												<td>CE</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end section -->
+
+				<!-- start section -->
+				<section class="section section--no-pt">
+					<div class="container">
+						<div class="row">
+							<div class="col-12 col-lg-6">
+								<h2>Version 3</h2>
+
+								<div class="info-table info-table--s3">
+									<table>
+										<thead>
+											<tr>
+												<td>Name</td>
+												<td>Title 1</td>
+												<td>Title 2</td>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr>
+												<td>Height</td>
+												<td>72″</td>
+												<td>72″</td>
+											</tr>
+											<tr>
+												<td>Width</td>
+												<td>33″</td>
+												<td>44″</td>
+											</tr>
+											<tr>
+												<td>Depth</td>
+												<td>35″</td>
+												<td>35″</td>
+											</tr>
+											<tr>
+												<td>Weight</td>
+												<td>510 lbs.</td>
+												<td>610 lbs.</td>
+											</tr>
+											<tr>
+												<td>Electrical</td>
+												<td>115 VAC</td>
+												<td>120 VAC</td>
+											</tr>
+											<tr>
+												<td>Certifications</td>
+												<td>UL</td>
+												<td>CE</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+							<div class="spacer py-4 d-lg-none"></div>
+
+							<div class="col-12 col-lg-6">
+								<h2>Version 4</h2>
+
+								<div class="info-table info-table--s4">
+									<table>
+										<thead>
+											<tr>
+												<td>Name</td>
+												<td>Title 1</td>
+												<td>Title 2</td>
+											</tr>
+										</thead>
+
+										<tbody>
+											<tr>
+												<td>Height</td>
+												<td>72″</td>
+												<td>72″</td>
+											</tr>
+											<tr>
+												<td>Width</td>
+												<td>33″</td>
+												<td>44″</td>
+											</tr>
+											<tr>
+												<td>Depth</td>
+												<td>35″</td>
+												<td>35″</td>
+											</tr>
+											<tr>
+												<td>Weight</td>
+												<td>510 lbs.</td>
+												<td>610 lbs.</td>
+											</tr>
+											<tr>
+												<td>Electrical</td>
+												<td>115 VAC</td>
+												<td>120 VAC</td>
+											</tr>
+											<tr>
+												<td>Certifications</td>
+												<td>UL</td>
+												<td>CE</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- end section -->
+			</main>
+			<!-- end main -->
+
+			<!-- start footer -->
+			@@include('template/footer_1.html')
+			<!-- end footer -->
+		</div>
+
+@@include('template/document_end.html')

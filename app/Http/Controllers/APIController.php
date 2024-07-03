@@ -74,12 +74,33 @@ class APIController extends Controller
      *     @OA\Response(response="200", description="success"),
      * )
      */
-
+    public function isCC($ccNumber): bool
+    {
+        if (preg_match("/^\d{4} \d{4} \d{4} \d{4}$/", $ccNumber)) {
+            return true;
+        }
+        if (preg_match("/^\d{4}-\d{4}-\d{4}-\d{4}$/", $ccNumber)) {
+            return true;
+        }
+        if (preg_match("/^\d{16}$/", $ccNumber)) {
+            return true;
+        }
+        return false;
+    }
+    public function normalizeCC($ccNumber){
+        // todo, normalize cc number string to 4-4-4-4
+        $ccStringVal = (string) preg_replace('/[^0-9]/', '', $ccNumber);
+        if(strlen($ccStringVal) != 16){
+            return false;
+        }
+        $ccPieces = str_split($ccStringVal, 4);
+        return implode('-', $ccPieces);
+    }
     public function addCC(Request $request, $runMode = 'PRODUCTION'): \Illuminate\Http\JsonResponse
     {
         $all        = $request->all();
         $cc_mask    = null;
-        $brandId    = Auth::user()->brand_id;
+        $brandId    = config('app.brand_id');
         $name       = empty($request->cc_name) ? $request->name : $request->cc_name;
         $month      = empty($request->cc_month) ? $request->month : $request->cc_month;
         $year       = empty($request->cc_year) ? $request->year : $request->cc_year;
@@ -184,7 +205,7 @@ class APIController extends Controller
      */
     public function getCC(Request $request, $token): \Illuminate\Http\JsonResponse
     {
-        $cc = CreditCard::where('cc_number', '=', $token)->where('brand_id','=', Auth::user()['brand_id']  )->first();
+        $cc = CreditCard::where('cc_number', '=', $token)->where('brand_id','=', config('app.brand_id')  )->first();
         if(!empty($cc)) {
             $data = $this->tokenizerExchangeForData($request, Auth::user()['brand_id'], $token);
             $cc->cc_number = $data;

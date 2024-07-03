@@ -1,0 +1,49 @@
+/* --------------------------------
+   block info
+-------------------------------- */
+
+.block-info
+{
+	background-color: $primary-color;
+	padding: 20px 15px;
+	color: lighten(saturate($primary-color, 6.06), 23.73);
+
+	.__ico
+	{
+		display: inline-block;
+		vertical-align: top;
+		margin-left: -10px;
+		margin-bottom: 20px;
+	}
+
+	.__title { color: $white; }
+}
+
+@include media-breakpoint-up(sm)
+{
+	.block-info
+	{
+		padding: 30px;
+
+		.__ico
+		{
+			margin-right: 20px;
+			margin-bottom: 0;
+		}
+	}
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

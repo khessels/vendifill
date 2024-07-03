@@ -1,0 +1,67 @@
+/* --------------------------------
+   social buttons
+-------------------------------- */
+
+.s-btns
+{
+	ul
+	{
+		margin-top: -10px;
+		margin-left: -25px;
+
+		line-height: 0;
+		font-size: 0;
+		letter-spacing: -1px;
+	}
+
+	li
+	{
+		margin-top: 10px;
+		margin-left: 25px;
+	}
+
+	a
+	{
+		display: block;
+		width: 1em;
+		font-size: 2rem;
+		letter-spacing: 0;
+		text-align: center;
+
+		i
+		{
+			vertical-align: middle;
+			line-height: 1;
+		}
+	}
+
+	&--white
+	{
+		a:not(:hover):not(:focus) { color: $white; }
+	}
+
+	&--gray
+	{
+		a:not(:hover):not(:focus) { color: #d3d3d3; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

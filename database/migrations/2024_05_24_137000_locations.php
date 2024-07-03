@@ -13,29 +13,26 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->geography('coordinates');
+            $table->geography('coordinates')->nullable();
             $table->string('name')->nullable(false);
-            $table->string('address')->nullable(false);
-            $table->string('city')->nullable(false);
+
+
+            $table->string('address')->nullable();
+            $table->string('city')->nullable();
             $table->string('zip')->nullable();
-            $table->string('country')->nullable(false);
-            $table->string('province')->nullable(false);
+            $table->string('country_code_2')->nullable(false)->default('CR');
+            $table->string('province')->nullable();
             $table->string('canton')->nullable();
             $table->string('phone_1')->nullable();
             $table->string('phone_2')->nullable();
             $table->string('fax')->nullable();
             $table->string('email')->nullable();
-
-            $table->string('description');
-            $table->text('comments')->nullable();
-
+            $table->string('description')->nullable();
             $table->enum('access',['public', 'private'])->default('public')->nullable(false);
-
-            $table->text('location_responsible_by')->nullable();
-            $table->integer('location_managed_by')->nullable();
+            $table->enum('active',['yes', 'no'])->default('yes')->nullable(false);
+            $table->text('contact_details')->nullable();
+            $table->string('managed_by')->nullable();
             $table->text('location_emergency')->nullable();
-            $table->text('location_description')->nullable();
-            $table->string('demographics')->nullable();
 
             $table->timestamps();
         });

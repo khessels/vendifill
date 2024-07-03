@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Livewire;
+
+use App\Models\Location;
+use App\Models\Machine;
+use App\Models\MachineType;
+use Livewire\Component;
+
+class MachineIndex extends Component
+{
+    public function render()
+    {
+        $locations = Location::where('active', 'yes')->get();
+        $machineTypes = MachineType::all();
+        $machines = Machine::with('location')
+            ->with('machine_type')
+            ->get();
+
+        return view('livewire.machine-index')
+            ->with('locations', $locations ?? [])
+            ->with('machines', $machines ?? [])
+            ->with('machine_types', $machineTypes ?? []);
+    }
+}

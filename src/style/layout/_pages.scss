@@ -1,0 +1,214 @@
+/* --------------------------------
+   pages
+-------------------------------- */
+
+.page-home
+{
+	.section--blog
+	{
+		.decor-el
+		{
+			top: 15%;
+			right: 0;
+		}
+	}
+}
+
+.page-home-1
+{
+	.section--about
+	{
+		@include media-breakpoint-up(sm)
+		{
+			background-image: url(../img/shape_bg.png);
+			background-position: 150px 180px;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+.page-home-2
+{
+	.section--about
+	{
+		@include media-breakpoint-up(sm)
+		{
+			background-image: url(../img/shape_bg.png);
+			background-position: 150px 200px;
+			background-repeat: no-repeat;
+		}
+	}
+
+	.section + .section--no-pt
+	{
+		.icon-list
+		{
+			&:first-child
+			{
+				margin-top: -70px;
+
+				@include media-breakpoint-up(md)
+				{
+					margin-top: -100px;
+				}
+
+				@include media-breakpoint-up(lg)
+				{
+					margin-top: -140px;
+				}
+			}
+		}
+	}
+
+	.section--features
+	{
+		@include media-breakpoint-up(lg)
+		{
+			&:before
+			{
+				content: "";
+				display: block;
+				position: absolute;
+				top: 55%;
+				bottom: 0;
+				left: 0;
+				width: 30px;
+				background-color: $primary-color;
+			}
+		}
+
+		.decor-el
+		{
+			top: 15%;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+.page-home-3
+{
+
+}
+
+.page-posts-list
+{
+	@include media-breakpoint-up(md)
+	{
+		.section
+		{
+			&:nth-of-type(1)
+			{
+				&:before
+				{
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 42.5%;
+					left: 0;
+					bottom: 20%;
+					background-color: #f7f7f7;
+				}
+			}
+		}
+	}
+}
+
+.page-404
+{
+	.container
+	{
+		&:last-child { margin: auto; }
+	}
+
+	.site-logo { margin-bottom: 30px; }
+
+	p
+	{
+		margin-top: 40px;
+		margin-bottom: 40px;
+
+		&:first-child { margin-top: 0; }
+		&:last-child { margin-bottom: 0; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	.page-about,
+	.page-contact,
+	.page-faq,
+	.page-products,
+	.page-services,
+
+	.page-elements-accordions,
+	.page-elements-alerts,
+	.page-elements-counters,
+	.page-elements-form,
+	.page-elements-icons,
+	.page-elements-tables,
+	.page-elements-media,
+	.page-elements-pricing,
+	.page-elements-tabs
+	{
+		main
+		{
+			background-image: url(../img/shape_bg.png);
+			background-repeat: no-repeat;
+		}
+	}
+
+	.page-about,
+	.page-services
+	{
+		main { background-position: -150px 80px; }
+	}
+
+	.page-elements-form,
+	.page-elements-tables,
+	.page-contact,
+	.page-faq
+	{
+		main { background-position: -50px -50px; }
+	}
+
+	.page-products
+	{
+		main { background-position: right -70px top -45px; }
+	}
+
+	.page-elements-pricing
+	{
+		main { background-position: right 70px top -60px; }
+	}
+
+	.page-elements-accordions,
+	.page-elements-alerts,
+	.page-elements-counters,
+	.page-elements-icons,
+	.page-elements-media,
+	.page-elements-tabs
+	{
+		main { background-position: -195px -60px; }
+	}
+
+	.page-404
+	{
+		.site-logo { margin-top: 30px; }
+	}
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

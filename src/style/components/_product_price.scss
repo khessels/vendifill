@@ -1,0 +1,42 @@
+/* --------------------------------
+   product price
+-------------------------------- */
+
+.product-price
+{
+	line-height: 0;
+	font-size: 0;
+	letter-spacing: -1px;
+
+	&__item
+	{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		font-weight: 700;
+		letter-spacing: 0;
+
+		&--new { color: $primary-color; }
+		&--old { color: #c5c5c5; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

@@ -1,0 +1,164 @@
+/* --------------------------------
+   buttons
+-------------------------------- */
+
+.custom-btn
+{
+	$borderWidth: 2px;
+	$textColor1: #333;
+	$textColor2: $white;
+
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 28px;
+	padding-right: 28px;
+	line-height: 1;
+	font:
+	{
+		size: rem-calc(16px);
+		family: $fontFamily-primary;
+		weight: 600;
+	};
+	text:
+	{
+		align: center !important;
+		decoration: none !important;
+		shadow: none !important;
+	};
+	letter-spacing: 0;
+	border: $borderWidth solid;
+	@include border-radius(0);
+	box-shadow: none;
+	outline: none;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-drag: none;
+	user-drag: none;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	z-index: 0;
+	@include transition(
+		background-color 0.25s ease-in-out,
+		border-color     0.25s ease-in-out,
+		color            0.25s ease-in-out
+	);
+
+	&:hover,
+	&:focus
+	{
+		
+	}
+
+	&--medium
+	{
+		min-width: 150px;
+		min-height: 50px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+
+	&--big
+	{
+		min-width: 180px;
+		min-height: 60px;
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	&.custom-btn--s1
+	{
+		color: $textColor1;
+		background-color: $white;
+		border-color: $primary-color;
+
+		&:hover,
+		&:focus
+		{
+			background-color: $primary-color;
+			color: $textColor2;
+		}
+	}
+
+	&.custom-btn--s2
+	{
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: $textColor2;
+
+		&:hover,
+		&:focus
+		{
+			background-color: $white;
+			border-color: $white;
+			color: $textColor1;
+		}
+	}
+
+	&.custom-btn--s3
+	{
+		background-color: $primary-color;
+		border-color: $primary-color;
+		color: $textColor2;
+
+		&:hover,
+		&:focus
+		{
+			background-color: #25272a;
+			border-color: #25272a;
+			color: $textColor2;
+		}
+	}
+
+	&.custom-btn--s4
+	{
+		background-color: #25272a;
+		border-color: #25272a;
+		color: $textColor2;
+
+		&:hover,
+		&:focus
+		{
+			background-color: $white;
+			border-color: $white;
+			color: $textColor1;
+		}
+	}
+
+	&.custom-btn--s5
+	{
+		background-color: $white;
+		border-color: $white;
+		color: $textColor1;
+
+		&:hover,
+		&:focus
+		{
+			background-color: #25272a;
+			border-color: #25272a;
+			color: $textColor2;
+		}
+	}
+
+	&.wide { width: 100%; }
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

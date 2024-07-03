@@ -11,6 +11,7 @@ use App\Traits\Content;
 class GuestPagesController extends Controller
 {
     use Content;
+
     public function __construct()
     {
         // define pages used in this controller
@@ -25,7 +26,21 @@ class GuestPagesController extends Controller
         $this->pages['machine']     = ['attributes' => ['machine', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['refill']     = ['attributes' => ['refill', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['login']       = ['attributes' => ['login', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         //$this->loadPages();
+    }
+    public function signup(Request $request)
+    {
+        try {
+            $page = 'signup';
+            $content = $this->getPageContentAttributes($page);
+            return view('pages.auth.signup')
+                ->with('page', $page)
+                ->with('content' ,$content );
+        } catch (\Exception $e) {
+            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
+            abort(404);
+        }
     }
     public function articleRequest(Request $request)
     {
@@ -164,21 +179,21 @@ class GuestPagesController extends Controller
             abort(404);
         }
     }
-    public function machines(Request $request)
-    {
-        try {
-            $page = 'machine';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
-            return view('pages.machines.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
-
-        } catch (\Exception $e) {
-            $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
-        }
-    }
+//    public function machines(Request $request)
+//    {
+//        try {
+//            $page = 'machine';
+//            $this->loadPage($page);
+//            $content = $this->getPageContentAttributes($page);
+//            return view('pages.machines.default')
+//                ->with('page', $page)
+//                ->with('content' ,$content );
+//
+//        } catch (\Exception $e) {
+//            $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
+//            abort(404);
+//        }
+//    }
     public function refill(Request $request)
     {
         try {

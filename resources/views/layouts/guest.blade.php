@@ -7,7 +7,38 @@
 
     @yield('head')
     @yield('head_scripts')
-    @yield('vite')
+{{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
+{{--    <link rel="stylesheet" href="/css/doc.css" type="text/css">--}}
+
+
+    <link rel="stylesheet" href="/css/critical.css" type="text/css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css" type="text/css">
+{{--    <link rel="stylesheet" href="/js/aos/aos.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/js/jarallax/jaralax.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/js/slick/slick.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/js/nice-select/nice-select.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/js/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css">--}}
+
+
+
+
+
+
+
+<!--
+    /// <reference path='../libs/aos/aos.js' />
+    /// <reference path='../libs/jarallax/jarallax.js' />
+    /// <reference path='../libs/jarallax/jarallax-element.js' />
+    /// <reference path='../libs/slick/slick.js' />
+    /// <reference path='../libs/countTo/jquery.countTo.js' />
+    /// <reference path='../libs/isotope/isotope.pkgd.js' />
+    /// <reference path='../libs/fancybox/jquery.fancybox.js' />
+    /// <reference path='../libs/nice-select/jquery.nice-select.js' />
+    /// <reference path='../libs/ion.rangeSlider/js/ion.rangeSlider.js' />
+-->
+
 
 </head>
 {{--    <body class="page-home page-home-2">--}}
@@ -79,10 +110,19 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="/js/main.min.js"></script>
+<script src="/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script src="/js/aos/aos.js"></script>
+<script src="/js/jarallax/jarallax.js"></script>
+<script src="/js/jarallax/jarallax-element.js"></script>
+<script src="/js/jarallax/jarallax-video.js"></script>
+<script src="/js/slick/slick.js"></script>
+<script src="/js/countTo/jquery.countTo.js"></script>
+<script src="/js/isotope/isotope.pkgd.js"></script>
+<script src="/js/fancybox/jquery.fancybox.js"></script>
+<script src="/js/nice-select/jquery.nice-select.js"></script>
+<script src="/js/ion.rangeSlider/js/ion.rangeSlider.js"></script>
+
 </body>
 </html>

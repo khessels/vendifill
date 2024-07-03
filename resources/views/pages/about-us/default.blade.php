@@ -14,10 +14,6 @@
 @section('head-scripts')
 @endsection
 
-@section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-@endsection
-
 @section('top-bar')
     @include('partials.top-bar')
 @endsection

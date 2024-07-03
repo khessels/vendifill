@@ -13,9 +13,6 @@
 @section('head-scripts')
 @endsection
 
-@section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-@endsection
 
 @section('top-bar')
     @include('partials.top-bar')
@@ -32,11 +29,8 @@
 
 @section('content')
     <main role="main">
-        <!-- Common styles
-        ================================================== -->
 
-        <!-- start section -->
-        <section class="section ">
+        <section class="section">
             <div class="container">
                 <div class="row justify-content-center">
                     @if( session('success'))

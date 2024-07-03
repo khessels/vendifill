@@ -1,7 +1,28 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Enable V3 Messaging
+    |--------------------------------------------------------------------------
+    |
+    */
+    'V3' => false,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Default rest headers for V3 Messaging
+    |--------------------------------------------------------------------------
+    |
+    | We specify the default headers to be used in V3 messaging
+    |
+    */
+    'headers' =>[
+        'Content-Type'              => "application/json",
+        'Accept'                    => "application/json",
+        'x-response-data-format'    => 'V3',
+        'x-response-error-format'    => 'V3',
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name

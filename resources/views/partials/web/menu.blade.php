@@ -31,13 +31,13 @@
         </li>
     @endhaspermission
     <li class="has-submenu">
-        <a class="nav-link" href="javascript:void(0)">{{__('Depots')}}</a>
+        <a class="nav-link" href="/outlets">{{__('Outlets')}}</a>
         <ul class="submenu">
-            <li><a href="/depots">{{__('Index')}}</a></li>
-            <li><a href="/depot/sales">{{__('Sales')}}</a></li>
-            <li><a href="/depot/tickets">{{__('Tickets')}}</a></li>
-            <li><a href="/depot/reviews">{{__('Reviews')}}</a></li>
-            <li><a href="/depot/complaints">{{__('Complaints')}}</a></li>
+            <li><a href="/outlets">{{__('Index')}}</a></li>
+            <li><a href="/outlet/sales">{{__('Sales')}}</a></li>
+            <li><a href="/outlet/tickets">{{__('Tickets')}}</a></li>
+            <li><a href="/outlet/reviews">{{__('Reviews')}}</a></li>
+            <li><a href="/outlet/complaints">{{__('Complaints')}}</a></li>
         </ul>
     </li>
     <li class="has-submenu">

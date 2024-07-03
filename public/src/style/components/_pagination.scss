@@ -1,0 +1,90 @@
+/* --------------------------------
+   pagination
+-------------------------------- */
+
+.pagination
+{
+	flex-wrap: wrap;
+	align-items: center;
+	margin: -5px;
+	border-radius: 0;
+
+	.page-item
+	{
+		margin: 5px;
+		@include userSelect(none);
+
+		&:not(.active):hover
+		{
+			.page-link
+			{
+				background-color: inherit;
+				border-color: $primary-color;
+				color: $primary-color;
+			}
+		}
+
+		&.active
+		{
+			.page-link
+			{
+				background-color: $primary-color;
+				border-color: $primary-color;
+				cursor: default;
+			}
+		}
+
+		> span
+		{
+			display: inline-block;
+			vertical-align: top;
+			line-height: 1;
+		}
+	}
+
+	.page-link
+	{
+		min-width: 40px;
+		height: 40px;
+		margin-left: 0;
+		padding: 0;
+		line-height: 38px;
+		font-size: 1.6rem;
+		color: #333;
+		text-align: center;
+		text-decoration: none;
+		border: 2px solid #dcdcdc;
+		border-radius: 0 !important;
+		box-shadow: none;
+		@include transition(
+			background-color 0.3s ease-in-out,
+			border-color     0.3s ease-in-out,
+			color            0.3s ease-in-out
+		);
+
+		i
+		{
+			line-height: 1;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

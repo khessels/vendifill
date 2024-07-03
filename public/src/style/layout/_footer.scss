@@ -1,0 +1,188 @@
+/* --------------------------------
+   footer
+-------------------------------- */
+
+.footer
+{
+	position: relative;
+	background-color: #25272a;
+	font-size: 1.6rem;
+	font-weight: 600;
+	color: #d3d3d3;
+
+	&__line
+	{
+		&--first
+		{
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+
+		&--second { }
+	}
+
+	&__item
+	{
+		position: relative;
+		width: 100%;
+		float: left;
+		margin-top: 15px;
+		margin-bottom: 15px;
+		z-index: 2;
+	}
+
+	&__navigation
+	{
+		line-height: 1.4;
+
+		&:first-child { margin-top: -5px; }
+
+		ul {  }
+
+		li
+		{
+			position: relative;
+			margin-top: 5px;
+
+			&.active
+			{
+				a
+				{
+					color: $white;
+
+					&:after { width: 30px; }
+				}
+			}
+		}
+
+		a
+		{
+			color: inherit;
+			text-decoration: none;
+
+			&:after
+			{
+				content: "";
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 0;
+				border-top: 2px solid $primary-color;
+				@include transition(width 0.3s ease-in-out);
+			}
+
+			&:hover,
+			&:focus
+			{
+				color: $white;
+
+				&:after { width: 30px; }
+			}
+		}
+	}
+
+	&__address
+	{
+		line-height: 1.4;
+		font-style: normal;
+
+		a { color: inherit; }
+	}
+
+	&__form-subscribe
+	{
+		.input-wrp { }
+
+		.textfield
+		{
+			border-bottom-color: #737373;
+			color: $white;
+
+			@include placeholder { color: $white; }
+
+			&:focus:not([disabled]),
+			&.focus:not([disabled])
+			{
+				border-color: $white;
+			}
+		}
+
+		i
+		{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			height: 1em;
+			font-size: 2rem;
+			color: #555;
+
+			+ .textfield { padding-right: 30px; }
+		}
+	}
+
+	.__copy
+	{
+		font-size: 1.4rem;
+		color: #83888b;
+	}
+}
+
+.footer--s1
+{
+	.footer__line
+	{
+		&--second
+		{
+			padding-top: 19px;
+			border-top: 1px solid #4c4d4e;
+		}
+	}
+}
+
+.footer--s2
+{
+	
+}
+
+@include media-breakpoint-up(sm)
+{
+	.footer
+	{
+		&__item
+		{
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@include media-breakpoint-up(md)
+{
+	.footer
+	{
+		&__line
+		{
+			&--first { padding-top: 75px; }
+		}
+	}
+
+	.footer--s2
+	{
+		.footer__line
+		{
+			&--first { padding-bottom: 75px; }
+		}
+	}
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

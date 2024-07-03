@@ -98,10 +98,11 @@ trait V3Messaging {
         error_log('function: ' . $function );
         error_log('line: ' . $line);
         error_log("===================");
-
-        $message = $this->_createV3Message($request,'topic', 'critical exception',  'logging', null, $data);
-        if(!empty($message)) {
-            $this->_publishV3Message($message);
+        if(config('app.V3') == true) {
+            $message = $this->_createV3Message($request, 'topic', 'critical exception', 'logging', null, $data);
+            if (!empty($message)) {
+                $this->_publishV3Message($message);
+            }
         }
     }
     public function decodeV3Payload($oPayload = null, $returnArray = false)

@@ -1,0 +1,136 @@
+/* --------------------------------
+   counters
+-------------------------------- */
+
+.counter
+{
+	margin-top: 30px;
+	margin-bottom: 30px;
+
+	&:first-child { margin-top: 0; }
+	&:last-child { margin-bottom: 0; }
+
+	.__inner {  }
+
+	.__item
+	{
+		position: relative;
+		width: 100%;
+	}
+
+	.__ico
+	{
+		display: inline-block;
+		vertical-align: top;
+		line-height: 1;
+		@include userSelect(none);
+
+		> img,
+		> svg
+		{
+			display: block;
+		}
+
+		+ .__content { margin-top: 10px; }
+	}
+
+	.__content
+	{
+		line-height: 1;
+		font-weight: 800;
+		@include userSelect(none);
+	}
+
+	.__title
+	{
+		font-family: inherit;
+		letter-spacing: -0.05em;
+	}
+
+	.__count
+	{
+		line-height: 0.8;
+
+		&:before
+		{
+			pointer-events: none;
+			display: block;
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			overflow: hidden;
+			content: attr(data-to) attr(data-after-text);
+		}
+
+		&:after { content: attr(data-after-text); }
+	}
+}
+
+.counter--s1
+{
+	$marginBottom: 50px;
+
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item { margin-bottom: $marginBottom; }
+
+	.__count
+	{
+		font-size: 10rem;
+		color: $primary-color;
+
+		&:first-child { margin-top: -0.1em; }
+	}
+}
+
+.counter--s2
+{
+	$marginBottom: 50px;
+
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item { margin-bottom: $marginBottom; }
+
+	.__count
+	{
+		font-size: 6rem;
+		color: #333;
+	}
+}
+
+.counter--s3
+{
+	$marginBottom: 50px;
+
+	.__inner { margin-bottom: -$marginBottom; }
+
+	.__item { margin-bottom: $marginBottom; }
+
+	.__count
+	{
+		font-size: 8rem;
+		color: $primary-color;
+
+		&:first-child { margin-top: -0.1em; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}

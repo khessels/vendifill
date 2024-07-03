@@ -13,10 +13,6 @@
 @section('head-scripts')
 @endsection
 
-@section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-@endsection
-
 @section('top-bar')
     @include('partials.top-bar')
 @endsection
@@ -26,16 +22,13 @@
 @endsection
 
 @section('start-screen')
-    <!-- page var: {{ $page }} -->
     {!! $content[$page]['start_screen'] ?? '' !!}
 @endsection
 
 @section('content')
 {{--    {!! $content[$page]['main'] ?? '' !!}--}}
     <main role="main">
-        <link rel="stylesheet" href="/css/style.min.css" type="text/css">
-        <!-- start section -->
-        <section class="section section--gray-bg">
+        <section class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center">
@@ -83,11 +76,9 @@
                         </div>
                         <!-- end auth form -->
                     </div>
-
                 </div>
             </div>
         </section>
-        <!-- end section -->
     </main>
 @stop
 

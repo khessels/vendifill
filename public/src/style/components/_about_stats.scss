@@ -1,0 +1,56 @@
+/* --------------------------------
+   about stats
+-------------------------------- */
+
+.about-img
+{
+	@include media-breakpoint-up(lg)
+	{
+		margin-left: -15px;
+		padding-left: 15px;
+		width: 49.4vw;
+	}
+}
+
+.about-stats
+{
+	line-height: 1;
+
+	.__img-place { }
+
+	.__txt-place
+	{
+		font-size: 6rem;
+		font-weight: 700;
+		color: $primary-color;
+		letter-spacing: -.05em;
+
+		&:last-child { margin-bottom: -0.12em; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	.about-stats
+	{
+		.__txt-place { font-size: 8rem; }
+	}
+}
+
+@include media-breakpoint-up(xl)
+{
+	.about-stats
+	{
+		.__txt-place { font-size: 10rem; }
+	}
+}

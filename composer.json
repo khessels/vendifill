@@ -1,20 +1,23 @@
 {
     "name": "laravel/laravel",
-    "type": "project",
+
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
         "php": "^8.3",
-        "laravel/framework": "^11.0",
+        "ext-openssl": "*",
+        "laravel/framework": "^v11.11.1",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "livewire/livewire": "^3.5",
         "matanyadaev/laravel-eloquent-spatial": "^4.2",
         "spatie/laravel-permission": "^6.7",
         "svnwa/laravel-strapi": "^1.2",
-        "ext-openssl": "*"
+        "symfony/http-foundation": "^7.1"
     },
     "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.13",
         "fakerphp/faker": "^1.23",
         "laravel/pint": "^1.13",
         "laravel/sail": "^1.26",

@@ -13,9 +13,6 @@
 @section('head-scripts')
 @endsection
 
-@section('vite')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-@endsection
 
 @section('top-bar')
     @include('partials.top-bar')
@@ -32,21 +29,13 @@
 
 @section('content')
     <main role="main">
-        <!-- Common styles
-        ================================================== -->
-        <link rel="stylesheet" href="/css/style.min.css" type="text/css">
-
-        <!-- start section -->
-        <section class="section ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-6-md">11</div>
-                    <div class="col-6-md">22</div>
-                </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6-md">11</div>
+                <div class="col-6-md">22</div>
             </div>
-        </section>
+        </div>
     </main>
-
 @stop
 
 @section('footer')

@@ -1,0 +1,151 @@
+/* --------------------------------
+   alert
+-------------------------------- */
+
+.alert
+{
+	$colorSuccess: #72bf4c;
+	$colorInfo:    #4d7ec0;
+	$colorWarning: #f48d37;
+	$colorDanger:  #f95a3f;
+
+	position: relative;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding: 27px 17px;
+	border: 3px solid;
+	line-height: 1.4;
+
+	&:first-child { margin-top: 0; }
+	&:last-child  { margin-bottom: 0; }
+
+	&__ico
+	{
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 20px;
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+		font-size: 1.6rem;
+		text-align: center;
+		color: $white;
+		border-radius: 50%;
+	}
+
+	&__close
+	{
+		display: none;
+		position: absolute;
+		top: 28px;
+		right: 20px;
+		width: 30px;
+		height: 30px;
+		background: none transparent;
+		border: none;
+		box-shadow: none;
+		font-size: 2.5rem;
+		font-weight: 600;
+		text-align: center;
+		outline: none;
+		appearance: none;
+
+		&:not(:disabled):not(.disabled) { cursor: pointer; }
+	}
+
+	a { color: inherit; }
+
+	&--dismissible
+	{
+		padding-right: 67px;
+
+		.alert__close { display: block; }
+	}
+
+	&--success { border-color: $colorSuccess; }
+	&--info    { border-color: $colorInfo; }
+	&--warning { border-color: $colorWarning; }
+	&--danger  { border-color: $colorDanger; }
+
+	&--s1
+	{
+		color: $white;
+
+		&.alert--success
+		{
+			background-color: $colorSuccess;
+
+			.alert__ico { background-color: darken($colorSuccess,15%); }
+		}
+
+		&.alert--info
+		{
+			background-color: $colorInfo;
+
+			.alert__ico { background-color: darken($colorInfo,15%); }
+		}
+
+		&.alert--warning
+		{
+			background-color: $colorWarning;
+
+			.alert__ico { background-color: darken($colorWarning,15%); }
+		}
+
+		&.alert--danger
+		{
+			background-color: $colorDanger;
+
+			.alert__ico { background-color: darken($colorDanger,15%); }
+		}
+
+		.alert__close { color: rgba($white,0.5); }
+	}
+
+	&--s2
+	{
+		color: #333;
+
+		&.alert--success
+		{
+			.alert__ico { background-color: $colorSuccess; }
+		}
+
+		&.alert--info
+		{
+			.alert__ico { background-color: $colorInfo; }
+		}
+
+		&.alert--warning
+		{
+			.alert__ico { background-color: $colorWarning; }
+		}
+
+		&.alert--danger
+		{
+			.alert__ico { background-color: $colorDanger; }
+		}
+
+		.alert__close { color: #b1b1b1; }
+	}
+}
+
+@include media-breakpoint-up(sm)
+{
+	
+}
+
+@include media-breakpoint-up(md)
+{
+	
+}
+
+@include media-breakpoint-up(lg)
+{
+	
+}
+
+@include media-breakpoint-up(xl)
+{
+	
+}
