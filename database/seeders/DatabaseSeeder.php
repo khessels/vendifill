@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
                     UsersSeeder::class,
                     Products::class,
                     MachinesSeeder::class,
+                    OutletSeeder::class,
                 ];
                 break;
         }

@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class OutletType extends Model
+{
+    use HasFactory;
+    protected $table = 'outlet_events';
+    protected $fillable = [
+        'outlet_type',
+    ];
+}
