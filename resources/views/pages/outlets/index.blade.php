@@ -36,8 +36,8 @@
                 <div class="row">
                     <div class="col-md-2">
                         @can('machines-manage')
-                            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#mdlAddMachine">
-                                {{__('Add machine')}}
+                            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#mdlAddOutlet">
+                                {{__('Add outlet')}}
                             </button>
                         @endcan
                     </div>
@@ -55,7 +55,7 @@
             </div>
         </section>
     </main>
-    <div class="modal modal-lg" id="mdlAddMachine">
+    <div class="modal modal-lg" id="mdlAddOutlet">
         <div class="modal-dialog ">
             <form method="post">
                 @csrf
@@ -63,43 +63,44 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Add machine</h4>
+                        <h4 class="modal-title">Add outlet</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="location_id">{{__('Location')}}</label>
-                            <select class="form-control" id="location_id" name="location_id">
-                                @foreach($locations as $location)
-                                    <option value="{{$location->id}}">{{$location->name}}</option>
-                                @endforeach
+                            <label for="name">{{__('Name')}}</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="{{__('Name of the location')}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">{{__('Contact')}}</label>
+                            <input type="text" class="form-control" id="contact" name="contact" placeholder="{{__('Contact details')}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="country_code">{{__('Country Code')}}</label>
+                            <select class="form-control" id="country_code" name="country_code">
+                                <option value="506" selected>Costa Rica</option>
                             </select>
                         </div>
                         <div class="form-group">
                             <label for="name">{{__('Coordinates')}}</label>
-                            <input type="text" class="form-control" id="coordinates" name="coordinates" placeholder="{{__('coordinates of the machine')}}">
+                            <input type="text" class="form-control" id="coordinates" name="coordinates" placeholder="{{__('coordinates of the location')}}">
                         </div>
                         <div class="form-group">
-                            <label for="machine_type">{{__('Machine Type')}}</label>
-                            <select class="form-control" id="machine_type_id" name="machine_type_id">
-                                @foreach($machine_types as $machineType)
-                                    <option value="{{$machineType->id}}">{{$machineType->machine_type}}</option>
+                            <label for="outlet_type">{{__('Outlet Type')}}</label>
+                            <select class="form-control" id="outlet_type_id" name="outlet_type_id">
+                                @foreach($outlet_types as $outletType)
+                                    <option value="{{$outletType->id}}">{{$outletType->outlet_type}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="brand">{{__('Brand')}}</label>
-                            <input type="text" class="form-control" id="brand" name="brand" placeholder="{{__('machine brand')}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="brand_model">{{__('Brand Model')}}</label>
-                            <input type="text" class="form-control" id="brand_model" name="brand_model" placeholder="{{__('machine model')}}">
-                        </div>
-                        <div class="form-group">
-                            <label for="year">{{__('Model year')}}</label>
-                            <input type="text" class="form-control" id="year" name="year" placeholder="{{__('Model year')}}">
+                            <label for="country_code">{{__('Active')}}</label>
+                            <select class="form-control" id="active" name="active">
+                                <option value="YES" selected>{{__('YES')}}</option>
+                                <option value="NO">{{__('NO')}}</option>
+                            </select>
                         </div>
                     </div>
 

@@ -5,13 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Location;
 use App\Models\Machine;
 use App\Models\MachineType;
+use App\Models\Outlet;
+use App\Models\OutletType;
+use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
 use App\Traits\Content;
 use Illuminate\Support\Facades\Redirect;
 
-class MachineController extends Controller
+class OutletController extends Controller
 {
     use Content;
     public function __construct()
@@ -21,10 +24,7 @@ class MachineController extends Controller
 //        $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 //        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 //        $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.index']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.config']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.stock']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.testing-ground']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['outlet.index']    = ['attributes' => ['outlets', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
         //$this->loadLocale();
@@ -34,16 +34,16 @@ class MachineController extends Controller
     public function index(Request $request)
     {
         try {
-            $page = 'machines.index';
+            $page = 'outlets.index';
             $content = $this->getPageContentAttributes($page);
-            $locations = Location::where('active', 'yes')->get();
-            $machineTypes = MachineType::all();
-            return view('pages.machines.index')
-                ->with('locations', $locations ?? [])
-                ->with('machine_types', $machineTypes ?? [])
+
+            $outletTypes = OutletType::all();
+            return view('pages.outlets.index')
+                ->with('outlet_types', $outletTypes ?? [])
                 ->with('page', $page)
                 ->with('content' ,$content );
         } catch (\Exception $e) {
+            Debugbar::error($e->getMessage());
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
         }
@@ -51,13 +51,13 @@ class MachineController extends Controller
     public function store(Request $request)
     {
         try {
-            $machine = new Machine($request->all());
-            $machine->save();
-            return redirect()->route('view.machines.index');
+            $outlet = new Outlet($request->all());
+            $outlet->save();
+            return redirect()->route('view.outlets.index');
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             return Redirect::back()
-                ->with('message', 'Machine not added')
+                ->with('message', 'Outlet not added')
                 ->with('alert-class', 'alert-warning');
         }
     }

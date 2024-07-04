@@ -33,10 +33,11 @@ class OutletSeeder extends Seeder
 
         $outlets = [];
 
-        $outlet['name'] = "Super Mercado Test";
+        $outlet['name'] = "Test Super Mercado";
         $outlet['contact'] = "+506 6107 3424";
         $outlet['country_code'] = "506";
         $outlet['outlet_type_id'] = 1;
+        $outlet['active'] = 'YES';
         $outlets[] = $outlet;
 
 

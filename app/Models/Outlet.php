@@ -15,13 +15,11 @@ class Outlet extends Model
         'country_code',
         'contact',
         'outlet_type_id',
+        'active',
     ];
-    public function location(): \Illuminate\Database\Eloquent\Relations\HasOne
+
+    public function outlet_type(): \Illuminate\Database\Eloquent\Relations\HasOne
     {
-        return $this->hasOne('App\Models\Location', 'id', 'location_id');
-    }
-    public function machine_type(): \Illuminate\Database\Eloquent\Relations\HasOne
-    {
-        return $this->hasOne('App\Models\MachineType', 'id', 'machine_type_id');
+        return $this->hasOne('App\Models\OutletType', 'id', 'outlet_type_id');
     }
 }

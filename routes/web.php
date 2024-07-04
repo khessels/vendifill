@@ -3,6 +3,7 @@
 use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MachineController;
+use App\Http\Controllers\OutletController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
@@ -50,9 +51,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('/locations',             [LocationController::class,    'index'])       ->name('view.locations.index');
         Route::post('/locations',            [LocationController::class,    'store']);
     });
-    Route::group( ['middleware' => ['can:locations-manage']], function () {
-        Route::get('/locations',             [LocationController::class,    'index'])       ->name('view.locations.index');
-        Route::post('/locations',            [LocationController::class,    'store']);
+    Route::group( ['middleware' => ['can:outlets-manage']], function () {
+        Route::get('/outlets',             [OutletController::class,    'index'])       ->name('view.outlet.index');
+        Route::post('/outlets',            [OutletController::class,    'store']);
     });
 
     Route::group( ['middleware' => ['can:machines-manage']], function () {
