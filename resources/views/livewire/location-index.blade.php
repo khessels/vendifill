@@ -24,7 +24,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $locations->links() }}
+        {{ $locations->links(data:['scrollTo' => false]) }}
     @else
         <span>No locations</span>
     @endif

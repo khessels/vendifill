@@ -11,7 +11,7 @@ class OutletIndex extends Component
     protected $paginationTheme = 'bootstrap';
     public function render()
     {
-        $outlets = Outlet::where('active', 'YES')->with('outlet_type')->simplePaginate(15);
+        $outlets = Outlet::where('active', 'YES')->with('outlet_type')->paginate(15);
         return view('livewire.outlet-index')->with('outlets', $outlets);
     }
 }

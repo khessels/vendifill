@@ -28,7 +28,7 @@
 
             </tfoot>
         </table>
-        {{ $machines->links() }}
+        {{ $machines->links(data:['scrollTo' => false]) }}
     @else
         <span>No machines listed</span>
     @endif

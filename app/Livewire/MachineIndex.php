@@ -17,7 +17,7 @@ class MachineIndex extends Component
         $machineTypes = MachineType::all();
         $machines = Machine::with('location')
             ->with('machine_type')
-            ->simplePaginate(15);
+            ->paginate(15);
 
         return view('livewire.machine-index')
             ->with('locations', $locations ?? [])

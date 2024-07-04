@@ -12,7 +12,7 @@ class LocationIndex extends Component
     protected $paginationTheme = 'bootstrap';
     public function render()
     {
-        $locations = Location::whereNotNull('id')->simplePaginate(15);
+        $locations = Location::whereNotNull('id')->paginate(15);
         return view('livewire.location-index')->with('locations', $locations);
     }
 }
