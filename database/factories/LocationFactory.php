@@ -25,7 +25,7 @@ class LocationFactory extends Factory
             'fax' => fake()->unique()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
             'description' => fake()->sentence(),
-            'access' => fake()->randomElements(['PUBLIC', 'PRIVATE']),
+            'access' => fake()->randomElement(['PUBLIC', 'PRIVATE']),
             'active' => 'YES',
             'contact_details' => fake()->text(),
             'managed_by' => fake()->sentence(),

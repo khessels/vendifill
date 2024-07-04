@@ -12,7 +12,12 @@ class MachineFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'uuid' => $this->faker->uuid(),
+            'brand' =>  $this->faker->name(),
+            'brand_model' =>  $this->faker->name(),
+            'year' =>  $this->faker->year(),
+            'location_id' =>  $this->faker->numberBetween(1,150),
+            'machine_type_id' => $this->faker->numberBetween(1,6),
         ];
     }
 }

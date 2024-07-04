@@ -27,4 +27,5 @@
         @endif
         </tbody>
     </table>
+    {{ $locations->links() }}
 </div>

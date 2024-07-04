@@ -30,6 +30,7 @@ class OutletSeeder extends Seeder
             $ot->save();
         }
 
+        Outlet::factory()->count(66)->create();
 
         $outlets = [];
 

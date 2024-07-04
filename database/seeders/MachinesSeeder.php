@@ -32,6 +32,7 @@ class MachinesSeeder extends Seeder
             $o = new MachineType($machineType);
             $o->save();
         }
+        Machine::factory()->count(150)->create();
 /*
  *             $table->geography('coordinates')->nullable();
             $table->uuid('uuid')->nullable();
@@ -45,27 +46,27 @@ class MachinesSeeder extends Seeder
 
             $table->unsignedBigInteger('machine_type_id')->index();
  */
-        $machines = [];
-
-        $machine["uuid"] = (string)Str::uuid();
-        $machine["brand"] = "blabla";
-        $machine["brand_model"] = "apo 103";
-        $machine["year"] = "2017";
-        $machine["location_id"] = "1";
-        $machine["machine_type_id"] = "1";
-        $machines[] = $machine;
-
-        $machine["uuid"] = (string)Str::uuid();
-        $machine["brand"] = "tratra";
-        $machine["brand_model"] = "apo 104";
-        $machine["year"] = "2017";
-        $machine["location_id"] = "1";
-        $machine["machine_type_id"] = "3";
-        $machines[] = $machine;
-
-        foreach($machines as $machine){
-            $o = new Machine($machine);
-            $o->save();
-        }
+//        $machines = [];
+//
+//        $machine["uuid"] = (string)Str::uuid();
+//        $machine["brand"] = "blabla";
+//        $machine["brand_model"] = "apo 103";
+//        $machine["year"] = "2017";
+//        $machine["location_id"] = "1";
+//        $machine["machine_type_id"] = "1";
+//        $machines[] = $machine;
+//
+//        $machine["uuid"] = (string)Str::uuid();
+//        $machine["brand"] = "tratra";
+//        $machine["brand_model"] = "apo 104";
+//        $machine["year"] = "2017";
+//        $machine["location_id"] = "1";
+//        $machine["machine_type_id"] = "3";
+//        $machines[] = $machine;
+//
+//        foreach($machines as $machine){
+//            $o = new Machine($machine);
+//            $o->save();
+//        }
     }
 }
