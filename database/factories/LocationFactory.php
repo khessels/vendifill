@@ -13,42 +13,23 @@ class LocationFactory extends Factory
     public function definition(): array
     {
         return [
-
             'name' => fake()->name(),
             'address' => fake()->address(),
+            'city' => fake()->city(),
+            'zip' => fake()->postcode(),
+            'country_code' => 506,
+            'province' => fake()->city(),
+            'canton' => "",
+            'phone_1' => fake()->unique()->phoneNumber(),
+            'phone_2' => fake()->unique()->phoneNumber(),
+            'fax' => fake()->unique()->phoneNumber(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-
-            'status' => fake()->randomElements(['active', 'inactive']),
-            'banned' => fake()->randomElements(['no','yes']),
-            'rating' => fake()->randomElements(['1','2','3','4','5']),
-            'remember_token' => Str::random(10),
+            'description' => fake()->sentence(),
+            'access' => fake()->randomElements(['PUBLIC', 'PRIVATE']),
+            'active' => 'YES',
+            'contact_details' => fake()->text(),
+            'managed_by' => fake()->sentence(),
+            'location_emergency' => fake()->sentence(),
         ];
-        /*
-            $table->id();
-            $table->point('gps')->nullable(false);
-            $table->string('name')->nullable(false);
-            $table->string('address')->nullable(false);
-            $table->string('city')->nullable(false);
-            $table->string('zip')->nullable();
-            $table->string('country')->nullable(false);
-            $table->string('province')->nullable(false);
-            $table->string('canton')->nullable();
-            $table->string('phone_1')->nullable();
-            $table->string('phone_2')->nullable();
-            $table->string('fax')->nullable();
-            $table->string('email')->nullable();
-
-            $table->string('description');
-            $table->text('comments')->nullable();
-
-            $table->enum('access',['public', 'private'])->default('public')->nullable(false);
-
-            $table->text('location_responsible_by')->nullable();
-            $table->integer('location_managed_by')->nullable();
-            $table->text('location_emergency')->nullable();
-            $table->text('location_description')->nullable();
-            $table->string('demographics')->nullable();
-         */
     }
 }

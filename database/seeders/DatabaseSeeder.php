@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Location;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -34,6 +35,7 @@ class DatabaseSeeder extends Seeder
                     PermissionsSeeder::class,
                     UsersSeeder::class,
                     Products::class,
+                    LocationSeeder::class,
                     MachinesSeeder::class,
                     OutletSeeder::class,
                 ];

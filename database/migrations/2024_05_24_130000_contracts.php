@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('whatsapp')->unique();
             $table->timestamp('expires')->nullable();
             $table->integer('percentage')->nullable();
-            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
 
             $table->timestamps();
         });

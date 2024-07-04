@@ -22,7 +22,7 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(false);
             $table->string('contact')->nullable(false);
-            $table->string('country_code')->nullable(false);
+            $table->integer('country_code')->nullable(false)->default(506);
             $table->enum('active', ['YES', 'NO'])->nullable(false)->default('NO');
             $table->geography('coordinates')->nullable();
             $table->unsignedBigInteger('outlet_type_id')->index();

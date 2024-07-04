@@ -17,10 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->enum('status', ['active', 'inactive'])->default('active');
-            $table->enum('reason', ['seed', 'new registration', 'banned', 'opt-out'])->default('new registration');
+            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
+            $table->enum('reason', ['SEED', 'NEW REGISTRATION', 'BANNED', 'OPT-OUT'])->default('NEW REGISTRATION');
             $table->double('rating', 2,1)->nullable()->default(5);
-            $table->enum('user_type', ['system', 'service', 'user'])->default('user');
+            $table->enum('user_type', ['SYSTEM', 'SERVICE', 'USER'])->default('USER');
 
             $table->rememberToken();
             $table->timestamps();

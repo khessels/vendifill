@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->integer('parent_id')->nullable();
             $table->integer('source_id')->nullable(false);
-            $table->enum('source', ['user', 'web', 'app', 'outlet', 'location', 'company'])->nullable(false);
+            $table->enum('source', ['USER', 'WEB', 'APP', 'OUTLET', 'LOCATION', 'COMPANY'])->nullable(false);
             $table->integer('target_id')->nullable(false);
-            $table->enum('target', ['user', 'machine', 'location', 'company', 'route', 'outlet'])->nullable(false);
-            $table->enum('message_type', ['comment', 'response', 'feedback', 'complaint'])->nullable(false);
+            $table->enum('target', ['USER', 'MACHINE', 'LOCATION', 'COMPANY', 'ROUTE', 'OUTLET'])->nullable(false);
+            $table->enum('message_type', ['COMMENT', 'RESPONSE', 'FEEDBACK', 'COMPLAINT'])->nullable(false);
             $table->string('message', 255)->nullable(false);
             $table->double('rating', 2, 1)->nullable();
 

@@ -21,19 +21,19 @@ return new class extends Migration
         Schema::create('packaging', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->enum('active', ['yes', 'no'])->nullable(false);
+            $table->enum('active', ['YES', 'NO'])->nullable(false);
             $table->timestamps();
         });
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->enum('active', ['yes', 'no'])->nullable(false);
+            $table->enum('active', ['YES', 'NO'])->nullable(false);
             $table->timestamps();
         });
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
-            $table->enum('active', ['yes', 'no'])->nullable(false);
+            $table->enum('active', ['YES', 'NO'])->nullable(false);
             $table->double('min_price', 6, 2)->nullable(false);
             $table->double('msrp', 6, 2)->nullable(false);
             $table->string('barcode')->nullable();
