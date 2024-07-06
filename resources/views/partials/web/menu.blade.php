@@ -13,8 +13,8 @@
         <a class="nav-link" href="/products">{{__('Products')}}</a>
         <ul class="submenu">
             <li><a href="/products">{{__('Index')}}</a></li>
-            <li><a href="/products/stock">{{__('Stock')}}</a></li>
-            <li><a href="/products/machine/stock">{{__('Machine Stock')}}</a></li>
+{{--            <li><a href="/products/stock">{{__('Stock')}}</a></li>--}}
+{{--            <li><a href="/products/machine/stock">{{__('Machine Stock')}}</a></li>--}}
         </ul>
     </li>
     @haspermission('machines-manage')
@@ -22,11 +22,11 @@
             <a class="nav-link" href="javascript:void(0)">{{__('Machines')}}</a>
             <ul class="submenu">
                 <li><a href="/machines">{{__('Index')}}</a></li>
-                <li><a href="/machine/stock">{{__('Stock')}}</a></li>
-                <li><a href="/machine/config">{{__('Config')}}</a></li>
-                @can('machines-experiment')
-                    <li><a href="/machine/testing-ground">{{__('Testing ground')}}</a></li>
-                @endcan
+{{--                <li><a href="/machine/stock">{{__('Stock')}}</a></li>--}}
+{{--                <li><a href="/machine/config">{{__('Config')}}</a></li>--}}
+{{--                @can('machines-experiment')--}}
+{{--                    <li><a href="/machine/testing-ground">{{__('Testing ground')}}</a></li>--}}
+{{--                @endcan--}}
             </ul>
         </li>
     @endhaspermission

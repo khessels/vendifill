@@ -47,19 +47,23 @@ class Products extends Seeder
     {
         $items                  = [];
         $item['name']           = 'bottle';
+        $item['weight']         = '100';
         $item['active']         = 'yes';
         $items[]                = $item;
 
         $item['name']           = 'wide bag';
         $item['active']         = 'yes';
+        $item['weight']         = '110';
         $items[]                = $item;
 
         $item['name']           = 'small bag';
         $item['active']         = 'yes';
+        $item['weight']         = '120';
         $items[]                = $item;
 
         $item['name']           = 'can';
         $item['active']         = 'yes';
+        $item['weight']         = '130';
         $items[]                = $item;
 
         return $items;
@@ -70,18 +74,19 @@ class Products extends Seeder
 //    }
     public function run(): void
     {
-        foreach($this->barcodeProviders() as $barcodeProvider){
-            $obj = BarcodeProvider::create($barcodeProvider);
-        }
+//        foreach($this->barcodeProviders() as $barcodeProvider){
+//            $obj = BarcodeProvider::create($barcodeProvider);
+//        }
         foreach($this->packages() as $package){
             $obj = Packaging::create($package);
         }
-        foreach($this->brands() as $brand){
-            $obj = Brand::create($brand);
-        }
+//        foreach($this->brands() as $brand){
+//            $obj = Brand::create($brand);
+//        }
+
 //        foreach($this->products() as $product){
 //            $obj = Product::create($product);
 //        }
-
+        Product::factory()->count(150)->create();
     }
 }

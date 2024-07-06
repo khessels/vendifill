@@ -17,7 +17,8 @@ $arrAllPermissions = [
     'machines-service',
     'machines-experiment',
     'locations-manage',
-    'outlets-manage'
+    'outlets-manage',
+    'products-manage'
 ];
 return [
     'permissions' => $arrAllPermissions,

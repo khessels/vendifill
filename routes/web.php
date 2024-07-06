@@ -4,6 +4,7 @@ use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MachineController;
 use App\Http\Controllers\OutletController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
@@ -27,6 +28,7 @@ Route::view('404', 'errors.404')->name('view.404');
 // Route::view('/', 'pages.index.guest');
 
 Route::get( '/',                     [GuestPagesController::class,   'index'])          ->name('view.index');
+Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('login');
 Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('view.login');
 Route::get( '/about-us',             [GuestPagesController::class,   'about_us'])       ->name('view.about-us');
 Route::get( '/contact-us',           [GuestPagesController::class,   'contact'])        ->name('view.contact');
@@ -60,6 +62,12 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('/machines',              [MachineController::class,     'index'])       ->name('view.machines.index');
         Route::post('/machines',             [MachineController::class,     'store']);
         Route::get('/machine/stock',         [MachineController::class,     'stock'])       ->name('view.machine.stock');
+    });
+
+    Route::group( ['middleware' => ['can:products-manage']], function () {
+        Route::get('/products',              [ProductController::class,     'index'])       ->name('view.products.index');
+        Route::post('/products',             [ProductController::class,     'store']);
+
     });
 
     Route::group( ['middleware' => ['can:machines-config']], function () {

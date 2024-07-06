@@ -1,7 +1,7 @@
 <div>
     {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
     @if(!empty( $outlets))
-        <table class="table">
+        <table class="table table-striped">
             <thead>
             <th>{{__('ID')}}</th>
             <th>{{__('Name')}}</th>
@@ -31,3 +31,10 @@
         <span>No Outlets listed</span>
     @endif
 </div>
+@section('scripts-bottom')
+    <script >
+        $(function() {
+            new DataTable('.table');
+        });
+    </script>
+@endsection

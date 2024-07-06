@@ -1,7 +1,7 @@
 <div>
     {{-- Because she competes with no one, no one can compete with her. --}}
     @if(!empty( $locations))
-        <table class="table">
+        <table class="table table-striped">
             <thead>
             <th>{{__('ID')}}</th>
             <th>{{__('Name')}}</th>
@@ -29,3 +29,10 @@
         <span>No locations</span>
     @endif
 </div>
+@section('scripts-bottom')
+    <script >
+        $(function() {
+            new DataTable('.table');
+        });
+    </script>
+@endsection

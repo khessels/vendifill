@@ -47,6 +47,7 @@ return new class extends Migration
             $table->string('type')->nullable(false);
             $table->timestamps();
         });
+
         Schema::create('machine_stock', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id')->index();
@@ -63,7 +64,7 @@ return new class extends Migration
             $table->double('price', 6,2)->nullable(false);
             $table->integer('slot')->nullable(false);
             $table->integer('count')->nullable(false)->default(0);
-            $table->integer('max')->nullable(false);
+            $table->integer('max_count')->nullable(false);
             $table->timestamps();
         });
         Schema::create('machine_events', function (Blueprint $table) {
