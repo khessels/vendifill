@@ -61,7 +61,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group( ['middleware' => ['can:machines-manage']], function () {
         Route::get('/machines',              [MachineController::class,     'index'])       ->name('view.machines.index');
         Route::post('/machines',             [MachineController::class,     'store']);
-        Route::get('/machine/stock',         [MachineController::class,     'stock'])       ->name('view.machine.stock');
+        Route::get('/machine/stock/{uuid}',  [MachineController::class,     'stock'])       ->name('view.machine.stock');
+
     });
 
     Route::group( ['middleware' => ['can:products-manage']], function () {

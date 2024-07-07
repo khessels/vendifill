@@ -3,7 +3,11 @@
 namespace Database\Seeders;
 
 use App\Models\Machine;
+use App\Models\MachineProduct;
+use App\Models\MachineStock;
 use App\Models\MachineType;
+use App\Models\MachineSlot;
+use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -29,44 +33,34 @@ class MachinesSeeder extends Seeder
         $machineType['machine_type'] = 'Combo NOT Cooled';
         $machineTypes[] = $machineType;
         foreach($machineTypes as $machineType){
-            $o = new MachineType($machineType);
-            $o->save();
+            MachineType::create($machineType);
         }
-        Machine::factory()->count(150)->create();
-/*
- *             $table->geography('coordinates')->nullable();
-            $table->uuid('uuid')->nullable();
-            $table->string('brand')->nullable();
-            $table->string('brand_model')->nullable();
-            $table->smallInteger('year')->nullable();
-            $table->unsignedBigInteger('location_id')->index();
-            $table->foreign('location_id')
-                ->references('id')
-                ->on('locations');
+        Machine::factory()->count(50)->create();
 
-            $table->unsignedBigInteger('machine_type_id')->index();
- */
-//        $machines = [];
-//
-//        $machine["uuid"] = (string)Str::uuid();
-//        $machine["brand"] = "blabla";
-//        $machine["brand_model"] = "apo 103";
-//        $machine["year"] = "2017";
-//        $machine["location_id"] = "1";
-//        $machine["machine_type_id"] = "1";
-//        $machines[] = $machine;
-//
-//        $machine["uuid"] = (string)Str::uuid();
-//        $machine["brand"] = "tratra";
-//        $machine["brand_model"] = "apo 104";
-//        $machine["year"] = "2017";
-//        $machine["location_id"] = "1";
-//        $machine["machine_type_id"] = "3";
-//        $machines[] = $machine;
-//
-//        foreach($machines as $machine){
-//            $o = new Machine($machine);
-//            $o->save();
-//        }
+        foreach(Machine::all() as $machine){
+            for($i = 1; $i <= 15; $i++){
+                MachineSlot::create(['slot_index' => $i, 'machine_id' => $machine->id, 'product_count' => 15]);
+            }
+        }
+        // set stock - & machine products
+        foreach(Machine::with('slots')->whereNotNull('id')->get() as $machine){
+            $products = Product::where('active', 'YES')->inRandomOrder()->limit(15)->get();
+            foreach($machine->slots as $index => $slot){
+                    MachineStock::create([
+                        'product_id' => $products[$index]->id,
+                        'machine_id' => $machine->id,
+                        'machine_slot_id' => $slot->slot_index,
+                        'recommended_price' => $products[$index]->msrp
+                    ]);
+                    MachineProduct::create([
+                        'product_id' => $products[$index]->id,
+                        'machine_id' => $machine->id,
+                        'machine_slot_id' => $slot->slot_index,
+                        'price' => $products[$index]->msrp,
+                        'count' => 12
+                        ]);
+
+            }
+        }
     }
 }

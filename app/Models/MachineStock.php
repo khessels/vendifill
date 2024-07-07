@@ -9,4 +9,9 @@ class MachineStock extends Model
 {
     use HasFactory;
     protected $table = 'machine_stock';
+    public function product(): \Illuminate\Database\Eloquent\Relations\HasOne
+    {
+        return $this->hasOne('App\Models\Product', 'id', 'product_id');
+    }
+
 }

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Location;
 use App\Models\Machine;
+use App\Models\MachineProduct;
+use App\Models\MachineStock;
 use App\Models\MachineType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -61,12 +63,19 @@ class MachineController extends Controller
                 ->with('alert-class', 'alert-warning');
         }
     }
-    public function stock(Request $request)
+    public function stock(Request $request, $uuid)
     {
         try {
+            $machine = Machine::where('uuid', $uuid)->with('slots')->with('machine_products.product')->first();
+            $machineStock = MachineStock::where('machine_id', $machine->id)->with('product')->get();
+            $machineProducts = MachineProduct::where('machine_id', $machine->id)->with('product')->get();
+
             $page = 'machines.stock';
             $content = $this->getPageContentAttributes($page);
             return view('pages.machines.stock')
+                ->with('machine', $machine)
+                ->with('machine_stock', $machineStock ?? [])
+                ->with('machine_products', $machineProducts ?? [])
                 ->with('page', $page)
                 ->with('content' ,$content );
         } catch (\Exception $e) {

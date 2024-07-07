@@ -26,7 +26,6 @@
 
             </tfoot>
         </table>
-        {{ $outlets->links(data:['scrollTo' => false]) }}
     @else
         <span>No Outlets listed</span>
     @endif

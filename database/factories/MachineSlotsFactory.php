@@ -2,16 +2,15 @@
 
 namespace Database\Factories;
 
-use App\Models\MachineStock;
+use App\Models\MachineSlot;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MachineStockFactory extends Factory
+class MachineSlotsFactory extends Factory
 {
-    protected $model = MachineStock::class;
+    protected $model = MachineSlot::class;
 
     public function definition(): array
     {
-
         return [
 
         ];

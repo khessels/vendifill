@@ -36,7 +36,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('machine_products', function (Blueprint $table) {
+        Schema::create('machine_slots', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('machine_id')->index();
             $table->foreign('machine_id')
@@ -44,11 +44,37 @@ return new class extends Migration
                 ->on('machines')
                 ->onDelete(' cascade');
 
-            $table->string('type')->nullable(false);
+            $table->smallInteger('slot_index')->nullable(false);
+            $table->smallInteger('product_count')->nullable(false);
             $table->timestamps();
         });
 
+        // represents the products that are actually in the machine
         Schema::create('machine_stock', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('machine_id')->index();
+            $table->foreign('machine_id')
+                ->references('id')
+                ->on('machines')
+                ->onDelete(' cascade');
+
+            $table->unsignedBigInteger('machine_slot_id')->index();
+            $table->foreign('machine_slot_id')
+                ->references('id')
+                ->on('machine_slots')
+                ->onDelete(' cascade');
+
+            $table->unsignedBigInteger('product_id')->index();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products');
+
+            $table->double('recommended_price', 6,2)->nullable(false);
+            $table->timestamps();
+        });
+
+        // represents how the machine should be filled
+        Schema::create('machine_products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('product_id')->index();
             $table->foreign('product_id')
@@ -60,14 +86,17 @@ return new class extends Migration
                 ->references('id')
                 ->on('machines')
                 ->onDelete('cascade');
+            $table->unsignedBigInteger('machine_slot_id')->index();
+            $table->foreign('machine_slot_id')
+                ->references('id')
+                ->on('machine_slots')
+                ->onDelete(' cascade');
 
+            $table->smallInteger('count')->nullable(false)->default(0);
             $table->double('price', 6,2)->nullable(false);
-            $table->integer('slot')->nullable(false);
-            $table->integer('count')->nullable(false)->default(0);
-            $table->integer('max_count')->nullable(false);
             $table->timestamps();
         });
-        Schema::create('machine_events', function (Blueprint $table) {
+        Schema::create('machine_journal', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('machine_id')->index();
             $table->foreign('machine_id')

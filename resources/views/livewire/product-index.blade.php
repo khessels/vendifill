@@ -26,7 +26,6 @@
 
             </tfoot>
         </table>
-        {{ $products->links(data:['scrollTo' => false]) }}
     @else
         <span>{{ __('No products listed') }}</span>
     @endif

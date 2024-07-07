@@ -26,4 +26,13 @@ class Machine extends Model
     {
         return $this->hasOne('App\Models\MachineType', 'id', 'machine_type_id');
     }
+    public function slots(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\MachineSlot', 'machine_id', 'id');
+    }
+    public function machine_products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\MachineProduct', 'machine_id', 'id');
+    }
+
 }
