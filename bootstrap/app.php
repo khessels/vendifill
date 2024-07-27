@@ -27,7 +27,6 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\Language::class,
         ]);
-
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

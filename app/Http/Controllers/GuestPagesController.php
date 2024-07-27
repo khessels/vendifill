@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\RandomCoordinates;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +12,7 @@ use App\Traits\Content;
 class GuestPagesController extends Controller
 {
     use Content;
+    use RandomCoordinates;
 
     public function __construct()
     {
@@ -103,6 +105,12 @@ class GuestPagesController extends Controller
     public function index(Request $request)
     {
         try {
+//            $lat = 9.9351229;
+//            $long = -84.099183;
+//            $center = [$lat, $long];
+//            $point = $this->Coordinates($center, 10);
+//            die($point);
+
             $template = 'guest';
             if(Auth::check()) {
                 // $roles = Auth::user()->getRoleNames();

@@ -19,7 +19,6 @@ return new class extends Migration
         Schema::create('machines', function (Blueprint $table) {
             $table->id();
 
-            $table->geography('coordinates')->nullable();
             $table->uuid('uuid')->nullable();
             $table->string('brand')->nullable();
             $table->string('brand_model')->nullable();
@@ -33,6 +32,7 @@ return new class extends Migration
             $table->foreign('machine_type_id')
                 ->references('id')
                 ->on('machine_types');
+            $table->geography('coordinates', 'point', 4326)->nullable(true);
             $table->timestamps();
         });
 

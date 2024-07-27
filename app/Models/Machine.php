@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use MatanYadaev\EloquentSpatial\Objects\Point;
+use MatanYadaev\EloquentSpatial\Traits\HasSpatial;
 class Machine extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSpatial;
     protected $table = 'machines';
     protected $fillable = [
         'coordinates',
@@ -17,6 +18,9 @@ class Machine extends Model
         'location_id',
         'uuid',
         'machine_type_id'
+    ];
+    protected $casts = [
+        'coordinates' => Point::class,
     ];
     public function location(): \Illuminate\Database\Eloquent\Relations\HasOne
     {

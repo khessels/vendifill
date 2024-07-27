@@ -9,7 +9,7 @@ class ProductIndex extends Component
 {
     public function render()
     {
-        $products = Product::paginate(50);
+        $products = Product::all();
 
         return view('livewire.product-index')
             ->with('products', $products ?? []);

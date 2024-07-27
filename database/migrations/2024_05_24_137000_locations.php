@@ -31,7 +31,7 @@ return new class extends Migration
             $table->text('contact_details')->nullable();
             $table->string('managed_by')->nullable();
             $table->string('location_emergency')->nullable();
-            $table->geography('coordinates')->nullable();
+            $table->geography('coordinates', 'point', 4326)->nullable(false);
 
             $table->timestamps();
         });

@@ -6,6 +6,7 @@ use App\Models\Outlet;
 use App\Models\OutletType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class OutletSeeder extends Seeder
 {
@@ -32,20 +33,23 @@ class OutletSeeder extends Seeder
 
         Outlet::factory()->count(66)->create();
 
-        $outlets = [];
-
-        $outlet['name'] = "Test Super Mercado";
-        $outlet['contact'] = "+506 6107 3424";
-        $outlet['country_code'] = 506;
-        $outlet['outlet_type_id'] = 1;
-        $outlet['active'] = 'YES';
-        $outlets[] = $outlet;
-
-
-        foreach($outlets as $outlet){
-            $o = new Outlet( $outlet);
-            $o->save();
-        }
+//        $outlets = [];
+//
+//        $lat = 9.9351229;
+//        $long = -84.099183;
+//        $outlet['name'] = "Test Super Mercado";
+//        $outlet['coordinates'] = DB::raw("(ST_GeomFromText('POINT(" . $lat . " " . $long .  ")', 4326))");
+//        $outlet['contact'] = "+506 6107 3424";
+//        $outlet['country_code'] = 506;
+//        $outlet['outlet_type_id'] = 1;
+//        $outlet['active'] = 'YES';
+//        $outlets[] = $outlet;
+//
+//
+//        foreach($outlets as $outlet){
+//            $o = new Outlet( $outlet);
+//            $o->save();
+//        }
 
     }
 }

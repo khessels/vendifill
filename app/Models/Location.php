@@ -4,10 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use MatanYadaev\EloquentSpatial\Objects\Point;
+use MatanYadaev\EloquentSpatial\Traits\HasSpatial;
 
 class Location extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSpatial;
+
 
     protected $table = 'locations';
     protected $fillable = [
@@ -19,9 +22,6 @@ class Location extends Model
         'country',
         'province',
         'canton',
-        'phone_1',
-        'phone_2',
-        'fax',
         'email',
         'description',
         'access',
@@ -29,5 +29,8 @@ class Location extends Model
         'managed_by',
         'location_emergency',
         'contact_details'
+    ];
+    protected $casts = [
+        'coordinates' => Point::class,
     ];
 }

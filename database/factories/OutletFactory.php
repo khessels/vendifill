@@ -4,14 +4,18 @@ namespace Database\Factories;
 
 use App\Models\Outlet;
 use App\Models\OutletType;
+use App\Traits\RandomCoordinates;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 
 class OutletFactory extends Factory
 {
+    use RandomCoordinates;
     protected $model = Outlet::class;
 
     public function definition(): array
     {
+
         /*
                      $table->id();
             $table->string('name')->nullable(false);
@@ -25,8 +29,14 @@ class OutletFactory extends Factory
                 ->on('outlet_types');
             $table->timestamps();
          */
+
+        $lat = 9.9351229;
+        $long = -84.099183;
+        $center = [$lat, $long];
+        $point = $this->Coordinates($center, 10);
         return [
             'name' => $this->faker->name(),
+            'coordinates' => DB::raw("(ST_GeomFromText('POINT(" . $point[0] . " " . $point[1] .  ")', 4326))"),
             'contact' =>$this->faker->name() . ', ' . $this->faker->phoneNumber(),
             'country_code'=> 506,
             'active' => 'YES',

@@ -24,7 +24,7 @@ class OutletController extends Controller
 //        $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 //        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 //        $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['outlet.index']    = ['attributes' => ['outlets', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
+        $this->pages['outlets.index']    = ['attributes' => ['outlets', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
 
         // load the pages and partials
         //$this->loadLocale();

@@ -27,6 +27,18 @@
                             @can('machines-experiment')
                                 <a href="/machine/experiment/{{$machine->uuid}}">{{__('Experiment')}}</a>
                             @endcan
+                            @if( ! empty( $machine->coordinates->latitude) && !empty( $machine->coordinates->longitude))
+                                <button class="btn btn-outline-secondary btn-xs" wire:click="$dispatch('map-update',
+                                    [{
+                                        id          : {{ $machine->id }},
+                                        name        : '{{ $machine->location->name }}',
+                                        className   : 'Machine',
+                                        latitude    : '{{ $machine->coordinates->latitude }}',
+                                        longitude   : '{{ $machine->coordinates->longitude }}'
+                                        }] )">
+                                    {{__('Show on map')}}
+                                </button>
+                            @endif
                         </td>
                     </tr>
                 @endforeach
@@ -43,7 +55,9 @@
 @section('scripts-bottom')
     <script >
         $(function() {
-            new DataTable('.table');
+            new DataTable('.table',  {
+                pageLength: 15
+            });
         });
     </script>
 @endsection

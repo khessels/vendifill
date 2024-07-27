@@ -52,6 +52,12 @@
                         @livewire('machine-index')
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        @livewire('map')
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>

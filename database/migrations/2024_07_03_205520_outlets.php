@@ -21,10 +21,10 @@ return new class extends Migration
         Schema::create('outlets', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable(false);
+            $table->geography('coordinates', 'point', 4326)->nullable(false);
             $table->string('contact')->nullable(false);
             $table->integer('country_code')->nullable(false)->default(506);
             $table->enum('active', ['YES', 'NO'])->nullable(false)->default('NO');
-            $table->geography('coordinates')->nullable();
             $table->unsignedBigInteger('outlet_type_id')->index();
             $table->foreign('outlet_type_id')
                 ->references('id')

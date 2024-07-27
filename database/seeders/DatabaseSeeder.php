@@ -36,8 +36,8 @@ class DatabaseSeeder extends Seeder
                     UsersSeeder::class,
                     Products::class,
                     LocationSeeder::class,
-                    MachinesSeeder::class,
                     OutletSeeder::class,
+                    MachinesSeeder::class,
                 ];
                 break;
         }

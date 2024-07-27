@@ -8,10 +8,10 @@ use Livewire\WithPagination;
 class OutletIndex extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    // protected $paginationTheme = 'bootstrap';
     public function render()
     {
-        $outlets = Outlet::where('active', 'YES')->with('outlet_type')->paginate(15);
+        $outlets = Outlet::where('active', 'YES')->with('outlet_type')->get();
         return view('livewire.outlet-index')->with('outlets', $outlets);
     }
 }

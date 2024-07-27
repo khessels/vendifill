@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use MatanYadaev\EloquentSpatial\Objects\Point;
+use MatanYadaev\EloquentSpatial\Traits\HasSpatial;
 class Outlet extends Model
 {
-    use HasFactory;
+    use HasFactory, HasSpatial;
     protected $table = 'outlets';
     protected $fillable = [
         'coordinates',
@@ -16,6 +17,9 @@ class Outlet extends Model
         'contact',
         'outlet_type_id',
         'active',
+    ];
+    protected $casts = [
+        'coordinates' => Point::class,
     ];
 
     public function outlet_type(): \Illuminate\Database\Eloquent\Relations\HasOne

@@ -33,7 +33,9 @@
 @section('scripts-bottom')
     <script >
         $(function() {
-            new DataTable('.table');
+            new DataTable('.table',  {
+                pageLength: 15
+            });
         });
     </script>
 @endsection
