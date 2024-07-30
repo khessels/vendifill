@@ -28,6 +28,7 @@ class WebPagesController extends Controller
     {
         try {
             $page = 'welcome';
+            ray()->markdown('# Hello World');
             $content = $this->getPageContentAttributes($page);
             return view('pages.index.web')
                 ->with('page', $page)

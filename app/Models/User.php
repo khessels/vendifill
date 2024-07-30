@@ -6,12 +6,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles;
-
+    /**
+     * Register the Telescope gate.
+     *
+     * This gate determines who can access Telescope in non-local environments.
+     */
+    protected function gate(): void
+    {
+        Gate::define('viewTelescope', function (User $user) {
+            return in_array($user->email, [
+                'kees.hessels@gmail.com',
+            ]);
+        });
+    }
     /**
      * The attributes that are mass assignable.
      *
