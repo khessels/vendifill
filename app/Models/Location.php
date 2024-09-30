@@ -33,4 +33,8 @@ class Location extends Model
     protected $casts = [
         'coordinates' => Point::class,
     ];
+    public function machines(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\Machine', 'location_id', 'id');
+    }
 }

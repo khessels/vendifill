@@ -38,5 +38,9 @@ class Machine extends Model
     {
         return $this->hasMany('App\Models\MachineProduct', 'machine_id', 'id');
     }
+    public function kv(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\MachineKV', 'machine_id', 'id');
+    }
 
 }

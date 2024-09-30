@@ -42,6 +42,7 @@ class MachinesSeeder extends Seeder
                 MachineSlot::create(['slot_index' => $i, 'machine_id' => $machine->id, 'product_count' => 15]);
             }
         }
+
         // set stock - & machine products
         foreach(Machine::with('slots')->whereNotNull('id')->get() as $machine){
             $products = Product::where('active', 'YES')->inRandomOrder()->limit(15)->get();
@@ -62,5 +63,11 @@ class MachinesSeeder extends Seeder
 
             }
         }
+
+        // change the uuid of the first machine to match the test esp32 uuid
+        $machine = Machine::first();
+        $machine->uuid = "3533398d-006e-4b4f-9bb4-0bf46df8e0a9";
+        $machine->kv()->create(['key' => 'mode', 'value' => 'test']);
+        $machine->save();
     }
 }

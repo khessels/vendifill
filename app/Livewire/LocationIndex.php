@@ -123,7 +123,7 @@ class LocationIndex extends Component
     public function render(): \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\Contracts\View\View|\Illuminate\View\View
     {
         //$this->locations = Location::whereNotNull('id')->paginate(15);
-        $locations = Location::all();
+        $locations = Location::with('machines')->get();
         $this->resetFields();
 
         return view('livewire.location-index')->with('locations', $locations);

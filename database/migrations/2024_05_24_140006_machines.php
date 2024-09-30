@@ -48,7 +48,20 @@ return new class extends Migration
             $table->smallInteger('product_count')->nullable(false);
             $table->timestamps();
         });
+        Schema::create('machine_kv', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('machine_id')->index();
+            $table->foreign('machine_id')
+                ->references('id')
+                ->on('machines')
+                ->onDelete(' cascade');
 
+            $table->string('key')->nullable(false);
+            $table->string('value')->nullable(true);
+            $table->json('json')->nullable(true);
+
+            $table->timestamps();
+        });
         // represents the products that are actually in the machine
         Schema::create('machine_stock', function (Blueprint $table) {
             $table->id();

@@ -208,7 +208,22 @@ class GuestPagesController extends Controller
             $page = 'refill';
             $this->loadPage($page);
             $content = $this->getPageContentAttributes($page);
-            return view('pages.machines.refill')
+            return view('pages.services.refill')
+                ->with('page', $page)
+                ->with('content' ,$content );
+
+        } catch (\Exception $e) {
+            $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
+            abort(404);
+        }
+    }
+    public function machines(Request $request)
+    {
+        try {
+            $page = 'machines';
+            $this->loadPage($page);
+            $content = $this->getPageContentAttributes($page);
+            return view('pages.services.machines')
                 ->with('page', $page)
                 ->with('content' ,$content );
 
