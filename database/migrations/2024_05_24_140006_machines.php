@@ -16,11 +16,13 @@ return new class extends Migration
             $table->string('machine_type')->nullable(false)->default('conventional');
             $table->timestamps();
         });
+
         Schema::create('machines', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('brand')->nullable();
-            $table->string('brand_model')->nullable();
-            $table->smallInteger('year')->nullable();
+//            $table->string('brand')->nullable();
+//            $table->string('brand_model')->nullable();
+//            $table->smallInteger('year')->nullable();
+            $table->enum('stationary', ['YES', 'NO'])->default('YES');
             $table->unsignedBigInteger('location_id')->index();
             $table->foreign('location_id')
                 ->references('id')
@@ -30,6 +32,7 @@ return new class extends Migration
             $table->foreign('machine_type_id')
                 ->references('id')
                 ->on('machine_types');
+
             $table->geography('coordinates', 'point', 4326)->nullable(true);
             $table->timestamps();
         });
