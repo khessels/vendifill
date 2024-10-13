@@ -86,7 +86,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get( 'tokenize/card',    [TokenizerController::class,       'retrieveCard'])     ->name('get.tokenize.card.retrieve');
         Route::post('tokenize/card',    [TokenizerController::class,       'tokenizeCard'])     ->name('post.tokenize.card');
         Route::get( 'developer/settings',         [DeveloperController::class,       'settings'])     ->name('view.developer.settings');
-        Route::get('/info', function () {
+        Route::get( 'developer/machine/vending',  [DeveloperController::class,       'vendingMachine'])     ->name('view.developer.machine.vending');
+        Route::get('info', function () {
             phpinfo();
         })->name('view.phpinfo');
     });

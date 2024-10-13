@@ -34,7 +34,7 @@ class Machine extends Model
     {
         return $this->hasMany('App\Models\MachineSlot', 'machine_id', 'id');
     }
-    public function machine_products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany('App\Models\MachineProduct', 'machine_id', 'id');
     }
@@ -42,5 +42,8 @@ class Machine extends Model
     {
         return $this->hasMany('App\Models\MachineKV', 'machine_id', 'id');
     }
-
+    public function stock(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany('App\Models\MachineStock', 'machine_id', 'id');
+    }
 }

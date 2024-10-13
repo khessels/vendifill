@@ -51,7 +51,7 @@ class MachinesSeeder extends Seeder
                         'product_id' => $products[$index]->id,
                         'machine_id' => $machine->id,
                         'machine_slot_id' => $slot->slot_index,
-                        'recommended_price' => $products[$index]->msrp
+                        'price' => $products[$index]->msrp
                     ]);
                     MachineProduct::create([
                         'product_id' => $products[$index]->id,
@@ -67,7 +67,7 @@ class MachinesSeeder extends Seeder
         // change the uuid of the first machine to match the test esp32 uuid
         $machine = Machine::first();
         $machine->uuid = "3533398d-006e-4b4f-9bb4-0bf46df8e0a9";
-        $machine->kv()->create(['key' => 'mode', 'value' => 'test']);
+        $machine->kv()->create(['key' => 'mode', 'value' => 'virtual']);
         $machine->save();
     }
 }

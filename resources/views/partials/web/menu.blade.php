@@ -63,6 +63,7 @@
             <li><a href="/report/error/log">{{__('Errors')}}</a></li>
             <li><a href="/tokenizer">{{__('Tokenizer')}}</a></li>
             <li><a href="/developer/settings">{{__('Settings')}}</a></li>
+            <li><a href="/developer/machine/vending">{{__('Vending machine')}}</a></li>
         </ul>
     </li>
     @endhasrole

@@ -18,11 +18,6 @@ class MachineController extends Controller
     use Content;
     public function __construct()
     {
-        // define pages used in this controller
-//        $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-//        $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-//        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-//        $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['machines.index']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['machines.config']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
         $this->pages['machines.stock']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
@@ -32,7 +27,18 @@ class MachineController extends Controller
         //$this->loadLocale();
         $this->loadPages();
     }
-
+    public function state(Request $request, $uuid){
+        return Machine::where('uuid', $uuid)->with('kv')->firstOrFail();
+    }
+    public function inventory(Request $request, $uuid){
+        try{
+            // ->with('stock.product')->with('products')
+            $s = Machine::where('uuid', $uuid)->with('machine_type')->with('kv')->with('slots.machine_product.product')->firstOrFail();
+            return $s;
+        }catch(\Exception $e){
+            error_log($e->getMessage());
+        }
+    }
     public function index(Request $request)
     {
         try {

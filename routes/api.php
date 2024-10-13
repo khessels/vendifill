@@ -4,6 +4,7 @@ use App\Http\Controllers\GuestPagesController;
 use App\Http\Controllers\RedisController;
 use App\Http\Controllers\UserAuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MachineController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 //
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'v1'], function() {
 
+    Route::get('machine/state/{uuid}', [MachineController::class, 'state']);
+    Route::get('machine/inventory/{uuid}', [MachineController::class, 'inventory']);
 
     Route::post('register', [UserAuthController::class, 'register']);
     Route::get('token', [UserAuthController::class, 'getToken']);

@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('machine_types', function (Blueprint $table) {
             $table->id();
-            $table->string('machine_type')->nullable(false);
+            $table->string('machine_type')->nullable(false)->default('conventional');
             $table->timestamps();
         });
         Schema::create('machines', function (Blueprint $table) {
-            $table->id();
-
-            $table->uuid('uuid')->nullable();
+            $table->uuid('id')->primary();
             $table->string('brand')->nullable();
             $table->string('brand_model')->nullable();
             $table->smallInteger('year')->nullable();
@@ -36,24 +34,39 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('machine_slots', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('machine_id')->index();
-            $table->foreign('machine_id')
-                ->references('id')
-                ->on('machines')
-                ->onDelete(' cascade');
-
-            $table->smallInteger('slot_index')->nullable(false);
+        Schema::create('slots', function (Blueprint $table) {
+            $table->uuid('id')->primary();
             $table->smallInteger('product_count')->nullable(false);
+            $table->smallInteger('max_product_count')->nullable(false);
+
+            $table->unsignedBigInteger('product_id')->index();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products');
+
+            $table->double('price', 6,2)->nullable(false);
+
             $table->timestamps();
         });
-        Schema::create('machine_kv', function (Blueprint $table) {
+
+        Schema::create('machine_slots', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('machine_id')->index();
-            $table->foreign('machine_id')
+
+            $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
+            $table->foreignUuid('slot_id')->references('id')->on('slots')->onDelete(' cascade');
+
+            $table->smallInteger('row')->nullable(false);
+            $table->smallInteger('col')->nullable(false);
+
+            $table->timestamps();
+        });
+
+        Schema::create('slot_kv', function (Blueprint $table) {
+            $table->id();
+            $table->uuid('slot_id')->index();
+            $table->foreign('slot_id')
                 ->references('id')
-                ->on('machines')
+                ->on('slots')
                 ->onDelete(' cascade');
 
             $table->string('key')->nullable(false);
@@ -62,27 +75,14 @@ return new class extends Migration
 
             $table->timestamps();
         });
-        // represents the products that are actually in the machine
-        Schema::create('machine_stock', function (Blueprint $table) {
+        Schema::create('machine_kv', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('machine_id')->index();
-            $table->foreign('machine_id')
-                ->references('id')
-                ->on('machines')
-                ->onDelete(' cascade');
+            $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
 
-            $table->unsignedBigInteger('machine_slot_id')->index();
-            $table->foreign('machine_slot_id')
-                ->references('id')
-                ->on('machine_slots')
-                ->onDelete(' cascade');
+            $table->string('key')->nullable(false);
+            $table->string('value')->nullable(true);
+            $table->json('json')->nullable(true);
 
-            $table->unsignedBigInteger('product_id')->index();
-            $table->foreign('product_id')
-                ->references('id')
-                ->on('products');
-
-            $table->double('recommended_price', 6,2)->nullable(false);
             $table->timestamps();
         });
 
@@ -94,16 +94,8 @@ return new class extends Migration
                 ->references('id')
                 ->on('products');
 
-            $table->unsignedBigInteger('machine_id')->index();
-            $table->foreign('machine_id')
-                ->references('id')
-                ->on('machines')
-                ->onDelete('cascade');
-            $table->unsignedBigInteger('machine_slot_id')->index();
-            $table->foreign('machine_slot_id')
-                ->references('id')
-                ->on('machine_slots')
-                ->onDelete(' cascade');
+            $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
+            $table->foreignUuid('slot_id')->references('id')->on('slots')->onDelete(' cascade');
 
             $table->smallInteger('count')->nullable(false)->default(0);
             $table->double('price', 6,2)->nullable(false);
@@ -111,14 +103,25 @@ return new class extends Migration
         });
         Schema::create('machine_journal', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('machine_id')->index();
-            $table->foreign('machine_id')
-                ->references('id')
-                ->on('machines')
-                ->onDelete('cascade');
+            $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
 
             $table->string('event')->nullable(false);
             $table->json('data')->nullable();
+
+            $table->timestamps();
+        });
+
+        Schema::create('contracts', function (Blueprint $table) {
+            $table->id();
+            $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
+
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('phone')->unique();
+            $table->string('whatsapp')->unique();
+            $table->timestamp('expires')->nullable();
+            $table->integer('percentage')->nullable();
+            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
 
             $table->timestamps();
         });
