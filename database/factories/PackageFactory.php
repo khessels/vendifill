@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Packaging;
+use App\Models\old\Packaging;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PackageFactory extends Factory

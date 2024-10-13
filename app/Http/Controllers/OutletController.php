@@ -2,16 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
-use App\Models\Machine;
-use App\Models\MachineType;
-use App\Models\Outlet;
-use App\Models\OutletType;
+use App\Models\old\Outlet;
+use App\Models\old\OutletType;
+use App\Traits\Content;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Http;
-use App\Traits\Content;
 use Illuminate\Support\Facades\Redirect;
 
 class OutletController extends Controller

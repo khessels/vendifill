@@ -13,15 +13,12 @@ return new class extends Migration
     {
         Schema::create('machine_types', function (Blueprint $table) {
             $table->id();
-            $table->string('machine_type')->nullable(false)->default('conventional');
+            $table->enum('machine_type', ['conventional', 'advanced'])->nullable(false)->default('conventional');
             $table->timestamps();
         });
 
         Schema::create('machines', function (Blueprint $table) {
             $table->uuid('id')->primary();
-//            $table->string('brand')->nullable();
-//            $table->string('brand_model')->nullable();
-//            $table->smallInteger('year')->nullable();
             $table->enum('stationary', ['YES', 'NO'])->default('YES');
             $table->unsignedBigInteger('location_id')->index();
             $table->foreign('location_id')
@@ -37,10 +34,21 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('slot_types', function (Blueprint $table) {
+            $table->id();
+            $table->enum('slot_type', ['conventional', 'advanced'])->nullable(false)->default('conventional');
+            $table->timestamps();
+        });
+
         Schema::create('slots', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->smallInteger('product_count')->nullable(false);
             $table->smallInteger('max_product_count')->nullable(false);
+
+            $table->unsignedBigInteger('slot_type_id')->index();
+            $table->foreign('slot_type_id')
+                ->references('id')
+                ->on('slot_types');
 
             $table->unsignedBigInteger('product_id')->index();
             $table->foreign('product_id')
@@ -114,20 +122,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('contracts', function (Blueprint $table) {
-            $table->id();
-            $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
 
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('phone')->unique();
-            $table->string('whatsapp')->unique();
-            $table->timestamp('expires')->nullable();
-            $table->integer('percentage')->nullable();
-            $table->enum('status', ['ACTIVE', 'INACTIVE'])->default('ACTIVE');
-
-            $table->timestamps();
-        });
     }
 
     /**

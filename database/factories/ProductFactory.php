@@ -2,9 +2,10 @@
 
 namespace Database\Factories;
 
-use App\Models\Product;
+use App\Models\old\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Liior\Faker\Prices;
+
 class ProductFactory extends Factory
 {
     protected $model = Product::class;

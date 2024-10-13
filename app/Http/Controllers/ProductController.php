@@ -2,14 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
-use App\Models\Machine;
-use App\Models\MachineType;
-use App\Models\Product;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Http;
+use App\Models\old\Product;
 use App\Traits\Content;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller

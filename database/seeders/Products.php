@@ -2,15 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\BarcodeProvider;
-use App\Models\Brand;
-use App\Models\Product;
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\old\Packaging;
+use App\Models\old\Product;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Hash;
-use App\Models\Packaging;
 
 class Products extends Seeder
 {

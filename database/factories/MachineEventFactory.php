@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\MachineEvent;
+use App\Models\old\MachineEvent;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MachineEventFactory extends Factory

@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\BarcodeProvider;
+use App\Models\old\BarcodeProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class BarcodeProviderFactory extends Factory

@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
-use App\Models\Machine;
-use App\Models\MachineProduct;
-use App\Models\MachineStock;
-use App\Models\MachineType;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Http;
+use App\Models\old\Location;
+use App\Models\old\Machine;
+use App\Models\old\MachineProduct;
+use App\Models\old\MachineStock;
+use App\Models\old\MachineType;
 use App\Traits\Content;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class MachineController extends Controller

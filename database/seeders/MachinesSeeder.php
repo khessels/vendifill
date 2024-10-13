@@ -2,15 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\Machine;
-use App\Models\MachineProduct;
-use App\Models\MachineStock;
-use App\Models\MachineType;
-use App\Models\MachineSlot;
-use App\Models\Product;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\old\Machine;
+use App\Models\old\MachineProduct;
+use App\Models\old\MachineSlot;
+use App\Models\old\MachineStock;
+use App\Models\old\MachineType;
+use App\Models\old\Product;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 
 class MachinesSeeder extends Seeder
 {

@@ -1,20 +1,39 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ */
+
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class TestCard
+ * 
+ * @property int $id
+ * @property int $user_id
+ * @property string $token
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ *
+ * @package App\Models
+ */
 class TestCard extends Model
 {
-    /**
-     * @var string
-     */
-    protected $table = 'test_cards';
-    /**
-     * @var array
-     */
-    protected $guarded = [];
-    public function card(){
-        return $this->hasOne('App\CreditCard','cc_number', 'token');
-    }
+	protected $table = 'test_cards';
+
+	protected $casts = [
+		'user_id' => 'int'
+	];
+
+	protected $hidden = [
+		'token'
+	];
+
+	protected $fillable = [
+		'user_id',
+		'token'
+	];
 }

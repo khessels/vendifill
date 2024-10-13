@@ -2,10 +2,9 @@
 
 namespace Database\Factories;
 
-use App\Models\Machine;
+use App\Models\old\Machine;
 use App\Traits\RandomCoordinates;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
 
 class MachineFactory extends Factory
 {

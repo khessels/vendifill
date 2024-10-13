@@ -13,11 +13,29 @@ class Cc extends Migration
      */
     public function up()
     {
-        Schema::create('credit_cards', function (Blueprint $table) {
+        Schema::create('card_brands', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->string('name')->nullable(false);
+            $table->timestamp('archived_at')->nullable(true);
+            $table->timestamps();
+        });
 
+
+        Schema::create('credit_cards', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('brand_id')->nullable(false);
-            //$table->unsignedInteger('sub_id')->nullable(true);
+
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete(' cascade');
+
+            $table->unsignedInteger('card_brand_id')->nullable(false);
+            $table->foreign('card_brand_id')
+                ->references('id')
+                ->on('card_brands')
+                ->onDelete(' cascade');
+
             $table->string('cc_number', 40);
             $table->longText('cc_mask');
             $table->longText('cc_year');

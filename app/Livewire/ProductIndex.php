@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use App\Models\Product;
+use App\Models\old\Product;
 use Livewire\Component;
 
 class ProductIndex extends Component

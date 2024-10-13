@@ -1,16 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\CreditCard;
-use App\Models\UserData;
-use App\Models\UserToken;
-use Illuminate\Support\Facades\Auth;
-use App\models\User;
-use Illuminate\Http\Request;
-use App\Traits\V3Messaging;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Crypt;
+use App\Models\old\CreditCard;
 use App\Traits\Tokenizer;
+use App\Traits\V3Messaging;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
+
 class APIController extends Controller
 {
     use V3Messaging, Tokenizer;

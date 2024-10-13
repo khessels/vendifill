@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
+
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete(' cascade');
+
             $table->integer('parent_id')->nullable();
             $table->integer('source_id')->nullable(false);
             $table->enum('source', ['USER', 'WEB', 'APP', 'OUTLET', 'LOCATION', 'COMPANY'])->nullable(false);

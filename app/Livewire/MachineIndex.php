@@ -2,11 +2,12 @@
 
 namespace App\Livewire;
 
-use App\Models\Location;
-use App\Models\Machine;
-use App\Models\MachineType;
+use App\Models\old\Location;
+use App\Models\old\Machine;
+use App\Models\old\MachineType;
 use Livewire\Component;
 use Livewire\WithPagination;
+
 class MachineIndex extends Component
 {
     use WithPagination;

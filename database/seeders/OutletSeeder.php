@@ -2,11 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Outlet;
-use App\Models\OutletType;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\old\Outlet;
+use App\Models\old\OutletType;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class OutletSeeder extends Seeder
 {

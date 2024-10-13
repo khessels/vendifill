@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\MachineKV;
+use App\Models\old\MachineKV;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MachineKVFactory extends Factory

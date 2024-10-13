@@ -2,8 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\Outlet;
-use App\Models\OutletType;
+use App\Models\old\Outlet;
 use App\Traits\RandomCoordinates;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;

@@ -2,9 +2,10 @@
 
 namespace App\Livewire;
 
-use App\Models\Outlet;
+use App\Models\old\Outlet;
 use Livewire\Component;
 use Livewire\WithPagination;
+
 class OutletIndex extends Component
 {
     use WithPagination;

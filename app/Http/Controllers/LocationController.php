@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Http;
+use App\Models\old\Location;
 use App\Traits\Content;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 
 class LocationController extends Controller
 {

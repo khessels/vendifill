@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Livewire;
+use App\Models\old\Location;
+use Illuminate\Support\Facades\DB;
 use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\On;
-use App\Models\Location;
-use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\WithPagination;
 

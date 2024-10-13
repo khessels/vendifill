@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\MachineSlot;
+use App\Models\old\MachineSlot;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MachineSlotsFactory extends Factory

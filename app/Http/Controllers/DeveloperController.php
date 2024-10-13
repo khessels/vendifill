@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Machine;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Http;
+use App\Models\old\Machine;
 use App\Traits\Content;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Http\Request;
 
 class DeveloperController extends Controller
 {
