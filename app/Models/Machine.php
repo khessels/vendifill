@@ -5,14 +5,14 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Machine
- * 
+ *
  * @property string $id
  * @property string $stationary
  * @property int $location_id
@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property point|null $coordinates
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Location $location
  * @property MachineType $machine_type
  * @property Collection|Contract[] $contracts
@@ -34,6 +34,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Machine extends Model
 {
+    use HasFactory;
+
 	protected $table = 'machines';
 	public $incrementing = false;
 

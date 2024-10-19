@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\old\Product;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Liior\Faker\Prices;
 
@@ -17,8 +17,9 @@ class ProductFactory extends Factory
         return [
             'name' =>  $this->faker->name(),
             'active'=> 'YES',
+            'sku' => $this->faker->unique()->ean8(),
+            'cooling'=>'none',
             'msrp' => $this->faker->price(10, 50),
-            'packaging_id' =>  $this->faker->numberBetween(1,4),
         ];
     }
 }

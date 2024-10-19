@@ -5,13 +5,13 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class SlotKv
- * 
+ *
  * @property int $id
  * @property string $slot_id
  * @property string $key
@@ -19,13 +19,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property array|null $json
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Slot $slot
  *
  * @package App\Models
  */
 class SlotKv extends Model
 {
+    use HasFactory;
+
 	protected $table = 'slot_kv';
 
 	protected $casts = [

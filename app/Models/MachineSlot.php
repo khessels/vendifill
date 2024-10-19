@@ -8,10 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class MachineSlot
- * 
+ *
  * @property int $id
  * @property string $machine_id
  * @property string $slot_id
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $col
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Machine $machine
  * @property Slot $slot
  *
@@ -27,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MachineSlot extends Model
 {
+    use HasFactory;
+
 	protected $table = 'machine_slots';
 
 	protected $casts = [

@@ -5,13 +5,13 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CountryCode
- * 
+ *
  * @property int $id
  * @property int $country_code
  * @property string $name
@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CountryCode extends Model
 {
+    use HasFactory;
 	protected $table = 'country_codes';
 
 	protected $casts = [

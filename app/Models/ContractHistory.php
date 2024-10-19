@@ -5,26 +5,27 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ContractHistory
- * 
+ *
  * @property int $id
  * @property int $contract_id
  * @property string $description
  * @property Carbon|null $follow_up
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Contract $contract
  *
  * @package App\Models
  */
 class ContractHistory extends Model
 {
+    use HasFactory;
 	protected $table = 'contract_history';
 
 	protected $casts = [

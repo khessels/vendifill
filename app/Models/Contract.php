@@ -5,14 +5,14 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Contract
- * 
+ *
  * @property int $id
  * @property int $user_id
  * @property string $machine_id
@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $status
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Machine $machine
  * @property User $user
  * @property Collection|ContractHistory[] $contract_histories
@@ -34,6 +34,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Contract extends Model
 {
+    use HasFactory;
 	protected $table = 'contracts';
 
 	protected $casts = [

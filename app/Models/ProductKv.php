@@ -5,13 +5,13 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ProductKv
- * 
+ *
  * @property int $id
  * @property int $product_id
  * @property string $key
@@ -19,13 +19,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property array|null $json
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Product $product
  *
  * @package App\Models
  */
 class ProductKv extends Model
 {
+    use HasFactory;
+
 	protected $table = 'product_kv';
 
 	protected $casts = [

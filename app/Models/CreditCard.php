@@ -5,13 +5,13 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CreditCard
- * 
+ *
  * @property int $id
  * @property int $user_id
  * @property int $card_brand_id
@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $run_mode
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property CardBrand $card_brand
  * @property User $user
  *
@@ -33,6 +33,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class CreditCard extends Model
 {
+    use HasFactory;
+
 	protected $table = 'credit_cards';
 
 	protected $casts = [

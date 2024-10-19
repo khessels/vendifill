@@ -2,17 +2,19 @@
 
 namespace Database\Factories;
 
-use App\Models\old\MachineEvent;
+use App\Models\Driver;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class MachineEventFactory extends Factory
+class DriverFactory extends Factory
 {
-    protected $model = MachineEvent::class;
+    protected $model = Driver::class;
 
     public function definition(): array
     {
         return [
 
+            'user_id' => User::factory(),
         ];
     }
 }

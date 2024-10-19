@@ -8,10 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class MachineProduct
- * 
+ *
  * @property int $id
  * @property int $product_id
  * @property string $machine_id
@@ -20,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $price
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Machine $machine
  * @property Product $product
  * @property Slot $slot
@@ -29,19 +30,18 @@ use Illuminate\Database\Eloquent\Model;
  */
 class MachineProduct extends Model
 {
+    use HasFactory;
+
 	protected $table = 'machine_products';
 
 	protected $casts = [
 		'product_id' => 'int',
-		'count' => 'int',
 		'price' => 'float'
 	];
 
 	protected $fillable = [
 		'product_id',
 		'machine_id',
-		'slot_id',
-		'count',
 		'price'
 	];
 
@@ -53,10 +53,5 @@ class MachineProduct extends Model
 	public function product()
 	{
 		return $this->belongsTo(Product::class);
-	}
-
-	public function slot()
-	{
-		return $this->belongsTo(Slot::class);
 	}
 }

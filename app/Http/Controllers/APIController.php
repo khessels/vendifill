@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\old\CreditCard;
+use App\Models\CreditCard;
 use App\Traits\Tokenizer;
 use App\Traits\V3Messaging;
 use Illuminate\Http\Request;

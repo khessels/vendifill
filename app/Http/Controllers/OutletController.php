@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\old\Outlet;
-use App\Models\old\OutletType;
+use App\Models\Outlet;
+use App\Models\OutletType;
 use App\Traits\Content;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;

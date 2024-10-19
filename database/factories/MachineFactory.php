@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\old\Machine;
+use App\Models\Machine;
 use App\Traits\RandomCoordinates;
 use Illuminate\Database\Eloquent\Factories\Factory;
 

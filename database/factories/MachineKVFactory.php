@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\old\MachineKV;
+use App\Models\MachineKv;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MachineKVFactory extends Factory
 {
-    protected $model = MachineKV::class;
+    protected $model = MachineKv::class;
 
     public function definition(): array
     {

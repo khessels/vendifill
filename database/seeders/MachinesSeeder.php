@@ -2,12 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\old\Machine;
-use App\Models\old\MachineProduct;
-use App\Models\old\MachineSlot;
-use App\Models\old\MachineStock;
-use App\Models\old\MachineType;
-use App\Models\old\Product;
+use App\Models\Machine;
+use App\Models\MachineProduct;
+use App\Models\MachineSlot;
+//use App\Models\MachineStock;
+use App\Models\MachineType;
+use App\Models\Product;
+use App\Models\Slot;
 use Illuminate\Database\Seeder;
 
 class MachinesSeeder extends Seeder
@@ -17,6 +18,11 @@ class MachinesSeeder extends Seeder
      */
     public function run(): void
     {
+        $machineCount = 50;
+        $rows = 10;
+        $cols = 10;
+
+
         $machineTypes = [];
         $machineType['machine_type'] = 'Snacks Cooled';
         $machineTypes[] = $machineType;
@@ -33,39 +39,38 @@ class MachinesSeeder extends Seeder
         foreach($machineTypes as $machineType){
             MachineType::create($machineType);
         }
-        Machine::factory()->count(50)->create();
+        $this->command->info('added machine types');
+        Slot::factory()->count($machineCount * ( $rows * $cols))->create();
+        $this->command->info('added slots');
+        Machine::factory()->count($machineCount)->create();
+        $this->command->info('added machines');
 
-        foreach(Machine::all() as $machine){
-            for($i = 1; $i <= 15; $i++){
-                MachineSlot::create(['slot_index' => $i, 'machine_id' => $machine->id, 'product_count' => 15]);
-            }
-        }
-
-        // set stock - & machine products
-        foreach(Machine::with('slots')->whereNotNull('id')->get() as $machine){
-            $products = Product::where('active', 'YES')->inRandomOrder()->limit(15)->get();
-            foreach($machine->slots as $index => $slot){
-                    MachineStock::create([
-                        'product_id' => $products[$index]->id,
-                        'machine_id' => $machine->id,
-                        'machine_slot_id' => $slot->slot_index,
-                        'price' => $products[$index]->msrp
-                    ]);
-                    MachineProduct::create([
-                        'product_id' => $products[$index]->id,
-                        'machine_id' => $machine->id,
-                        'machine_slot_id' => $slot->slot_index,
-                        'price' => $products[$index]->msrp,
-                        'count' => 12
+        $slots = Slot::all();
+        $machines = Machine::all();
+        foreach( $machines as $index => $machine){
+            $products = Product::inRandomOrder()->limit( $rows * $cols)->get();
+            for($i = 1; $i <= ( $rows * $cols); $i++){
+                $slot = $slots[ $index + ( $i - 1)];
+                for( $row = 1; $row <= $rows; $row++ ){
+                    for( $col = 1; $col <= $cols; $col++ ){
+                        $slot->product_id = $products[ $i]->id;
+                        $slot->save();
+                        MachineSlot::create([ 'slot_id' => $slot->id, 'machine_id' => $machine->id, 'row' => $row, 'col' => $col]);
+                        MachineProduct::create([
+                            'product_id'    => $products[ $i]->id,
+                            'machine_id'    => $machine->id,
+                            'price'         => $products[ $i]->msrp,
                         ]);
-
+                    }
+                }
             }
         }
-
+        $this->command->info('filled the machines up');
         // change the uuid of the first machine to match the test esp32 uuid
         $machine = Machine::first();
-        $machine->uuid = "3533398d-006e-4b4f-9bb4-0bf46df8e0a9";
-        $machine->kv()->create(['key' => 'mode', 'value' => 'virtual']);
+        $machine->id = "3533398d-006e-4b4f-9bb4-0bf46df8e0a9";
+        $machine->kv()->create([ 'key' => 'mode', 'value' => 'virtual']);
         $machine->save();
+        $this->command->info('set uuid of the first machine to test uuid and to virtual mode');
     }
 }

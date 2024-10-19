@@ -2,66 +2,13 @@
 
 namespace Database\Seeders;
 
-use App\Models\old\Packaging;
-use App\Models\old\Product;
+use App\Models\Packaging;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
 
 class Products extends Seeder
 {
-    public function barcodeProviders(): array
-    {
-        $items                  = [];
-        $item['name']           = 'barcodespider';
-        $item['config']         = json_encode([ 'connection' => ['url' => 'https://www.barcodespider.com/{barcode?}', 'token' => '123']]);
-        $items[]                = $item;
-        return $items;
-    }
-    public function brands(): array
-    {
-        $items                  = [];
-        $item['name']           = 'Coca Cola';
-        $item['active']         = 'yes';
-        $items[]                = $item;
 
-        $item['name']           = 'Pepsi';
-        $item['active']         = 'yes';
-        $items[]                = $item;
-
-        $item['name']           = 'Mars';
-        $item['active']         = 'yes';
-        $items[]                = $item;
-
-        $item['name']           = 'Doritos';
-        $item['active']         = 'yes';
-        $items[]                = $item;
-
-        return $items;
-    }
-    public function packages(): array
-    {
-        $items                  = [];
-        $item['name']           = 'bottle';
-        $item['weight']         = '100';
-        $item['active']         = 'yes';
-        $items[]                = $item;
-
-        $item['name']           = 'wide bag';
-        $item['active']         = 'yes';
-        $item['weight']         = '110';
-        $items[]                = $item;
-
-        $item['name']           = 'small bag';
-        $item['active']         = 'yes';
-        $item['weight']         = '120';
-        $items[]                = $item;
-
-        $item['name']           = 'can';
-        $item['active']         = 'yes';
-        $item['weight']         = '130';
-        $items[]                = $item;
-
-        return $items;
-    }
 //    public function products(): array
 //    {
 //        return ;
@@ -71,9 +18,9 @@ class Products extends Seeder
 //        foreach($this->barcodeProviders() as $barcodeProvider){
 //            $obj = BarcodeProvider::create($barcodeProvider);
 //        }
-        foreach($this->packages() as $package){
-            $obj = Packaging::create($package);
-        }
+//        foreach($this->packages() as $package){
+//            $obj = Packaging::create($package);
+//        }
 //        foreach($this->brands() as $brand){
 //            $obj = Brand::create($brand);
 //        }

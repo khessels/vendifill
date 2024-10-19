@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('machine_types', function (Blueprint $table) {
             $table->id();
-            $table->enum('machine_type', ['conventional', 'advanced'])->nullable(false)->default('conventional');
+            $table->string('machine_type')->nullable(false);
             $table->timestamps();
         });
 
@@ -36,7 +36,7 @@ return new class extends Migration
 
         Schema::create('slot_types', function (Blueprint $table) {
             $table->id();
-            $table->enum('slot_type', ['conventional', 'advanced'])->nullable(false)->default('conventional');
+            $table->string('slot_type')->nullable(false);
             $table->timestamps();
         });
 
@@ -50,7 +50,7 @@ return new class extends Migration
                 ->references('id')
                 ->on('slot_types');
 
-            $table->unsignedBigInteger('product_id')->index();
+            $table->unsignedBigInteger('product_id')->nullable();
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products');
@@ -104,11 +104,7 @@ return new class extends Migration
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products');
-
             $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
-            $table->foreignUuid('slot_id')->references('id')->on('slots')->onDelete(' cascade');
-
-            $table->smallInteger('count')->nullable(false)->default(0);
             $table->double('price', 6,2)->nullable(false);
             $table->timestamps();
         });

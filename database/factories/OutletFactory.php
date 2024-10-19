@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\old\Outlet;
+use App\Models\Outlet;
 use App\Traits\RandomCoordinates;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\DB;
@@ -40,6 +40,7 @@ class OutletFactory extends Factory
             'country_code'=> 506,
             'active' => 'YES',
             'outlet_type_id' => $this->faker->numberBetween(1,3),
+            'user_id' => 1,
         ];
     }
 }

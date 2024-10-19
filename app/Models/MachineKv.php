@@ -8,10 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class MachineKv
- * 
+ *
  * @property int $id
  * @property string $machine_id
  * @property string $key
@@ -19,13 +20,15 @@ use Illuminate\Database\Eloquent\Model;
  * @property array|null $json
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Machine $machine
  *
  * @package App\Models
  */
 class MachineKv extends Model
 {
+    use HasFactory;
+
 	protected $table = 'machine_kv';
 
 	protected $casts = [

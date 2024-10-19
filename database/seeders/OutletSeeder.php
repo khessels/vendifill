@@ -2,8 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\old\Outlet;
-use App\Models\old\OutletType;
+use App\Models\Outlet;
+use App\Models\OutletType;
 use Illuminate\Database\Seeder;
 
 class OutletSeeder extends Seeder

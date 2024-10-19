@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\old\OutletType;
+use App\Models\OutletType;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class OutletTypeFactory extends Factory

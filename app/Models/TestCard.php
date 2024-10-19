@@ -8,10 +8,10 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class TestCard
- * 
+ *
  * @property int $id
  * @property int $user_id
  * @property string $token
@@ -22,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TestCard extends Model
 {
+    use HasFactory;
+
 	protected $table = 'test_cards';
 
 	protected $casts = [

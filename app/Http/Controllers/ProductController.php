@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\old\Product;
+use App\Models\Product;
 use App\Traits\Content;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;

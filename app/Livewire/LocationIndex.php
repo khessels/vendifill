@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Livewire;
-use App\Models\old\Location;
+use App\Models\Location;
 use Illuminate\Support\Facades\DB;
 use JetBrains\PhpStorm\NoReturn;
 use Livewire\Attributes\On;

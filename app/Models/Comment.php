@@ -5,13 +5,13 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Comment
- * 
+ *
  * @property int $id
  * @property int $user_id
  * @property int|null $parent_id
@@ -24,13 +24,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property float|null $rating
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property User $user
  *
  * @package App\Models
  */
 class Comment extends Model
 {
+    use HasFactory;
 	protected $table = 'comments';
 
 	protected $casts = [

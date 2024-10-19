@@ -5,13 +5,15 @@
  */
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use MatanYadaev\EloquentSpatial\Objects\Point;
+use MatanYadaev\EloquentSpatial\Traits\HasSpatial;
 
 /**
  * Class Outlet
- * 
+ *
  * @property int $id
  * @property int $user_id
  * @property string $name
@@ -22,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $outlet_type_id
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property OutletType $outlet_type
  * @property User $user
  *
@@ -30,11 +32,13 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Outlet extends Model
 {
+    use HasFactory, HasSpatial;
+
 	protected $table = 'outlets';
 
 	protected $casts = [
 		'user_id' => 'int',
-		'coordinates' => 'point',
+        'coordinates' => Point::class,
 		'country_code' => 'int',
 		'outlet_type_id' => 'int'
 	];

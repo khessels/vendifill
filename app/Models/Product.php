@@ -7,12 +7,13 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Product
- * 
+ *
  * @property int $id
  * @property string $name
  * @property string $sku
@@ -21,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $msrp
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
- * 
+ *
  * @property Collection|Machine[] $machines
  * @property Collection|ProductKv[] $product_kvs
  * @property Collection|Slot[] $slots
@@ -32,6 +33,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
+    use HasFactory;
 	protected $table = 'products';
 
 	protected $casts = [
@@ -46,7 +48,7 @@ class Product extends Model
 		'msrp'
 	];
 
-	public function machines()
+    public function machines()
 	{
 		return $this->belongsToMany(Machine::class, 'machine_products')
 					->withPivot('id', 'slot_id', 'count', 'price')

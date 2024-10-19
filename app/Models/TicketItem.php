@@ -7,15 +7,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class TicketItem
- * 
+ *
  * @property int $id
  * @property int $ticket_id
  * @property int $product_id
  * @property int $quantity
- * 
+ *
  * @property Product $product
  * @property Ticket $ticket
  *
@@ -23,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class TicketItem extends Model
 {
+    use HasFactory;
+
 	protected $table = 'ticket_items';
 	public $timestamps = false;
 

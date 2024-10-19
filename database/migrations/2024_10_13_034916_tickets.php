@@ -18,12 +18,6 @@ return new class extends Migration
 
             $table->foreignUuid('machine_id')->references('id')->on('machines')->onDelete(' cascade');
 
-            $table->unsignedBigInteger('product_id')->index();
-            $table->foreign('product_id')
-                ->references('id')
-                ->on('products')
-                ->onDelete(' cascade');
-            $table->smallInteger('quantity')->nullable(false);
         });
 
         $schema->create('ticket_items', function (Blueprint $table) {
