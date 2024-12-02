@@ -37,6 +37,20 @@ return new class extends Migration
 
             $table->smallInteger('quantity')->nullable(false);
         });
+        Schema::create('ticket_journal', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('ticket_id')->index();
+            $table->foreign('ticket_id')
+                ->references('id')
+                ->on('tickets')
+                ->onDelete('cascade');
+
+            $table->string('event')->nullable(false);
+            $table->json('data')->nullable();
+            $table->enum('archive', ['YES', 'NO'])->default('NO')->nullable(false);
+            $table->timestamps();
+        });
     }
 
     /**

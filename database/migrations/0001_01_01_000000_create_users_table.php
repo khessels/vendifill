@@ -25,7 +25,20 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+        Schema::create('user_journal', function (Blueprint $table) {
+            $table->id();
 
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
+            $table->string('event')->nullable(false);
+            $table->json('data')->nullable();
+            $table->enum('archive', ['YES', 'NO'])->default('NO')->nullable(false);
+            $table->timestamps();
+        });
         Schema::create('password_reset_tokens', function (Blueprint $table) {
             $table->string('email')->primary();
             $table->string('token');

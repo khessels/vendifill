@@ -41,8 +41,7 @@ class Machine extends Model
 
 	protected $casts = [
 		'location_id' => 'int',
-		'machine_type_id' => 'int',
-		'coordinates' => 'point'
+		'machine_type_id' => 'int'
 	];
 
 	protected $fillable = [
@@ -72,7 +71,7 @@ class Machine extends Model
 		return $this->hasMany(MachineJournal::class);
 	}
 
-	public function machine_kvs()
+	public function kv()
 	{
 		return $this->hasMany(MachineKv::class);
 	}

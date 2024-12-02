@@ -59,7 +59,15 @@ return new class extends Migration
 
             $table->timestamps();
         });
+        Schema::create('slot_journal', function (Blueprint $table) {
+            $table->id();
+            $table->foreignUuid('slot_id')->references('id')->on('slots')->onDelete(' cascade');
 
+            $table->string('event')->nullable(false);
+            $table->json('data')->nullable();
+            $table->enum('archive', ['YES', 'NO'])->default('NO')->nullable(false);
+            $table->timestamps();
+        });
         Schema::create('machine_slots', function (Blueprint $table) {
             $table->id();
 

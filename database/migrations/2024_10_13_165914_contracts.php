@@ -31,7 +31,20 @@ return new class extends Migration
 
             $table->timestamps();
         });
+        Schema::create('contract_journal', function (Blueprint $table) {
+            $table->id();
 
+            $table->unsignedBigInteger('contract_id')->index();
+            $table->foreign('contract_id')
+                ->references('id')
+                ->on('contracts')
+                ->onDelete('cascade');
+
+            $table->string('event')->nullable(false);
+            $table->json('data')->nullable();
+            $table->enum('archive', ['YES', 'NO'])->default('NO')->nullable(false);
+            $table->timestamps();
+        });
         Schema::create('contract_history', function (Blueprint $table) {
             $table->id();
 
@@ -46,6 +59,8 @@ return new class extends Migration
 
             $table->timestamps();
         });
+
+
     }
 
     /**

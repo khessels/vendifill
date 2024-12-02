@@ -9,7 +9,9 @@ use App\Models\MachineSlot;
 use App\Models\MachineType;
 use App\Models\Product;
 use App\Models\Slot;
+use App\Models\SlotType;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MachinesSeeder extends Seeder
 {
@@ -21,7 +23,7 @@ class MachinesSeeder extends Seeder
         $machineCount = 50;
         $rows = 10;
         $cols = 10;
-
+        $chunkSize = 250;
 
         $machineTypes = [];
         $machineType['machine_type'] = 'Snacks Cooled';
@@ -39,38 +41,54 @@ class MachinesSeeder extends Seeder
         foreach($machineTypes as $machineType){
             MachineType::create($machineType);
         }
-        $this->command->info('added machine types');
+        $this->command->info('inserting machine types');
+        SlotType::factory()->count(10)->create();
+        $this->command->info('inserting slot types');
         Slot::factory()->count($machineCount * ( $rows * $cols))->create();
-        $this->command->info('added slots');
-        Machine::factory()->count($machineCount)->create();
-        $this->command->info('added machines');
+        $this->command->info('inserting slots');
+        Machine::factory()->count( $machineCount)->create();
+        $this->command->info('added ' . $machineCount . ' machines');
 
         $slots = Slot::all();
         $machines = Machine::all();
-        foreach( $machines as $index => $machine){
-            $products = Product::inRandomOrder()->limit( $rows * $cols)->get();
+        $machineSlots = [];
+        $machineProducts = [];
+        foreach( $machines as $machineIndex => $machine){
+            $this->command->info('inserting requirements for one machine: ' . $machineIndex);
+            $products = Product::inRandomOrder()->limit( ($rows * $cols) + 1)->get();
             for($i = 1; $i <= ( $rows * $cols); $i++){
-                $slot = $slots[ $index + ( $i - 1)];
+                $slot = $slots[ $machineIndex + ( $i - 1)];
                 for( $row = 1; $row <= $rows; $row++ ){
                     for( $col = 1; $col <= $cols; $col++ ){
                         $slot->product_id = $products[ $i]->id;
                         $slot->save();
-                        MachineSlot::create([ 'slot_id' => $slot->id, 'machine_id' => $machine->id, 'row' => $row, 'col' => $col]);
-                        MachineProduct::create([
+                        $machineSlots[] = [ 'slot_id' => $slot->id, 'machine_id' => $machine->id, 'row' => $row, 'col' => $col];
+                        $machineProducts[] =  [
                             'product_id'    => $products[ $i]->id,
                             'machine_id'    => $machine->id,
                             'price'         => $products[ $i]->msrp,
-                        ]);
+                        ];
                     }
                 }
             }
         }
-        $this->command->info('filled the machines up');
-        // change the uuid of the first machine to match the test esp32 uuid
+
+        $this->command->info('inserting machine slots');
+        $ms = collect( $machineSlots);
+        foreach( $ms->chunk( $chunkSize) as $index => $chunk ){
+            $this->command->info('.. ' . $index);
+            MachineSlot::insert( $chunk->toArray() );
+        }
+
+        $this->command->info('inserting machine suggested products');
+        $mp = collect( $machineProducts);
+        foreach( $mp->chunk($chunkSize) as $index => $chunk ){
+            $this->command->info('.. ' . $index);
+            MachineProduct::insert( $chunk->toArray());
+        }
+
+        $this->command->info('inserting a virtual device.');
         $machine = Machine::first();
-        $machine->id = "3533398d-006e-4b4f-9bb4-0bf46df8e0a9";
         $machine->kv()->create([ 'key' => 'mode', 'value' => 'virtual']);
-        $machine->save();
-        $this->command->info('set uuid of the first machine to test uuid and to virtual mode');
     }
 }

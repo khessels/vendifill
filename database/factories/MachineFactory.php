@@ -5,6 +5,7 @@ namespace Database\Factories;
 use App\Models\Machine;
 use App\Traits\RandomCoordinates;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\DB;
 
 class MachineFactory extends Factory
 {
@@ -17,13 +18,11 @@ class MachineFactory extends Factory
         $center = [$lat, $long];
         $point = $this->Coordinates($center, 10);
         return [
-            'uuid' => $this->faker->uuid(),
-            'brand' =>  $this->faker->name(),
-            'brand_model' =>  $this->faker->name(),
-            'year' =>  $this->faker->year(),
+            'id' => $this->faker->uuid(),
+            'stationary' => 'YES',
             'location_id' =>  $this->faker->numberBetween(1,150),
             'machine_type_id' => $this->faker->numberBetween(1,6),
-//            'coordinates' => DB::raw("(ST_GeomFromText('POINT(" . $point[0] . " " . $point[1] .  ")', 4326))"),
+            'coordinates' => DB::raw("(ST_GeomFromText('POINT(" . $point[0] . " " . $point[1] .  ")', 4326))"),
         ];
     }
 }

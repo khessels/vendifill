@@ -22,7 +22,7 @@ class SlotFactory extends Factory
             'product_id' => Null,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
-            'slot_type_id' => fake()->numberBetween( 0, 5),
+            'slot_type_id' => fake()->numberBetween( 1, 10),
         ];
     }
 }

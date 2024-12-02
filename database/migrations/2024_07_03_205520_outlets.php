@@ -38,6 +38,37 @@ return new class extends Migration
                 ->on('outlet_types');
             $table->timestamps();
         });
+        Schema::create('outlet_journal', function (Blueprint $table) {
+            $table->id();
+
+            $table->unsignedBigInteger('outlet_id')->index();
+            $table->foreign('outlet_id')
+                ->references('id')
+                ->on('outlets')
+                ->onDelete('cascade');
+
+            $table->string('event')->nullable(false);
+            $table->json('data')->nullable();
+            $table->enum('archive', ['YES', 'NO'])->default('NO')->nullable(false);
+            $table->timestamps();
+        });
+
+        Schema::create('outlet_products', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('product_id')->index();
+            $table->foreign('product_id')
+                ->references('id')
+                ->on('products');
+
+            $table->unsignedBigInteger('outlet_id')->index();
+            $table->foreign('outlet_id')
+                ->references('id')
+                ->on('outlets')
+                ->onDelete('cascade');
+
+            $table->double('price', 6,2)->nullable(false);
+            $table->timestamps();
+        });
     }
 
     /**
