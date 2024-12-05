@@ -29,7 +29,7 @@ return [
             'permissions' => $arrAllPermissions
         ],
         [
-            'name'=> 'strapi',
+            'name'=> 'content-manager',
             'permissions' => ['content-flush']
         ],
         [

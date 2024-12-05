@@ -5,12 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Http;
-use App\Traits\Content;
+//use App\Traits\Content;
 use Illuminate\Support\Facades\Redis;
 
 class RedisController extends Controller
 {
-    use Content;
+    //use Content;
     public function ping(Request $request)
     {
         try {

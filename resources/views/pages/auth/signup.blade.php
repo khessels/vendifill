@@ -23,7 +23,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
     {!! $content[$page]['start_screen'] ?? '' !!}
 @endsection
 

@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content[$page]['tab_title'] ?? 'tab_title'}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -22,7 +22,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
 
 @endsection
 
@@ -41,7 +41,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                Tokenize Data
+                                @c(['key' => 'tokenize data'])
                             </div>
                             <div class="card-body">
                                 @hasrole('developer')
@@ -53,7 +53,7 @@
                                                 <label for="data">Data</label>
                                                 <input type="text" name="data" class="form-control" placeholder="data">
                                             </div>
-                                            <button class="btn btn-warning btn-sm" type="submit">Tokenize</button>
+                                            <button class="btn btn-warning btn-sm" type="submit">@c(['key' => 'tokenize'])</button>
                                             @if(!empty( Session::get('token')))
                                                 <div class="input-group">
                                                     <label for="token">Token</label>
@@ -74,7 +74,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                Retrieve data from token
+                                @c(['key' => 'retrieve data from token'])
                             </div>
                             <div class="card-body">
                                 @hasrole('developer')
@@ -108,7 +108,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                Add Card
+                                @c(['key' => 'add card'])
                             </div>
                             <div class="card-body">
                                 @hasrole('developer')

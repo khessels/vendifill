@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('title')
-    {{$content[$page]['tab_title'] ?? 'tab_title'}}
+     @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -14,7 +14,6 @@
 @section('head-scripts')
 @endsection
 
-
 @section('top-bar')
     @include('partials.top-bar')
 @endsection
@@ -23,12 +22,12 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
-    {!! $content[$page]['start_screen'] ?? '' !!}
+@section('hero')
+    @c(['key' => 'hero', 'page' => $page, 'mimetype' => 'text/html', 'default' => '' ])
 @endsection
 
 @section('content')
-    {!! $content[$page]['main'] ?? '' !!}
+    @c(['key' => 'content', 'page' => $page, 'mimetype' => 'text/html', 'default' => '' ])
 @endsection
 
 @section('footer')

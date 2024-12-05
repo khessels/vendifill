@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content[$page]['tab_title'] ?? 'tab_title'}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -21,7 +21,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
 
 @endsection
 
@@ -55,13 +55,13 @@
                                 <div class="card" style="width: 18rem;">
     {{--                                <img src="..." class="card-img-top" alt="...">--}}
                                     <div class="card-body">
-                                        <h5 class="card-title">Slot: {{ $machineProduct->machine_slot_id}}</h5>
-                                        <p class="card-text">default product: {{ $machineProduct->product->name }}</p>
-                                        <p class="card-text">product count: {{ $machineProduct->count }}</p>
-                                        <p class="card-text">product price: {{ $machineProduct->price }}</p>
-                                        <a href="#" class="btn btn-primary">Fill up</a>
+                                        <h5 class="card-title">@c(['key' => 'slot']): {{ $machineProduct->machine_slot_id}}</h5>
+                                        <p class="card-text">@c(['key' => 'default product']): {{ $machineProduct->product->name }}</p>
+                                        <p class="card-text">@c(['key' => 'product count']): {{ $machineProduct->count }}</p>
+                                        <p class="card-text">@c(['key' => 'price']): {{ $machineProduct->price }}</p>
+                                        <a href="#" class="btn btn-primary">@c(['key' => 'fill up'])</a>
                                         @can('machines-experiment')
-                                            <a href="#" class="btn btn-outline-secondary">Set to zero</a>
+                                            <a href="#" class="btn btn-outline-secondary">@c(['key' => 'set to zero'])</a>
                                         @endcan
                                     </div>
                                 </div>
@@ -71,7 +71,7 @@
                             <div class="col-md-12">
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <h5 class="card-title">No Stock information for this machine</h5>
+                                        <h5 class="card-title">@c(['key' => 'no stock information'])</h5>
                                     </div>
                                 </div>
                             </div>

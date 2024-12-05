@@ -7,12 +7,12 @@
                     <div class="top-bar__contacts">
                         <ul>
                             <li>
-                                <a href="tel:{{ $content['top-bar']['phone_1'] ?? "phone_1"}}">{{ $content['top-bar']['phone_1'] ?? "phone_1"}}</a>
-                                <a href="tel:{{ $content['top-bar']['phone_2'] ?? "phone_2"}}">{{ $content['top-bar']['phone_2'] ?? "phone_2"}}</a>
+                                <a href="tel:@c(['key' => 'top-bar.phone-1', 'page' => $page ])">@c(['key' => 'top-bar.phone-1'])</a>
+                                <a href="tel:@c(['key' => 'top-bar.phone-2'])">@c(['key' => 'top-bar.phone-2'])</a>
                             </li>
 
                             <li>
-                                <a href="mailto:{{$content['top-bar']['email_support'] ?? 'email_support'}}">{{$content['top-bar']['email_support'] ?? 'email_support'}}</a>
+                                <a href="mailto:@c(['key' => 'email_address_support'])">@c(['key' => 'email_address_support'])</a>
                             </li>
                         </ul>
                     </div>

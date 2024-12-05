@@ -1,7 +1,7 @@
-<div id="start-screen" class="start-screen start-screen--style-2">
+<div id="hero" class="hero hero--style-2">
     <div
-        id="start-screen__slider"
-        class="start-screen__slider"
+        id="hero__slider"
+        class="hero__slider"
         data-slick='{
                             "autoplay": true,
                             "fade": true,
@@ -10,13 +10,13 @@
                             {
                                 "breakpoint": 767,
                                 "settings":{
-                                    "appendDots":"#start-screen__slider-nav"
+                                    "appendDots":"#hero__slider-nav"
                                 }
                             }]
                         }'>
 
-        <div class="start-screen__slide start-screen__slide--1 align-items-center text-center">
-            <div class="__bg" style="background-image: url(img/start-screen_img/2/1.jpg);"></div>
+        <div class="hero__slide hero__slide--1 align-items-center text-center">
+            <div class="__bg" style="background-image: url(img/hero_img/2/1.jpg);"></div>
 
             <div class="container">
                 <div class="row justify-content-center">
@@ -37,8 +37,8 @@
             </div>
         </div>
 
-        <div class="start-screen__slide start-screen__slide--2 align-items-center">
-            <div class="__bg" style="background-image: url(img/start-screen_img/1/1.jpg);"></div>
+        <div class="hero__slide hero__slide--2 align-items-center">
+            <div class="__bg" style="background-image: url(img/hero_img/1/1.jpg);"></div>
 
             <div class="container">
                 <div class="row">
@@ -53,8 +53,8 @@
             </div>
         </div>
 
-        <div class="start-screen__slide start-screen__slide--3 align-items-center">
-            <div class="__bg" style="background-image: url(img/start-screen_img/3/1.jpg);background-position: center left 50%;"></div>
+        <div class="hero__slide hero__slide--3 align-items-center">
+            <div class="__bg" style="background-image: url(img/hero_img/3/1.jpg);background-position: center left 50%;"></div>
 
             <div class="container">
                 <div class="row">
@@ -70,11 +70,11 @@
         </div>
     </div>
 
-    <div class="start-screen__panel">
+    <div class="hero__panel">
         <div class="d-md-table w-100">
             <div class="d-md-table-cell align-middle text-left pl-5">
-                <div id="start-screen__slider-nav" class="start-screen__slider-nav start-screen__slider-nav--hor" dir="rtl">
-                    <span id="start-screen__slider-count"></span>
+                <div id="hero__slider-nav" class="hero__slider-nav hero__slider-nav--hor" dir="rtl">
+                    <span id="hero__slider-count"></span>
                     <b></b>
                 </div>
             </div>

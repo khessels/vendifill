@@ -12,7 +12,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->statefulApi();
+        //$middleware->statefulApi();
 
         //$middleware->append(\Illuminate\Session\Middleware\StartSession::class);
         //$middleware->append(\Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class);
@@ -22,7 +22,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
-            'DebugBar' => Barryvdh\Debugbar\Facade::class,
+//            'DebugBar' => Barryvdh\Debugbar\Facade::class,
         ]);
         $middleware->web(append: [
             \App\Http\Middleware\Language::class,

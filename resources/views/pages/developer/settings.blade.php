@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content['welcome']['tab_title'] ?? 'tab_title'}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -22,7 +22,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
     <main role="main">
         <!-- Common styles
         ================================================== -->
@@ -34,16 +34,16 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">
-                                Role related
+                                @c(['key' => 'role related'])
                             </div>
                             <div class="card-body">
                                 @haspermission('switch-role')
                                     <button id='toggle-role-switcher' data-value="{{$roleSwitcher ?? ""}}" type="button" class="btn btn-light btn-lg">
-                                        Role switcher
+                                        @c(['key' => 'role switcher', 'page' => $page])
                                         @if(!empty($roleSwitcher))
-                                            <span class="badge badge-warning">enabled</span>
+                                            <span class="badge badge-warning">@c(['key' => 'enabled'])</span>
                                         @else
-                                            <span class="badge badge-secondary">Disabled</span>
+                                            <span class="badge badge-secondary">@c(['key' => 'disabled'])</span>
                                         @endif
                                     </button>
                                 @endhaspermission

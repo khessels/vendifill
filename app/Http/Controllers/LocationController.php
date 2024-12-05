@@ -9,24 +9,12 @@ use Illuminate\Support\Facades\Redirect;
 
 class LocationController extends Controller
 {
-    use Content;
-    public function __construct()
-    {
-        // define pages used in this controller
-        $this->pages['locations.index']    = ['attributes' => ['locations', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-
-        $this->loadPages();
-    }
-
     public function index(Request $request)
     {
         try {
             $page = 'locations.index';
-            $content = $this->getPageContentAttributes($page);
-
             return view('pages.locations.index')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);

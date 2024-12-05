@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content['welcome']['tab_title'] ?? 'tab_title'}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -22,7 +22,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
 
 @endsection
 

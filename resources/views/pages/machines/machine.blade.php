@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{$content[$page]['tab_title'] ?? 'tab_title'}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -13,7 +13,6 @@
 @section('head-scripts')
 @endsection
 
-
 @section('top-bar')
     @include('partials.top-bar')
 @endsection
@@ -22,8 +21,8 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
-    {!! $content[$page]['start_screen'] ?? '' !!}
+@section('hero')
+    @c(['key' => 'hero', 'page' => $page, 'mimetype' => 'text/html', 'default' => '' ])
 @endsection
 
 @section('content')
@@ -37,7 +36,7 @@
                     <div class="col-md-2">
                         @can('machines-manage')
                             <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#mdlAddMachine">
-                                {{__('Add machine')}}
+                                @c(['key' => 'add machine'])
                             </button>
                         @endcan
                     </div>
@@ -63,14 +62,14 @@
 
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Add machine</h4>
+                        <h4 class="modal-title">@c(['key' => 'add machine'])</h4>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
                     <!-- Modal body -->
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="location_id">{{__('Location')}}</label>
+                            <label for="location_id">@c(['key' => 'location'])</label>
                             <select class="form-control" id="location_id" name="location_id">
                                 @foreach($locations as $location)
                                     <option value="{{$location->id}}">{{$location->name}}</option>
@@ -78,11 +77,11 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="name">{{__('Coordinates')}}</label>
+                            <label for="name">@c(['key' => 'coordinates'])</label>
                             <input type="text" class="form-control" id="coordinates" name="coordinates" placeholder="{{__('coordinates of the machine')}}">
                         </div>
                         <div class="form-group">
-                            <label for="machine_type">{{__('Machine Type')}}</label>
+                            <label for="machine_type">@c(['key' => 'machine type'])</label>
                             <select class="form-control" id="machine_type_id" name="machine_type_id">
                                 @foreach($machine_types as $machineType)
                                     <option value="{{$machineType->id}}">{{$machineType->machine_type}}</option>
@@ -90,23 +89,23 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="brand">{{__('Brand')}}</label>
-                            <input type="text" class="form-control" id="brand" name="brand" placeholder="{{__('machine brand')}}">
+                            <label for="brand">@c(['key' => 'brand'])</label>
+                            <input type="text" class="form-control" id="brand" name="brand" placeholder="@c(['key' => 'brand'])">
                         </div>
                         <div class="form-group">
-                            <label for="brand_model">{{__('Brand Model')}}</label>
-                            <input type="text" class="form-control" id="brand_model" name="brand_model" placeholder="{{__('machine model')}}">
+                            <label for="brand_model">@c(['key' => 'model'])</label>
+                            <input type="text" class="form-control" id="brand_model" name="brand_model" placeholder="@c(['key' => 'model'])">
                         </div>
                         <div class="form-group">
-                            <label for="year">{{__('Model year')}}</label>
-                            <input type="text" class="form-control" id="year" name="year" placeholder="{{__('Model year')}}">
+                            <label for="year">@c(['key' => 'model year'])</label>
+                            <input type="text" class="form-control" id="year" name="year" placeholder="@c(['key' => 'model year'])">
                         </div>
                     </div>
 
                     <!-- Modal footer -->
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">@c(['key' => 'close'])</button>
+                        <button type="submit" class="btn btn-primary">@c(['key' => 'save changes'])</button>
                     </div>
 
                 </div>

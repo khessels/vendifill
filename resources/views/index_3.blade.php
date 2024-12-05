@@ -299,10 +299,10 @@
 			<!-- end side menu -->
 
 			<!-- start start screen -->
-			<div id="start-screen" class="start-screen start-screen--style-3">
+			<div id="hero" class="hero hero--style-3">
 				<div
-					id="start-screen__slider"
-					class="start-screen__slider"
+					id="hero__slider"
+					class="hero__slider"
 					data-slick='{
 						"autoplay": true,
 						"fade": true,
@@ -311,13 +311,13 @@
 						{
 							"breakpoint": 767,
 							"settings":{
-								"appendDots":"#start-screen__slider-nav"
+								"appendDots":"#hero__slider-nav"
 							}
 						}]
 					}'>
 
-					<div class="start-screen__slide start-screen__slide--1 align-items-center">
-						<div class="__bg" style="background-image: url(img/start-screen_img/3/1.jpg);background-position: center left 40%;"></div>
+					<div class="hero__slide hero__slide--1 align-items-center">
+						<div class="__bg" style="background-image: url(img/hero_img/3/1.jpg);background-position: center left 40%;"></div>
 
 						<div class="container">
 							<div class="row">
@@ -344,8 +344,8 @@
 						</div>
 					</div>
 
-					<div class="start-screen__slide start-screen__slide--2 align-items-center">
-						<div class="__bg" style="background-image: url(img/start-screen_img/1/1.jpg);"></div>
+					<div class="hero__slide hero__slide--2 align-items-center">
+						<div class="__bg" style="background-image: url(img/hero_img/1/1.jpg);"></div>
 
 						<div class="container">
 							<div class="row">
@@ -360,8 +360,8 @@
 						</div>
 					</div>
 
-					<div class="start-screen__slide start-screen__slide--3 align-items-center text-center">
-						<div class="__bg" style="background-image: url(img/start-screen_img/2/1.jpg);"></div>
+					<div class="hero__slide hero__slide--3 align-items-center text-center">
+						<div class="__bg" style="background-image: url(img/hero_img/2/1.jpg);"></div>
 
 						<div class="container">
 							<div class="row justify-content-center">
@@ -383,7 +383,7 @@
 					</div>
 				</div>
 
-				<div id="start-screen__slider-nav" class="start-screen__slider-nav start-screen__slider-nav--ver"></div>
+				<div id="hero__slider-nav" class="hero__slider-nav hero__slider-nav--ver"></div>
 
 				<link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap" rel="stylesheet">
 			</div>

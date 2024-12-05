@@ -9,30 +9,12 @@ use App\Traits\Content;
 
 class WebPagesController extends Controller
 {
-    use Content;
-    public function __construct()
-    {
-
-        // define pages used in this controller
-        $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['profile']     = ['attributes' => ['profile', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-
-        $this->pages['recovery']    = ['attributes' => ['recovery', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-
-        // load the pages and partials
-        //$this->loadLocale();
-        $this->loadPages();
-    }
-
     public function index(Request $request)
     {
         try {
             $page = 'welcome';
-            ray()->markdown('# Hello World');
-            $content = $this->getPageContentAttributes($page);
             return view('pages.index.web')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -42,10 +24,8 @@ class WebPagesController extends Controller
     {
         try {
             $page = 'profile';
-            $content = $this->getPageContentAttributes($page);
             return view('pages.auth.profile')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -55,14 +35,11 @@ class WebPagesController extends Controller
     {
         try {
             $page = 'recovery';
-            $content = $this->getPageContentAttributes($page);
             return view('pages.auth.recovery')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
         }
     }
-
 }

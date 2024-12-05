@@ -11,34 +11,14 @@ use App\Traits\Content;
 
 class GuestPagesController extends Controller
 {
-    use Content;
     use RandomCoordinates;
 
-    public function __construct()
-    {
-        // define pages used in this controller
-        $this->pages['welcome']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['red-button']     = ['attributes' => ['red-button', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['article-request']     = ['attributes' => ['article-request', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['about-us']    = ['attributes' => ['about-us', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['terms']       = ['attributes' => ['terms', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['faq']       = ['attributes' => ['faq', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['contact']     = ['attributes' => ['contact', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['service']     = ['attributes' => ['service', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machine']     = ['attributes' => ['machine', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['refill']     = ['attributes' => ['refill', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['login']       = ['attributes' => ['login', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['signup']      = ['attributes' => ['signup', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        //$this->loadPages();
-    }
     public function signup(Request $request)
     {
         try {
             $page = 'signup';
-            $content = $this->getPageContentAttributes($page);
             return view('pages.auth.signup')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -48,11 +28,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'article-request';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.article-request.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -62,11 +39,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'red-button';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.red-button.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -76,11 +50,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'faq';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.faqs.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -91,11 +62,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'terms';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.terms.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -117,11 +85,8 @@ class GuestPagesController extends Controller
                 $template = 'web';
             }
             $page = 'welcome';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.index.'.$template)
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -131,11 +96,9 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'login';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
+
             return view('pages.auth.'.$page)
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
@@ -146,11 +109,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'about-us';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.about-us.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
@@ -161,11 +121,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'service';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.services.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
@@ -176,11 +133,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'contact';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.contact.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
@@ -206,11 +160,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'refill';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.services.refill')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
@@ -221,11 +172,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'machines';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
             return view('pages.services.machines')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
@@ -236,11 +184,9 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'contact';
-            $this->loadPage($page);
-            $content = $this->getPageContentAttributes($page);
+
             return view('pages.contact.default')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);

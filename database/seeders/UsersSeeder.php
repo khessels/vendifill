@@ -28,16 +28,16 @@ class UsersSeeder extends Seeder
         $user['permissions']    = config('constants.permissions');
         $users[]                = $user;
 
-        $user['name']           = 'strapi production';
+        $user['name']           = 'kcs-content-manager';
         $user['status']         = 'active';
         $user['reason']         = 'seed';
         $user['rating']         = 5;
         $user['email_verified_at'] = Carbon::now()->toIso8601String();
-        $user['email']          = 'strapi@vendifill.com';
+        $user['email']          = 'kcs-content-manager@vendifill.com';
         $user['password']       = Hash::make('Hades666');
         $user['super_admin']    = false;
         $user['user_type']      = "service";
-        $user['roles']          = [ ['name' => 'strapi'] ];
+        $user['roles']          = [ ['name' => 'content-manager'] ];
         $user['permission']     = [ 'content-flush' ];
         $users[]                = $user;
 

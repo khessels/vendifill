@@ -13,19 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class MachineController extends Controller
 {
-    use Content;
-    public function __construct()
-    {
-        $this->pages['machines.index']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.config']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.stock']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-        $this->pages['machines.testing-ground']    = ['attributes' => ['machines', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-
-        // load the pages and partials
-        //$this->loadLocale();
-        $this->loadPages();
-    }
-    public function state(Request $request, $uuid){
+   public function state(Request $request, $uuid){
         return Machine::where('uuid', $uuid)->with('kv')->firstOrFail();
     }
     public function inventory(Request $request, $uuid){
@@ -41,14 +29,12 @@ class MachineController extends Controller
     {
         try {
             $page = 'machines.index';
-            $content = $this->getPageContentAttributes($page);
             $locations = Location::where('active', 'yes')->get();
             $machineTypes = MachineType::all();
             return view('pages.machines.index')
                 ->with('locations', $locations ?? [])
                 ->with('machine_types', $machineTypes ?? [])
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -75,13 +61,12 @@ class MachineController extends Controller
             $machineProducts = MachineProduct::where('machine_id', $machine->id)->with('product')->get();
 
             $page = 'machines.stock';
-            $content = $this->getPageContentAttributes($page);
+
             return view('pages.machines.stock')
                 ->with('machine', $machine)
                 ->with('machine_stock', $machineStock ?? [])
                 ->with('machine_products', $machineProducts ?? [])
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -91,10 +76,8 @@ class MachineController extends Controller
     {
         try {
             $page = 'machines.config';
-            $content = $this->getPageContentAttributes($page);
             return view('pages.machines.config')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -104,10 +87,8 @@ class MachineController extends Controller
     {
         try {
             $page = 'machines.testing-ground';
-            $content = $this->getPageContentAttributes($page);
             return view('pages.machines.testing-ground')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);

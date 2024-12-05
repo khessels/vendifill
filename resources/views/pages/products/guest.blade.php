@@ -22,7 +22,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
 @endsection
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.guest')
 @section('title')
-    {{$content[$page]['tab_title'] ?? 'tab_title'}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -21,8 +21,8 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
-    {!! $content[$page]['start_screen'] ?? '' !!}
+@section('hero')
+    @c(['key' => 'hero', 'page' => $page, 'mimetype' => 'text/html', 'default' => '' ])
 @endsection
 
 @section('content')
@@ -36,17 +36,17 @@
                             <!-- start auth form -->
                             <form class="auth-form" action="/login" method="POST">
                                 @csrf
-                                <h4>{{$content['login']['sign_in'] ?? 'sign_in'}}</h4>
+                                <h4>@c(['key' => 'signin'])</h4>
 
                                 <div class="input-wrp">
                                     <input name='email' class="textfield"
-                                           placeholder="{{$content['login']['email'] ?? 'email'}}" type="text"/>
+                                           placeholder="@c(['key' => 'email'])" type="text"/>
                                 </div>
 
                                 <div class="input-wrp">
                                     <i class="textfield-ico fontello-eye"></i>
                                     <input name="password" class="textfield"
-                                           placeholder="{{$content['login']['password'] ?? 'password'}}"
+                                           placeholder="@c(['key' => 'password'])"
                                            type="password"/>
                                 </div>
 
@@ -55,7 +55,7 @@
                                         <label class="checkfield align-bottom">
                                             <input type="checkbox" checked="">
                                             <i></i>
-                                            {{$content['login']['remember_me'] ?? 'remember_me'}}
+                                            @c(['key' => 'remember_me'])
                                         </label>
                                     </div>
 
@@ -66,10 +66,10 @@
                                 </div>
 
                                 <button class="custom-btn custom-btn--big custom-btn--s3" type="submit"
-                                        role="button">{{$content['login']['btn_sign_in'] ?? 'btn_sign_in'}}</button>
+                                        role="button">@c(['key' => 'btn_signin'])</button>
 
                                 <div class="text-center"><a
-                                        href="/signup">{{$content['login']['link_sign_up'] ?? 'link_sign_up'}}</a> {{$content['login']['sign_up_postfix'] ?? 'sign_up_postfix'}}
+                                        href="/signup">@c(['key' => 'signup'])</a> @c(['key' => 'signin.postfix'])
                                 </div>
                             </form>
 

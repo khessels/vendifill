@@ -14,23 +14,13 @@ use Illuminate\Support\Facades\Session;
 
 class TokenizerController extends APIController
 {
-    use Content, Tokenizer;
-    public function __construct()
-    {
-        // define pages used in this controller
-        $this->pages['tokenize.index']     = ['attributes' => ['welcome', 'footer', 'head', 'top-bar', 'side-menu', 'social-media']];
-
-        $this->loadPages();
-    }
-
+    use Tokenizer;
     public function index(Request $request)
     {
         try {
             $page = 'tokenize.index';
-            $content = $this->getPageContentAttributes($page);
             return view('pages.tokenize.web')
-                ->with('page', $page)
-                ->with('content' ,$content );
+                ->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);

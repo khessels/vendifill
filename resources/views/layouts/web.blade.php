@@ -40,7 +40,7 @@
     <!-- end side menu -->
 
     <!-- start screen -->
-    @yield('start-screen')
+    @yield('hero')
     <!-- end side menu -->
 
     <!-- start main -->

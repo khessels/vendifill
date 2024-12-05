@@ -11,7 +11,7 @@
 
                     <div class="footer__item">
                         <p class="__copy">
-                            {{ $content['footer']['copyright'] ?? "Copyright © 2023 VendiFill.com"}}
+                            @c(['key' => 'copyright', 'default' =>"Copyright © 2023 - 25 VendiFill.com"])
                         </p>
                     </div>
                 </div>
@@ -19,8 +19,9 @@
                 <div class="col-12 col-md-5 col-lg-4 col-xl-3">
                     <div class="footer__item">
                         <address class="footer__address">
-                            {{ $content['footer']['address'] ?? "address"}}
-                            <p><a href="mailto:{{ $content['footer']['email_info'] ?? "email_info"}}"></a></p>
+                            @c(['key' => 'address'])
+
+                            <p><a href="mailto:@c(['key' => 'email_address_info'])">@c(['key' => 'email_address_info'])</a></p>
                         </address>
                     </div>
 
@@ -28,17 +29,17 @@
                         <!-- start social buttons -->
                         <div class="s-btns s-btns--white">
                             <ul class="d-flex flex-row flex-wrap align-items-center">
-                                @if(!empty($content['footer']['link_facebook']))
-                                    <li><a class="f" href="{{ $content['footer']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
+                                @if(!empty("@c(['key' => 'link_facebook'])"))
+                                    <li><a class="f" href="@c(['key' => 'link_facebook'])"><i class="fontello-facebook"></i></a></li>
                                 @endif
-                                @if(!empty($content['footer']['link_twitter']))
-                                    <li><a class="t" href="{{ $content['footer']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
+                                @if(!empty("@c(['key' => 'link_x'])"))
+                                    <li><a class="t" href="@c(['key' => 'link_x'])"><i class="fontello-twitter"></i></a></li>
                                 @endif
-                                @if(!empty($content['footer']['link_youtube']))
-                                    <li><a class="y" href="{{ $content['footer']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
+                                @if(!empty("@c(['key' => 'link_youtube'])"))
+                                    <li><a class="y" href="@c(['key' => 'link_facebook'])"><i class="fontello-youtube-play"></i></a></li>
                                 @endif
-                                @if(!empty($content['footer']['link_instagram']))
-                                    <li><a class="i" href="{{ $content['footer']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
+                                @if(!empty("@c(['key' => 'link_blsky'])"))
+                                    <li><a class="i" href="@c(['key' => 'link_blsky'])"><i class="fontello-instagram"></i></a></li>
                                 @endif
 
                             </ul>
@@ -53,7 +54,7 @@
                             <div class="footer__item">
                                 <nav class="footer__navigation">
                                     <ul>
-                                        {{ $content['footer']['column_3'] ?? "column_3"}}
+                                        @c(['key' => 'footer.column-3'])
                                         <!-- li class="active" -->
 {{--                                        <li><a href="javascript:void(0)">Documents</a></li>--}}
 {{--                                        <li><a href="javascript:void(0)">Services</a></li>--}}
@@ -70,7 +71,7 @@
                                 <nav class="footer__navigation">
                                     <ul>
                                         <!-- li class="active" -->
-                                        {{ $content['footer']['column_4'] ?? "column_4"}}
+                                        @c(['key' => 'footer.column-4'])
 {{--                                        <li><a href="javascript:void(0)">Snack Vending Machines</a></li>--}}
 {{--                                        <li><a href="javascript:void(0)">Beverage Vending Machines</a></li>--}}
 {{--                                        <li><a href="javascript:void(0)">Combo Vending Machines</a></li>--}}

@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Session;
 
 class LanguagesController extends Controller
 {
-    use Content;
     public function languageSwitch(Request $request)
     {
         try {

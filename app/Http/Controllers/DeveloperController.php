@@ -8,8 +8,6 @@ use Illuminate\Http\Request;
 
 class DeveloperController extends Controller
 {
-    use Content;
-
     public function settings(Request $request)
     {
         try {

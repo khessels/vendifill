@@ -1,6 +1,6 @@
 @extends('layouts.web')
 @section('title')
-    {{ __('Developer')}}: {{ __('Vending machine')}}
+    @c(['key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
@@ -22,7 +22,7 @@
     @include('partials.side-menu')
 @endsection
 
-@section('start-screen')
+@section('hero')
     <main role="main">
         <section class="section ">
             <div class="container">
@@ -30,7 +30,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">
-                               Select vending machine
+                                @c(['key' => 'select vending machine'])
                             </div>
                             <div class="card-body">
 
@@ -40,7 +40,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">
-                                Machine state
+                                @c(['key' => 'machine state'])
                             </div>
                             <div class="card-body">
 
@@ -50,7 +50,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">
-                                Enter amount
+                                @c(['key' => 'amount'])
                             </div>
                             <div class="card-body">
 
@@ -60,7 +60,7 @@
                     <div class="col-md-3">
                         <div class="card">
                             <div class="card-header">
-                                Select items
+                                @c(['key' => 'select items'])
                             </div>
                             <div class="card-body">
 
@@ -73,7 +73,7 @@
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header">
-                                Vending machine
+                                @c(['key' => 'vending machine'])
                             </div>
                             <div class="card-body">
 
