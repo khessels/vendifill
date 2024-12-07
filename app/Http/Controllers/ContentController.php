@@ -13,18 +13,20 @@ class ContentController extends Controller
 {
     public static function translate( $expression)
     {
-        $key = $expression[ 'key'];
+        $redisKey = $expression[ 'key'];
         if( isset( $expression[ 'page'])) {
-            $key .= '.' . $expression[ 'page'];
+            $redisKey .= '.' . $expression[ 'page'];
         }
         if(! isset( $expression[ 'language'])) {
-            $key .= '.' . Lang::locale();
+            $redisKey .= '.' . Lang::locale();
+            $expression[ 'language'] = Lang::locale();
         }
-        $value = Redis::get( $key);
-        if ( $value === false) {
-            // todo: send the expression to the content manager
+
+        $value = Redis::get( config( 'kcs-content-manager.app' ) . '.' . $redisKey);
+        if ( $value === false || $value === null) {
             $response = Http::withHeaders([
                 'Authentication' => 'bearer ' . config( 'kcs-content-manager.token' ),
+                'x-dev' => config( 'kcs-content-manager.dev'),
                 'x-app' => config( 'kcs-content-manager.app' ),
                 'Content-Type' => 'application/json',
                 'Accept' => 'application/json' ])
