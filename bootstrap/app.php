@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\Language;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -22,10 +23,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
             'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
             'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
-//            'DebugBar' => Barryvdh\Debugbar\Facade::class,
+            'DebugBar' => Barryvdh\Debugbar\Facade::class,
         ]);
         $middleware->web(append: [
             \App\Http\Middleware\Language::class,
+            \App\Http\Middleware\Content::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

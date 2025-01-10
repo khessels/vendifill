@@ -2,12 +2,11 @@
 
 namespace App\Providers;
 
-use http\Client;
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Redis;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\ServiceProvider;
-use App\Http\Controllers\ContentController;
+
 class ContentServiceProvider extends ServiceProvider
 {
     /**
@@ -15,31 +14,6 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        // get all the content from the server and populate redis
-        try{
-            $app = config( 'kcs-content-manager.app' );
-            $response = Http::withHeaders([
-                'Authentication' => 'bearer ' . $app,
-                'Content-Type' => 'application/json',
-                'x-app' => config( 'kcs-content-manager.app' ),
-            ])
-                ->get('http://kcs-content-manager.local/api/management/content');
-            $items = $response->json();
-            foreach( $items as $item ){
-                $key = $item[ 'key'];
-                if( $item[ 'page'] != null){
-                    $key .= '.' . $item[ 'page'];
-                }
-                if( $item[ 'language'] != null){
-                    $key .= '.' . $item[ 'language'];
-                }
-                if( $item[ 'value'] != null) {
-                    Redis::set($app . '.' . $key, $item['value']);
-                }
-            }
-        }catch( \Exception $e){
-            error_log( $e->getMessage());
-        }
     }
 
     /**
@@ -47,8 +21,20 @@ class ContentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::directive('c', function (string $expression) {
-            return "<?php echo \App\Http\Controllers\ContentController::translate( $expression); ?>";
+        $this->app = config('kcs-content-manager.app');
+        $path = storage_path('app/kcs-content-manager.resources.' . Lang::locale());
+        try{
+            $content = file_get_contents( $path );
+        }catch(\Exception $e){
+            $content = "[]";
+        }
+        Blade::directive('c', function (string $expression) use ( $content) {
+            $contentEditMode = Cache::get('kcs-content-manager.edit-mode');
+            if( $contentEditMode) {
+                return "<?php echo \App\Http\Controllers\ContentController::translate(  $expression, '" . $content . "'); ?>";
+            }else{
+                return "<?php echo \App\Http\Controllers\ContentController::translateEdit(  $expression, '" . $content . "'); ?>";
+            }
         });
     }
 }
