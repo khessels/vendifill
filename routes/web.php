@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContentController;
 use App\Http\Controllers\DeveloperController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\MachineController;
@@ -44,6 +45,9 @@ Route::get('/terms',                 [GuestPagesController::class,   'terms'])  
 Route::get('/profile',               [WebPagesController::class,     'profile'])        ->name('view.profile');
 Route::get('/signup',                [GuestPagesController::class,   'signup'])         ->name('view.signup');
 
+Route::get('/cms/{page}', [ContentController::class, 'getPageFromCMS'])->name('cms.page');
+Route::get('/cms/image/data', [ContentController::class, 'getImageData'])->name('cms.image.data.get');
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
     // your routes here
     //Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
@@ -79,7 +83,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('/machine/testing-ground', [MachineController::class, 'testingGround'])->name('view.machine.testing.ground');
     });
 
-    Route::group( ['middleware' => ['role:developer']], function () {
+    Route::group( ['middleware' => ['role:developer|admin']], function () {
         Route::get( 'tokenizer',        [TokenizerController::class,        'index'])           ->name('view.tokenize.index');
         Route::post('tokenize',         [TokenizerController::class,       'tokenize'])         ->name('post.tokenize.tokenize');
         Route::get( 'tokenize',         [TokenizerController::class,        'retrieveData'])    ->name('get.tokenize.retrieve');
@@ -90,6 +94,88 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
         Route::get('info', function () {
             phpinfo();
         })->name('view.phpinfo');
+        Route::middleware('role:developer|admin')->group(function () {
+            Route::post('/bkr/removal/emails', [BKRController::class, 'sendEmails']);
+            Route::get('/bkr/removal/entries/log/email/{session_id}', [BKRController::class, 'emailLogEntries'])->name('get.bkr.removal.log.email');
+            Route::get('/bkr/removal/{session_id}', [BKRController::class, 'listRequest'])->name('get.bkr.removal');
+            Route::post('/bkr/removal', [BKRController::class, 'addRemoval'])->name('add.bkr.removal');
+            Route::post('/bkr/removal/data', [BKRController::class, 'addRemovalData'])->name('add.bkr.removal.data');
+            Route::delete('/bkr/removal/data', [BKRController::class, 'removeRemovalData'])->name('remove.bkr.removal.data');
+            Route::patch('/bkr/removal/additional-data', [BKRController::class, 'additionalData'])->name('remove.bkr.removal.additional.data');
+
+            Route::get('/iframe/lease-calculator', [LeaseCalculatorController::class, 'viewIframe']);
+            //Route::get('/iframe/lease-calculator', [LeaseCalculatorController::class, 'viewIframe']);
+            //Route::get('/iframe', [DealerController::class, 'iframe']);
+
+            Route::post('/kvk/resolve', [LeaseCalculatorController::class, 'kvkResolve']);
+            route::group(['prefix' => 'messages'], function () {
+                Route::get('/', [WelcomeController::class, 'messages'])->name('messages');
+                Route::delete('/', [WelcomeController::class, 'deleteMessages'])->name('messages.delete');
+                Route::put('/archive', [WelcomeController::class, 'archiveMessages'])->name('messages.archive');
+            });
+            route::group(['prefix' => 'cms'], function () {
+                Route::post('/images/action', [ContentController::class, 'imagesAction'])->name('cms.images.action');
+                Route::post('/images/directory', [ContentController::class, 'createImagesDirectory'])->name('cms.images.directory.create');
+                Route::delete('/images/directory', [ContentController::class, 'deleteImagesDirectory'])->name('cms.images.directory.delete');
+
+
+                Route::get('/', [ContentController::class, 'index'])->name('cms.index');
+                Route::get('/enable', [ContentController::class, 'cms_enable'])->name('cms.enable');
+                Route::get('/disable', [ContentController::class, 'cms_disable'])->name('cms.disable');
+
+                Route::get('/artisan/optimize', [ContentController::class, 'artisan_optimize'])->name('cms.artisan.optimize');
+
+                Route::get('/collection/enable', [ContentController::class, 'collection_enable'])->name('cms.collection.enable');
+                Route::get('/collection/disable', [ContentController::class, 'collection_disable'])->name('cms.collection.disable');
+                Route::get('/collection/delete', [ContentController::class, 'collection_delete'])->name('cms.collection.delete');
+                Route::get('/collection/upload', [ContentController::class, 'collection_upload'])->name('cms.collection.upload');
+                Route::get('/collection/reset', [ContentController::class, 'collection_reset'])->name('cms.collection.reset');
+                Route::get('/collection/reload', [ContentController::class, 'collection_reload'])->name('cms.collection.reload');
+
+                Route::patch('/tag/direct/{app}/{id}', [ContentController::class, 'tag_update_direct'])->name('cms.tag.update.direct');
+
+                Route::delete('/database', [ContentController::class, 'db_delete'])->name('cms.database.delete');
+                Route::post('/page/add', [ContentController::class, 'addPage'])->name('cms.page.add');
+                Route::delete('/page/cache', [ContentController::class, 'clearPageCache'])->name('cms.page.cache.clear');
+                Route::get('/image/management', [ContentController::class, 'imageManagement'])->name('cms.image.management.get');
+                Route::post('/image/management', [ContentController::class, 'imageManagement'])->name('cms.image.management.post');
+                Route::post('/dropzone/store', [ContentController::class, 'store'])->name('cms.dropzone.store');
+                Route::post('/image/data', [ContentController::class, 'setImageData'])->name('cms.image.data.post');
+
+            });
+            //Route::get('/lease/requests', [LeaseCalculatorController::class, 'leaseRequestsData'])->name('get.lease.requests');
+
+            route::group(['prefix' => '/lease/request'], function () {
+                Route::post('/emails', [LeaseCalculatorController::class, 'sendEmails']);
+                Route::get('/entries/log/email/{session_id}', [LeaseCalculatorController::class, 'emailLogEntries'])->name('get.lease.request.log.email');
+                Route::delete( '/archive/{sessionId}', [LeaseCalculatorController::class, 'archivePartialRecords'] )->name('post.lease.request.archive');
+                Route::get('/entries/{session_id}', [LeaseCalculatorController::class, 'entries']);
+                Route::post('/entry/{session_id}', [LeaseCalculatorController::class, 'entry']);
+                Route::delete('/entry/{id}', [LeaseCalculatorController::class, 'deleteEntry']);
+            });
+            route::group(['prefix' => '/lease/requests'], function () {
+                Route::get('/', [LeaseCalculatorController::class, 'leaseRequests'])->name('view.lease.requests');
+                Route::delete('/', [LeaseCalculatorController::class, 'leaseRequestsDelete']);
+            });
+            Route::get('/filters', [FilterController::class, 'filters'])->name('view.filters');
+            Route::get('/dealers', [DealerController::class, 'dealers'])->name('view.dealers');
+
+            route::group(['prefix' => 'dealer'], function () {
+                Route::get('performance/historical/{dealer_id}', [DealerController::class, 'historicalPerformance']);
+                Route::get('entries/{session_id}', [DealerController::class, 'entries']);
+                Route::post('entry/{session_id}', [DealerController::class, 'entry']);
+                Route::patch('password', [DealerController::class, 'setPassword']);
+
+                Route::post('/email', [DealerController::class, 'updateEmail']);
+                Route::patch('/tier', [DealerController::class, 'updateTier']);
+                Route::post('/email/credentials/{ids?}', [DealerController::class, 'emailCredentials']);
+                Route::post('/', [DealerController::class, 'addDealer'])->name('dealer.post');
+                Route::delete('/{id?}', [DealerController::class, 'removeDealer'])->name('dealer.delete');
+                Route::delete('/status/toggle/{id}', [DealerController::class, 'toggleStatusDealer'])->name(
+                    'dealer,.status.toggle'
+                );
+            });
+        });
     });
     //Route::get('machines/manage',    [MachineController::class],       'viewManagement')     ->name('machines.manage');
 });

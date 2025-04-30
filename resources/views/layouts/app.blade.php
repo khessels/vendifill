@@ -43,10 +43,8 @@
             .tox-tinymce {
                 z-index: 1001;
             }
-            .form-check{
-                width:20px;
-            }
         </style>
+{{--        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js" integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
     @endif
 
 
@@ -133,22 +131,10 @@
 <script src="/js/fancybox/jquery.fancybox.js"></script>
 <script src="/js/nice-select/jquery.nice-select.js"></script>
 <script src="/js/ion.rangeSlider/js/ion.rangeSlider.js"></script>
-
-</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-<script>
-    toastr.options.timeOut = 2000;
-    toastr.options.closeButton = true;
-    toastr.options.closeHtml = '<button><i class="icon-off"></i></button>';
-
-    toastr.options.showMethod = 'slideDown';
-    toastr.options.hideMethod = 'slideUp';
-    toastr.options.closeMethod = 'slideUp';
-
-    toastr.options.progressBar = true;
-</script>
+</body>
 @if( ! empty( $cms))
     @include('partials.cms')
 @endif
-
+@include('partials.error-alert')
 </html>
