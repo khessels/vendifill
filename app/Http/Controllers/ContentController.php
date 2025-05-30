@@ -185,7 +185,8 @@ class ContentController extends Controller
                 }
             }
         }
-        return view("pages.page-not-found");
+        $this->alertNotification("Page not found", "danger");
+        return redirect()->back();
     }
 
 
@@ -569,7 +570,8 @@ class ContentController extends Controller
         ])->get(config('kcs-content-manager.domain') . '/api/page/list/ACTIVE');
         $pages = $response->json();
         Cache::set('pages', $pages);
-        return redirect('/dashboard');
+        return redirect()->back();
+
     }
 
     public function deletePage( Request $request, $page ){
@@ -580,7 +582,7 @@ class ContentController extends Controller
             'x-dev' => config('kcs-content-manager.dev'),
             'x-app' => config('kcs-content-manager.app')
         ])->delete(config('kcs-content-manager.domain') . '/api/page/' . $page);
-        return redirect('/dashboard');
+        return redirect()->back();
     }
     public function addPage( Request $request ){
         $all = $request->all();
@@ -599,7 +601,7 @@ class ContentController extends Controller
             'x-dev' => config('kcs-content-manager.dev'),
             'x-app' => config('kcs-content-manager.app')
         ])->post(config('kcs-content-manager.domain') . '/api/page', $all);
-        return redirect('/dashboard');
+        return redirect()->back();
     }
     public function getPage( Request $request, $page ){
         $response = Http::withHeaders([
@@ -623,6 +625,6 @@ class ContentController extends Controller
 
     public function clearPageCache( Request $request){
         Cache::clear('pages');
-        return redirect('/dashboard');
+        return redirect()->back();
     }
 }

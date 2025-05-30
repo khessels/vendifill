@@ -29,11 +29,15 @@ return [
             'permissions' => $arrAllPermissions
         ],
         [
+            'name'=> 'admin',
+            'permissions' => $arrAllPermissions
+        ],
+        [
             'name'=> 'content-manager',
             'permissions' => ['content-flush']
         ],
         [
-            'name'=> 'depot',
+            'name'=> 'outlet',
             'permissions' => ['tickets-fulfill']
         ],
         [
@@ -50,6 +54,14 @@ return [
         ],
         [
             'name'=> 'service supplier',
+            'permissions' => []
+        ],
+        [
+            'name'=> 'vendor',
+            'permissions' => []
+        ],
+        [
+            'name'=> 'referer',
             'permissions' => []
         ],
     ]

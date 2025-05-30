@@ -41,12 +41,12 @@ class UserAuthController extends Controller
         if (Auth::attempt($credentials, true)) {
             $user = User::where('email',$credentials['email'])->first();
             $token = $user->createToken($credentials['name'])->plainTextToken;
-            $roles = Auth::user()->getRoleNames();
-            return response()->json($this->responseObject($request, true, [
-                'access_token' => $token,
-            ]));
+            // $roles = Auth::user()->getRoleNames();
+            return response()->json( [
+                'access_token' => $token
+            ]);
         }else{
-            return response()->json($this->responseObject($request, false, null, "Invalid Credentials"),401);
+            return response( "Invalid Credentials", 401);
         }
     }
     public function tokenDelete(Request $request)
@@ -57,7 +57,7 @@ class UserAuthController extends Controller
         $request->session()->invalidate();
         //$request->user()->currentAccessToken()->delete();
         //$user->currentAccessToken()->delete();
-        return response()->json($this->responseObject($request, true, "Logged out"));
+        return response( "Logged out");
     }
     public function register(Request $request): \Illuminate\Http\JsonResponse
     {

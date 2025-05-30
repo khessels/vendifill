@@ -93,7 +93,7 @@ class APIController extends Controller
         $ccPieces = str_split($ccStringVal, 4);
         return implode('-', $ccPieces);
     }
-    public function addCC(Request $request, $runMode = 'PRODUCTION'): \Illuminate\Http\JsonResponse
+    public function addCC(Request $request, $runMode = 'PRODUCTION')
     {
         $all        = $request->all();
         $cc_mask    = null;
@@ -162,9 +162,9 @@ class APIController extends Controller
             $cc->run_mode   = $runMode;
             $cc->save();
             $arr            = $this->getPublicCCDetails($cc,null, $token, $cc_card);
-            return response()->json($this->responseObject($request, true, $arr) );
+            return response()->json( $arr);
         }
-        return response()->json($this->responseObject($request, false) );
+        return response( "Failed", 400);
     }
     protected function getPublicCCDetails($cc, $default, string $token, string $card = null): bool|array
     {
@@ -200,7 +200,7 @@ class APIController extends Controller
      *     @OA\Response(response="200", description="success"),
      * )
      */
-    public function getCC(Request $request, $token): \Illuminate\Http\JsonResponse
+    public function getCC(Request $request, $token)
     {
         $cc = CreditCard::where('cc_number', '=', $token)->where('brand_id','=', config('app.brand_id')  )->first();
         if(!empty($cc)) {
@@ -209,11 +209,11 @@ class APIController extends Controller
             if (!empty($cc)) {
                 $publicCCDetails = $this->getPublicCCDetails($cc, null, $token);
                 if (!empty($publicCCDetails)) {
-                    return response()->json($this->responseObject($request, true, $publicCCDetails));
+                    return response()->json( $publicCCDetails);
                 }
             }
         }
-        return response()->json($this->responseObject($request, false) );
+        return response();
     }
 
     /**
@@ -228,7 +228,7 @@ class APIController extends Controller
      *     @OA\Response(response="200", description="success"),
      * )
      */
-    public function deleteCC(Request $request, $token): \Illuminate\Http\JsonResponse
+    public function deleteCC(Request $request, $token)
     {
         $cc = CreditCard::where('cc_number', '=', $token)->where('brand_id','=', Auth::user()->brand_id)->first();
         $result = $this->tokenizerDeleteToken($request, Auth::user()->brand_id, $token);
@@ -236,7 +236,7 @@ class APIController extends Controller
         if(!empty($cc) && $result) {
             CreditCard::destroy($cc['id']);
         }
-        return response()->json($this->responseObject($request, true) );
+        return response();
     }
 
     /**
@@ -251,13 +251,13 @@ class APIController extends Controller
      *     @OA\Response(response="200", description="success"),
      * )
      */
-    public function deleteUserData(Request $request, $token): \Illuminate\Http\JsonResponse
+    public function deleteUserData(Request $request, $token)
     {
         $result = $this->tokenizerDeleteToken($request, Auth::user()['brand_id'], $token);
         if($result){
-            return response()->json($this->responseObject($request, true) );
+            return response();
         }
-        return response()->json($this->responseObject($request, false) );
+        return response( "Failed", 400);
     }
 
     /**
@@ -275,7 +275,7 @@ class APIController extends Controller
     public function getUserData(Request $request, $token, $key = null): \Illuminate\Http\JsonResponse
     {
             $data = $this->tokenizerExchangeForData($request, Auth::user()['brand_id'], $token);
-            return response()->json($this->responseObject($request, true, $data) );
+            return response()->json( $data);
     }
 
     /**
@@ -301,7 +301,7 @@ class APIController extends Controller
      *     @OA\Response(response="200", description="success"),
      * )
      */
-    public function setUserData(Request $request): \Illuminate\Http\JsonResponse
+    public function setUserData(Request $request)
     {
         $encodings = [
             "ASCII"
@@ -311,10 +311,10 @@ class APIController extends Controller
             $maxChars = 100;
         }
         if(strlen($request->data) > $maxChars){
-            return response()->json($this->responseObject($request, false, "max string length: " . $maxChars . " characters") );
+            return response( "max string length: " . $maxChars . " characters", 400);
         }
         $token = $this->tokenizerExchangeForToken($request, Auth::user()['brand_id'], $request->data);
-        return response()->json($this->responseObject($request, true, $token) );
+        return response( $token);
     }
 
     protected function getCardBrand($pan, $include_sub_types = false): string

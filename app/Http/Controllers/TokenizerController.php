@@ -33,10 +33,12 @@ class TokenizerController extends APIController
                 $token = $this->tokenizerExchangeForToken($request, config('app.brand_id'), $request->data);
                 $request->session()->put('token', $token);
             }
+            $this->alertNotification( 'Data exchanged for token');
             return Redirect::back()->with('success', 'Data exchanged for token');
         }catch(\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
+            $this->alertNotification( $e->getMessage(), 'error');
+            return redirect()->back();
         }
     }
     public function retrieveData(Request $request)
@@ -49,7 +51,8 @@ class TokenizerController extends APIController
             return Redirect::back()->with('success', 'token exchanged for data');
         }catch(\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
+            $this->alertNotification( $e->getMessage(), 'error');
+            return redirect()->back();
         }
     }
     public function tokenizeCard(Request $request)
@@ -65,7 +68,8 @@ class TokenizerController extends APIController
 
         }catch(\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
+            $this->alertNotification( $e->getMessage(), 'error');
+            return redirect()->back();
         }
     }
     public function retrieveCard(Request $request)
@@ -84,7 +88,8 @@ class TokenizerController extends APIController
             }
         }catch(\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
+            $this->alertNotification( $e->getMessage(), 'error');
+            return redirect()->back();
         }
     }
 }

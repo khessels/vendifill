@@ -79,14 +79,8 @@ class GuestPagesController extends Controller
 //            $point = $this->Coordinates($center, 10);
 //            die($point);
 
-            $template = 'guest';
-            if(Auth::check()) {
-                // $roles = Auth::user()->getRoleNames();
-                $template = 'web';
-            }
-            $page = 'welcome';
-            return view('pages.index.'.$template)
-                ->with('page', $page);
+            $page = 'index';
+            return view('pages.'.$page)->with('page', $page);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -121,9 +115,8 @@ class GuestPagesController extends Controller
     {
         try {
             $page = 'service';
-            return view('pages.services.default')
+            return view('pages.services')
                 ->with('page', $page);
-
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -185,12 +178,21 @@ class GuestPagesController extends Controller
         try {
             $page = 'contact';
 
-            return view('pages.contact.default')
+            return view('pages.contact')
                 ->with('page', $page);
 
         } catch (\Exception $e) {
             $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
+        }
+    }
+    public function hello(Request $request)
+    {
+        try {
+            return response()->json( $request->all());
+        } catch (\Exception $e) {
+            $this->criticalException(null, $e, __FILE__, __FUNCTION__, __LINE__);
+            return response( $e->getMessage(), 400);
         }
     }
 }

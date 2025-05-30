@@ -48,9 +48,8 @@ class MachineController extends Controller
             return redirect()->route('view.machines.index');
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            return Redirect::back()
-                ->with('message', 'Machine not added')
-                ->with('alert-class', 'alert-warning');
+            $this->alertNotification($e->getMessage(), 'warning');
+            return Redirect::back();
         }
     }
     public function stock(Request $request, $uuid)

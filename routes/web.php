@@ -23,96 +23,74 @@ use App\Http\Controllers\TokenizerController;
 //    if ($locale) App::setLocale($locale);
 //}
 // todo: check if locale is in query parameters
-
-Route::view('404', 'errors.404')->name('view.404');
+Route::middleware('language')->group(function () {
+    Route::view('404', 'errors.404')->name('view.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
 
-Route::get( '/',                     [GuestPagesController::class,   'index'])          ->name('view.index');
-Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('login');
-Route::get( '/login',                [GuestPagesController::class,   'login'])          ->name('view.login');
-Route::get( '/about-us',             [GuestPagesController::class,   'about_us'])       ->name('view.about-us');
-Route::get( '/contact-us',           [GuestPagesController::class,   'contact'])        ->name('view.contact');
-Route::get( '/article/request',      [GuestPagesController::class,   'articleRequest']) ->name('view.article.request');
-Route::get( '/services',             [GuestPagesController::class,   'services'])       ->name('view.services');
-Route::get( '/services/machines',    [GuestPagesController::class,   'machines'])       ->name('view.services.machines');
-Route::get( '/services/refill',      [GuestPagesController::class,   'refill'])         ->name('view.services.refill');
-Route::get( '/faqs',                 [GuestPagesController::class,   'faqs'])           ->name('view.faqs');
-Route::post('/login',                [UserAuthController::class,     'login'])          ->name('post.login');
-Route::post('/language/switch',      [LanguagesController::class,    'languageSwitch']) ->name('post.language.switch');
-Route::get('/red-button',            [GuestPagesController::class,   'redButton'])      ->name('view.red-button');
-Route::get('/terms',                 [GuestPagesController::class,   'terms'])          ->name('view.terms');
-Route::get('/profile',               [WebPagesController::class,     'profile'])        ->name('view.profile');
-Route::get('/signup',                [GuestPagesController::class,   'signup'])         ->name('view.signup');
+    Route::get('/', [GuestPagesController::class, 'index'])->name('view.index');
+    Route::get('/login', [GuestPagesController::class, 'login'])->name('login');
+//    Route::get('/login', [GuestPagesController::class, 'login'])->name('view.login');
+    Route::get('/about-us', [GuestPagesController::class, 'about_us'])->name('view.about-us');
+    Route::get('/contact', [GuestPagesController::class, 'contact'])->name('view.contact');
+    Route::get('/article/request', [GuestPagesController::class, 'articleRequest'])->name('view.article.request');
+    Route::get('/services', [GuestPagesController::class, 'services'])->name('view.services');
+    Route::get('/services/machines', [GuestPagesController::class, 'machines'])->name('view.services.machines');
+    Route::get('/services/refill', [GuestPagesController::class, 'refill'])->name('view.services.refill');
+    Route::get('/faqs', [GuestPagesController::class, 'faqs'])->name('view.faqs');
+    Route::post('/login', [UserAuthController::class, 'login'])->name('post.login');
+    Route::post('/language/switch', [LanguagesController::class, 'languageSwitch'])->name('post.language.switch');
+    Route::get('/red-button', [GuestPagesController::class, 'redButton'])->name('view.red-button');
+    Route::get('/terms', [GuestPagesController::class, 'terms'])->name('view.terms');
+    Route::get('/profile', [WebPagesController::class, 'profile'])->name('view.profile');
+    Route::get('/signup', [GuestPagesController::class, 'signup'])->name('view.signup');
 
-Route::get('/cms/{page}', [ContentController::class, 'getPageFromCMS'])->name('cms.page');
-Route::get('/cms/image/data', [ContentController::class, 'getImageData'])->name('cms.image.data.get');
+    Route::group(['middleware' => ['auth:sanctum']], function () {
+        // your routes here
+        //Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
+        Route::post('/logout', [UserAuthController::class, 'logout'])->name('post.logout');
 
-Route::group(['middleware' => ['auth:sanctum']], function () {
-    // your routes here
-    //Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
-    Route::post('/logout',              [UserAuthController::class,     'logout'])      ->name('post.logout');
+        Route::group(['middleware' => ['can:locations-manage']], function () {
+            Route::get('/locations', [LocationController::class, 'index'])->name('view.locations.index');
+            Route::post('/locations', [LocationController::class, 'store']);
+        });
+        Route::group(['middleware' => ['can:outlets-manage']], function () {
+            Route::get('/outlets', [OutletController::class, 'index'])->name('view.outlet.index');
+            Route::post('/outlets', [OutletController::class, 'store']);
+        });
 
-    Route::group( ['middleware' => ['can:locations-manage']], function () {
-        Route::get('/locations',             [LocationController::class,    'index'])       ->name('view.locations.index');
-        Route::post('/locations',            [LocationController::class,    'store']);
-    });
-    Route::group( ['middleware' => ['can:outlets-manage']], function () {
-        Route::get('/outlets',             [OutletController::class,    'index'])       ->name('view.outlet.index');
-        Route::post('/outlets',            [OutletController::class,    'store']);
-    });
+        Route::group(['middleware' => ['can:machines-manage']], function () {
+            Route::get('/machines', [MachineController::class, 'index'])->name('view.machines.index');
+            Route::post('/machines', [MachineController::class, 'store']);
+            Route::get('/machine/stock/{uuid}', [MachineController::class, 'stock'])->name('view.machine.stock');
 
-    Route::group( ['middleware' => ['can:machines-manage']], function () {
-        Route::get('/machines',              [MachineController::class,     'index'])       ->name('view.machines.index');
-        Route::post('/machines',             [MachineController::class,     'store']);
-        Route::get('/machine/stock/{uuid}',  [MachineController::class,     'stock'])       ->name('view.machine.stock');
+        });
 
-    });
+        Route::group(['middleware' => ['can:products-manage']], function () {
+            Route::get('/products', [ProductController::class, 'index'])->name('view.products.index');
+            Route::post('/products', [ProductController::class, 'store']);
 
-    Route::group( ['middleware' => ['can:products-manage']], function () {
-        Route::get('/products',              [ProductController::class,     'index'])       ->name('view.products.index');
-        Route::post('/products',             [ProductController::class,     'store']);
+        });
 
-    });
+        Route::group(['middleware' => ['can:machines-config']], function () {
+            Route::get('/machine/config', [MachineController::class, 'config'])->name('view.machine.config');
+        });
 
-    Route::group( ['middleware' => ['can:machines-config']], function () {
-        Route::get('/machine/config', [MachineController::class, 'config'])->name('view.machine.config');
-    });
+        Route::group(['middleware' => ['can:machines-experiment']], function () {
+            Route::get('/machine/testing-ground', [MachineController::class, 'testingGround'])->name('view.machine.testing.ground');
+        });
 
-    Route::group( ['middleware' => ['can:machines-experiment']], function () {
-        Route::get('/machine/testing-ground', [MachineController::class, 'testingGround'])->name('view.machine.testing.ground');
-    });
-
-    Route::group( ['middleware' => ['role:developer|admin']], function () {
-        Route::get( 'tokenizer',        [TokenizerController::class,        'index'])           ->name('view.tokenize.index');
-        Route::post('tokenize',         [TokenizerController::class,       'tokenize'])         ->name('post.tokenize.tokenize');
-        Route::get( 'tokenize',         [TokenizerController::class,        'retrieveData'])    ->name('get.tokenize.retrieve');
-        Route::get( 'tokenize/card',    [TokenizerController::class,       'retrieveCard'])     ->name('get.tokenize.card.retrieve');
-        Route::post('tokenize/card',    [TokenizerController::class,       'tokenizeCard'])     ->name('post.tokenize.card');
-        Route::get( 'developer/settings',         [DeveloperController::class,       'settings'])     ->name('view.developer.settings');
-        Route::get( 'developer/machine/vending',  [DeveloperController::class,       'vendingMachine'])     ->name('view.developer.machine.vending');
-        Route::get('info', function () {
-            phpinfo();
-        })->name('view.phpinfo');
-        Route::middleware('role:developer|admin')->group(function () {
-            Route::post('/bkr/removal/emails', [BKRController::class, 'sendEmails']);
-            Route::get('/bkr/removal/entries/log/email/{session_id}', [BKRController::class, 'emailLogEntries'])->name('get.bkr.removal.log.email');
-            Route::get('/bkr/removal/{session_id}', [BKRController::class, 'listRequest'])->name('get.bkr.removal');
-            Route::post('/bkr/removal', [BKRController::class, 'addRemoval'])->name('add.bkr.removal');
-            Route::post('/bkr/removal/data', [BKRController::class, 'addRemovalData'])->name('add.bkr.removal.data');
-            Route::delete('/bkr/removal/data', [BKRController::class, 'removeRemovalData'])->name('remove.bkr.removal.data');
-            Route::patch('/bkr/removal/additional-data', [BKRController::class, 'additionalData'])->name('remove.bkr.removal.additional.data');
-
-            Route::get('/iframe/lease-calculator', [LeaseCalculatorController::class, 'viewIframe']);
-            //Route::get('/iframe/lease-calculator', [LeaseCalculatorController::class, 'viewIframe']);
-            //Route::get('/iframe', [DealerController::class, 'iframe']);
-
-            Route::post('/kvk/resolve', [LeaseCalculatorController::class, 'kvkResolve']);
-            route::group(['prefix' => 'messages'], function () {
-                Route::get('/', [WelcomeController::class, 'messages'])->name('messages');
-                Route::delete('/', [WelcomeController::class, 'deleteMessages'])->name('messages.delete');
-                Route::put('/archive', [WelcomeController::class, 'archiveMessages'])->name('messages.archive');
-            });
+        Route::group(['middleware' => ['role:developer|admin']], function () {
+            Route::get('tokenizer', [TokenizerController::class, 'index'])->name('view.tokenize.index');
+            Route::post('tokenize', [TokenizerController::class, 'tokenize'])->name('post.tokenize.tokenize');
+            Route::get('tokenize', [TokenizerController::class, 'retrieveData'])->name('get.tokenize.retrieve');
+            Route::get('tokenize/card', [TokenizerController::class, 'retrieveCard'])->name('get.tokenize.card.retrieve');
+            Route::post('tokenize/card', [TokenizerController::class, 'tokenizeCard'])->name('post.tokenize.card');
+            Route::get('developer/settings', [DeveloperController::class, 'settings'])->name('view.developer.settings');
+            Route::get('developer/machine/vending', [DeveloperController::class, 'vendingMachine'])->name('view.developer.machine.vending');
+            Route::get('info', function () {
+                phpinfo();
+            })->name('view.phpinfo');
             route::group(['prefix' => 'cms'], function () {
                 Route::post('/images/action', [ContentController::class, 'imagesAction'])->name('cms.images.action');
                 Route::post('/images/directory', [ContentController::class, 'createImagesDirectory'])->name('cms.images.directory.create');
@@ -143,87 +121,55 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
                 Route::post('/image/data', [ContentController::class, 'setImageData'])->name('cms.image.data.post');
 
             });
-            //Route::get('/lease/requests', [LeaseCalculatorController::class, 'leaseRequestsData'])->name('get.lease.requests');
-
-            route::group(['prefix' => '/lease/request'], function () {
-                Route::post('/emails', [LeaseCalculatorController::class, 'sendEmails']);
-                Route::get('/entries/log/email/{session_id}', [LeaseCalculatorController::class, 'emailLogEntries'])->name('get.lease.request.log.email');
-                Route::delete( '/archive/{sessionId}', [LeaseCalculatorController::class, 'archivePartialRecords'] )->name('post.lease.request.archive');
-                Route::get('/entries/{session_id}', [LeaseCalculatorController::class, 'entries']);
-                Route::post('/entry/{session_id}', [LeaseCalculatorController::class, 'entry']);
-                Route::delete('/entry/{id}', [LeaseCalculatorController::class, 'deleteEntry']);
-            });
-            route::group(['prefix' => '/lease/requests'], function () {
-                Route::get('/', [LeaseCalculatorController::class, 'leaseRequests'])->name('view.lease.requests');
-                Route::delete('/', [LeaseCalculatorController::class, 'leaseRequestsDelete']);
-            });
-            Route::get('/filters', [FilterController::class, 'filters'])->name('view.filters');
-            Route::get('/dealers', [DealerController::class, 'dealers'])->name('view.dealers');
-
-            route::group(['prefix' => 'dealer'], function () {
-                Route::get('performance/historical/{dealer_id}', [DealerController::class, 'historicalPerformance']);
-                Route::get('entries/{session_id}', [DealerController::class, 'entries']);
-                Route::post('entry/{session_id}', [DealerController::class, 'entry']);
-                Route::patch('password', [DealerController::class, 'setPassword']);
-
-                Route::post('/email', [DealerController::class, 'updateEmail']);
-                Route::patch('/tier', [DealerController::class, 'updateTier']);
-                Route::post('/email/credentials/{ids?}', [DealerController::class, 'emailCredentials']);
-                Route::post('/', [DealerController::class, 'addDealer'])->name('dealer.post');
-                Route::delete('/{id?}', [DealerController::class, 'removeDealer'])->name('dealer.delete');
-                Route::delete('/status/toggle/{id}', [DealerController::class, 'toggleStatusDealer'])->name(
-                    'dealer,.status.toggle'
-                );
-            });
         });
+        //Route::get('machines/manage',    [MachineController::class],       'viewManagement')     ->name('machines.manage');
     });
-    //Route::get('machines/manage',    [MachineController::class],       'viewManagement')     ->name('machines.manage');
-});
 
 
 
 //Route::view('/contact', 'pages.contact.default')->name('view.contact');
 //Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
+Route::get('/cms/{page}', [ContentController::class, 'getPageFromCMS'])->name('cms.page');
+Route::get('/cms/image/data', [ContentController::class, 'getImageData'])->name('cms.image.data.get');
 
+    if (config('app.env') === 'local') {
+        Route::view('/old/index', 'index');
+        Route::view('/old/login', 'login');
+        Route::view('/old/about_us', 'about_us');
+        Route::view('/index_2', 'index_2');
+        Route::view('/index_3', 'index_3');
+        Route::view('/account', 'account');
+        Route::view('/blog', 'blog');
+        Route::view('/blog/details', 'blog_details');
+        Route::view('/cart/checkout', 'cart_checkout');
+        Route::view('/old/contact', 'contact');
+        Route::view('/element/accordions', 'elements-accordions');
+        Route::view('/element/alerts', 'elements-alerts');
+        Route::view('/element/counters', 'elements-counters');
+        Route::view('/element/form', 'elements-form');
+        Route::view('/element/icons', 'elements-icons');
+        Route::view('/element/tables/info', 'elements-tables_info');
+        Route::view('/element/tables/pricing', 'elements-tables_pricing');
+        Route::view('/element/embeds/media', 'elements-media_embeds');
 
-if(config('app.env') === 'local') {
-    Route::view('/old/index', 'index');
-    Route::view('/old/login', 'login');
-    Route::view('/old/about_us', 'about_us');
-    Route::view('/index_2', 'index_2');
-    Route::view('/index_3', 'index_3');
-    Route::view('/account', 'account');
-    Route::view('/blog', 'blog');
-    Route::view('/blog/details', 'blog_details');
-    Route::view('/cart/checkout', 'cart_checkout');
-    Route::view('/old/contact', 'contact');
-    Route::view('/element/accordions', 'elements-accordions');
-    Route::view('/element/alerts', 'elements-alerts');
-    Route::view('/element/counters', 'elements-counters');
-    Route::view('/element/form', 'elements-form');
-    Route::view('/element/icons', 'elements-icons');
-    Route::view('/element/tables/info', 'elements-tables_info');
-    Route::view('/element/tables/pricing', 'elements-tables_pricing');
-    Route::view('/element/embeds/media', 'elements-media_embeds');
+        Route::view('/element/tabs', 'elements-tabs');
+        //Route::view('/faqs', 'faq');
+        Route::view('/gallery/classic', 'gallery_classic');
+        Route::view('/gallery/masonry', 'gallery_masonry');
 
-    Route::view('/element/tabs', 'elements-tabs');
-    //Route::view('/faqs', 'faq');
-    Route::view('/gallery/classic', 'gallery_classic');
-    Route::view('/gallery/masonry', 'gallery_masonry');
+        Route::view('/old/products', 'products');
+        Route::view('/product/details', 'product_details');
+        Route::view('/product/single', 'product_single');
 
-    Route::view('/old/products', 'products');
-    Route::view('/product/details', 'product_details');
-    Route::view('/product/single', 'product_single');
+        Route::view('/old/services', 'services');
+        Route::view('/catalog/shop', 'catalog_shop');
+        Route::view('/typography', 'typography');
 
-    Route::view('/old/services', 'services');
-    Route::view('/catalog/shop', 'catalog_shop');
-    Route::view('/typography', 'typography');
-
-    Route::get('/info', function () {
-        phpinfo();
-    });
-}
+        Route::get('/info', function () {
+            phpinfo();
+        });
+    }
 //Route::get('/', [GuestPagesController::class, 'index'])->name('index');
 
 //Route::view('dashboard', 'dashboard')
@@ -235,3 +181,4 @@ if(config('app.env') === 'local') {
 //    ->name('profile');
 
 //require __DIR__.'/auth.php';
+});

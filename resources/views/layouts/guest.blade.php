@@ -11,9 +11,9 @@
 {{--    <link rel="stylesheet" href="/css/doc.css" type="text/css">--}}
 
 
-    <link rel="stylesheet" href="/css/critical.css" type="text/css">
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css" type="text/css">
+{{--    <link rel="stylesheet" href="/css/critical.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/css/style.css" type="text/css">--}}
+{{--    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css" type="text/css">--}}
 {{--    <link rel="stylesheet" href="/js/aos/aos.css" type="text/css">--}}
 {{--    <link rel="stylesheet" href="/js/jarallax/jaralax.css" type="text/css">--}}
 {{--    <link rel="stylesheet" href="/js/slick/slick.css" type="text/css">--}}
@@ -50,10 +50,32 @@
     @endif
 
 
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Assistant:200,300,400,600,700,800', 'Raleway:600&display=swap'] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <!-- Load other scripts ================================================== -->
+    <script type="text/javascript">
+        var _html = document.documentElement,
+            isTouch = (('ontouchstart' in _html) || (navigator.msMaxTouchPoints > 0) || (navigator.maxTouchPoints));
+
+        _html.className = _html.className.replace("no-js","js");
+        _html.classList.add( isTouch ? "touch" : "no-touch");
+    </script>
+    <script type="text/javascript" src="js/device.min.js"></script>
+    <link rel="stylesheet" href="/css/style.min.css" type="text/css">
 </head>
 {{--    <body class="page-home page-home-2">--}}
-<body class="page-contact">
-<div id="app">
+@yield('body')
     <!-- start header -->
     @yield('top-bar')
     <!-- end header -->

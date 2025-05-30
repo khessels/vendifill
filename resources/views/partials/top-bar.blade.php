@@ -28,16 +28,19 @@
                                     </li>
 
                                     @guest
-                                    <li><a href="{{ $content['top-bar']['link_login'] ?? "/login"}}">{{ $content['top-bar']['login'] ?? "login"}}</a></li>
+                                        <li><a href="/login">@c(['key' => 'login', 'default' => 'Login'])</a></li>
+                                    @endguest
+                                    @guest
+                                        <li><a href="/signup">@c(['key' => 'signup', 'default' => 'Signup'])</a></li>
                                     @endguest
                                     @auth
                                         <li>
-                                            <form method="post" action="{{ $content['top-bar']['link_logout'] ?? "/logout"}}">
+                                            <form method="post" action="/logout">
                                                 @csrf
-                                                <a style="cursor: pointer;" onclick="this.parentNode.submit();">{{ $content['top-bar']['logout'] ?? "logout"}}</a>
+                                                <a style="cursor: pointer;" onclick="this.parentNode.submit();">@c(['key' => 'logout', 'default' => 'Logout'])</a>
                                             </form>
                                         </li>
-                                        <li><a href="{{ $content['top-bar']['link_profile'] ?? "/profile"}}">{{ $content['top-bar']['profile'] ?? "profile"}}</a></li>
+                                        <li><a href="/profile">@c(['key' => 'profile', 'default' => 'Profile'])</a></li>
                                     @endauth
                                 </ul>
                             </nav>
@@ -49,18 +52,10 @@
                                 <div class="s-btns s-btns--gray">
                                     <ul class="d-flex flex-row flex-wrap justify-content-center align-items-center">
                                         <li><a class="f" target="_blank" href="https://www.facebook.com/vendifill"><i class="fontello-facebook"></i></a></li>
-                                        @if(!empty($content['top-bar']['link_facebook']))
-                                            <li><a class="f" href="{{ $content['top-bar']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
-                                        @endif
-                                        @if(!empty($content['top-bar']['link_twitter']))
-                                            <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
-                                        @endif
-                                        @if(!empty($content['top-bar']['link_youtube']))
-                                            <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
-                                        @endif
-                                        @if(!empty($content['top-bar']['link_instagram']))
-                                            <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
-                                        @endif
+{{--                                            <li><a class="f" href="https://www.facebook.com/vendifill"><i class="fontello-facebook"></i></a></li>--}}
+{{--                                            <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>--}}
+{{--                                            <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>--}}
+{{--                                            <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>--}}
 {{--                                        <li><a class="t" href="javascript:void(0)"><i class="fontello-twitter"></i></a></li>--}}
 {{--                                        <li><a class="y" href="javascript:void(0)"><i class="fontello-youtube-play"></i></a></li>--}}
 {{--                                        <li><a class="i" href="javascript:void(0)"><i class="fontello-instagram"></i></a></li>--}}
@@ -83,6 +78,7 @@
 
         <a class="top-bar__logo site-logo" href="/">
             <img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
+            <span style="margin-left: -120px; color: #0d1116; font-weight: bolder; font-size: 180%">VendiFill</span>
         </a>
 
         <a id="top-bar__navigation-toggler" class="top-bar__navigation-toggler" href="javascript:void(0);">
@@ -112,8 +108,8 @@
 
                 <div class="top-bar__action">
                     @guest
-                        <a class="custom-btn" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red_button'] ?? "red_button"}}</a>
-                        <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red_button'] ?? "red_button"}}</a>
+{{--                        <a class="custom-btn" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red_button'] ?? "red_button"}}</a>--}}
+{{--                        <a class="custom-btn custom-btn--big custom-btn--s2" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red_button'] ?? "red_button"}}</a>--}}
                     @endguest
                 </div>
             </div>

@@ -62,8 +62,9 @@
 
 				<div class="hero__inner">
 					<div class="container">
-						<a class="site-logo" href="/index">
+						<a class="site-logo" style="text-decoration: none;" href="/index">
 							<img class="img-fluid" src="/img/site_logo/logo_2.svg" width="155" height="40" alt="vendifill.com logo" />
+                            <span style="margin-left: -120px; color: #0d1116; font-weight: bolder; font-size: 180%">VendiFill</span>
 						</a>
 					</div>
 

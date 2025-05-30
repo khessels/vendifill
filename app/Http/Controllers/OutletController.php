@@ -33,9 +33,8 @@ class OutletController extends Controller
             return redirect()->route('view.outlets.index');
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            return Redirect::back()
-                ->with('message', 'Outlet not added')
-                ->with('alert-class', 'alert-warning');
+            $this->alertNotification($e->getMessage(), 'warning');
+            return redirect()->back();
         }
     }
     public function stock(Request $request)

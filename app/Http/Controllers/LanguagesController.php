@@ -18,7 +18,9 @@ class LanguagesController extends Controller
             return redirect()->back()->with('language_switched' , $language);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
-            abort(404);
+            $this->alertNotification($e->getMessage(), 400);
+            return redirect()->back();
+
         }
     }
 }
