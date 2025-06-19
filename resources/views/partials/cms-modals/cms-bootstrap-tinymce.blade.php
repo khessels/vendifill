@@ -1,8 +1,8 @@
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js"
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js"
         integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/plugins/image/plugin.min.js"></script> --}}
 <div id="mdl_text_html" class="modal modal-lg" tabindex="-1">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -24,6 +24,7 @@
 </div>
 <script type="text/javascript">
     toastr.info('Direct CMS Active')
+
     let app = '{{ config('kcs-content-manager.app')}}'
     let body = $('body');
     var mdlTextHtml = new bootstrap.Modal(document.getElementById("mdl_text_html"), {});
@@ -98,18 +99,17 @@
         entity_encoding: 'raw',
         entities: '160,nbsp',
         convert_urls:false,
+
         save_onsavecallback: function (editor) {
-            debugger
             let content = editor.getContent()
-            // let content = tinymce.get('text_html').getContent();
             let id = $("#mdl_text_html .id" ).val()
             let mimetype = $("#mdl_text_html .mimetype" ).val()
             saveContent( id, content, mimetype)
         },
         plugins: [
-            'link', 'lists', 'nonbreaking', 'autolink', 'code'
+            'link', 'lists', 'nonbreaking', 'autolink', 'code', 'image'
         ],toolbar: [
-            'undo redo | bold italic underline | fontfamily fontsize | code',
+            'undo redo | bold italic underline | fontfamily fontsize | image | code',
             'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
         ]
     });

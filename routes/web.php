@@ -23,7 +23,7 @@ use App\Http\Controllers\TokenizerController;
 //    if ($locale) App::setLocale($locale);
 //}
 // todo: check if locale is in query parameters
-Route::middleware('language')->group(function () {
+Route::middleware('language', 'web')->group(function () {
     Route::view('404', 'errors.404')->name('view.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
@@ -91,36 +91,7 @@ Route::middleware('language')->group(function () {
             Route::get('info', function () {
                 phpinfo();
             })->name('view.phpinfo');
-            route::group(['prefix' => 'cms'], function () {
-                Route::post('/images/action', [ContentController::class, 'imagesAction'])->name('cms.images.action');
-                Route::post('/images/directory', [ContentController::class, 'createImagesDirectory'])->name('cms.images.directory.create');
-                Route::delete('/images/directory', [ContentController::class, 'deleteImagesDirectory'])->name('cms.images.directory.delete');
 
-
-                Route::get('/', [ContentController::class, 'index'])->name('cms.index');
-                Route::get('/enable', [ContentController::class, 'cms_enable'])->name('cms.enable');
-                Route::get('/disable', [ContentController::class, 'cms_disable'])->name('cms.disable');
-
-                Route::get('/artisan/optimize', [ContentController::class, 'artisan_optimize'])->name('cms.artisan.optimize');
-
-                Route::get('/collection/enable', [ContentController::class, 'collection_enable'])->name('cms.collection.enable');
-                Route::get('/collection/disable', [ContentController::class, 'collection_disable'])->name('cms.collection.disable');
-                Route::get('/collection/delete', [ContentController::class, 'collection_delete'])->name('cms.collection.delete');
-                Route::get('/collection/upload', [ContentController::class, 'collection_upload'])->name('cms.collection.upload');
-                Route::get('/collection/reset', [ContentController::class, 'collection_reset'])->name('cms.collection.reset');
-                Route::get('/collection/reload', [ContentController::class, 'collection_reload'])->name('cms.collection.reload');
-
-                Route::patch('/tag/direct/{app}/{id}', [ContentController::class, 'tag_update_direct'])->name('cms.tag.update.direct');
-
-                Route::delete('/database', [ContentController::class, 'db_delete'])->name('cms.database.delete');
-                Route::post('/page/add', [ContentController::class, 'addPage'])->name('cms.page.add');
-                Route::delete('/page/cache', [ContentController::class, 'clearPageCache'])->name('cms.page.cache.clear');
-                Route::get('/image/management', [ContentController::class, 'imageManagement'])->name('cms.image.management.get');
-                Route::post('/image/management', [ContentController::class, 'imageManagement'])->name('cms.image.management.post');
-                Route::post('/dropzone/store', [ContentController::class, 'store'])->name('cms.dropzone.store');
-                Route::post('/image/data', [ContentController::class, 'setImageData'])->name('cms.image.data.post');
-
-            });
         });
         //Route::get('machines/manage',    [MachineController::class],       'viewManagement')     ->name('machines.manage');
     });
@@ -130,8 +101,6 @@ Route::middleware('language')->group(function () {
 //Route::view('/contact', 'pages.contact.default')->name('view.contact');
 //Route::view('/about_us', 'pages.about-us.default');
 Route::view('/recovery', 'pages.auth.recovery');
-Route::get('/cms/{page}', [ContentController::class, 'getPageFromCMS'])->name('cms.page');
-Route::get('/cms/image/data', [ContentController::class, 'getImageData'])->name('cms.image.data.get');
 
     if (config('app.env') === 'local') {
         Route::view('/old/index', 'index');

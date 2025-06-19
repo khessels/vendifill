@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <title>CMS</title>
+    <title>@c(['editable' => true, 'page' => $page, 'key' => 'main', 'default' => 'Generic CMS'])</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
 
@@ -36,7 +36,6 @@
 </head>
 
 <body>
-    @include('package-views::partials.error-alert')
     @yield('main')
 </body>
     @yield('footer-js')

@@ -180,7 +180,7 @@
     toastr.options.progressBar = true;
 </script>
 @if( ! empty( $cms))
-    @include('partials.cms')
+    @include('partials.cms-modals.cms-bootstrap-tinymce')
 @endif
 
 </html>

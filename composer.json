@@ -4,6 +4,16 @@
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/khessels/cms.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/khessels/responseformat.git"
+        }
+    ],
     "require": {
         "php": "^8.4",
         "ext-curl": "*",
@@ -26,7 +36,9 @@
         "spatie/laravel-cookie-consent": "^3.3",
         "symfony/http-client": "*",
         "symfony/http-foundation": "^7.1",
-        "symfony/mailgun-mailer": "*"
+        "symfony/mailgun-mailer": "*",
+        "khessels/cms": "dev-master",
+        "khessels/responseformat": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.13",
