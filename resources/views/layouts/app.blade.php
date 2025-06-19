@@ -134,7 +134,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </body>
 @if( ! empty( $cms))
-    @include('partials.cms')
+    @include('partials.cms-modals.cms-bootstrap-tinymce')
 @endif
 @include('partials.error-alert')
 </html>

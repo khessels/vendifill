@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GuestPagesController;
 use \App\Http\Controllers\WebPagesController;
 use \App\Http\Controllers\UserAuthController;
-use \App\Http\Controllers\LanguagesController;
+
 use App\Http\Controllers\TokenizerController;
 
 // display the page in requested browser locale
@@ -23,7 +23,7 @@ use App\Http\Controllers\TokenizerController;
 //    if ($locale) App::setLocale($locale);
 //}
 // todo: check if locale is in query parameters
-Route::middleware('language', 'web')->group(function () {
+Route::middleware(['language', 'web'])->group(function () {
     Route::view('404', 'errors.404')->name('view.404');
 //Route::view('/', 'index');
 // Route::view('/', 'pages.index.guest');
@@ -39,7 +39,6 @@ Route::middleware('language', 'web')->group(function () {
     Route::get('/services/refill', [GuestPagesController::class, 'refill'])->name('view.services.refill');
     Route::get('/faqs', [GuestPagesController::class, 'faqs'])->name('view.faqs');
     Route::post('/login', [UserAuthController::class, 'login'])->name('post.login');
-    Route::post('/language/switch', [LanguagesController::class, 'languageSwitch'])->name('post.language.switch');
     Route::get('/red-button', [GuestPagesController::class, 'redButton'])->name('view.red-button');
     Route::get('/terms', [GuestPagesController::class, 'terms'])->name('view.terms');
     Route::get('/profile', [WebPagesController::class, 'profile'])->name('view.profile');
