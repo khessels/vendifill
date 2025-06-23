@@ -26,20 +26,20 @@
 @endsection
 
 @section('hero')
-    @c(['editable'=>true,  'key' => 'hero', 'page' => $page, 'default' => '
+    @c(['mimetype' => 'text/html', 'editable' => true, 'key' => 'hero', 'page' => $page, 'default' => '
         <div id="start-screen" class="start-screen start-screen--style-1">
             <div
                 id="start-screen__slider"
                 class="start-screen__slider"
                 data-slick="{
-                    \"autoplay\": true,
-                    \"fade\": true,
-                    \"speed\": 1200,
-                    \"responsive\": [
+                    \'autoplay\': true,
+                    \'fade\': true,
+                    \'speed\': 1200,
+                    \'responsive\': [
                     {
-                        \"breakpoint\": 767,
-                        \"settings\":{
-                            \"appendDots\":\"#start-screen__slider-nav\"
+                        \'breakpoint\': 767,
+                        \'settings\':{
+                            \'appendDots\':\'#start-screen__slider-nav\'
                         }
                     }]
                 }">
@@ -158,7 +158,7 @@
 @endsection
 
 @section('content')
-    @c(['editable'=>true,  'key' => 'content', 'page' => $page, 'default' => '
+    @c(['editable' => true,  'key' => 'content', 'page' => $page, 'default' => '
         <main role="main">
         <!-- start section -->
         <section class="section section--about">
@@ -438,37 +438,37 @@
 
                             <div class="js-slick"
                                  data-slick="{
-											\"autoplay\": true,
-											\"dots\": true,
-											\"speed\": 1200,
-											\"appendDots\": \"#slick-dots--container-3\",
-											\"responsive\": [
+											\'autoplay\': true,
+											\'dots\': true,
+											\'speed\': 1200,
+											\'appendDots\': \'#slick-dots--container-3\',
+											\'responsive\': [
 											{
-												\"breakpoint\": 575,
-												\"settings\":{
-													\"slidesToShow\": 2,
-													\"slidesToScroll\": 2
+												\'breakpoint\': 575,
+												\'settings\':{
+													\'slidesToShow\': 2,
+													\'slidesToScroll\': 2
 												}
 											},
 											{
-												\"breakpoint\": 767,
-												\"settings\":{
-													\"slidesToShow\": 2,
-													\"slidesToScroll\": 2
+												\'breakpoint\': 767,
+												\'settings\':{
+													\'slidesToShow\': 2,
+													\'slidesToScroll\': 2
 												}
 											},
 											{
-												\"breakpoint\": 991,
-												\"setting\s":{
-													\"slidesToShow\": 3,
-													\"slidesToScroll\": 3
+												\'breakpoint\': 991,
+												\'setting\s":{
+													\'slidesToShow\': 3,
+													\'slidesToScroll\': 3
 												}
 											},
 											{
-												\"breakpoint\": 1199,
-												\"settings\":{
-													\"slidesToShow\": 4,
-													\"slidesToScroll\": 2
+												\'breakpoint\': 1199,
+												\'settings\':{
+													\'slidesToShow\': 4,
+													\'slidesToScroll\': 2
 												}
 											}]
 										}">
@@ -734,212 +734,7 @@
                 </div>
             </div>
 
-            <!-- start gallery -->
-            <div id="gallery-grid-1" class="gallery gallery--grid">
-                <div class="row no-gutters js-isotope"
-                     data-isotope-options="{
-								\"itemSelector\": \".js-isotope__item\",
-								\"transitionDuration\": \"0.8s\",
-								\"percentPosition\": true,
-								\"masonry\": { \"columnWidth\": \".js-isotope__sizer\" }
-							}">
 
-                    <div class="col-12 col-sm-1  js-isotope__sizer"></div>
-
-                    <!-- start item -->
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-2">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/1.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Combo in Bars</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/1.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-1">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/2.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Snack Markets</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/2.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-6  js-isotope__item  category-3">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/3.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Beverage Machine</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/3.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-1">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/4.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Shop and Markets</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/4.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-md-4 col-xl-3  js-isotope__item  category-2">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/5.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Toys</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/5.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-md-8 col-xl-6  js-isotope__item  category-3">
-                        <div class="__item" data-x="2" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/6.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Water Machine</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/6.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-1">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/7.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Supermarkets</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/7.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-
-                    <!-- start item -->
-                    <div class="col-12 col-sm-6 col-lg-4 col-xl-3  js-isotope__item  category-2">
-                        <div class="__item" data-x="1" data-y="1">
-                            <figure class="__image">
-                                <img class="lazy" src="/img/blank.gif" data-src="/img/gallery_img/8.jpg" alt="demo" />
-                            </figure>
-
-                            <div class="__content">
-                                <div class="row">
-                                    <div class="col">
-                                        <div class="h4 __title">Vending Business</div>
-                                    </div>
-
-                                    <div class="col-auto">
-                                        <a class="__link" href="/img/gallery_img/8.jpg" data-fancybox="gallery-masonry">
-                                            <i class="fontello-resize"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end item -->
-                </div>
-            </div>
-            <!-- end gallery -->
         </section>
         <!-- end section -->
 
@@ -1100,37 +895,37 @@
 
                             <div class="js-slick disable-not-active"
                                  data-slick="{
-											\"autoplay\": true,
-											\"dots\": true,
-											\"speed\": 1200,
-											\"appendDots\": \"#slick-dots--container-4\",
-											\"responsive\": [
+											\'autoplay\': true,
+											\'dots\': true,
+											\'speed\': 1200,
+											\'appendDots\': \'#slick-dots--container-4\',
+											\'responsive\': [
 											{
-												\"breakpoint\": 575,
-												\"settings\":{
-													\"slidesToShow\": 2,
-													\"slidesToScroll\": 2
+												\'breakpoint\': 575,
+												\'settings\':{
+													\'slidesToShow\': 2,
+													\'slidesToScroll\': 2
 												}
 											},
 											{
-												\"breakpoint\": 767,
-												\"settings\":{
-													\"slidesToShow\": 2,
-													\"slidesToScroll\": 2
+												\'breakpoint\': 767,
+												\'settings\':{
+													\'slidesToShow\': 2,
+													\'slidesToScroll\': 2
 												}
 											},
 											{
-												\"breakpoint\": 991,
-												\"settings\":{
-													\"slidesToShow\": 3,
-													\"slidesToScroll\": 3
+												\'breakpoint\': 991,
+												\'settings\':{
+													\'slidesToShow\': 3,
+													\'slidesToScroll\': 3
 												}
 											},
 											{
-												\"breakpoint\": 1199,
-												\"settings\":{
-													\"slidesToShow\": 4,
-													\"slidesToScroll\": 2
+												\'breakpoint\': 1199,
+												\'settings\':{
+													\'slidesToShow\': 4,
+													\'slidesToScroll\': 2
 												}
 											}]
 										}">
@@ -1310,10 +1105,10 @@
                         <div class="review review--slider">
                             <div class="js-slick"
                                  data-slick="{
-											\"autoplay\": true,
-											\"dots\": true,
-											\"speed\": 1200,
-											\"appendDots\": \"#slick-dots--container-0\"
+											\'autoplay\': true,
+											\'dots\': true,
+											\'speed\': 1200,
+											\'appendDots\': \'#slick-dots--container-0\'
 										}">
 
                                 <!-- start item -->
@@ -1631,38 +1426,38 @@
                         <div class="brands-list brands-list--slider">
                             <div class="js-slick"
                                  data-slick="{
-											\"autoplay\": true,
-											\"dots\": true,
-											\"speed\": 1200,
-											\"slidesToShow\": 2,
-											\"slidesToScroll\": 2,
-											\"responsive\": [
+											\'autoplay\': true,
+											\'dots\': true,
+											\'speed\': 1200,
+											\'slidesToShow\': 2,
+											\'slidesToScroll\': 2,
+											\'responsive\': [
 											{
-												\"breakpoint\": 575,
-												\"settings\":{
-													\"slidesToShow\": 3,
-													\"slidesToScroll\": 1
+												\'breakpoint\': 575,
+												\'settings\':{
+													\'slidesToShow\': 3,
+													\'slidesToScroll\': 1
 												}
 											},
 											{
-												\"breakpoint\": 767,
-												\"settings\":{
-													\"slidesToShow\": 4,
-													\"slidesToScroll\": 1
+												\'breakpoint\': 767,
+												\'settings\':{
+													\'slidesToShow\': 4,
+													\'slidesToScroll\': 1
 												}
 											},
 											{
-												\"breakpoint\": 991,
-												\"settings\":{
-													\"slidesToShow\": 5,
-													\"slidesToScroll\": 1
+												\'breakpoint\': 991,
+												\'settings\':{
+													\'slidesToShow\': 5,
+													\'slidesToScroll\': 1
 												}
 											},
 											{
-												\"breakpoint\": 1199,
-												\"settings\":{
-													\"slidesToShow\": 5,
-													\"slidesToScroll\": 1
+												\'breakpoint\': 1199,
+												\'settings\':{
+													\'slidesToShow\': 5,
+													\'slidesToScroll\': 1
 												}
 											}]
 										}">

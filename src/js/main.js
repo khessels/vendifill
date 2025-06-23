@@ -1,13 +1,3 @@
-/// <reference path='../libs/aos/aos.js' />
-/// <reference path='../libs/jarallax/jarallax.js' />
-/// <reference path='../libs/jarallax/jarallax-element.js' />
-/// <reference path='../libs/slick/slick.js' />
-/// <reference path='../libs/countTo/jquery.countTo.js' />
-/// <reference path='../libs/isotope/isotope.pkgd.js' />
-/// <reference path='../libs/fancybox/jquery.fancybox.js' />
-/// <reference path='../libs/nice-select/jquery.nice-select.js' />
-/// <reference path='../libs/ion.rangeSlider/js/ion.rangeSlider.js' />
-
 (function($) {
 
 	/*-- Strict mode enabled --*/
@@ -856,7 +846,7 @@
 						},
 						complete: function ()
 						{
-							
+
 						}
 					});
 

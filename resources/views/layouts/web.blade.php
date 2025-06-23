@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- web layout ->
 <html class="no-js"  lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <title>@yield('title') | {{ config('app.name', 'tab_title') }}</title>

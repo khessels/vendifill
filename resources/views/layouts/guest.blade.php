@@ -1,53 +1,26 @@
 <!DOCTYPE html>
+<!-- guest layout -->
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LV32MGJ6KD"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-    gtag('config', 'G-LV32MGJ6KD');
+        gtag('config', 'G-LV32MGJ6KD');
     </script>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-{{--    @csrf--}}
+{{-- @csrf--}}
     <title>@yield('title') </title>
 
     @yield('head')
     @yield('head_scripts')
 {{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 {{--    <link rel="stylesheet" href="/css/doc.css" type="text/css">--}}
-
-
-{{--    <link rel="stylesheet" href="/css/critical.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/css/style.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/js/aos/aos.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/js/jarallax/jaralax.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/js/slick/slick.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/js/nice-select/nice-select.css" type="text/css">--}}
-{{--    <link rel="stylesheet" href="/js/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css">--}}
-
-
-
-
-
-
-
-<!--
-    /// <reference path='../libs/aos/aos.js' />
-    /// <reference path='../libs/jarallax/jarallax.js' />
-    /// <reference path='../libs/jarallax/jarallax-element.js' />
-    /// <reference path='../libs/slick/slick.js' />
-    /// <reference path='../libs/countTo/jquery.countTo.js' />
-    /// <reference path='../libs/isotope/isotope.pkgd.js' />
-    /// <reference path='../libs/fancybox/jquery.fancybox.js' />
-    /// <reference path='../libs/nice-select/jquery.nice-select.js' />
-    /// <reference path='../libs/ion.rangeSlider/js/ion.rangeSlider.js' />
--->
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css" type="text/css">
     @if( ! empty( $cms))
         <style>
             .tox-tinymce {
@@ -152,20 +125,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
-
-<script type="text/javascript" src="/js/main.min.js"></script>
 <script src="/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/js/main.min.js"></script>
 <script src="/js/aos/aos.js"></script>
 <script src="/js/jarallax/jarallax.js"></script>
 <script src="/js/jarallax/jarallax-element.js"></script>
 <script src="/js/jarallax/jarallax-video.js"></script>
 <script src="/js/slick/slick.js"></script>
 <script src="/js/countTo/jquery.countTo.js"></script>
-<script src="/js/isotope/isotope.pkgd.js"></script>
+<script src="/js/isotope/isotope.pkgd.min.js"></script>
 <script src="/js/fancybox/jquery.fancybox.js"></script>
 <script src="/js/nice-select/jquery.nice-select.js"></script>
 <script src="/js/ion.rangeSlider/js/ion.rangeSlider.js"></script>
 
+@if( ! empty( $cms))
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js"
+        integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/plugins/image/plugin.min.js"></script>
+@endif
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script>

@@ -95,4 +95,24 @@
         };
         tinymce.init( config);
     });
+    body.on('dblclick', '.cms', function( e){
+
+        let outerContent = this.outerHTML;
+        let id = this.dataset.cmsId;
+        let mimetype = this.dataset.cmsMimetype;
+
+        let element = $(outerContent);
+        $( element).removeClass( "cms");
+        $( element).removeClass( "trumbowyg-editor");
+        $( element).removeAttr( "data-cms-id");
+        $( element).removeAttr( "data-cms-mimetype");
+        if ( ! $( element).prop('classList').length) $( element).removeAttr('class');
+
+        let content = $( element).prop( 'outerHTML');
+
+        $("#mdl_text_html .id" ).val( id);
+        $("#mdl_text_html .mimetype" ).val( mimetype);
+        tinymce.get('text_html').setContent(content);
+        mdlTextHtml.show();
+    })
 </script>

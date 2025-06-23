@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- app layout -->
 <html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,24 +22,14 @@
 {{--    <link rel="stylesheet" href="/js/nice-select/nice-select.css" type="text/css">--}}
 {{--    <link rel="stylesheet" href="/js/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css">--}}
 
-
-
-
-
-
-
-<!--
-    /// <reference path='../libs/aos/aos.js' />
-    /// <reference path='../libs/jarallax/jarallax.js' />
-    /// <reference path='../libs/jarallax/jarallax-element.js' />
-    /// <reference path='../libs/slick/slick.js' />
-    /// <reference path='../libs/countTo/jquery.countTo.js' />
-    /// <reference path='../libs/isotope/isotope.pkgd.js' />
-    /// <reference path='../libs/fancybox/jquery.fancybox.js' />
-    /// <reference path='../libs/nice-select/jquery.nice-select.js' />
-    /// <reference path='../libs/ion.rangeSlider/js/ion.rangeSlider.js' />
--->
     @if( ! empty( $cms))
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js"
+            integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/plugins/image/plugin.min.js"></script>
+
         <style>
             .tox-tinymce {
                 z-index: 1001;
@@ -127,7 +118,7 @@
 <script src="/js/jarallax/jarallax-video.js"></script>
 <script src="/js/slick/slick.js"></script>
 <script src="/js/countTo/jquery.countTo.js"></script>
-<script src="/js/isotope/isotope.pkgd.js"></script>
+<script src="/js/isotope/isotope.pkgd.min.js"></script>
 <script src="/js/fancybox/jquery.fancybox.js"></script>
 <script src="/js/nice-select/jquery.nice-select.js"></script>
 <script src="/js/ion.rangeSlider/js/ion.rangeSlider.js"></script>

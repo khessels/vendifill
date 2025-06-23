@@ -25,7 +25,6 @@
         "nyholm/psr7": "^1.8",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.0",
-        "laravel/telescope": "^5.1",
         "laravel/tinker": "^2.9",
         "liorchamla/faker-prices": "^2.0",
         "livewire/livewire": "^3.5",
