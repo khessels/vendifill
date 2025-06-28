@@ -56,9 +56,10 @@
     </script>
     <script type="text/javascript" src="js/device.min.js"></script>
     <link rel="stylesheet" href="/css/style.min.css" type="text/css">
+
 </head>
 {{--    <body class="page-home page-home-2">--}}
-@yield('body')
+    @yield('body')
     <!-- start header -->
     @yield('top-bar')
     <!-- end header -->
@@ -137,15 +138,6 @@
 <script src="/js/fancybox/jquery.fancybox.js"></script>
 <script src="/js/nice-select/jquery.nice-select.js"></script>
 <script src="/js/ion.rangeSlider/js/ion.rangeSlider.js"></script>
-
-@if( ! empty( $cms))
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js"
-        integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/plugins/image/plugin.min.js"></script>
-@endif
-</body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 <script>
     toastr.options.timeOut = 2000;
@@ -158,6 +150,16 @@
 
     toastr.options.progressBar = true;
 </script>
+@if( ! empty( $cms))
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js"
+        integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/plugins/image/plugin.min.js"></script>
+@endif
+</body>
+
+
 @if( ! empty( $cms))
     @include('partials.cms-modals.cms-bootstrap-tinymce')
 @endif

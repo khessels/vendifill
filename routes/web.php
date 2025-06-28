@@ -47,6 +47,7 @@ Route::middleware( [ 'language', 'web'])->group(function () {
     Route::group(['middleware' => ['auth:sanctum']], function () {
         // your routes here
         //Route::get( '/',                    [WebPagesController::class,     'index'])       ->name('index');
+        Route::post('/switch-menu', [DeveloperController::class, 'switchMenu'])->name('menu.switch');
         Route::post('/logout', [UserAuthController::class, 'logout'])->name('post.logout');
 
         Route::group(['middleware' => ['can:locations-manage']], function () {

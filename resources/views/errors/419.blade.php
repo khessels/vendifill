@@ -22,7 +22,7 @@
 
     <!-- Critical styles
     ================================================== -->
-    <link rel="stylesheet" href="/css/critical.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/critical.css" type="text/css">
 
     <!-- Load google font
     ================================================== -->

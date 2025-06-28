@@ -23,7 +23,7 @@
 @endsection
 
 @section('hero')
-    @c(['key' => 'hero', 'page' => $page, 'mimetype' => 'text/html', 'default' => '' ])
+    {{-- @c(['key' => 'hero', 'page' => $page, 'mimetype' => 'text/html', 'default' => '' ]) --}}
 @endsection
 
 @section('content')

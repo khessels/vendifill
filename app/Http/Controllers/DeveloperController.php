@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Machine;
 use App\Traits\Content;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class DeveloperController extends Controller
 {
@@ -12,6 +13,22 @@ class DeveloperController extends Controller
     {
         try {
             return view('pages.developer.settings');
+        } catch (\Exception $e) {
+            $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
+            abort(404);
+        }
+    }
+    public function switchMenu(Request $request)
+    {
+        try {
+            $menuType = Cookie::get('menuType');
+            if ( empty( $menuType) || $menuType === 'web') {
+                $menuType = 'guest';
+            } else {
+                $menuType = 'web';
+            }
+            Cookie::queue('menuType', $menuType);
+            return redirect()->back()->with('success', 'switched to: ' . $menuType);
         } catch (\Exception $e) {
             $this->criticalException($request, $e, __FILE__, __FUNCTION__, __LINE__);
             abort(404);
@@ -29,4 +46,5 @@ class DeveloperController extends Controller
             abort(404);
         }
     }
+
 }

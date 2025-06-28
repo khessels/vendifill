@@ -1172,10 +1172,11 @@ a:hover {
   display: none;
   background-color: #25272a;
   padding: 15px 20px;
-  line-height: 1.2;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #d3d3d3
+  line-height: 1;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #d3d3d3;
+  height:40px;
 }
 .top-bar__line-contacts a:not([class]) {
   color: inherit

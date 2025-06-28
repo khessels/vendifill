@@ -2,8 +2,8 @@
         integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script type="text/javascript">
-    toastr.info('Direct CMS Active')
-    let app = '{{ config('kcs-content-manager.app')}}'
+    toastr.info('Direct CMS Active: tinymce')
+    let app = '{{ config('cms.app')}}'
     $( document ).ready(function() {
         const config = {
             license_key: 'gpl',
@@ -95,24 +95,4 @@
         };
         tinymce.init( config);
     });
-    body.on('dblclick', '.cms', function( e){
-
-        let outerContent = this.outerHTML;
-        let id = this.dataset.cmsId;
-        let mimetype = this.dataset.cmsMimetype;
-
-        let element = $(outerContent);
-        $( element).removeClass( "cms");
-        $( element).removeClass( "trumbowyg-editor");
-        $( element).removeAttr( "data-cms-id");
-        $( element).removeAttr( "data-cms-mimetype");
-        if ( ! $( element).prop('classList').length) $( element).removeAttr('class');
-
-        let content = $( element).prop( 'outerHTML');
-
-        $("#mdl_text_html .id" ).val( id);
-        $("#mdl_text_html .mimetype" ).val( mimetype);
-        tinymce.get('text_html').setContent(content);
-        mdlTextHtml.show();
-    })
 </script>

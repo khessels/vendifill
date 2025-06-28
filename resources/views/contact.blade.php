@@ -22,7 +22,7 @@
 
 		<!-- Critical styles
 		================================================== -->
-		<link rel="stylesheet" href="/css/critical.min.css" type="text/css">
+		<link rel="stylesheet" href="/css/critical.css" type="text/css">
 
 		<!-- Load google font
 		================================================== -->
@@ -315,10 +315,6 @@
 
 			<!-- start main -->
 			<main role="main">
-				<!-- Common styles
-				================================================== -->
-				<link rel="stylesheet" href="/css/style.min.css" type="text/css">
-
 				<!-- start section -->
 				<section class="section">
 					<div class="container">

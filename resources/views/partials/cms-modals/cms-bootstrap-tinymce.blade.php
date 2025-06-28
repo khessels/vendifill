@@ -23,9 +23,9 @@
     </div>
 </div>
 <script type="text/javascript">
-    toastr.info('Direct CMS Active')
+    toastr.info('Direct CMS Active: bootstrap-tinymce')
 
-    let app = '{{ config('kcs-content-manager.app')}}'
+    let app = '{{ config('cms.app')}}'
     let body = $('body');
     var mdlTextHtml = new bootstrap.Modal(document.getElementById("mdl_text_html"), {});
 

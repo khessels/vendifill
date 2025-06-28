@@ -1,4 +1,5 @@
 <!-- start header -->
+
 <header id="top-bar" class="top-bar top-bar--s1" data-nav-fixed="true" data-nav-anchor="false">
     <div class="top-bar__line-contacts">
         <div class="container-fluid">
@@ -29,8 +30,6 @@
 
                                     @guest
                                         <li><a href="/login">@c(['key' => 'login', 'default' => 'Login'])</a></li>
-                                    @endguest
-                                    @guest
                                         <li><a href="/signup">@c(['key' => 'signup', 'default' => 'Signup'])</a></li>
                                     @endguest
                                     @auth
@@ -70,12 +69,7 @@
         </div>
     </div>
 
-    <!-- class "compensate-for-scrollbar" from fancybox.js, use if data-fixed="true" -->
     <div class="top-bar__line-menu    compensate-for-scrollbar">
-{{--        <div class="top-bar__side-menu-button js-side-menu-toggler">--}}
-{{--            <span></span>--}}
-{{--        </div>--}}
-
         <a class="top-bar__logo site-logo" href="/">
             <img class="img-fluid" src="/img/site_logo/logo_1.svg" width="155" height="40" alt="demo" />
             <span style="margin-left: -120px; color: #0d1116; font-weight: bolder; font-size: 180%">VendiFill</span>
@@ -92,7 +86,16 @@
                         @include('partials.guest.menu')
                     @endguest
                     @auth
-                        @include('partials.web.menu')
+                        @switch( Cookie::get('menuType', 'web'))
+                            @case('web')
+                                @include('partials.web.menu')
+                                @break
+                            @case('guest')
+                                @include('partials.guest.menu')
+                                @break
+                            @default
+                                @include('partials.web.menu')
+                        @endswitch
                     @endauth
                 </nav>
 
@@ -103,7 +106,6 @@
                     @auth
                         @include('partials.web.top-bar-address')
                     @endauth
-
                 </div>
 
                 <div class="top-bar__action">
