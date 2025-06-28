@@ -29,7 +29,6 @@
         <li>
             <a class="nav-link active" href="/contact">Contact Us</a>
         </li>
-
     </ul>
     <script>
         function submitSwitchLanguage() {

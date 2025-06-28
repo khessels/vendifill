@@ -63,13 +63,11 @@ Route::middleware( [ 'language', 'web'])->group(function () {
             Route::get('/machines', [MachineController::class, 'index'])->name('view.machines.index');
             Route::post('/machines', [MachineController::class, 'store']);
             Route::get('/machine/stock/{uuid}', [MachineController::class, 'stock'])->name('view.machine.stock');
-
         });
 
         Route::group(['middleware' => ['can:products-manage']], function () {
             Route::get('/products', [ProductController::class, 'index'])->name('view.products.index');
             Route::post('/products', [ProductController::class, 'store']);
-
         });
 
         Route::group(['middleware' => ['can:machines-config']], function () {
@@ -91,7 +89,6 @@ Route::middleware( [ 'language', 'web'])->group(function () {
             Route::get('info', function () {
                 phpinfo();
             })->name('view.phpinfo');
-
         });
         //Route::get('machines/manage',    [MachineController::class],       'viewManagement')     ->name('machines.manage');
     });
