@@ -21,6 +21,8 @@
 {{--    <link rel="stylesheet" href="/js/fancybox/jquery.fancybox.css" type="text/css">--}}
 {{--    <link rel="stylesheet" href="/js/nice-select/nice-select.css" type="text/css">--}}
 {{--    <link rel="stylesheet" href="/js/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css">--}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 
     @if( ! empty( $cms))
 
@@ -37,7 +39,6 @@
         </style>
 {{--        <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/7.6.0/tinymce.min.js" integrity="sha512-/4EpSbZW47rO/cUIb0AMRs/xWwE8pyOLf8eiDWQ6sQash5RP1Cl8Zi2aqa4QEufjeqnzTK8CLZWX7J5ZjLcc1Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
     @endif
-
 
 </head>
 {{--    <body class="page-home page-home-2">--}}
@@ -106,8 +107,7 @@
     }(window, document));
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
+
 
 
 <script type="text/javascript" src="/js/main.min.js"></script>

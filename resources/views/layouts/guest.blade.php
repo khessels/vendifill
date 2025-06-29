@@ -55,8 +55,9 @@
         _html.classList.add( isTouch ? "touch" : "no-touch");
     </script>
     <script type="text/javascript" src="js/device.min.js"></script>
-    <link rel="stylesheet" href="/css/style.min.css" type="text/css">
-
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
 </head>
 {{--    <body class="page-home page-home-2">--}}
     @yield('body')
@@ -123,8 +124,7 @@
     }(window, document));
 </script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="/js/jquery-2.2.4.min.js"><\/script>')</script>
+
 
 <script src="/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/js/main.min.js"></script>
