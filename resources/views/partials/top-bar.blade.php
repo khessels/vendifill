@@ -8,12 +8,12 @@
                     <div class="top-bar__contacts">
                         <ul>
                             <li>
-                                <a href="tel:@c(['key' => 'top-bar.phone-1', 'page' => $page ])">@c(['key' => 'top-bar.phone-1'])</a>
-                                <a href="tel:@c(['key' => 'top-bar.phone-2'])">@c(['key' => 'top-bar.phone-2'])</a>
+                                <a href="@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-1-link'])">@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-1-text'])</a>
+                                <a href="@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-2-link'])">@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-2-text'])</a>
                             </li>
 
                             <li>
-                                <a href="mailto:@c(['key' => 'email_address_support'])">@c(['key' => 'email_address_support'])</a>
+                                <a href="@c(['mimetype' => 'text/plain', 'key' => 'email_address_support_link'])">@c(['mimetype' => 'text/plain', 'key' => 'email_address_support_text'])</a>
                             </li>
                         </ul>
                     </div>
@@ -29,8 +29,8 @@
                                     </li>
 
                                     @guest
-                                        <li><a href="/login">@c(['key' => 'login', 'default' => 'Login'])</a></li>
-                                        <li><a href="/signup">@c(['key' => 'signup', 'default' => 'Signup'])</a></li>
+                                        <li><a href="/login">@c(['mimetype' => 'text/plain', 'key' => 'login', 'default' => 'Login'])</a></li>
+                                        <li><a href="/signup">@c(['mimetype' => 'text/plain', 'key' => 'signup', 'default' => 'Signup'])</a></li>
                                     @endguest
                                     @auth
                                         <li>
@@ -81,6 +81,14 @@
 
         <div class="top-bar__collapse">
             <div>
+                <script>
+                    $('body').on('click', '.switch_language_link', function(e) {
+                        e.preventDefault();
+                        const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+                        $('#switch_language_csrf_token').val( csrfToken);
+                        document.getElementById( 'switchLanguage').submit();
+                    });
+                </script>
                 <nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
                     @guest
                         @include('partials.guest.menu')

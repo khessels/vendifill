@@ -11,51 +11,61 @@
         <div class="side-menu__contacts">
             <ul class="contact-info">
                 <li>
-                    <div class="__label">{{ $content['side-menu']['address'] ?? "address"}}</div>
+                    <div class="__label">@c(['key' => 'address'])</div>
 
+                </li>
+
+                <li>
+                    <div class="__label">@c(['mimetype' => 'text/plain', 'key' => 'phone', 'default' =>"Phone"])</div>
                     <p>
-                        {{ $content['side-menu']['html_address'] ?? "html_address"}}
+                        <a href="@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-1-link'])">@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-1-text'])</a><br>
+                        <a href="@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-2-link'])">@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-2-text'])</a>
                     </p>
                 </li>
 
                 <li>
-                    <div class="__label">{{ $content['side-menu']['phone'] ?? "phone"}}</div>
-
-                    <p>
-                        {{ $side_menu['phone_1'] ?? "phone_1"}}<br>
-                        {{ $side_menu['phone_2'] ?? "phone_2"}}
-                    </p>
-                </li>
-
-                <li>
-                    <div class="__label">{{ $content['side-menu']['social'] ?? "social"}}</div>
+                    <div class="__label">@c(['mimetype' => 'text/plain', 'key' => 'social', 'default' =>"Social media"])</div>
 
                     <!-- start social buttons -->
                     <div class="s-btns s-btns--gray">
                         <ul class="d-flex flex-row flex-wrap align-items-center">
-                            @if(!empty($content['top-bar']['link_facebook']))
-                                <li><a class="f" href="{{ $content['top-bar']['link_facebook'] }}"><i class="fontello-facebook"></i></a></li>
+                            @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_facebook_link'])"))
+                                <li>
+                                    <a class="f" href="@c(['mimetype' => 'text/plain', 'key' => 'link_facebook_link'])">
+                                    <i class="fontello-facebook"></i></a>
+                                </li>
                             @endif
-                            @if(!empty($content['top-bar']['link_twitter']))
-                                <li><a class="t" href="{{ $content['top-bar']['link_twitter'] }}"><i class="fontello-twitter"></i></a></li>
+                            @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_x_link'])"))
+                                <li>
+                                    <a class="t" href="@c(['mimetype' => 'text/plain', 'key' => 'link_x_link'])">
+                                        <i class="fontello-twitter"></i>
+                                    </a>
+                                </li>
                             @endif
-                            @if(!empty($content['top-bar']['link_youtube']))
-                                <li><a class="y" href="{{ $content['top-bar']['link_youtube'] }}"><i class="fontello-youtube-play"></i></a></li>
+                            @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_youtube_link'])"))
+                                <li>
+                                    <a class="y" href="@c(['mimetype' => 'text/plain', 'key' => 'link_youtube_link'])">
+                                        <i class="fontello-youtube-play"></i>
+                                    </a>
+                                </li>
                             @endif
-                            @if(!empty($content['top-bar']['link_instagram']))
-                                <li><a class="i" href="{{ $content['top-bar']['link_instagram'] }}"><i class="fontello-instagram"></i></a></li>
+                            @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_blsky_link'])"))
+                                <li>
+                                    <a class="i" href="@c(['mimetype' => 'text/plain', 'key' => 'link_blsky_link'])">
+                                        <i class="fontello-instagram"></i>
+                                    </a>
+                                </li>
                             @endif
-
                         </ul>
                     </div>
                     <!-- end social buttons -->
                 </li>
             </ul>
         </div>
-
+{{--
         <div>
             <a class="custom-btn custom-btn--big custom-btn--s2 wide" href="{{ route('view.red-button') }}">{{ $content['top-bar']['red-button'] ?? "red-button"}}</a>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- end side menu -->

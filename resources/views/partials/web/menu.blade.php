@@ -1,28 +1,28 @@
 <ul>
     <li>
-        <a class="nav-link" href="/">@c(['key' => 'home', 'default' => 'Home'])</a>
+        <a class="nav-link" href="/">@c(['mimetype' => 'text/plain', 'key' => 'home', 'default' => 'Home'])</a>
     </li>
 
     <li class="has-submenu">
-        <a class="nav-link" href="/sales">@c(['key' => 'sales', 'default' => 'Sales'])</a>
+        <a class="nav-link" href="/sales">@c(['mimetype' => 'text/plain', 'key' => 'sales', 'default' => 'Sales'])</a>
         <ul class="submenu">
             <li><a href="#">__</a></li>
             <li><a href="#">__</a></li>
         </ul>
     </li>
     <li class="has-submenu">
-        <a class="nav-link" href="/products">@c(['key' => 'products', 'default' => 'Products'])</a>
+        <a class="nav-link" href="/products">@c(['mimetype' => 'text/plain', 'key' => 'products', 'default' => 'Products'])</a>
         <ul class="submenu">
-            <li><a href="/products">@c(['key' => 'index', 'default' => 'Index'])</a></li>
+            <li><a href="/products">@c(['mimetype' => 'text/plain', 'key' => 'index', 'default' => 'Index'])</a></li>
 {{--            <li><a href="/products/stock">{{__('Stock')}}</a></li>--}}
 {{--            <li><a href="/products/machine/stock">{{__('Machine Stock')}}</a></li>--}}
         </ul>
     </li>
     @haspermission('machines-manage')
         <li class="has-submenu">
-            <a class="nav-link" href="javascript:void(0)">@c(['key' => 'machines', 'default' => 'Machines'])</a>
+            <a class="nav-link" href="javascript:void(0)">@c(['mimetype' => 'text/plain', 'key' => 'machines', 'default' => 'Machines'])</a>
             <ul class="submenu">
-                <li><a href="/machines">@c(['key' => 'index', 'default' => 'Index'])</a></li>
+                <li><a href="/machines">@c(['mimetype' => 'text/plain', 'key' => 'index', 'default' => 'Index'])</a></li>
 {{--                <li><a href="/machine/stock">{{__('Stock')}}</a></li>--}}
 {{--                <li><a href="/machine/config">{{__('Config')}}</a></li>--}}
 {{--                @can('machines-experiment')--}}
@@ -62,8 +62,8 @@
         <ul class="submenu">
             <li>
                 <form id="switchLanguage" action="/switch-menu" method="POST">
-                    @csrf
-                    <a href="#" class="nav-link" onclick="submitSwitchLanguage()">@c(['key' => 'switch_menu', 'default' => 'Switch Menu'])</a>
+                    <input type="hidden" id="switch_language_csrf_token" name="_token" value="" />
+                    <a href="#" class="nav-link switch_language_link" onclick="submitSwitchLanguage()">Switch</a>
                 </form>
             </li>
             <li><a href="/report/events/log">{{__('Events')}}</a></li>
@@ -75,8 +75,4 @@
     </li>
     @endhasrole
 </ul>
-<script>
-     function submitSwitchLanguage() {
-        document.getElementById('switchLanguage').submit();
-    }
-</script>
+

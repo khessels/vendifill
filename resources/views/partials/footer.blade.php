@@ -11,7 +11,7 @@
 
                     <div class="footer__item">
                         <p class="__copy">
-                            @c(['key' => 'copyright', 'default' =>"Copyright © 2023 - 25 VendiFill.com"])
+                            @c(['mimetype' => 'text/plain', 'key' => 'copyright', 'default' =>"Copyright © 2023 - 25 VendiFill.com"])
                         </p>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         <address class="footer__address">
                             @c(['key' => 'address'])
 
-                            <p><a href="mailto:@c(['key' => 'email_address_info'])">@c(['key' => 'email_address_info'])</a></p>
+                            <p><a href="@c(['mimetype' => 'text/plain', 'key' => 'email_address_info_link'])">@c(['mimetype' => 'text/plain', 'key' => 'email_address_info_text'])</a></p>
                         </address>
                     </div>
 
@@ -29,17 +29,17 @@
                         <!-- start social buttons -->
                         <div class="s-btns s-btns--white">
                             <ul class="d-flex flex-row flex-wrap align-items-center">
-                                @if(!empty("@c(['key' => 'link_facebook'])"))
-                                    <li><a class="f" href="@c(['key' => 'link_facebook'])"><i class="fontello-facebook"></i></a></li>
+                                @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_facebook_link'])"))
+                                    <li><a class="f" href="@c(['mimetype' => 'text/plain', 'key' => 'link_facebook_link'])"><i class="fontello-facebook"></i></a></li>
                                 @endif
-                                @if(!empty("@c(['key' => 'link_x'])"))
-                                    <li><a class="t" href="@c(['key' => 'link_x'])"><i class="fontello-twitter"></i></a></li>
+                                @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_x_link'])"))
+                                    <li><a class="t" href="@c(['mimetype' => 'text/plain', 'key' => 'link_x_link'])"><i class="fontello-twitter"></i></a></li>
                                 @endif
-                                @if(!empty("@c(['key' => 'link_youtube'])"))
-                                    <li><a class="y" href="@c(['key' => 'link_facebook'])"><i class="fontello-youtube-play"></i></a></li>
+                                @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_youtube_link'])"))
+                                    <li><a class="y" href="@c(['mimetype' => 'text/plain', 'key' => 'link_youtube_link'])"><i class="fontello-youtube-play"></i></a></li>
                                 @endif
-                                @if(!empty("@c(['key' => 'link_blsky'])"))
-                                    <li><a class="i" href="@c(['key' => 'link_blsky'])"><i class="fontello-instagram"></i></a></li>
+                                @if(!empty("@c(['mimetype' => 'text/plain', 'key' => 'link_blsky_link'])"))
+                                    <li><a class="i" href="@c(['mimetype' => 'text/plain', 'key' => 'link_blsky_link'])"><i class="fontello-instagram"></i></a></li>
                                 @endif
 
                             </ul>
@@ -54,13 +54,14 @@
                             <div class="footer__item">
                                 <nav class="footer__navigation">
                                     <ul>
-                                        @c(['key' => 'footer.column-3'])
-                                        <!-- li class="active" -->
-{{--                                        <li><a href="javascript:void(0)">Documents</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">Services</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">Vending Info</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">News</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">Support</a></li>--}}
+                                        @c(['key' => 'footer.column-3', 'default'=>'
+                                            <!-- li class="active" -->
+                                            <li><a href="javascript:void(0)">Documents</a></li>
+                                            <li><a href="javascript:void(0)">Services</a></li>
+                                            <li><a href="javascript:void(0)">Vending Info</a></li>
+                                            <li><a href="javascript:void(0)">News</a></li>
+                                            <li><a href="javascript:void(0)">Support</a></li>
+                                        '])
                                     </ul>
                                 </nav>
                             </div>
@@ -71,12 +72,13 @@
                                 <nav class="footer__navigation">
                                     <ul>
                                         <!-- li class="active" -->
-                                        @c(['key' => 'footer.column-4'])
-{{--                                        <li><a href="javascript:void(0)">Snack Vending Machines</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">Beverage Vending Machines</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">Combo Vending Machines</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">Coffee Machines</a></li>--}}
-{{--                                        <li><a href="javascript:void(0)">ATMs Machines</a></li>--}}
+                                        @c(['key' => 'footer.column-4', 'default'=> '
+                                            <li><a href="javascript:void(0)">Snack Vending Machines</a></li>
+                                            <li><a href="javascript:void(0)">Beverage Vending Machines</a></li>
+                                            <li><a href="javascript:void(0)">Combo Vending Machines</a></li>
+                                            <li><a href="javascript:void(0)">Coffee Machines</a></li>
+                                            <li><a href="javascript:void(0)">ATMs Machines</a></li>
+                                        '])
                                     </ul>
                                 </nav>
                             </div>
