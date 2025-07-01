@@ -88,6 +88,12 @@
                         $('#switch_language_csrf_token').val( csrfToken);
                         document.getElementById( 'switchLanguage').submit();
                     });
+
+                    let activePage = '{{ $page ?? '' }}';
+                    console.log( activePage)
+                    $(document).ready(function() {
+                        $('.page_' + activePage).addClass('active');
+                    });
                 </script>
                 <nav id="top-bar__navigation" class="top-bar__navigation" role="navigation">
                     @guest
