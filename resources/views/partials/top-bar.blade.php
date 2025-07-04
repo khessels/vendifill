@@ -13,7 +13,7 @@
                             </li>
 
                             <li>
-                                <a href="@c(['mimetype' => 'text/plain', 'key' => 'email_address_support_link'])">@c(['mimetype' => 'text/plain', 'key' => 'email_address_support_text'])</a>
+                                <a target='_blank' href="@c(['mimetype' => 'text/plain', 'key' => 'email_address_support_link'])">@c(['mimetype' => 'text/plain', 'key' => 'email_address_support_text'])</a>
                             </li>
                         </ul>
                     </div>
