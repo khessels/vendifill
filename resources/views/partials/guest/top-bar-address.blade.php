@@ -8,7 +8,9 @@
             {{--                                VA 2015-1688--}}
         </p>
     </li>
-
+    <li>
+        @include('partials.language')
+    </li>
     <li>
         <div class="__label">@c(['mimetype' => 'text/plain', 'key' => 'phone', 'default' => 'Phone'])</div>
 
@@ -16,12 +18,7 @@
         <br>
         <a href="@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-2-link'])">@c(['mimetype' => 'text/plain', 'key' => 'top-bar.phone-2-text'])</a>
     </li>
-    <li style="display: none;" class="switchLanguageMenu">
-        <form id="switchLanguage" action="/switch-menu" method="POST">
-            <input type="hidden" id="switch_language_csrf_token" name="_token" value="" />
-            <a href="#" class="nav-link switch_language_link">Switch</a>
-        </form>
-    </li>
+
     <li>
         {{-- <div class="__label">{{ $content['top-bar']['social'] ?? "social"}}</div> --}}
 
@@ -45,3 +42,5 @@
         <!-- end social buttons -->
     </li>
 </ul>
+
+
