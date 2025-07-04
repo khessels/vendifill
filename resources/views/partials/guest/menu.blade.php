@@ -20,7 +20,7 @@
         <li>
             <a href="/faqs">faq</a>
         </li>
-        <li style="display: none;" id="switchLanguageMenu">
+        <li style="display: none;" class="switchLanguageMenu">
             <form id="switchLanguage" action="/switch-menu" method="POST">
                 <input type="hidden" id="switch_language_csrf_token" name="_token" value="" />
                 <a href="#" class="nav-link switch_language_link">Switch</a>
@@ -36,7 +36,7 @@
 @auth
     <script>
          $(document).ready(function() {
-            $('#switchLanguageMenu').show()
+            $('.switchLanguageMenu').show()
         });
     </script>
 @endauth
