@@ -11,7 +11,7 @@
         <div class="side-menu__contacts">
             <ul class="contact-info">
                 <li>
-                    <div class="__label">@c([['mimetype' => 'text/plain', 'key' => 'address', 'default' =>"Address"])</div>
+                    <div class="__label">@c(['mimetype' => 'text/plain', 'key' => 'address', 'default' =>"Address"])</div>
 
                 </li>
 
