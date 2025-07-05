@@ -1,8 +1,8 @@
 <ul class="contact-info">
     <li>
-        <div class="__label">@c([['mimetype' => 'text/plain', 'key' => 'address', 'default' =>"Address"])</div>
+        <div class="__label">@c(['mimetype' => 'text/plain', 'key' => 'address', 'default' =>"Address"])</div>
 
-        @c([['mimetype' => 'text/plain', 'key' => 'address.full', 'default' =>"full address html"])
+        @c(['mimetype' => 'text/plain', 'key' => 'address.full', 'default' =>"full address html"])
     </li>
     <li>
         @include('partials.language')
