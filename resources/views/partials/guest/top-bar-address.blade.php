@@ -1,12 +1,8 @@
 <ul class="contact-info">
     <li>
-        {{-- <div class="__label">{{ $content['top-bar']['address'] ?? "address"}}</div> --}}
+        <div class="__label">@c([['mimetype' => 'text/plain', 'key' => 'address', 'default' =>"Address"])</div>
 
-        <p>
-            {{-- {{ $content['top-bar']['html_address'] ?? "html_address"}} --}}
-            {{--                                5272 Lyngate Ct Burke,<br>--}}
-            {{--                                VA 2015-1688--}}
-        </p>
+        @c([['mimetype' => 'text/plain', 'key' => 'address.full', 'default' =>"full address html"])
     </li>
     <li>
         @include('partials.language')
