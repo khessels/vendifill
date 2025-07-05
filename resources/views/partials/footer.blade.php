@@ -19,7 +19,7 @@
                 <div class="col-12 col-md-5 col-lg-4 col-xl-3">
                     <div class="footer__item">
                         <address class="footer__address">
-                            @c([['mimetype' => 'text/html', 'key' => 'address', 'default' =>"address"])
+                            @c(['mimetype' => 'text/html', 'key' => 'address', 'default' =>"Address"])
 
                             <p><a href="@c(['mimetype' => 'text/plain', 'key' => 'email_address_info_link'])">@c(['mimetype' => 'text/plain', 'key' => 'email_address_info_text'])</a></p>
                         </address>
