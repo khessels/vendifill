@@ -51,6 +51,14 @@ return [
             'serve' => false,
             'throw' => false,
         ],
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/images'),
+            'url' => env('APP_URL').'/storage/images',
+            'visibility' => 'public',
+            'throw' => false,
+            'report' => false,
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
