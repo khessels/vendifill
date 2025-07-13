@@ -1,7 +1,7 @@
 @extends('layouts.guest')
 
 @section('title')
-    @c(['key' => 'title', 'page' => $page])
+    @c(['mimetype' => 'text/plain', 'editable' => false, 'key' => 'title', 'page' => $page])
 @endsection
 
 @section('head')
